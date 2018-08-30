@@ -1,13 +1,13 @@
 '.source.gfm':
   'embed image':
     'prefix': 'img'
-    'body': '![$name:1]($link:2)'
+    'body': '![${1:name}](${2:image-url})'
   'embed link':
     'prefix': 'url'
-    'body': '[$1]($2)'
+    'body': '[${1:name}](${2:url})'
   'embed movie':
     'prefix': 'mov'
-    'body': '!![${1:reference-name}](${2:https://www.youtube.com/embed/bICfKRyKTwE})'
+    'body': '!![${1:name}](${2:https://www.youtube.com/embed/bICfKRyKTwE})'
   'embed inline formula':
     'prefix': 'formi'
     'body': '$ ${1:f(a,b,c) = (a^2+b^2+c^2)^3} $'

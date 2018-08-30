@@ -14,3 +14,6 @@
   'insert comment paragraph':
     'prefix': 'ecom'
     'body': '    --{{${1:id}}}--\n${2:This **text** gets read out aloud!}'
+  'insert css effect':
+    'prefix': 'ecss'
+    'body': '<!-- class = "animated rollIn" style = "animation-delay: 2s; color: purple" -->'

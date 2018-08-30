@@ -1,0 +1,10 @@
+'.source.gfm':
+  'insert inline footnote':
+    'prefix': 'fti'
+    'body': '[^${1:ref}](${2:explanation})'
+  'insert footnote':
+    'prefix': 'ft'
+    'body': '[^${1:ref}]'
+  'insert footnote explanation':
+    'prefix': 'fte'
+    'body': '[^${1:ref}]: ${2:write some explanation}'

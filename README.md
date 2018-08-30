@@ -22,7 +22,7 @@ translation: Русский  translations/French.md
 
 s
 
-[[ ]] Add as many elements as you want?
+[[ ]] Add asdfasasdafdfas many elements as you want?
 [[X]] The X marks the correct answer!
 [[ ]] ... this is wrong ...
 [[X]] ... this has to be selected too ...
@@ -42,13 +42,10 @@ Add a solution explanation __Markdown__!
 
 ## test
 
-[[-1][0][1]]
-[          ] liaScript is great?
-[          ] I would use it to make online **courses**?
-[          ] I would use it for online **surveys**?
+ this is a text [^1] asfdas
+ and this is an [^2](inliner)
 
 
-[[:agree][:unsure][:maybe not so]]
-[                                ] liaScript is great?
-[                                ] I would use it to make online **courses**?
-[                                ] I would use it for online **surveys**?
+[^1]: this is a simple footer
+
+          https://de.wikipedia.org/wiki/Fundamentalsatz_der_Analysis
