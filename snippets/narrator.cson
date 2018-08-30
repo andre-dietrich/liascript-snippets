@@ -1,0 +1,256 @@
+'.source.gfm':
+  'voice: UK English Female':
+    'prefix': 'rvukf'
+    'body':   'UK English Female'
+  'voice: UK English Male':
+    'prefix': 'rvukm'
+    'body':   'UK English Male'
+  'voice: US English Female':
+    'prefix': 'rvusf'
+    'body':   'US English Female'
+  'voice: US English Male':
+    'prefix': 'rvusm'
+    'body':   'US English Male'
+  'voice: Arabic Female':
+    'prefix': 'rvsaf'
+    'body':   'Arabic Female'
+  'voice: Arabic Male':
+    'prefix': 'rvsam'
+    'body':   'Arabic Male'
+  'voice: Armenian Male':
+    'prefix': 'rvamm'
+    'body':   'Armenian Male'
+  'voice: Australian Female':
+    'prefix': 'rvauf'
+    'body':   'Australian Female'
+  'voice: Australian Male':
+    'prefix': 'rvaum'
+    'body':   'Australian Male'
+  'voice: Brazilian Portuguese Female':
+    'prefix': 'rvbrf'
+    'body':   'Brazilian Portuguese Female'
+  'voice: Brazilian Portuguese Male':
+    'prefix': 'rvbrm'
+    'body':   'Brazilian Portuguese Male'
+  'voice: Chinese Female':
+    'prefix': 'rvcnf'
+    'body':   'Chinese Female'
+  'voice: Chinese Male':
+    'prefix': 'rvcnm'
+    'body':   'Chinese Male'
+  'voice: Chinese (Hong Kong) Female':
+    'prefix': 'rvhkf'
+    'body':   'Chinese (Hong Kong) Female'
+  'voice: Chinese (Hong Kong) Male':
+    'prefix': 'rvhkm'
+    'body':   'Chinese (Hong Kong) Male'
+  'voice: Chinese Taiwan Female':
+    'prefix': 'rvtwf'
+    'body':   'Chinese Taiwan Female'
+  'voice: Chinese Taiwan Male':
+    'prefix': 'rvtwm'
+    'body':   'Chinese Taiwan Male'
+  'voice: Czech Female':
+    'prefix': 'rvczf'
+    'body':   'Czech Female'
+  'voice: Czech Male':
+    'prefix': 'rvczm'
+    'body':   'Czech Male'
+  'voice: Danish Female':
+    'prefix': 'rvdkf'
+    'body':   'Danish Female'
+  'voice: Danish Male':
+    'prefix': 'rvdkm'
+    'body':   'Danish Male'
+  'voice: Deutsch Female':
+    'prefix': 'rvdef'
+    'body':   'Deutsch Female'
+  'voice: Deutsch Male':
+    'prefix': 'rvdem'
+    'body':   'Deutsch Male'
+  'voice: Dutch Female':
+    'prefix': 'rvnlf'
+    'body':   'Dutch Female'
+  'voice: Dutch Male':
+    'prefix': 'rvnlm'
+    'body':   'Dutch Male'
+  'voice: Finnish Female':
+    'prefix': 'rvfif'
+    'body':   'Finnish Female'
+  'voice: Finnish Male':
+    'prefix': 'rvfim'
+    'body':   'Finnish Male'
+  'voice: French Female':
+    'prefix': 'rvfrf'
+    'body':   'French Female'
+  'voice: French Male':
+    'prefix': 'rvfrm'
+    'body':   'French Male'
+  'voice: Greek Female':
+    'prefix': 'rvgrf'
+    'body':   'Greek Female'
+  'voice: Greek Male':
+    'prefix': 'rvgrm'
+    'body':   'Greek Male'
+  'voice: Hindi Female':
+    'prefix': 'rvinf'
+    'body':   'Hindi Female'
+  'voice: Hindi Male':
+    'prefix': 'rvinm'
+    'body':   'Hindi Male'
+  'voice: Hungarian Female':
+    'prefix': 'rvhuf'
+    'body':   'Hungarian Female'
+  'voice: Hungarian Male':
+    'prefix': 'rvhum'
+    'body':   'Hungarian Male'
+  'voice: Indonesian Female':
+    'prefix': 'rvidf'
+    'body':   'Indonesian Female'
+  'voice: Indonesian Male':
+    'prefix': 'rvidm'
+    'body':   'Indonesian Male'
+  'voice: Italian Female':
+    'prefix': 'rvitf'
+    'body':   'Italian Female'
+  'voice: Italian Male':
+    'prefix': 'rvitm'
+    'body':   'Italian Male'
+  'voice: Japanese Female':
+    'prefix': 'rvjpf'
+    'body':   'Japanese Female'
+  'voice: Japanese Male':
+    'prefix': 'rvjpm'
+    'body':   'Japanese Male'
+  'voice: Korean Female':
+    'prefix': 'rvkrf'
+    'body':   'Korean Female'
+  'voice: Korean Male':
+    'prefix': 'rvkrm'
+    'body':   'Korean Male'
+  'voice: Latin Female':
+    'prefix': 'rvlatf'
+    'body':   'Latin Female'
+  'voice: Latin Male':
+    'prefix': 'rvlatm'
+    'body':   'Latin Male'
+  'voice: Norwegian Female':
+    'prefix': 'rvnof'
+    'body':   'Norwegian Female'
+  'voice: Norwegian Male':
+    'prefix': 'rvnom'
+    'body':   'Norwegian Male'
+  'voice: Polish Female':
+    'prefix': 'rvplf'
+    'body':   'Polish Female'
+  'voice: Polish Male':
+    'prefix': 'rvplm'
+    'body':   'Polish Male'
+  'voice: Portuguese Female':
+    'prefix': 'rvptf'
+    'body':   'Portuguese Female'
+  'voice: Portuguese Male':
+    'prefix': 'rvptm'
+    'body':   'Portuguese Male'
+  'voice: Romanian Female':
+    'prefix': 'rvrof'
+    'body':   'Romanian Female'
+  'voice: Russian Female':
+    'prefix': 'rvruf'
+    'body':   'Russian Female'
+  'voice: Russian Male':
+    'prefix': 'rvrum'
+    'body':   'Russian Male'
+  'voice: Slovak Female':
+    'prefix': 'rvskf'
+    'body':   'Slovak Female'
+  'voice: Slovak Male':
+    'prefix': 'rvskm'
+    'body':   'Slovak Male'
+  'voice: Spanish Female':
+    'prefix': 'rvesf'
+    'body':   'Spanish Female'
+  'voice: Spanish Male':
+    'prefix': 'rvesm'
+    'body':   'Spanish Male'
+  'voice: Spanish Latin American Female':
+    'prefix': 'rves2f'
+    'body':   'Spanish Latin American Female'
+  'voice: Spanish Latin American Male':
+    'prefix': 'rves2m'
+    'body':   'Spanish Latin American Male'
+  'voice: Swedish Female':
+    'prefix': 'rvsef'
+    'body':   'Swedish Female'
+  'voice: Swedish Male':
+    'prefix': 'rvsem'
+    'body':   'Swedish Male'
+  'voice: Tamil Male':
+    'prefix': 'rvlkm'
+    'body':   'Tamil Male'
+  'voice: Thai Female':
+    'prefix': 'rvthf'
+    'body':   'Thai Female'
+  'voice: Thai Male':
+    'prefix': 'rvthm'
+    'body':   'Thai Male'
+  'voice: Turkish Female':
+    'prefix': 'rvtrf'
+    'body':   'Turkish Female'
+  'voice: Turkish Male':
+    'prefix': 'rvtrm'
+    'body':   'Turkish Male'
+  'voice: Vietnamese Female':
+    'prefix': 'rvvnf'
+    'body':   'Vietnamese Female'
+  'voice: Vietnamese Male':
+    'prefix': 'rvvnm'
+    'body':   'Vietnamese Male'
+  'voice: Afrikaans Male':
+    'prefix': 'rvzam'
+    'body':   'Afrikaans Male'
+  'voice: Albanian Male':
+    'prefix': 'rvalm'
+    'body':   'Albanian Male'
+  'voice: Bosnian Male':
+    'prefix': 'rvbam'
+    'body':   'Bosnian Male'
+  'voice: Catalan Male':
+    'prefix': 'rvcatm'
+    'body':   'Catalan Male'
+  'voice: Croatian Male':
+    'prefix': 'rvhrm'
+    'body':   'Croatian Male'
+  'voice: Esperanto Male':
+    'prefix': 'rvepom'
+    'body':   'Esperanto Male'
+  'voice: Icelandic Male':
+    'prefix': 'rvism'
+    'body':   'Icelandic Male'
+  'voice: Latvian Male':
+    'prefix': 'rvlvm'
+    'body':   'Latvian Male'
+  'voice: Macedonian Male':
+    'prefix': 'rvmkm'
+    'body':   'Macedonian Male'
+  'voice: Moldavian Female':
+    'prefix': 'rvmdf'
+    'body':   'Moldavian Female'
+  'voice: Moldavian Male':
+    'prefix': 'rvmdm'
+    'body':   'Moldavian Male'
+  'voice: Montenegrin Male':
+    'prefix': 'rvmem'
+    'body':   'Montenegrin Male'
+  'voice: Serbian Male':
+    'prefix': 'rvrsm'
+    'body':   'Serbian Male'
+  'voice: Serbo-Croatian Male':
+    'prefix': 'rvrscm'
+    'body':   'Serbo-Croatian Male'
+  'voice: Swahili Male':
+    'prefix': 'rvszm'
+    'body':   'Swahili Male'
+  'voice: Welsh Male':
+    'prefix': 'rvwelm'
+    'body':   'Welsh Male'

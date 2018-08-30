@@ -36,6 +36,11 @@
           false;}
       </script>
     """
+  'insert line to single choice quiz':
+    'prefix': 'qsl'
+    'body': """
+      [(${1: })] ${2:text}
+    """
   'multiple choice quiz':
     'prefix': 'qmul'
     'body': """
@@ -66,6 +71,11 @@
         else if (input == "[0,0,0,1]")  true;
         else                            false;}
       </script>
+    """
+  'insert line to multiple choice quiz':
+    'prefix': 'qml'
+    'body': """
+      [[${1: }]] ${2:text}
     """
   'add JavaScript check to quiz':
     'prefix': 'qjs'

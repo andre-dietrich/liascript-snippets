@@ -26,17 +26,6 @@ Add a solution explanation __Markdown__!
 
 ## test
 
-``` js     +Script.js
- var json = @code(1);
 
-  json.first_name + " " + json.last_name;
-
-```
-``` json     +Data.json
-{
-  "first_name"  :  "Sammy",
-  "last_name"   :  "Shark",
-  "online"      :  true
-}
-```
-<script>@code(0)</script>
+    --{{1 UK English Male}}--
+This **text** gets read out aloud!

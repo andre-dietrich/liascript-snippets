@@ -1,0 +1,16 @@
+'.source.gfm':
+  'insert inline effect':
+    'prefix': 'efi'
+    'body': '{${1:id}}{${2:__element__}}'
+  'insert inline effect with stop':
+    'prefix': 'efi2'
+    'body': '{${1:start}-${2:stop}}{${3:__element__}}'
+  'insert effect block':
+    'prefix': 'efb'
+    'body': '    {${1:id}}\n'
+  'insert effect block with stop':
+    'prefix': 'efb2'
+    'body': '    {${1:start}-${2:stop}}\n'
+  'insert comment paragraph':
+    'prefix': 'ecom'
+    'body': '    --{{${1:id}}}--\n${2:This **text** gets read out aloud!}'

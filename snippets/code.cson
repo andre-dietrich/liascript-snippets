@@ -66,7 +66,7 @@
   'insert a code project':
     'prefix': 'codp'
     'body': """
-    ``` ${1:js}     ${2:+Script.js}
+    ``` ${1:js}     ${2:-Script.js}
     ${3:var json = @code(1);
 
     `${json.first_name} ${json.last_name} is${json.online ? "" : " not"} online`;}
