@@ -1,3 +1,18 @@
+<!--
+author:   Andre Dietrich
+email:    andre.dietrich@ovgu.de
+version:  1.0.0
+language: en
+narrator: Deutsch Male
+
+comment:  This simple description of your course.
+          Multiline is also okay.
+
+script:   https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js
+
+translation: Русский  translations/French.md
+-->
+
 # Test
 
 
@@ -11,6 +26,7 @@ s
 [[X]] The X marks the correct answer!
 [[ ]] ... this is wrong ...
 [[X]] ... this has to be selected too ...
+[[X]] not so good
 [[?]] give a *hint1*
 [[?]] give a *hint2*
 [[?]] give a *hint3*
@@ -26,6 +42,13 @@ Add a solution explanation __Markdown__!
 
 ## test
 
+[[-1][0][1]]
+[          ] liaScript is great?
+[          ] I would use it to make online **courses**?
+[          ] I would use it for online **surveys**?
 
-    --{{1 UK English Male}}--
-This **text** gets read out aloud!
+
+[[:agree][:unsure][:maybe not so]]
+[                                ] liaScript is great?
+[                                ] I would use it to make online **courses**?
+[                                ] I would use it for online **surveys**?

@@ -1,0 +1,64 @@
+'.source.gfm':
+  'survey text input':
+    'prefix': 'srtxt'
+    'body':   '[[___ ___ ___ ___]]'
+  'survey single choice with numbers':
+    'prefix': 'srsin'
+    'body': """
+    [(${1:1})] ${2:option 1}
+    [(${3:2})] ${4:some other option}
+    [(${5:0})] ${6:or a default}
+    """
+  'survey single choice with variables':
+    'prefix': 'srsin2'
+    'body': """
+    [(${1::beige})] ${2:option ids can either be}
+    [(${3::green})] ${4:only numbers or only variable}
+    [(${5::black})] ${6:name, starting with a colon}
+    """
+  'survey multichoice with numbers':
+    'prefix': 'srmul'
+    'body': """
+    [[${1:1}]] ${2:option 1}
+    [[${3:2}]] ${4:some other option}
+    [[${5:0}]] ${6:or a default}
+    """
+  'survey multichoice with variables':
+    'prefix': 'srmul2'
+    'body': """
+    [[${1::beige}]] ${2:option ids can either be}
+    [[${3::green}]] ${4:only numbers or only variable}
+    [[${5::black}]] ${6:name, starting with a colon}
+    """
+  'survey single choice matrix with numbers':
+    'prefix': 'srsinmat'
+    'body': """
+    [(-1)(0)(1)]
+    [          ] liaScript is great?
+    [          ] I would use it to make online **courses**?
+    [          ] I would use it for online **surveys**?
+    """
+  'survey single choice matrix with variables':
+    'prefix': 'srsinmat2'
+    'body': """
+    [(:agree)(:unsure)(:maybe not so)]
+    [                                ] liaScript is great?
+    [                                ] I would use it to make online **courses**?
+    [                                ] I would use it for online **surveys**?
+    """
+  'survey multiplechoice matrix with numbers':
+    'prefix': 'srmulmat'
+    'body': """
+    [[-1][0][1]]
+    [          ] liaScript is great?
+    [          ] I would use it to make online **courses**?
+    [          ] I would use it for online **surveys**?
+    """
+  'survey multiplechoice matrix with variables':
+    'prefix': 'srmulmat2'
+    'body': """
+    [[:agree][:unsure][:maybe not so]]
+    [                                ] liaScript is great?
+    [                                ] I would use it to make online **courses**?
+    [                                ] I would use it for online **surveys**?
+    """
