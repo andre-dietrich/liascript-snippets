@@ -1,0 +1,95 @@
+'.source.gfm':
+  'simple text-quiz':
+    'prefix': 'qtext'
+    'body': '[[${1:enter solution in here}]]'
+  'simple text-quiz with JavaScript check':
+    'prefix': 'qtextjs'
+    'body': """
+      [[${1:solution}]]
+      <script>
+        let input = @input;
+        "solution" == input.trim().toLowerCase();
+      </script>
+    """
+  'single choice quiz':
+    'prefix': 'qsin'
+    'body': """
+      [(${1: })] ${2:Add as many elements as you want?}
+      [(${3:X})] ${4:The X marks the correct answer!}
+      [(${5: })] ${6:And only one X is allowed.}
+    """
+  'single choice quiz with JavaScript check':
+    'prefix': 'qsinjs'
+    'body': """
+      [(${1: })] ${2:Add as many elements as you want?}
+      [(${3:X})] ${4:The X marks the correct answer!}
+      [(${5: })] ${6:And only one X is allowed.}
+      <script>
+        // @input gets replaced by a single number
+        // -1 if no selection otherwise it starts
+        // with 0.
+        let input = @input;
+
+        ${7:if(input == 1)
+          true;
+        else
+          false;}
+      </script>
+    """
+  'multiple choice quiz':
+    'prefix': 'qmul'
+    'body': """
+      [[${1: }]] ${2:Add as many elements as you want?}
+      [[${3:X}]] ${4:The X marks the correct answer!}
+      [[${5: }]] ${6:... this is wrong ...}
+      [[${7:X}]] ${8:... this has to be selected too ...}
+    """
+  'multiple choice quiz with JavaScript check':
+    'prefix': 'qmuljs'
+    'body': """
+      [[${1: }]] ${2:Add as many elements as you want?}
+      [[${3:X}]] ${4:The X marks the correct answer!}
+      [[${5: }]] ${6:... this is wrong ...}
+      [[${7:X}]] ${8:... this has to be selected too ...}
+      <script>
+        // @input gets replaced by an array in the
+        // form of [0,0,0,1], whereby 0 and 1
+        // define wheather a checkbox is checked
+        // or not...
+        let input = @input;
+
+        ${9:input = JSON.stringify(input);
+        // In this case it is okay if at least one
+        // input is correct.
+        if      (input == "[0,1,0,1]")  true;
+        else if (input == "[0,1,0,0]")  true;
+        else if (input == "[0,0,0,1]")  true;
+        else                            false;}
+      </script>
+    """
+  'add JavaScript check to quiz':
+    'prefix': 'qjs'
+    'body': """
+      <script>
+        ${1// @input gets replaced by the current quiz input.
+        // In case of a:
+        // * text input -> "string"
+        // * single choice -> int (-1, if nothing is selected)
+        // * multiple choice -> array int (0 unchecked, 1 checked)
+        let input = @input;
+
+        true; // if solved otherwise return false}
+      </script>
+    """
+  'give a quiz-hint':
+    'prefix': 'qhint'
+    'body': '[[?]] ${1:give a *hint*}'
+  'add quiz-solution':
+    'prefix': 'qsol'
+    'body': """
+      ****************************************
+
+      ${1:Add a solution explanation __Markdown__!}
+
+      ****************************************
+    """

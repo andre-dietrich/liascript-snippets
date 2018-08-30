@@ -1,0 +1,64 @@
+'.source.gfm':
+  '1 colum table':
+    'prefix': 'tab1'
+    'body': """
+      | Header     |
+      | :--------- |
+      | Item       |
+    """
+  '2 colum table':
+    'prefix': 'tab2'
+    'body': """
+    | Header 1   | Header 2   |
+    | :--------- | :--------- |
+    | Item 1     | Item 2     |
+    """
+  '3 colum table':
+    'prefix': 'tab3'
+    'body': """
+    | Header 1   | Header 2   | Header 3   |
+    | :--------- | :--------- | :--------- |
+    | Item 1     | Item 2     | Item 3     |
+    """
+  '4 colum table':
+    'prefix': 'tab4'
+    'body': """
+    | Header 1   | Header 2   | Header 3   | Header 4   |
+    | :--------- | :--------- | :--------- | :--------- |
+    | Item 1     | Item 2     | Item 3     | Item 4     |
+    """
+  '5 colum table':
+    'prefix': 'tab5'
+    'body': """
+    | Header 1   | Header 2   | Header 3   | Header 4   | Header 5   |
+    | :--------- | :--------- | :--------- | :--------- | :--------- |
+    | Item 1     | Item 2     | Item 3     | Item 4     | Item 5     |
+    """
+  '6 colum table':
+    'prefix': 'tab6'
+    'body': """
+    | Header 1   | Header 2   | Header 3   | Header 4   | Header 5   | Header 6   |
+    | :--------- | :--------- | :--------- | :--------- | :--------- | :--------- |
+    | Item 1     | Item 2     | Item 3     | Item 4     | Item 5     | Item 6     |
+    """
+  '7 colum table':
+    'prefix': 'tab7'
+    'body': """
+    | Header 1   | Header 2   | Header 3   | Header 4   | Header 5   | Header 6   | Header 7   |
+    | :--------- | :--------- | :--------- | :--------- | :--------- | :--------- | :--------- |
+    | Item 1     | Item 2     | Item 3     | Item 4     | Item 5     | Item 6     | Item 7     |
+    """
+  '8 colum table':
+    'prefix': 'tab8'
+    'body': """
+    | Header 1   | Header 2   | Header 3   | Header 4   | Header 5   | Header 6   | Header 7   | Header 8   |
+    | :--------- | :--------- | :--------- | :--------- | :--------- | :--------- | :--------- | :--------- |
+    | Item 1     | Item 2     | Item 3     | Item 4     | Item 5     | Item 6     | Item 7     | Item 8     |
+    """
+  '9 colum table':
+    'prefix': 'tab9'
+    'body': """
+    | Header 1   | Header 2   | Header 3   | Header 4   | Header 5   | Header 6   | Header 7   | Header 8   | Header 9   |
+    | :--------- | :--------- | :--------- | :--------- | :--------- | :--------- | :--------- | :--------- | :--------- |
+    | Item 1     | Item 2     | Item 3     | Item 4     | Item 5     | Item 6     | Item 7     | Item 8     | Item 9     |
+    """

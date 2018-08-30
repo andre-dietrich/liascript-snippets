@@ -1,0 +1,45 @@
+'.source.gfm':
+  'color dot diagram':
+    'prefix': 'diadots'
+    'body': """
+                         dia - dots
+        6 | A a B b C c
+          | D d E e F f G g H h I i
+          | J j K k L l M m N n o O
+          | P p Q q R r S s T t U u
+          | V v W w X x Y y Z Z   *
+        1 +------------------------
+          0                      24
+    """
+  'multiline diagram':
+    'prefix': 'diamul'
+    'body': """
+                                  dia - multiline
+        1.9 |
+            |                 ***
+          y |               *     *
+          - | r r r r r r r*r r r r*r r r r r r r
+          a |             *         *
+          x |            *           *
+          i | B B B B B * B B B B B B * B B B B B
+          s |         *                 *
+            | *  * *                       * *  *
+         -1 +------------------------------------
+            0            x-axis                 1
+    """
+  'simple diagram':
+    'prefix': 'diasim'
+    'body': """
+                                      dia - base
+       1.9 |
+           |     DOTS
+         y |                                *
+         - |
+         a |                         *
+         x |                  *
+         i |         *
+         s |
+           | *
+        -1 +------------------------------------
+           0            x-axis                 1
+    """

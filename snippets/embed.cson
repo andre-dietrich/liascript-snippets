@@ -1,0 +1,22 @@
+'.source.gfm':
+  'embed image':
+    'prefix': 'img'
+    'body': '![$name:1]($link:2)'
+  'embed link':
+    'prefix': 'url'
+    'body': '[$1]($2)'
+  'embed movie':
+    'prefix': 'mov'
+    'body': '!![${1:reference-name}](${2:https://www.youtube.com/embed/bICfKRyKTwE})'
+  'embed inline formula':
+    'prefix': 'formi'
+    'body': '$ ${1:f(a,b,c) = (a^2+b^2+c^2)^3} $'
+  'embed multiline formula':
+    'prefix': 'formul'
+    'body': """
+    $$ % KaTeX docs: https://khan.github.io/KaTeX/docs/supported.html
+
+       \\\\sum_{i=1}^\\\\infty\\\\frac{1}{n^2}
+            =\\\\frac{\\\\pi^2}{6}
+    $$
+    """

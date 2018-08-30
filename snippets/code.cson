@@ -1,0 +1,82 @@
+'.source.gfm':
+  'insert code block':
+    'prefix': 'cod'
+    'body': """
+    ``` ${1:js}
+    ${2:// see more information at:
+    let i = 0;
+    let rslt = 0;
+    for(i; i<10; i++)
+      rslt = rslt + i;
+
+    rslt;}
+    ```
+    """
+  'insert an executable code block':
+    'prefix': 'codx'
+    'body': """
+    ``` ${1:js}
+    ${2:// see more information at:
+    let i = 0;
+    let rslt = 0;
+    for(i; i<10; i++)
+      rslt = rslt + i;
+
+    rslt;}
+    ```
+    <script>${3:@code}</script>
+    """
+  'insert an executable with JavaScript error handling':
+    'prefix': 'codjs'
+    'body': """
+    ``` ${1:js}
+    ${2:// see more information at:
+    let i = 0;
+    let rslt = 0;
+    for(i; i<10; i++)
+      rslt = rslt + i;
+
+    rslt;}
+    ```
+    <script>
+      try{
+        eval(`@code`);
+      } catch (e) {
+        var log = e.stack.match(/((.*?):(.*))\n.*?(:(\d+):(\d+)\)\n)/);
+        var err_msg = new LiaError(log[1] + " =>  (" + log[4], 1);
+        err_msg.add_detail(0, log[3], "error", log[5]-1, log[6]);
+        throw err_msg;
+      }
+    </script>
+    """
+  'insert JavaScript tag with error handling':
+    'prefix': 'codscrpt'
+    'body': """
+    <script>
+      try{
+        eval(`@code`);
+      } catch (e) {
+        var log = e.stack.match(/((.*?):(.*))\n.*?(:(\d+):(\d+)\)\n)/);
+        var err_msg = new LiaError(log[1] + " =>  (" + log[4], 1);
+        err_msg.add_detail(0, log[3], "error", log[5]-1, log[6]);
+        throw err_msg;
+      }
+    </script>
+    """
+  'insert a code project':
+    'prefix': 'codp'
+    'body': """
+    ``` ${1:js}     ${2:+Script.js}
+    ${3:var json = @code(1);
+
+    `${json.first_name} ${json.last_name} is${json.online ? "" : " not"} online`;}
+    ```
+    ``` ${4:json}     ${5:+Data.json}
+    {
+      "first_name"  :  "Sammy",
+      "last_name"   :  "Shark",
+      "online"      :  true
+    }
+    ```
+    <script>@code(0)</script>
+    """
