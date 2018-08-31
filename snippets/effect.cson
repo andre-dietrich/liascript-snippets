@@ -1,19 +1,180 @@
 '.source.gfm':
-  'insert inline effect':
-    'prefix': 'efi'
-    'body': '{${1:id}}{${2:__element__}}'
-  'insert inline effect with stop':
-    'prefix': 'efi2'
-    'body': '{${1:start}-${2:stop}}{${3:__element__}}'
-  'insert effect block':
-    'prefix': 'efb'
-    'body': '    {${1:id}}\n'
-  'insert effect block with stop':
-    'prefix': 'efb2'
-    'body': '    {${1:start}-${2:stop}}\n'
-  'insert comment paragraph':
-    'prefix': 'ecom'
-    'body': '    --{{${1:id}}}--\n${2:This **text** gets read out aloud!}'
-  'insert css effect':
-    'prefix': 'ecss'
-    'body': '<!-- class = "animated rollIn" style = "animation-delay: 2s; color: purple" -->'
+  '{number}{element}':
+    'prefix': 'lia.effect.inline'
+    'body': '{${1:number}}{${2:__element__}}'
+    'description': """
+      Use simple inline effects to highlight specific elements within a Markdown block. Simply enclose your elements withint two subsequent braces ({}{}), whereby the first one is used to hold the number of appearence, while the will contain your text, image, video, what so ever ...
+      You can tweak your effects with additional animations and styling. Animate.css is included at default.
+
+      Examples:
+        This block contains some {1}{inline __effects__} that will appear {2}{subsequently}.
+
+        Inline effects can also contain more effects {1}{I will appear first {2}{and I as a second}}.
+
+        With styling ++ {3}{bouncing red and delayed}<!--
+              class = "animated infinite bounce"
+              style = "animation-delay: 3s; color: red;"
+            -->
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">🎇</span>'
+
+
+  '{from-to}{element}':
+    'prefix': 'lia.effect.inline2'
+    'body': '{${1:from}-${2:to}}{${3:__element__}}'
+    'description': """
+      Use simple inline effects to highlight specific elements within a Markdown block. Simply enclose your elements withint two subsequent braces ({}{}), whereby the first one contains two numbers separated by (-) the first number defines the time of appearence and the second one the time of disapperance. The element contains the Markdown elements for highlighting (text, videos, images, etc.)
+      You can tweak your effects with additional animations and styling. Animate.css is included at default.
+
+      Examples:
+        This block contains some {1-2}{I appear at fragment 1 and disapper at 2}.
+
+        Nesting is allowed but has to make sense {1-3}{I will rest from 1 to 3 {4}{I will not be visible}}.
+
+        With styling ++ {1-3}{bouncing red and delayed}<!--
+              class = "animated infinite bounce"
+              style = "animation-delay: 3s; color: red;"
+            -->
+    """
+
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">🎇</span>'
+
+
+  '{{number}}':
+    'prefix': 'lia.effect.block'
+    'body': '    {${1:number}}\n$2'
+    'description': """
+      Use block effects to let entire Markdown blocks appear or disapper. It works exactly as simple inline effects. But the number of appearence has to be put in double braces.
+      The entire block can also be styled and the animation tweaked, but the required comment tag has to be be defined before the Markdown block. Animate.css is included at default.
+
+      Examples:
+                          {{1}}
+        This entire block will appear with the first
+        fragment. And remain till the end of this slide.
+
+                          {{2}}
+        ```js
+        // this works with any markdown block
+        ```
+
+        <!-- class = "animated rollIn" -->
+             {{3}}
+        | Also | with  |
+        |------|-------|
+        | any  | table |
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">🎆</span>'
+
+
+  '{{from-to}}':
+    'prefix': 'lia.effect.block'
+    'body': '    {${1:from}-${2:to}}\n$3'
+    'description': """
+      Use block effects to let entire Markdown blocks appear or disapper. It works exactly as simple inline effects. But the number of appearence has to be put in double braces, followed by a hyphen (-) and the number of disapperance.
+      The entire block can also be styled and the animation tweaked, but the required comment tag has to be be defined before the Markdown block. Animate.css is included at default.
+
+      Examples:
+                         {{1-4}}
+        This entire block will appear with the first fragment.
+        And remain untill the fourth fragment of this slide.
+
+                         {{0-1}}
+        ```js
+        // I will be present emeadiately and disapper on the 1st
+        // fragment.
+        ```
+
+        <!-- class = "animated rollIn" -->
+             {{3-4}}
+        | Also | with  |
+        |------|-------|
+        | any  | table |
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">🎆</span>'
+
+
+  '{{number}} *** ... ***':
+    'prefix': 'lia.effect.multiblock'
+    'body': """
+                       {{${1:number}}}
+      ************************************************
+
+      ${2:Insert your Markdown blocks in here ...}
+
+      ************************************************
+    """
+    'description': """
+      You can bundle multiple blocks to one effect block by enclosing them into two lines of stars (*). The rest works exactly as block effects...
+      The entire block can also be styled and the animation tweaked, but the required comment tag has to be be defined before the Markdown block. Animate.css is included at default.
+
+      Examples:
+                          {{1}}
+        *************************************************
+
+        Both blocks will appear at once. Nesting of other
+        other {2}{inline} and block effects is also
+        allowed.
+
+
+        | Also | with  |
+        |------|-------|
+        | any  | table |
+
+        **************************************************
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">🎆</span>'
+
+
+  '{{from-to}} *** ... ***':
+    'prefix': 'lia.effect.multiblock2'
+    'body': """
+                       {{${1:from}-${2:to}}}
+      ************************************************
+
+      ${3:Insert your Markdown blocks in here ...}
+
+      ************************************************
+    """
+    'description': """
+      You can bundle multiple blocks to one effect block by enclosing them into two lines of stars (*). The rest works exactly as block effects...
+      The entire block can also be styled and the animation tweaked, but the required comment tag has to be be defined before the Markdown block. Animate.css is included at default.
+
+      Examples:
+                          {{1-3}}
+        *************************************************
+
+        Both blocks will appear at once and disapper at
+        the third fragment. Nesting of other other
+        {2}{inline} and block effects is also allowed.
+
+
+        | Also | with  |
+        |------|-------|
+        | any  | table |
+
+        **************************************************
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">🎆</span>'
+
+  '<!-- class="animated rollIn" ... -->':
+    'prefix': 'lia.effect.animate.example'
+    'body': '<!-- class="animated rollIn" style="animation-delay: 3s;" -->'
+    'description': """
+      This is only an example of how animate.css can be used to tweak your effects. Additional css magic can be applied onto single elements or blocks by adding a comment tag either in front of the block or directly after the element.
+
+      Example:
+
+        <!-- class = "animated rollIn" style = "animation-delay: 3s; color: purple" -->
+        The whole text-block should appear in purple color and with a wobbling effect.
+        Which is a **bad** example, please use it with causion ...
+        ~~ Jumping red ~~ <!-- class = "animated infinite bounce" style = "color: red;" -->
+
+      For more information how to change the animation styles, click on the link below.
+    """
+    'descriptionMoreURL': 'https://github.com/daneden/animate.css/'
