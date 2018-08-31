@@ -1,22 +1,71 @@
 '.source.gfm':
-  'embed image':
-    'prefix': 'img'
-    'body': '![${1:name}](${2:image-url})'
-  'embed link':
-    'prefix': 'url'
+  '[name](url)':
+    'prefix': 'lia.link'
     'body': '[${1:name}](${2:url})'
-  'embed movie':
-    'prefix': 'mov'
-    'body': '!![${1:name}](${2:https://www.youtube.com/embed/bICfKRyKTwE})'
-  'embed inline formula':
-    'prefix': 'formi'
-    'body': '$ ${1:f(a,b,c) = (a^2+b^2+c^2)^3} $'
-  'embed multiline formula':
-    'prefix': 'formul'
-    'body': """
-    $$ % KaTeX docs: https://khan.github.io/KaTeX/docs/supported.html
+    'description': """
+      Links can be added in many ways to a document (relative or absolute), either in common Markdown style by enclosed brackets ([]) and parentheses (()), or directly if it starts with http or www and matches the common url pattern.
+      If you want to navigate within the current document, use hash tag and the number of the slide.
+      And you can add additional html and css options by adding a traling comment.
 
-       \\\\sum_{i=1}^\\\\infty\\\\frac{1}{n^2}
-            =\\\\frac{\\\\pi^2}{6}
-    $$
+      Examples:
+        [LiaScript](https://liascript.github.io)
+
+        Also an accepted link: https://liascript.github.io
+
+        Local navigation: [top](#1)
+
+        With styling [LiaScript](https://liascript.github.io)<!--
+          title = "click me"
+          style = "color: red;"
+        -->
     """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">🔗</span>'
+
+
+  '![alt-text](image-url)':
+    'prefix': 'lia.image'
+    'body': '![${1:alt-text}](${2:image-url})'
+    'description': """
+      Include images via the common Markdown notation as depicted below, by using absolute or relative paths. In contrast to common Markdown you can add also styles, classes, or any other allowed image tag to it simply by appending a comment tag.
+
+      Example:
+
+        ![image of a puppy](https://upload.wikimedia.org/wikipedia/commons/c/c7/Puppy_on_Halong_Bay.jpg)
+
+        ![relative](./img/puppy.jpg)
+
+        ![with styling](./img/puppy.jpg)<!--
+            title = "a gray puppy"
+            width = "300px"
+            style = "border: 10px solid; filter: grayscale(100%);"
+          -->
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">🖼</span>'
+
+
+  '!![alt-text](movie-url)':
+    'prefix': 'lia.movie'
+    'body': '!![${1:alt-text}](${2:movie-url})'
+    'description': """
+      Include movies similar to images but with two starting exclamation marks (!!) as depicted below. Paths can either be absolute or relative, YouTube can be directly included via the its iframe url. You can add also styles, classes, or any other allowed options to it simply by appending a comment tag.
+
+      Example:
+
+        !![eLab](https://www.youtube.com/embed/bICfKRyKTwE)
+
+        !![relative](./mov/video.mp4)
+
+        !![eLab](https://www.youtube.com/embed/bICfKRyKTwE)<!--
+            title = "the elab in gray"
+            width = "90%"
+            style = "border: 10px solid; filter: grayscale(100%);"
+          -->
+
+      But it is still possible to use HTML to include Videos and other stuff ...
+
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/bICfKRyKTwE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">🎞</span>'
