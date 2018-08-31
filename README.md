@@ -1,18 +1,3 @@
-<!--
-author:   Andre Dietrich
-email:    andre.dietrich@ovgu.de
-version:  1.0.0
-language: en
-narrator: Deutsch Male
-
-comment:  This simple description of your course.
-          Multiline is also okay.
-
-script:   https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js
-
-translation: Русский  translations/French.md
--->
-
 # Test
 
 
@@ -49,3 +34,14 @@ Add a solution explanation __Markdown__!
 [^1]: this is a simple footer
 
           https://de.wikipedia.org/wiki/Fundamentalsatz_der_Analysis
+
+
+``` js
+// see more information at:
+let i = 0;
+let rslt = 0;
+for(i; i<10; i++)
+  rslt = rslt + i;
+
+rslt;
+```

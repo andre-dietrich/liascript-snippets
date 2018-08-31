@@ -1,17 +1,28 @@
 '.source.gfm':
   'insert code block':
     'prefix': 'cod'
+    'description': """
+    Insert an simple JavaScript code block with with syntax highlighting 
+
+    ``` js
+    let i = 0; let rslt = 0;
+    for(i; i<10; i++)
+      rslt = rslt + i;
+    rslt;
+    ```
+    """
+    'descriptionMoreURL': 'http://www.google.de'
+    'leftLabelHTML': '<span style="color:#ff0">LS</span>'
     'body': """
     ``` ${1:js}
     ${2:// see more information at:
-    let i = 0;
-    let rslt = 0;
+    let i = 0; let rslt = 0;
     for(i; i<10; i++)
       rslt = rslt + i;
-
     rslt;}
     ```
     """
+
   'insert an executable code block':
     'prefix': 'codx'
     'body': """
@@ -26,6 +37,7 @@
     ```
     <script>${3:@code}</script>
     """
+
   'insert an executable with JavaScript error handling':
     'prefix': 'codjs'
     'body': """
@@ -49,6 +61,7 @@
       }
     </script>
     """
+
   'insert JavaScript tag with error handling':
     'prefix': 'codscrpt'
     'body': """
@@ -63,6 +76,7 @@
       }
     </script>
     """
+
   'insert a code project':
     'prefix': 'codp'
     'body': """

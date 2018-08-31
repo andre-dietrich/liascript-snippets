@@ -1,256 +1,435 @@
 '.source.gfm':
   'voice: UK English Female':
-    'prefix': 'rvukf'
+    'prefix': 'voice.uk.english.female'
     'body':   'UK English Female'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
   'voice: UK English Male':
-    'prefix': 'rvukm'
+    'prefix': 'lvoice.uk.english.male'
     'body':   'UK English Male'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
   'voice: US English Female':
-    'prefix': 'rvusf'
+    'prefix': 'voice.us.english.female'
     'body':   'US English Female'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
   'voice: US English Male':
-    'prefix': 'rvusm'
+    'prefix': 'voice.us.english.male'
     'body':   'US English Male'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
   'voice: Arabic Female':
-    'prefix': 'rvsaf'
+    'prefix': 'voice.arabic.female'
     'body':   'Arabic Female'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
   'voice: Arabic Male':
-    'prefix': 'rvsam'
+    'prefix': 'voice.arabic.male'
     'body':   'Arabic Male'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
   'voice: Armenian Male':
-    'prefix': 'rvamm'
+    'prefix': 'voice.armenian.male'
     'body':   'Armenian Male'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
   'voice: Australian Female':
-    'prefix': 'rvauf'
+    'prefix': 'voice.australian.english.female'
     'body':   'Australian Female'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
   'voice: Australian Male':
-    'prefix': 'rvaum'
+    'prefix': 'voice.australian.english.male'
     'body':   'Australian Male'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
   'voice: Brazilian Portuguese Female':
-    'prefix': 'rvbrf'
+    'prefix': 'voice.brazilian.portuguese.female'
     'body':   'Brazilian Portuguese Female'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
   'voice: Brazilian Portuguese Male':
-    'prefix': 'rvbrm'
+    'prefix': 'voice.brazilian.portuguese.male'
     'body':   'Brazilian Portuguese Male'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
   'voice: Chinese Female':
-    'prefix': 'rvcnf'
+    'prefix': 'voice.chinese.female'
     'body':   'Chinese Female'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
   'voice: Chinese Male':
-    'prefix': 'rvcnm'
+    'prefix': 'voice.chinese.male'
     'body':   'Chinese Male'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
   'voice: Chinese (Hong Kong) Female':
-    'prefix': 'rvhkf'
+    'prefix': 'voice.chinese.hong.kong.female'
     'body':   'Chinese (Hong Kong) Female'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
   'voice: Chinese (Hong Kong) Male':
-    'prefix': 'rvhkm'
+    'prefix': 'voice.chinese.hong.kong.male'
     'body':   'Chinese (Hong Kong) Male'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
   'voice: Chinese Taiwan Female':
-    'prefix': 'rvtwf'
+    'prefix': 'voice.chinese.taiwan.female'
     'body':   'Chinese Taiwan Female'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
   'voice: Chinese Taiwan Male':
-    'prefix': 'rvtwm'
+    'prefix': 'voice.chinese.taiwan.male'
     'body':   'Chinese Taiwan Male'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
   'voice: Czech Female':
-    'prefix': 'rvczf'
+    'prefix': 'voice.czech.female'
     'body':   'Czech Female'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
   'voice: Czech Male':
-    'prefix': 'rvczm'
+    'prefix': 'voice.czech.male'
     'body':   'Czech Male'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
   'voice: Danish Female':
-    'prefix': 'rvdkf'
+    'prefix': 'voice.danish.female'
     'body':   'Danish Female'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
   'voice: Danish Male':
-    'prefix': 'rvdkm'
+    'prefix': 'voice.danish.male'
     'body':   'Danish Male'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
   'voice: Deutsch Female':
-    'prefix': 'rvdef'
+    'prefix': 'voice.deutsch.female'
     'body':   'Deutsch Female'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
   'voice: Deutsch Male':
-    'prefix': 'rvdem'
+    'prefix': 'voice.deutsch.male'
     'body':   'Deutsch Male'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
+  'voice: German Female':
+    'prefix': 'voice.german.female'
+    'body':   'Deutsch Female'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
+  'voice: German Male':
+    'prefix': 'voice.german.male'
+    'body':   'Deutsch Male'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
   'voice: Dutch Female':
-    'prefix': 'rvnlf'
+    'prefix': 'voice.dutch.female'
     'body':   'Dutch Female'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
   'voice: Dutch Male':
-    'prefix': 'rvnlm'
+    'prefix': 'voice.dutch.male'
     'body':   'Dutch Male'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
   'voice: Finnish Female':
-    'prefix': 'rvfif'
+    'prefix': 'voice.finnish.female'
     'body':   'Finnish Female'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
   'voice: Finnish Male':
-    'prefix': 'rvfim'
+    'prefix': 'voice.finnisch.male'
     'body':   'Finnish Male'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
   'voice: French Female':
-    'prefix': 'rvfrf'
+    'prefix': 'voice.french.female'
     'body':   'French Female'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
   'voice: French Male':
-    'prefix': 'rvfrm'
+    'prefix': 'voice.french.male'
     'body':   'French Male'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
   'voice: Greek Female':
-    'prefix': 'rvgrf'
+    'prefix': 'voice.greek.female'
     'body':   'Greek Female'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
   'voice: Greek Male':
-    'prefix': 'rvgrm'
+    'prefix': 'voice.greek.male'
     'body':   'Greek Male'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
   'voice: Hindi Female':
-    'prefix': 'rvinf'
+    'prefix': 'voice.hindi.female'
     'body':   'Hindi Female'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
   'voice: Hindi Male':
-    'prefix': 'rvinm'
+    'prefix': 'voice.hindi.male'
     'body':   'Hindi Male'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
   'voice: Hungarian Female':
-    'prefix': 'rvhuf'
+    'prefix': 'voice.hungarian.female'
     'body':   'Hungarian Female'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
   'voice: Hungarian Male':
-    'prefix': 'rvhum'
+    'prefix': 'voice.hungarian.male'
     'body':   'Hungarian Male'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
   'voice: Indonesian Female':
-    'prefix': 'rvidf'
+    'prefix': 'voice.indonesian.female'
     'body':   'Indonesian Female'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
   'voice: Indonesian Male':
-    'prefix': 'rvidm'
+    'prefix': 'voice.indonesian.male'
     'body':   'Indonesian Male'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
   'voice: Italian Female':
-    'prefix': 'rvitf'
+    'prefix': 'voice.italian.female'
     'body':   'Italian Female'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
   'voice: Italian Male':
-    'prefix': 'rvitm'
+    'prefix': 'voice.italian.male'
     'body':   'Italian Male'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
   'voice: Japanese Female':
-    'prefix': 'rvjpf'
+    'prefix': 'voice.japanese.female'
     'body':   'Japanese Female'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
   'voice: Japanese Male':
-    'prefix': 'rvjpm'
+    'prefix': 'voice.japanese.male'
     'body':   'Japanese Male'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
   'voice: Korean Female':
-    'prefix': 'rvkrf'
+    'prefix': 'voice.korean.female'
     'body':   'Korean Female'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
   'voice: Korean Male':
-    'prefix': 'rvkrm'
+    'prefix': 'voice.korean.male'
     'body':   'Korean Male'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
   'voice: Latin Female':
-    'prefix': 'rvlatf'
+    'prefix': 'voice.latin.female'
     'body':   'Latin Female'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
   'voice: Latin Male':
-    'prefix': 'rvlatm'
+    'prefix': 'voice.latin.male'
     'body':   'Latin Male'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
   'voice: Norwegian Female':
-    'prefix': 'rvnof'
+    'prefix': 'voice.norwegian.female'
     'body':   'Norwegian Female'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
   'voice: Norwegian Male':
-    'prefix': 'rvnom'
+    'prefix': 'voice.norwegian.male'
     'body':   'Norwegian Male'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
   'voice: Polish Female':
-    'prefix': 'rvplf'
+    'prefix': 'voice.polish.female'
     'body':   'Polish Female'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
   'voice: Polish Male':
-    'prefix': 'rvplm'
+    'prefix': 'voice.polish.male'
     'body':   'Polish Male'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
   'voice: Portuguese Female':
-    'prefix': 'rvptf'
+    'prefix': 'voice.portuguese.female'
     'body':   'Portuguese Female'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
   'voice: Portuguese Male':
-    'prefix': 'rvptm'
+    'prefix': 'voice.portuguese.male'
     'body':   'Portuguese Male'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
   'voice: Romanian Female':
-    'prefix': 'rvrof'
+    'prefix': 'voice.romanian.female'
     'body':   'Romanian Female'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
   'voice: Russian Female':
-    'prefix': 'rvruf'
+    'prefix': 'voice.russian.female'
     'body':   'Russian Female'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
   'voice: Russian Male':
-    'prefix': 'rvrum'
+    'prefix': 'voice.russian.female'
     'body':   'Russian Male'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
   'voice: Slovak Female':
-    'prefix': 'rvskf'
+    'prefix': 'voice.slovak.female'
     'body':   'Slovak Female'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
   'voice: Slovak Male':
-    'prefix': 'rvskm'
+    'prefix': 'voice.slovak.male'
     'body':   'Slovak Male'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
   'voice: Spanish Female':
-    'prefix': 'rvesf'
+    'prefix': 'voice.spanish.female'
     'body':   'Spanish Female'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
   'voice: Spanish Male':
-    'prefix': 'rvesm'
+    'prefix': 'voice.spanish.male'
     'body':   'Spanish Male'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
   'voice: Spanish Latin American Female':
-    'prefix': 'rves2f'
+    'prefix': 'voice.spanish.latin.america.female'
     'body':   'Spanish Latin American Female'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
   'voice: Spanish Latin American Male':
-    'prefix': 'rves2m'
+    'prefix': 'voice.spanish.latin.america.male'
     'body':   'Spanish Latin American Male'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
   'voice: Swedish Female':
-    'prefix': 'rvsef'
+    'prefix': 'voice.swedish.female'
     'body':   'Swedish Female'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
   'voice: Swedish Male':
-    'prefix': 'rvsem'
+    'prefix': 'voice.swedish.male'
     'body':   'Swedish Male'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
   'voice: Tamil Male':
-    'prefix': 'rvlkm'
+    'prefix': 'voice.tamil.male'
     'body':   'Tamil Male'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
   'voice: Thai Female':
-    'prefix': 'rvthf'
+    'prefix': 'voice.tamil.female'
     'body':   'Thai Female'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
   'voice: Thai Male':
-    'prefix': 'rvthm'
+    'prefix': 'voice.thai.male'
     'body':   'Thai Male'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
   'voice: Turkish Female':
-    'prefix': 'rvtrf'
+    'prefix': 'voice.turkish.female'
     'body':   'Turkish Female'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
   'voice: Turkish Male':
-    'prefix': 'rvtrm'
+    'prefix': 'voice.turkish.male'
     'body':   'Turkish Male'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
   'voice: Vietnamese Female':
-    'prefix': 'rvvnf'
+    'prefix': 'voice.vietnamese.female'
     'body':   'Vietnamese Female'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
   'voice: Vietnamese Male':
-    'prefix': 'rvvnm'
+    'prefix': 'voice.vietnamese.male'
     'body':   'Vietnamese Male'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
   'voice: Afrikaans Male':
-    'prefix': 'rvzam'
+    'prefix': 'voice.afrikaans.male'
     'body':   'Afrikaans Male'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
   'voice: Albanian Male':
-    'prefix': 'rvalm'
+    'prefix': 'voice.albanian.male'
     'body':   'Albanian Male'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
   'voice: Bosnian Male':
-    'prefix': 'rvbam'
+    'prefix': 'voice.bosnian.male'
     'body':   'Bosnian Male'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
   'voice: Catalan Male':
-    'prefix': 'rvcatm'
+    'prefix': 'voice.catalan.male'
     'body':   'Catalan Male'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
   'voice: Croatian Male':
-    'prefix': 'rvhrm'
+    'prefix': 'voice.croatian.male'
     'body':   'Croatian Male'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
   'voice: Esperanto Male':
-    'prefix': 'rvepom'
+    'prefix': 'voice.esperanto.male'
     'body':   'Esperanto Male'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
   'voice: Icelandic Male':
-    'prefix': 'rvism'
+    'prefix': 'voice.icelandic.male'
     'body':   'Icelandic Male'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
   'voice: Latvian Male':
-    'prefix': 'rvlvm'
+    'prefix': 'voice.latvian.male'
     'body':   'Latvian Male'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
   'voice: Macedonian Male':
-    'prefix': 'rvmkm'
+    'prefix': 'voice.macedonian.male'
     'body':   'Macedonian Male'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
   'voice: Moldavian Female':
-    'prefix': 'rvmdf'
+    'prefix': 'voice.moldavian.female'
     'body':   'Moldavian Female'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
   'voice: Moldavian Male':
-    'prefix': 'rvmdm'
+    'prefix': 'voice.moldavian.male'
     'body':   'Moldavian Male'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
   'voice: Montenegrin Male':
-    'prefix': 'rvmem'
+    'prefix': 'voice.montenegrin.male'
     'body':   'Montenegrin Male'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
   'voice: Serbian Male':
-    'prefix': 'rvrsm'
+    'prefix': 'voice.serbian.male'
     'body':   'Serbian Male'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
   'voice: Serbo-Croatian Male':
-    'prefix': 'rvrscm'
+    'prefix': 'voice.serbo.croatian.male'
     'body':   'Serbo-Croatian Male'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
   'voice: Swahili Male':
-    'prefix': 'rvszm'
+    'prefix': 'voice.swahili.male'
     'body':   'Swahili Male'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
   'voice: Welsh Male':
-    'prefix': 'rvwelm'
+    'prefix': 'voice.welsh.male'
     'body':   'Welsh Male'
+    'descriptionMoreURL': 'https://responsivevoice.org'
