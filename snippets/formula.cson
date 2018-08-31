@@ -1,5 +1,5 @@
 '.source.gfm':
-  'embed inline formula':
+  '$ f(x) = (x^2+5)^3 $':
     'prefix': 'lia.formula.inline'
     'body': '$ ${1:f(a,b,c) = (a^2+b^2+c^2)^3} $'
     'description': """
@@ -10,7 +10,7 @@
     Formulas are rendered with KaTex, so click on the link below to get more information and examples on the applied notation.
     """
     'descriptionMoreURL': 'https://khan.github.io/KaTeX/docs/supported.html'
-    'leftLabelHTML': '<span style="color:#ff0">Lia</span>'
+    'leftLabelHTML': '<span style="color:#ff0">LS</span>'
 
   'embed multiline formula':
     'prefix': 'lia.formula.block'
@@ -33,4 +33,4 @@
     Formulas are rendered with KaTex, so click on the link below to get more information and examples on the applied notation.
     """
     'descriptionMoreURL': 'https://khan.github.io/KaTeX/docs/supported.html'
-    'leftLabelHTML': '<span style="color:#ff0">Lia</span>'
+    'leftLabelHTML': '<span style="color:#ff0">LS</span>'

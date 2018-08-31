@@ -1,10 +1,52 @@
 '.source.gfm':
-  'insert inline footnote':
-    'prefix': 'fti'
+  '[^ref](text)':
+    'prefix': 'lia.footnote inline'
     'body': '[^${1:ref}](${2:explanation})'
-  'insert footnote':
-    'prefix': 'ft'
+    'description': """
+    Inline Footnotes are composed of a reference in brackets with a starting caret. The following text has to be put into parentheses, only one line is allowed.
+
+       Example with [^1](inline _footnote_) and some more text.
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">LS</span>'
+
+  '[^ref]':
+    'prefix': 'lia.footnote.reference'
     'body': '[^${1:ref}]'
-  'insert footnote explanation':
-    'prefix': 'fte'
-    'body': '[^${1:ref}]: ${2:write some explanation}'
+    'description': """
+    Multiline footnotes have to be split into a reference and into a comments. Footnote references are defined by brackets with a starting caret and can appear everywhere within the text. Footnote texts have to be put into the end of each section.
+
+    Example:
+
+    Here is a footnote reference, [^1] and another.[^longnote]
+
+    ...
+
+    [^1]: Here is the footnote text.
+
+    [^longnote]: Here's one with multiple blocks.
+
+                   Subsequent paragraphs are indented to show that they
+                   belong to the previous footnote.
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">LS</span>'
+
+  '[^ref]: some comments ...':
+    'prefix': 'lia.footnote.text'
+    'body': '[^${1:ref}]: ${2:some comments}'
+    'description': """
+    Multiline footnotes have to be split into a reference and into a comments. Footnote texts start with a reference "tag", which is followed by a colon. They have to be put into the end of each section otherwise they are not interpreted as footnote texts and multiblock footnotes have to follow the previous identation.
+
+    Example:
+    ...
+
+    [^1]: Here is the footnote text.
+
+    [^longnote]: Here's one with multiple blocks.
+
+                   Subsequent paragraphs are indented to show that they
+                   belong to the previous footnote.
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">LS</span>'

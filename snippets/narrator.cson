@@ -5,7 +5,7 @@
     'descriptionMoreURL': 'https://responsivevoice.org'
 
   'voice: UK English Male':
-    'prefix': 'lvoice.uk.english.male'
+    'prefix': 'voice.uk.english.male'
     'body':   'UK English Male'
     'descriptionMoreURL': 'https://responsivevoice.org'
 
