@@ -1,0 +1,36 @@
+'.source.gfm':
+  'embed inline formula':
+    'prefix': 'lia.formula.inline'
+    'body': '$ ${1:f(a,b,c) = (a^2+b^2+c^2)^3} $'
+    'description': """
+    Insert a mathematical formula (inline) within your text. It has to be enclosed with two single dollar signs, as shown in the example.
+
+    Example: $ f(a,b,c) = (a^2+b^2+c^2)^3 $
+
+    Formulas are rendered with KaTex, so click on the link below to get more information and examples on the applied notation.
+    """
+    'descriptionMoreURL': 'https://khan.github.io/KaTeX/docs/supported.html'
+    'leftLabelHTML': '<span style="color:#ff0">Lia</span>'
+
+  'embed multiline formula':
+    'prefix': 'lia.formula.block'
+    'body': """
+    $$
+       ${1:\\\\sum_\\{i=1\\}^\\\\infty\\\\frac\\{1\\}\\{n^2\\}
+            =\\\\frac\\{\\\\pi^2\\}\\{6\\}}
+    $$
+    """
+    'description': """
+    Insert a more multiline mathematical formula as a block, which is automatically centered within your document. It has to be enclosed with two dollar signs, as shown in the example.
+
+    Example:
+
+    $$
+       \\sum_{i=1}^\\infty\\frac{1}{n^2}
+            =\\frac{\\pi^2}{6}
+    $$
+
+    Formulas are rendered with KaTex, so click on the link below to get more information and examples on the applied notation.
+    """
+    'descriptionMoreURL': 'https://khan.github.io/KaTeX/docs/supported.html'
+    'leftLabelHTML': '<span style="color:#ff0">Lia</span>'
