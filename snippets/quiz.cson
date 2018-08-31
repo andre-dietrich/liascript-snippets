@@ -1,87 +1,235 @@
 '.source.gfm':
-  'simple text-quiz':
-    'prefix': 'qtext'
-    'body': '[[${1:enter solution in here}]]'
-  'simple text-quiz with JavaScript check':
-    'prefix': 'qtextjs'
+  '[[solution]]':
+    'prefix': 'lia.quiz.text'
+    'body': '[[${1:solution}]]'
+    'description': """
+      Simply encompass your solution word into double brackets and you will get a nicely rendered text quiz.
+
+      Example:
+        What is the color of the sky?
+
+        [[blue]]
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">🎓</span>'
+
+
+  '[[solution]]<script> ... </script>':
+    'prefix': 'lia.quiz.text.js'
     'body': """
       [[${1:solution}]]
       <script>
-        let input = @input;
-        "solution" == input.trim().toLowerCase();
+        ${2:// @input will be replace by the user input
+        let input_string = @input;
+        "solution" == input_string.trim().toLowerCase();}
       </script>
     """
-  'single choice quiz':
-    'prefix': 'qsin'
+    'description': """
+      If different inputs are possible, you can add a script tag to your quiz-field. The reference @input will be replaced by the current user input string, and the result of the script has to be true or false.
+
+      Example:
+        What is the color of the sky?
+
+        [[blue]]
+        <script>
+          let input_string = @input;
+          "BLUE" == input_string.trim().toUpperCase();
+        </script>
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">🎓</span>'
+
+
+  '[( |X)] text':
+    'prefix': 'lia.quiz.single.choice'
+    'body': '[(${1: })] ${2:enter your text}'
+    'description': """
+      Compose your single choice quizzes out of many lines in the following format:.
+
+      Example:
+        This is a single choice quiz with three options:
+
+          [( )] Add as many lines as you want?
+          [(X)] The X marks the only correct answer!
+          [( )] ... And only one X is allowed.
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">🎓</span>'
+
+  '[[ |X]] text':
+    'prefix': 'lia.quiz.multiple.choice'
+    'body': '[[${1: }]] ${2:enter your text}'
+    'description': """
+      Compose your multiple choice quizzes out of many lines in the following format:.
+
+      Example:
+        This is a multiple choice quiz with four options:
+
+          [[ ]] Add as many lines as you want?
+          [[X]] The X marks the correct lines that have to be selected!
+          [[X]] This can offer multiple options that have to be clicked.
+          [[ ]] But it can also consist of empty brackets either.
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">🎓</span>'
+
+  '[[?]] hint':
+    'prefix': 'lia.quiz.hint'
+    'body': '[[?]] ${1:enter your hint}'
+    'description': """
+      If a quiz might be a bit tricka, you can add hints directly after any type of quiz and as many hints as you want. The user can decide wheather he or she wants to use it, simply by clicking on the additional question mark, that appears after the check button.
+
+      Example:
+        This is a text quiz with two hints:
+
+          [[solution]]
+          [[?]] This is the first hint
+          [[?]] This is a second hint
+
+        And a multiple choice quiz with one hint:
+
+          [[X]] This is correct!
+          [[ ]] This is wrong!
+          [[?]] Click on the first option!
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">🎓</span>'
+
+  '*** ... ***':
+    'prefix': 'lia.quiz.solution'
+    'body': """
+      ****************************************
+
+      ${1:Add a solution explanation __Markdown__!}
+
+      ****************************************
+    """
+    'description': """
+      If the user solved a quiz or clicked onto resolve, the correct answer gets automatically revealed, but you can add additional information to your solution by adding two lines to the end of your quiz that can contain multiple Markdown blocks as explanation.
+
+      Example:
+        What is the color of the sky?
+
+          [[blue]]
+          [[?]] Enter blue!
+          *************************************
+
+          During the day the color is blue, if
+          it is not cloudy. See the following
+          picture ...
+
+          ![blue sky](./img/sunny.jpg)
+
+          *************************************
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">🎓</span>'
+
+
+  '[[!]] <script> ... </script>':
+    'prefix': 'lia.quiz.'
     'body': """
       [(${1: })] ${2:Add as many elements as you want?}
       [(${3:X})] ${4:The X marks the correct answer!}
       [(${5: })] ${6:And only one X is allowed.}
     """
-  'single choice quiz with JavaScript check':
-    'prefix': 'qsinjs'
+
+  '<script> /*single choice*/ </script>':
+    'prefix': 'lia.quiz.single.js'
     'body': """
-      [(${1: })] ${2:Add as many elements as you want?}
-      [(${3:X})] ${4:The X marks the correct answer!}
-      [(${5: })] ${6:And only one X is allowed.}
       <script>
         // @input gets replaced by a single number
         // -1 if no selection otherwise it starts
         // with 0.
-        let input = @input;
+        let input_number = @input;
 
-        ${7:if(input == 1)
+        ${1:if(input_number == 1)
           true;
         else
           false;}
       </script>
     """
-  'insert line to single choice quiz':
-    'prefix': 'qsl'
-    'body': """
-      [(${1: })] ${2:text}
+    'description': """
+      In some rare cases you might want to change the correct solution, or add a counter, that reveals the correct answer after some predefined number of trials. Then simply add a script tag to the quiz. The @input string gets replaced by an integer representing the current user input:
+
+      -1 -> no selection
+      0  -> the first
+      1  -> the second
+
+      Example:
+
+          [( )] Check this ...
+          [(X)] ... and not this
+          <script>
+            // @input gets replaced by a single number
+            // -1 if no selection otherwise it starts
+            // with 0.
+            let input_number = @input;
+
+            ${7:if(input_number == 0)
+              true;
+            else
+              false;}
+          </script>
     """
-  'multiple choice quiz':
-    'prefix': 'qmul'
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">🎓</span>'
+
+
+  '<script> /*single multiple*/ </script>':
+    'prefix': 'lia.quiz.multiple.js'
     'body': """
-      [[${1: }]] ${2:Add as many elements as you want?}
-      [[${3:X}]] ${4:The X marks the correct answer!}
-      [[${5: }]] ${6:... this is wrong ...}
-      [[${7:X}]] ${8:... this has to be selected too ...}
-    """
-  'multiple choice quiz with JavaScript check':
-    'prefix': 'qmuljs'
-    'body': """
-      [[${1: }]] ${2:Add as many elements as you want?}
-      [[${3:X}]] ${4:The X marks the correct answer!}
-      [[${5: }]] ${6:... this is wrong ...}
-      [[${7:X}]] ${8:... this has to be selected too ...}
       <script>
         // @input gets replaced by an array in the
         // form of [0,0,0,1], whereby 0 and 1
         // define wheather a checkbox is checked
         // or not...
-        let input = @input;
+        let input_array = @input;
+        ${1:input_array = JSON.stringify(input_array);
 
-        ${9:input = JSON.stringify(input);
-        // In this case it is okay if at least one
-        // input is correct.
-        if      (input == "[0,1,0,1]")  true;
-        else if (input == "[0,1,0,0]")  true;
-        else if (input == "[0,0,0,1]")  true;
-        else                            false;}
+        if      (input_array == "[0,1,0,1]")  true;
+        else if (input_array == "[0,1,0,0]")  true;
+        else if (input_array == "[0,0,0,1]")  true;
+        else                                 false;}
       </script>
     """
-  'insert line to multiple choice quiz':
-    'prefix': 'qml'
-    'body': """
-      [[${1: }]] ${2:text}
+    'description': """
+      In some rare cases you might want to change the correct solution, add a counter, or let some correct answers pass. Then simply add a script tag to the quiz. The @input string here gets replaced by an by an array of integers ([0,1,1,0]) that represent the current user input:
+
+      0 -> stands for checked
+      1 -> represents an unchecked field
+
+      Example:
+
+        Get at least one right ...
+
+        [[ ]] Wrong.
+        [[X]] Right.
+        [[ ]] Wrong.
+        [[X]] Right.
+        <script>
+          // @input gets replaced by an array in the
+          // form of [0,0,0,1], whereby 0 and 1
+          // define wheather a checkbox is checked
+          // or not...
+          let input_array = @input;
+          input_array = JSON.stringify(input_array);
+
+          if      (input_array == "[0,1,0,1]")  true;
+          else if (input_array == "[0,1,0,0]")  true;
+          else if (input_array == "[0,0,0,1]")  true;
+          else                                 false;
+        </script>
     """
-  'add JavaScript check to quiz':
-    'prefix': 'qjs'
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">🎓</span>'
+
+
+  '<script> /* quiz */ </script>':
+    'prefix': 'lia.quiz.js'
     'body': """
       <script>
-        ${1// @input gets replaced by the current quiz input.
+        ${1:// @input gets replaced by the current quiz input.
         // In case of a:
         // * text input -> "string"
         // * single choice -> int (-1, if nothing is selected)
@@ -91,15 +239,84 @@
         true; // if solved otherwise return false}
       </script>
     """
-  'give a quiz-hint':
-    'prefix': 'qhint'
-    'body': '[[?]] ${1:give a *hint*}'
-  'add quiz-solution':
-    'prefix': 'qsol'
-    'body': """
-      ****************************************
+    'description': """
+      This will insert a generic script tag in the following form, the @input will be replaced according the current context:
 
-      ${1:Add a solution explanation __Markdown__!}
+      <script>
+        // @input gets replaced by the current quiz input.
+        // In case of a:
+        // * text input -> "string"
+        // * single choice -> int (-1, if nothing is selected)
+        // * multiple choice -> array int (0 unchecked, 1 checked)
+        let input = @input;
 
-      ****************************************
+        true; // if solved otherwise return false
+      </script>
     """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">🎓</span>'
+
+
+    'single choice quiz with 3 options':
+      'prefix': 'lia.quiz.single.choice.3'
+      'body': """
+        [(${1: })] ${2:This is wrong.}
+        [(${3:X})] ${4:The only correct option.}
+        [(${5: })] ${6:Still not right.}
+      """
+    'description': """
+      Insert a the following quiz dummy:
+
+      [( )] This is wrong.
+      [(X)] The only correct option.
+      [( )] Still not right.
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">🎓</span>'
+
+
+    'multiple choice quiz with 4 options':
+      'prefix': 'lia.quiz.multiple.choice.4'
+      'body': """
+        [[${1: }]] ${2:Add as many elements as you want?}
+        [[${3:X}]] ${4:The X marks the correct answer!}
+        [[${5: }]] ${6:... this is wrong ...}
+        [[${7:X}]] ${8:... this has to be selected too ...}
+      """
+      'description': """
+        Insert a the following quiz dummy:
+
+        [[ ]] Add as many elements as you want?
+        [[X]] The X marks the correct answer!
+        [[ ]] ... this is wrong ...
+        [[X]] ... this has to be selected too ...
+      """
+      'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+      'leftLabelHTML': '<span style="color:#ff0">🎓</span>'
+
+
+    '[[!]] <script> ... </script>':
+      'prefix': 'lia.quiz.generic.js'
+      'body': """
+        [[!]]
+        <script>
+          ${1:// you are free to check anything you want
+          true;}
+        </script>
+      """
+      'description': """
+        In some realy realy rare cases, you might want to have something completely different and analyse some other html or code inputs (unit testing). In this case you can apply this generic tag and do in javascript whatever you want. The this quiz is solved if the script gets evaluated to true, not solved by resulting in false (everything else is ignored).
+
+        *Click Me!*<!-- onclick="window['rand'] = Math.random();" -->
+
+        [[!]]
+        <script>
+          alert("your value random value is:", window['rand']);
+          if(window['rand'] > 0.8)
+            true;
+          else
+            false
+        </script>
+      """
+      'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+      'leftLabelHTML': '<span style="color:#ff0">🎓</span>'
