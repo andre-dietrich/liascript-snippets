@@ -2,434 +2,527 @@
   'voice: UK English Female':
     'prefix': 'voice.uk.english.female'
     'body':   'UK English Female'
+    'leftLabelHTML': '<span style="color:#ff0">🇬🇧 👩</span>'
     'descriptionMoreURL': 'https://responsivevoice.org'
 
   'voice: UK English Male':
     'prefix': 'voice.uk.english.male'
     'body':   'UK English Male'
+    'leftLabelHTML': '<span style="color:#ff0">🇬🇧 👨</span>'
     'descriptionMoreURL': 'https://responsivevoice.org'
 
   'voice: US English Female':
     'prefix': 'voice.us.english.female'
     'body':   'US English Female'
+    'leftLabelHTML': '<span style="color:#ff0">🇺🇸 👩</span>'
     'descriptionMoreURL': 'https://responsivevoice.org'
 
   'voice: US English Male':
     'prefix': 'voice.us.english.male'
     'body':   'US English Male'
+    'leftLabelHTML': '<span style="color:#ff0">🇺🇸 👨</span>'
     'descriptionMoreURL': 'https://responsivevoice.org'
 
   'voice: Arabic Female':
     'prefix': 'voice.arabic.female'
     'body':   'Arabic Female'
+    'leftLabelHTML': '<span style="color:#ff0">🇦🇪 👩</span>'
     'descriptionMoreURL': 'https://responsivevoice.org'
 
   'voice: Arabic Male':
     'prefix': 'voice.arabic.male'
     'body':   'Arabic Male'
+    'leftLabelHTML': '<span style="color:#ff0">🇦🇪 👨</span>'
     'descriptionMoreURL': 'https://responsivevoice.org'
 
   'voice: Armenian Male':
     'prefix': 'voice.armenian.male'
     'body':   'Armenian Male'
+    'leftLabelHTML': '<span style="color:#ff0">🇦🇲 👨</span>'
     'descriptionMoreURL': 'https://responsivevoice.org'
 
   'voice: Australian Female':
     'prefix': 'voice.australian.english.female'
     'body':   'Australian Female'
+    'leftLabelHTML': '<span style="color:#ff0">🇦🇺 👩</span>'
     'descriptionMoreURL': 'https://responsivevoice.org'
 
   'voice: Australian Male':
     'prefix': 'voice.australian.english.male'
     'body':   'Australian Male'
+    'leftLabelHTML': '<span style="color:#ff0">🇦🇺 👨</span>'
     'descriptionMoreURL': 'https://responsivevoice.org'
 
   'voice: Brazilian Portuguese Female':
     'prefix': 'voice.brazilian.portuguese.female'
     'body':   'Brazilian Portuguese Female'
+    'leftLabelHTML': '<span style="color:#ff0">🇧🇷 👩</span>'
     'descriptionMoreURL': 'https://responsivevoice.org'
 
   'voice: Brazilian Portuguese Male':
     'prefix': 'voice.brazilian.portuguese.male'
     'body':   'Brazilian Portuguese Male'
+    'leftLabelHTML': '<span style="color:#ff0">🇧🇷 👨</span>'
     'descriptionMoreURL': 'https://responsivevoice.org'
 
   'voice: Chinese Female':
     'prefix': 'voice.chinese.female'
     'body':   'Chinese Female'
+    'leftLabelHTML': '<span style="color:#ff0">🇨🇳 👩</span>'
     'descriptionMoreURL': 'https://responsivevoice.org'
 
   'voice: Chinese Male':
     'prefix': 'voice.chinese.male'
     'body':   'Chinese Male'
+    'leftLabelHTML': '<span style="color:#ff0">🇨🇳 👨</span>'
     'descriptionMoreURL': 'https://responsivevoice.org'
 
   'voice: Chinese (Hong Kong) Female':
     'prefix': 'voice.chinese.hong.kong.female'
     'body':   'Chinese (Hong Kong) Female'
+    'leftLabelHTML': '<span style="color:#ff0">🇭🇰 👩</span>'
     'descriptionMoreURL': 'https://responsivevoice.org'
 
   'voice: Chinese (Hong Kong) Male':
     'prefix': 'voice.chinese.hong.kong.male'
     'body':   'Chinese (Hong Kong) Male'
+    'leftLabelHTML': '<span style="color:#ff0">🇭🇰 👨</span>'
     'descriptionMoreURL': 'https://responsivevoice.org'
 
   'voice: Chinese Taiwan Female':
     'prefix': 'voice.chinese.taiwan.female'
     'body':   'Chinese Taiwan Female'
+    'leftLabelHTML': '<span style="color:#ff0">🇹🇼 👩</span>'
     'descriptionMoreURL': 'https://responsivevoice.org'
 
   'voice: Chinese Taiwan Male':
     'prefix': 'voice.chinese.taiwan.male'
     'body':   'Chinese Taiwan Male'
+    'leftLabelHTML': '<span style="color:#ff0">🇹🇼 👨</span>'
     'descriptionMoreURL': 'https://responsivevoice.org'
 
   'voice: Czech Female':
     'prefix': 'voice.czech.female'
     'body':   'Czech Female'
+    'leftLabelHTML': '<span style="color:#ff0">🇨🇿 👩</span>'
     'descriptionMoreURL': 'https://responsivevoice.org'
 
   'voice: Czech Male':
     'prefix': 'voice.czech.male'
     'body':   'Czech Male'
+    'leftLabelHTML': '<span style="color:#ff0">🇨🇿 👨</span>'
     'descriptionMoreURL': 'https://responsivevoice.org'
 
   'voice: Danish Female':
     'prefix': 'voice.danish.female'
     'body':   'Danish Female'
+    'leftLabelHTML': '<span style="color:#ff0">🇩🇰 👩</span>'
     'descriptionMoreURL': 'https://responsivevoice.org'
 
   'voice: Danish Male':
     'prefix': 'voice.danish.male'
     'body':   'Danish Male'
+    'leftLabelHTML': '<span style="color:#ff0">🇩🇰 👨</span>'
     'descriptionMoreURL': 'https://responsivevoice.org'
 
   'voice: Deutsch Female':
     'prefix': 'voice.deutsch.female'
     'body':   'Deutsch Female'
+    'leftLabelHTML': '<span style="color:#ff0">🇩🇪 👩</span>'
     'descriptionMoreURL': 'https://responsivevoice.org'
 
   'voice: Deutsch Male':
     'prefix': 'voice.deutsch.male'
     'body':   'Deutsch Male'
+    'leftLabelHTML': '<span style="color:#ff0">🇩🇪 👨</span>'
     'descriptionMoreURL': 'https://responsivevoice.org'
 
   'voice: German Female':
     'prefix': 'voice.german.female'
     'body':   'Deutsch Female'
+    'leftLabelHTML': '<span style="color:#ff0">🇩🇪 👩</span>'
     'descriptionMoreURL': 'https://responsivevoice.org'
 
   'voice: German Male':
     'prefix': 'voice.german.male'
     'body':   'Deutsch Male'
+    'leftLabelHTML': '<span style="color:#ff0">🇩🇪 👨</span>'
     'descriptionMoreURL': 'https://responsivevoice.org'
 
   'voice: Dutch Female':
     'prefix': 'voice.dutch.female'
     'body':   'Dutch Female'
+    'leftLabelHTML': '<span style="color:#ff0">🇳🇱 👩</span>'
     'descriptionMoreURL': 'https://responsivevoice.org'
 
   'voice: Dutch Male':
     'prefix': 'voice.dutch.male'
     'body':   'Dutch Male'
+    'leftLabelHTML': '<span style="color:#ff0">🇳🇱 👨</span>'
     'descriptionMoreURL': 'https://responsivevoice.org'
 
   'voice: Finnish Female':
     'prefix': 'voice.finnish.female'
     'body':   'Finnish Female'
+    'leftLabelHTML': '<span style="color:#ff0">🇫🇮 👩</span>'
     'descriptionMoreURL': 'https://responsivevoice.org'
 
   'voice: Finnish Male':
     'prefix': 'voice.finnisch.male'
     'body':   'Finnish Male'
+    'leftLabelHTML': '<span style="color:#ff0">🇫🇮 👨</span>'
     'descriptionMoreURL': 'https://responsivevoice.org'
 
   'voice: French Female':
     'prefix': 'voice.french.female'
     'body':   'French Female'
+    'leftLabelHTML': '<span style="color:#ff0">🇫🇷 👩</span>'
     'descriptionMoreURL': 'https://responsivevoice.org'
 
   'voice: French Male':
     'prefix': 'voice.french.male'
     'body':   'French Male'
+    'leftLabelHTML': '<span style="color:#ff0">🇫🇷 👨</span>'
     'descriptionMoreURL': 'https://responsivevoice.org'
 
   'voice: Greek Female':
     'prefix': 'voice.greek.female'
     'body':   'Greek Female'
+    'leftLabelHTML': '<span style="color:#ff0">🇬🇷 👩</span>'
     'descriptionMoreURL': 'https://responsivevoice.org'
 
   'voice: Greek Male':
     'prefix': 'voice.greek.male'
     'body':   'Greek Male'
+    'leftLabelHTML': '<span style="color:#ff0">🇬🇷 👨</span>'
     'descriptionMoreURL': 'https://responsivevoice.org'
 
   'voice: Hindi Female':
     'prefix': 'voice.hindi.female'
     'body':   'Hindi Female'
+    'leftLabelHTML': '<span style="color:#ff0">🇮🇳 👩</span>'
     'descriptionMoreURL': 'https://responsivevoice.org'
 
   'voice: Hindi Male':
     'prefix': 'voice.hindi.male'
     'body':   'Hindi Male'
+    'leftLabelHTML': '<span style="color:#ff0">🇮🇳 👨</span>'
     'descriptionMoreURL': 'https://responsivevoice.org'
 
   'voice: Hungarian Female':
     'prefix': 'voice.hungarian.female'
     'body':   'Hungarian Female'
+    'leftLabelHTML': '<span style="color:#ff0">🇭🇺 👩</span>'
     'descriptionMoreURL': 'https://responsivevoice.org'
 
   'voice: Hungarian Male':
     'prefix': 'voice.hungarian.male'
     'body':   'Hungarian Male'
+    'leftLabelHTML': '<span style="color:#ff0">🇭🇺 👨</span>'
     'descriptionMoreURL': 'https://responsivevoice.org'
 
   'voice: Indonesian Female':
     'prefix': 'voice.indonesian.female'
     'body':   'Indonesian Female'
+    'leftLabelHTML': '<span style="color:#ff0">🇮🇩 👩</span>'
     'descriptionMoreURL': 'https://responsivevoice.org'
 
   'voice: Indonesian Male':
     'prefix': 'voice.indonesian.male'
     'body':   'Indonesian Male'
+    'leftLabelHTML': '<span style="color:#ff0">🇮🇩 👨</span>'
     'descriptionMoreURL': 'https://responsivevoice.org'
 
   'voice: Italian Female':
     'prefix': 'voice.italian.female'
     'body':   'Italian Female'
+    'leftLabelHTML': '<span style="color:#ff0">🇮🇹 👩</span>'
     'descriptionMoreURL': 'https://responsivevoice.org'
 
   'voice: Italian Male':
     'prefix': 'voice.italian.male'
     'body':   'Italian Male'
+    'leftLabelHTML': '<span style="color:#ff0">🇮🇹 👨</span>'
     'descriptionMoreURL': 'https://responsivevoice.org'
 
   'voice: Japanese Female':
     'prefix': 'voice.japanese.female'
     'body':   'Japanese Female'
+    'leftLabelHTML': '<span style="color:#ff0">🇯🇵 👩</span>'
     'descriptionMoreURL': 'https://responsivevoice.org'
 
   'voice: Japanese Male':
     'prefix': 'voice.japanese.male'
     'body':   'Japanese Male'
+    'leftLabelHTML': '<span style="color:#ff0">🇯🇵 👨</span>'
     'descriptionMoreURL': 'https://responsivevoice.org'
 
   'voice: Korean Female':
     'prefix': 'voice.korean.female'
     'body':   'Korean Female'
+    'leftLabelHTML': '<span style="color:#ff0">🇰🇵🇰🇷 👩</span>'
     'descriptionMoreURL': 'https://responsivevoice.org'
 
   'voice: Korean Male':
     'prefix': 'voice.korean.male'
     'body':   'Korean Male'
+    'leftLabelHTML': '<span style="color:#ff0">🇰🇵🇰🇷 👨</span>'
     'descriptionMoreURL': 'https://responsivevoice.org'
 
   'voice: Latin Female':
     'prefix': 'voice.latin.female'
     'body':   'Latin Female'
+    'leftLabelHTML': '<span style="color:#ff0">🏴󠁧󠁢󠁷󠁬󠁳󠁿 👩</span>'
     'descriptionMoreURL': 'https://responsivevoice.org'
 
   'voice: Latin Male':
     'prefix': 'voice.latin.male'
     'body':   'Latin Male'
+    'leftLabelHTML': '<span style="color:#ff0">🏴󠁧󠁢󠁷󠁬󠁳󠁿 👨</span>'
     'descriptionMoreURL': 'https://responsivevoice.org'
 
   'voice: Norwegian Female':
     'prefix': 'voice.norwegian.female'
     'body':   'Norwegian Female'
+    'leftLabelHTML': '<span style="color:#ff0">🇳🇴 👩</span>'
     'descriptionMoreURL': 'https://responsivevoice.org'
 
   'voice: Norwegian Male':
     'prefix': 'voice.norwegian.male'
     'body':   'Norwegian Male'
+    'leftLabelHTML': '<span style="color:#ff0">🇳🇴 👨</span>'
     'descriptionMoreURL': 'https://responsivevoice.org'
 
   'voice: Polish Female':
     'prefix': 'voice.polish.female'
     'body':   'Polish Female'
+    'leftLabelHTML': '<span style="color:#ff0">🇵🇱 👩</span>'
     'descriptionMoreURL': 'https://responsivevoice.org'
 
   'voice: Polish Male':
     'prefix': 'voice.polish.male'
     'body':   'Polish Male'
+    'leftLabelHTML': '<span style="color:#ff0">🇵🇱 👨</span>'
     'descriptionMoreURL': 'https://responsivevoice.org'
 
   'voice: Portuguese Female':
     'prefix': 'voice.portuguese.female'
     'body':   'Portuguese Female'
+    'leftLabelHTML': '<span style="color:#ff0">🇵🇹 👩</span>'
     'descriptionMoreURL': 'https://responsivevoice.org'
 
   'voice: Portuguese Male':
     'prefix': 'voice.portuguese.male'
     'body':   'Portuguese Male'
+    'leftLabelHTML': '<span style="color:#ff0">🇵🇹 👨</span>'
     'descriptionMoreURL': 'https://responsivevoice.org'
 
   'voice: Romanian Female':
     'prefix': 'voice.romanian.female'
     'body':   'Romanian Female'
+    'leftLabelHTML': '<span style="color:#ff0">🇷🇴 👩</span>'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
+  'voice: Romanian Male':
+    'prefix': 'voice.romanian.male'
+    'body':   'Romanian Male'
+    'leftLabelHTML': '<span style="color:#ff0">🇷🇴 👨</span>'
     'descriptionMoreURL': 'https://responsivevoice.org'
 
   'voice: Russian Female':
     'prefix': 'voice.russian.female'
     'body':   'Russian Female'
+    'leftLabelHTML': '<span style="color:#ff0">🇷🇺 👩</span>'
     'descriptionMoreURL': 'https://responsivevoice.org'
 
   'voice: Russian Male':
     'prefix': 'voice.russian.female'
     'body':   'Russian Male'
+    'leftLabelHTML': '<span style="color:#ff0">🇷🇺 👨</span>'
     'descriptionMoreURL': 'https://responsivevoice.org'
 
   'voice: Slovak Female':
     'prefix': 'voice.slovak.female'
     'body':   'Slovak Female'
+    'leftLabelHTML': '<span style="color:#ff0">🇸🇰 👩</span>'
     'descriptionMoreURL': 'https://responsivevoice.org'
 
   'voice: Slovak Male':
     'prefix': 'voice.slovak.male'
     'body':   'Slovak Male'
+    'leftLabelHTML': '<span style="color:#ff0">🇸🇰 👨</span>'
     'descriptionMoreURL': 'https://responsivevoice.org'
 
   'voice: Spanish Female':
     'prefix': 'voice.spanish.female'
     'body':   'Spanish Female'
+    'leftLabelHTML': '<span style="color:#ff0">🇪🇸 👩</span>'
     'descriptionMoreURL': 'https://responsivevoice.org'
 
   'voice: Spanish Male':
     'prefix': 'voice.spanish.male'
     'body':   'Spanish Male'
+    'leftLabelHTML': '<span style="color:#ff0">🇪🇸 👨</span>'
     'descriptionMoreURL': 'https://responsivevoice.org'
 
   'voice: Spanish Latin American Female':
     'prefix': 'voice.spanish.latin.america.female'
     'body':   'Spanish Latin American Female'
+    'leftLabelHTML': '<span style="color:#ff0">🏳️‍🌈 👩</span>'
     'descriptionMoreURL': 'https://responsivevoice.org'
 
   'voice: Spanish Latin American Male':
     'prefix': 'voice.spanish.latin.america.male'
     'body':   'Spanish Latin American Male'
+    'leftLabelHTML': '<span style="color:#ff0">🏳️‍🌈 👨</span>'
     'descriptionMoreURL': 'https://responsivevoice.org'
 
   'voice: Swedish Female':
     'prefix': 'voice.swedish.female'
     'body':   'Swedish Female'
+    'leftLabelHTML': '<span style="color:#ff0">🇸🇪 👩</span>'
     'descriptionMoreURL': 'https://responsivevoice.org'
 
   'voice: Swedish Male':
     'prefix': 'voice.swedish.male'
     'body':   'Swedish Male'
+    'leftLabelHTML': '<span style="color:#ff0">🇸🇪 👨</span>'
     'descriptionMoreURL': 'https://responsivevoice.org'
 
   'voice: Tamil Male':
     'prefix': 'voice.tamil.male'
     'body':   'Tamil Male'
+    'leftLabelHTML': '<span style="color:#ff0">🇱🇰 👨</span>'
     'descriptionMoreURL': 'https://responsivevoice.org'
 
   'voice: Thai Female':
     'prefix': 'voice.tamil.female'
     'body':   'Thai Female'
+    'leftLabelHTML': '<span style="color:#ff0">🇹🇭 👩</span>'
     'descriptionMoreURL': 'https://responsivevoice.org'
 
   'voice: Thai Male':
     'prefix': 'voice.thai.male'
     'body':   'Thai Male'
+    'leftLabelHTML': '<span style="color:#ff0">🇹🇭 👨</span>'
     'descriptionMoreURL': 'https://responsivevoice.org'
 
   'voice: Turkish Female':
     'prefix': 'voice.turkish.female'
     'body':   'Turkish Female'
+    'leftLabelHTML': '<span style="color:#ff0">🇹🇷 👩</span>'
     'descriptionMoreURL': 'https://responsivevoice.org'
 
   'voice: Turkish Male':
     'prefix': 'voice.turkish.male'
     'body':   'Turkish Male'
+    'leftLabelHTML': '<span style="color:#ff0">🇹🇷 👨</span>'
     'descriptionMoreURL': 'https://responsivevoice.org'
 
   'voice: Vietnamese Female':
     'prefix': 'voice.vietnamese.female'
     'body':   'Vietnamese Female'
+    'leftLabelHTML': '<span style="color:#ff0">🇻🇳 👩</span>'
     'descriptionMoreURL': 'https://responsivevoice.org'
 
   'voice: Vietnamese Male':
     'prefix': 'voice.vietnamese.male'
     'body':   'Vietnamese Male'
+    'leftLabelHTML': '<span style="color:#ff0">🇻🇳 👨</span>'
     'descriptionMoreURL': 'https://responsivevoice.org'
 
   'voice: Afrikaans Male':
     'prefix': 'voice.afrikaans.male'
     'body':   'Afrikaans Male'
+    'leftLabelHTML': '<span style="color:#ff0">🇿🇦 👨</span>'
     'descriptionMoreURL': 'https://responsivevoice.org'
 
   'voice: Albanian Male':
     'prefix': 'voice.albanian.male'
     'body':   'Albanian Male'
+    'leftLabelHTML': '<span style="color:#ff0">🇦🇱 👨</span>'
     'descriptionMoreURL': 'https://responsivevoice.org'
 
   'voice: Bosnian Male':
     'prefix': 'voice.bosnian.male'
     'body':   'Bosnian Male'
+    'leftLabelHTML': '<span style="color:#ff0">🇧🇦 👨</span>'
     'descriptionMoreURL': 'https://responsivevoice.org'
 
   'voice: Catalan Male':
     'prefix': 'voice.catalan.male'
     'body':   'Catalan Male'
+    'leftLabelHTML': '<span style="color:#ff0">🇪🇸 👨</span>'
     'descriptionMoreURL': 'https://responsivevoice.org'
 
   'voice: Croatian Male':
     'prefix': 'voice.croatian.male'
     'body':   'Croatian Male'
+    'leftLabelHTML': '<span style="color:#ff0">🇭🇷 👨</span>'
     'descriptionMoreURL': 'https://responsivevoice.org'
 
   'voice: Esperanto Male':
     'prefix': 'voice.esperanto.male'
     'body':   'Esperanto Male'
+    'leftLabelHTML': '<span style="color:#ff0">🏁 👨</span>'
     'descriptionMoreURL': 'https://responsivevoice.org'
 
   'voice: Icelandic Male':
     'prefix': 'voice.icelandic.male'
     'body':   'Icelandic Male'
+    'leftLabelHTML': '<span style="color:#ff0">🇮🇸 👨</span>'
     'descriptionMoreURL': 'https://responsivevoice.org'
 
   'voice: Latvian Male':
     'prefix': 'voice.latvian.male'
     'body':   'Latvian Male'
+    'leftLabelHTML': '<span style="color:#ff0">🇱🇻 👨</span>'
     'descriptionMoreURL': 'https://responsivevoice.org'
 
   'voice: Macedonian Male':
     'prefix': 'voice.macedonian.male'
     'body':   'Macedonian Male'
+    'leftLabelHTML': '<span style="color:#ff0">🇲🇰 👨</span>'
     'descriptionMoreURL': 'https://responsivevoice.org'
 
   'voice: Moldavian Female':
     'prefix': 'voice.moldavian.female'
     'body':   'Moldavian Female'
+    'leftLabelHTML': '<span style="color:#ff0">🇲🇩 👩</span>'
     'descriptionMoreURL': 'https://responsivevoice.org'
 
   'voice: Moldavian Male':
     'prefix': 'voice.moldavian.male'
     'body':   'Moldavian Male'
+    'leftLabelHTML': '<span style="color:#ff0">🇲🇩 👨</span>'
     'descriptionMoreURL': 'https://responsivevoice.org'
 
   'voice: Montenegrin Male':
     'prefix': 'voice.montenegrin.male'
     'body':   'Montenegrin Male'
+    'leftLabelHTML': '<span style="color:#ff0">🇲🇪 👨</span>'
     'descriptionMoreURL': 'https://responsivevoice.org'
 
   'voice: Serbian Male':
     'prefix': 'voice.serbian.male'
     'body':   'Serbian Male'
+    'leftLabelHTML': '<span style="color:#ff0">🇷🇸 👨</span>'
     'descriptionMoreURL': 'https://responsivevoice.org'
 
   'voice: Serbo-Croatian Male':
     'prefix': 'voice.serbo.croatian.male'
     'body':   'Serbo-Croatian Male'
+    'leftLabelHTML': '<span style="color:#ff0">🇷🇸🇭🇷 👨</span>'
     'descriptionMoreURL': 'https://responsivevoice.org'
 
   'voice: Swahili Male':
     'prefix': 'voice.swahili.male'
     'body':   'Swahili Male'
+    'leftLabelHTML': '<span style="color:#ff0">🇰🇪 👨🏿</span>'
     'descriptionMoreURL': 'https://responsivevoice.org'
 
   'voice: Welsh Male':
     'prefix': 'voice.welsh.male'
     'body':   'Welsh Male'
+    'leftLabelHTML': '<span style="color:#ff0">🏴󠁧󠁢󠁷󠁬󠁳󠁿 👨</span>'
     'descriptionMoreURL': 'https://responsivevoice.org'
