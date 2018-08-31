@@ -18,7 +18,7 @@
       | zebra stripes | are neat      |    $1 |
     """
     'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
-    'leftLabelHTML': '<span style="color:#ff0">🦉</span>'
+    'leftLabelHTML': '<span style="color:#ff0">目</span>'
 
 
   '2 colum table':
@@ -40,7 +40,7 @@
       | zebra stripes | are neat      |    $1 |
     """
     'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
-    'leftLabelHTML': '<span style="color:#ff0">🦉</span>'
+    'leftLabelHTML': '<span style="color:#ff0">目</span>'
 
 
   '3 colum table':
@@ -62,7 +62,7 @@
       | zebra stripes | are neat      |    $1 |
     """
     'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
-    'leftLabelHTML': '<span style="color:#ff0">🦉</span>'
+    'leftLabelHTML': '<span style="color:#ff0">目</span>'
 
 
   '4 colum table':
@@ -84,7 +84,7 @@
       | zebra stripes | are neat      |    $1 |
     """
     'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
-    'leftLabelHTML': '<span style="color:#ff0">🦉</span>'
+    'leftLabelHTML': '<span style="color:#ff0">目</span>'
 
 
   '5 colum table':
@@ -106,7 +106,7 @@
       | zebra stripes | are neat      |    $1 |
     """
     'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
-    'leftLabelHTML': '<span style="color:#ff0">🦉</span>'
+    'leftLabelHTML': '<span style="color:#ff0">目</span>'
 
 
   '6 colum table':
@@ -128,7 +128,7 @@
       | zebra stripes | are neat      |    $1 |
     """
     'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
-    'leftLabelHTML': '<span style="color:#ff0">🦉</span>'
+    'leftLabelHTML': '<span style="color:#ff0">目</span>'
 
 
   '7 colum table':
@@ -150,7 +150,7 @@
       | zebra stripes | are neat      |    $1 |
     """
     'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
-    'leftLabelHTML': '<span style="color:#ff0">🦉</span>'
+    'leftLabelHTML': '<span style="color:#ff0">目</span>'
 
 
   '8 colum table':
@@ -172,7 +172,7 @@
       | zebra stripes | are neat      |    $1 |
     """
     'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
-    'leftLabelHTML': '<span style="color:#ff0">🦉</span>'
+    'leftLabelHTML': '<span style="color:#ff0">目</span>'
 
 
   '9 colum table':
@@ -194,4 +194,4 @@
       | zebra stripes | are neat      |    $1 |
     """
     'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
-    'leftLabelHTML': '<span style="color:#ff0">🦉</span>'
+    'leftLabelHTML': '<span style="color:#ff0">目</span>'

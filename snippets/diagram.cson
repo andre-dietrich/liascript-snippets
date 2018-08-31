@@ -1,20 +1,56 @@
 '.source.gfm':
   'color dot diagram':
-    'prefix': 'diadots'
+    'prefix': 'lia.diagram.dots'
     'body': """
-                         dia - dots
-        6 | A a B b C c
-          | D d E e F f G g H h I i
-          | J j K k L l M m N n o O
-          | P p Q q R r S s T t U u
-          | V v W w X x Y y Z Z   *
-        1 +------------------------
-          0                      24
+                     Title - dots
+      6 | A a B b C c
+        | D d E e F f G g H h I i
+        | J j K k L l M m N n o O
+        | P p Q q R r S s T t U u
+        | V v W w X x Y y Z Z   *
+      1 +------------------------
+        0                      24
     """
+    'description': """
+      The character is used as a color code, such as r stands for red, w for white, etc. Uppercase and lowercase characters define the size of the plotted dots. And if there is only one character, then it is plotted as a single dot only.
+
+      Example:
+                        Colored - Dots
+           6 | A a B b C c
+             | D d E e F f G g H h I i
+      y-axis | J j K k L l M m N n o O
+             | P p Q q R r S s T t U u
+             | V v W w X x Y y Z Z   *
+           1 +------------------------
+             0        x-axis        24
+
+      The definition of the title, x and y labels and their limits is optional, but the number of used pipes (|) and hyphens (|) define the resulution of the diagram.
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">📈</span>'
+
+
   'multiline diagram':
-    'prefix': 'diamul'
+    'prefix': 'lia.diagram.multiline'
     'body': """
-                                  dia - multiline
+                                        Multiline
+        1.9 |
+            |                 ***
+          y |               *     *
+          - | r r r r r r r*r r r r*r r r r r r r
+          a |             *         *
+          x |            *           *
+          i | B B B B B * B B B B B B * B B B B B
+          s |         *                 *
+            | *  * *                       * *  *
+         -1 +------------------------------------
+            0              x-axis               1
+    """
+    'description': """
+      The character is used as a color code, such as r stands for red, B for blue, etc. Uppercase and lowercase characters define the size of the plotted dots. A sequence of equal characters gets interpreted as a polyline, there are more than two characters and if there are no two characters at the same x position.
+
+      Example:
+                                        Multiline
         1.9 |
             |                 ***
           y |               *     *
@@ -26,11 +62,17 @@
             | *  * *                       * *  *
          -1 +------------------------------------
             0            x-axis                 1
+
+      The definition of the title, x and y labels and their limits is optional, but the number of used pipes (|) and hyphens (|) define the resulution of the diagram.
     """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">📈</span>'
+
+
   'simple diagram':
-    'prefix': 'diasim'
+    'prefix': 'lia.diagram.simple'
     'body': """
-                                      dia - base
+                    Combining dots and polylines
        1.9 |
            |     DOTS
          y |                                *
@@ -43,3 +85,24 @@
         -1 +------------------------------------
            0            x-axis                 1
     """
+    'description': """
+      Simple dots and polyline representations can be applied together in one diagram, if they use different characters.
+
+      Example:
+                    Combining dots and polylines
+        1.9 |
+            |     DOTS
+          y |                                *
+          - |
+          a |                         *
+          x |                  *
+          i |         *
+          s |
+            | *
+         -1 +------------------------------------
+            0            x-axis                 1
+
+      The definition of the title, x and y labels and their limits is optional, but the number of used pipes (|) and hyphens (|) define the resulution of the diagram.
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">📈</span>'
