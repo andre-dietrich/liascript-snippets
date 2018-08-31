@@ -10,7 +10,7 @@
     Formulas are rendered with KaTex, so click on the link below to get more information and examples on the applied notation.
     """
     'descriptionMoreURL': 'https://khan.github.io/KaTeX/docs/supported.html'
-    'leftLabelHTML': '<span style="color:#ff0">LS</span>'
+    'leftLabelHTML': '<span style="color:#ff0">🦉</span>'
 
   'embed multiline formula':
     'prefix': 'lia.formula.block'
@@ -33,4 +33,4 @@
     Formulas are rendered with KaTex, so click on the link below to get more information and examples on the applied notation.
     """
     'descriptionMoreURL': 'https://khan.github.io/KaTeX/docs/supported.html'
-    'leftLabelHTML': '<span style="color:#ff0">LS</span>'
+    'leftLabelHTML': '<span style="color:#ff0">🦉</span>'

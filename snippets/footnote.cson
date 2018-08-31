@@ -8,7 +8,7 @@
        Example with [^1](inline _footnote_) and some more text.
     """
     'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
-    'leftLabelHTML': '<span style="color:#ff0">LS</span>'
+    'leftLabelHTML': '<span style="color:#ff0">🦉</span>'
 
   '[^ref]':
     'prefix': 'lia.footnote.reference'
@@ -30,7 +30,7 @@
                    belong to the previous footnote.
     """
     'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
-    'leftLabelHTML': '<span style="color:#ff0">LS</span>'
+    'leftLabelHTML': '<span style="color:#ff0">🦉</span>'
 
   '[^ref]: some comments ...':
     'prefix': 'lia.footnote.text'
@@ -49,4 +49,4 @@
                    belong to the previous footnote.
     """
     'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
-    'leftLabelHTML': '<span style="color:#ff0">LS</span>'
+    'leftLabelHTML': '<span style="color:#ff0">🦉</span>'

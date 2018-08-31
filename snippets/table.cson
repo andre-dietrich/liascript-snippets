@@ -1,64 +1,197 @@
 '.source.gfm':
   '1 colum table':
-    'prefix': 'tab1'
+    'prefix': 'lia.table.1'
     'body': """
-      | Header     |
+      | ${1:Header}     |
       | :--------- |
-      | Item       |
+      | ${2:Item}       |
     """
+    'description': """
+      There must be at least 3 dashes separating each header cell. Cells are separated by pipes (|), and you don't need to make the raw Markdown line up prettily. Hyphens (-) are used to seperate the table header from the body, whereby the colons are used to align the columns.
+
+      Example:
+
+      | Tables        | Are           | Cool  |
+      | ------------- |:-------------:| -----:|
+      | col 3 is      | right-aligned | $1600 |
+      | col 2 is      | centered      |   $12 |
+      | zebra stripes | are neat      |    $1 |
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">🦉</span>'
+
+
   '2 colum table':
-    'prefix': 'tab2'
+    'prefix': 'lia.table.2'
     'body': """
-    | Header 1   | Header 2   |
-    | :--------- | :--------- |
-    | Item 1     | Item 2     |
+      | Header 1   | Header 2   |
+      | :--------- | :--------- |
+      | Item 1     | Item 2     |
     """
+    'description': """
+      There must be at least 3 dashes separating each header cell. Cells are separated by pipes (|), and you don't need to make the raw Markdown line up prettily. Hyphens (-) are used to seperate the table header from the body, whereby the colons are used to align the columns.
+
+      Example:
+
+      | Tables        | Are           | Cool  |
+      | ------------- |:-------------:| -----:|
+      | col 3 is      | right-aligned | $1600 |
+      | col 2 is      | centered      |   $12 |
+      | zebra stripes | are neat      |    $1 |
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">🦉</span>'
+
+
   '3 colum table':
-    'prefix': 'tab3'
+    'prefix': 'lia.table.3'
     'body': """
-    | Header 1   | Header 2   | Header 3   |
-    | :--------- | :--------- | :--------- |
-    | Item 1     | Item 2     | Item 3     |
+      | Header 1   | Header 2   | Header 3   |
+      | :--------- | :--------- | :--------- |
+      | Item 1     | Item 2     | Item 3     |
     """
+    'description': """
+      There must be at least 3 dashes separating each header cell. Cells are separated by pipes (|), and you don't need to make the raw Markdown line up prettily. Hyphens (-) are used to seperate the table header from the body, whereby the colons are used to align the columns.
+
+      Example:
+
+      | Tables        | Are           | Cool  |
+      | ------------- |:-------------:| -----:|
+      | col 3 is      | right-aligned | $1600 |
+      | col 2 is      | centered      |   $12 |
+      | zebra stripes | are neat      |    $1 |
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">🦉</span>'
+
+
   '4 colum table':
-    'prefix': 'tab4'
+    'prefix': 'lia.table.4'
     'body': """
-    | Header 1   | Header 2   | Header 3   | Header 4   |
-    | :--------- | :--------- | :--------- | :--------- |
-    | Item 1     | Item 2     | Item 3     | Item 4     |
+      | Header 1   | Header 2   | Header 3   | Header 4   |
+      | :--------- | :--------- | :--------- | :--------- |
+      | Item 1     | Item 2     | Item 3     | Item 4     |
     """
+    'description': """
+      There must be at least 3 dashes separating each header cell. Cells are separated by pipes (|), and you don't need to make the raw Markdown line up prettily. Hyphens (-) are used to seperate the table header from the body, whereby the colons are used to align the columns.
+
+      Example:
+
+      | Tables        | Are           | Cool  |
+      | ------------- |:-------------:| -----:|
+      | col 3 is      | right-aligned | $1600 |
+      | col 2 is      | centered      |   $12 |
+      | zebra stripes | are neat      |    $1 |
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">🦉</span>'
+
+
   '5 colum table':
-    'prefix': 'tab5'
+    'prefix': 'lia.table.5'
     'body': """
-    | Header 1   | Header 2   | Header 3   | Header 4   | Header 5   |
-    | :--------- | :--------- | :--------- | :--------- | :--------- |
-    | Item 1     | Item 2     | Item 3     | Item 4     | Item 5     |
+      | Header 1   | Header 2   | Header 3   | Header 4   | Header 5   |
+      | :--------- | :--------- | :--------- | :--------- | :--------- |
+      | Item 1     | Item 2     | Item 3     | Item 4     | Item 5     |
     """
+    'description': """
+      There must be at least 3 dashes separating each header cell. Cells are separated by pipes (|), and you don't need to make the raw Markdown line up prettily. Hyphens (-) are used to seperate the table header from the body, whereby the colons are used to align the columns.
+
+      Example:
+
+      | Tables        | Are           | Cool  |
+      | ------------- |:-------------:| -----:|
+      | col 3 is      | right-aligned | $1600 |
+      | col 2 is      | centered      |   $12 |
+      | zebra stripes | are neat      |    $1 |
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">🦉</span>'
+
+
   '6 colum table':
-    'prefix': 'tab6'
+    'prefix': 'lia.table.6'
     'body': """
-    | Header 1   | Header 2   | Header 3   | Header 4   | Header 5   | Header 6   |
-    | :--------- | :--------- | :--------- | :--------- | :--------- | :--------- |
-    | Item 1     | Item 2     | Item 3     | Item 4     | Item 5     | Item 6     |
+      | Header 1   | Header 2   | Header 3   | Header 4   | Header 5   | Header 6   |
+      | :--------- | :--------- | :--------- | :--------- | :--------- | :--------- |
+      | Item 1     | Item 2     | Item 3     | Item 4     | Item 5     | Item 6     |
     """
+    'description': """
+      There must be at least 3 dashes separating each header cell. Cells are separated by pipes (|), and you don't need to make the raw Markdown line up prettily. Hyphens (-) are used to seperate the table header from the body, whereby the colons are used to align the columns.
+
+      Example:
+
+      | Tables        | Are           | Cool  |
+      | ------------- |:-------------:| -----:|
+      | col 3 is      | right-aligned | $1600 |
+      | col 2 is      | centered      |   $12 |
+      | zebra stripes | are neat      |    $1 |
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">🦉</span>'
+
+
   '7 colum table':
-    'prefix': 'tab7'
+    'prefix': 'lia.table.7'
     'body': """
-    | Header 1   | Header 2   | Header 3   | Header 4   | Header 5   | Header 6   | Header 7   |
-    | :--------- | :--------- | :--------- | :--------- | :--------- | :--------- | :--------- |
-    | Item 1     | Item 2     | Item 3     | Item 4     | Item 5     | Item 6     | Item 7     |
+      | Header 1   | Header 2   | Header 3   | Header 4   | Header 5   | Header 6   | Header 7   |
+      | :--------- | :--------- | :--------- | :--------- | :--------- | :--------- | :--------- |
+      | Item 1     | Item 2     | Item 3     | Item 4     | Item 5     | Item 6     | Item 7     |
     """
+    'description': """
+      There must be at least 3 dashes separating each header cell. Cells are separated by pipes (|), and you don't need to make the raw Markdown line up prettily. Hyphens (-) are used to seperate the table header from the body, whereby the colons are used to align the columns.
+
+      Example:
+
+      | Tables        | Are           | Cool  |
+      | ------------- |:-------------:| -----:|
+      | col 3 is      | right-aligned | $1600 |
+      | col 2 is      | centered      |   $12 |
+      | zebra stripes | are neat      |    $1 |
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">🦉</span>'
+
+
   '8 colum table':
-    'prefix': 'tab8'
+    'prefix': 'lia.table.8'
     'body': """
-    | Header 1   | Header 2   | Header 3   | Header 4   | Header 5   | Header 6   | Header 7   | Header 8   |
-    | :--------- | :--------- | :--------- | :--------- | :--------- | :--------- | :--------- | :--------- |
-    | Item 1     | Item 2     | Item 3     | Item 4     | Item 5     | Item 6     | Item 7     | Item 8     |
+      | Header 1   | Header 2   | Header 3   | Header 4   | Header 5   | Header 6   | Header 7   | Header 8   |
+      | :--------- | :--------- | :--------- | :--------- | :--------- | :--------- | :--------- | :--------- |
+      | Item 1     | Item 2     | Item 3     | Item 4     | Item 5     | Item 6     | Item 7     | Item 8     |
     """
+    'description': """
+      There must be at least 3 dashes separating each header cell. Cells are separated by pipes (|), and you don't need to make the raw Markdown line up prettily. Hyphens (-) are used to seperate the table header from the body, whereby the colons are used to align the columns.
+
+      Example:
+
+      | Tables        | Are           | Cool  |
+      | ------------- |:-------------:| -----:|
+      | col 3 is      | right-aligned | $1600 |
+      | col 2 is      | centered      |   $12 |
+      | zebra stripes | are neat      |    $1 |
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">🦉</span>'
+
+
   '9 colum table':
-    'prefix': 'tab9'
+    'prefix': 'lia.table.9'
     'body': """
-    | Header 1   | Header 2   | Header 3   | Header 4   | Header 5   | Header 6   | Header 7   | Header 8   | Header 9   |
-    | :--------- | :--------- | :--------- | :--------- | :--------- | :--------- | :--------- | :--------- | :--------- |
-    | Item 1     | Item 2     | Item 3     | Item 4     | Item 5     | Item 6     | Item 7     | Item 8     | Item 9     |
+      | Header 1   | Header 2   | Header 3   | Header 4   | Header 5   | Header 6   | Header 7   | Header 8   | Header 9   |
+      | :--------- | :--------- | :--------- | :--------- | :--------- | :--------- | :--------- | :--------- | :--------- |
+      | Item 1     | Item 2     | Item 3     | Item 4     | Item 5     | Item 6     | Item 7     | Item 8     | Item 9     |
     """
+    'description': """
+      There must be at least 3 dashes separating each header cell. Cells are separated by pipes (|), and you don't need to make the raw Markdown line up prettily. Hyphens (-) are used to seperate the table header from the body, whereby the colons are used to align the columns.
+
+      Example:
+
+      | Tables        | Are           | Cool  |
+      | ------------- |:-------------:| -----:|
+      | col 3 is      | right-aligned | $1600 |
+      | col 2 is      | centered      |   $12 |
+      | zebra stripes | are neat      |    $1 |
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">🦉</span>'
