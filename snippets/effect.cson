@@ -178,3 +178,4 @@
       For more information how to change the animation styles, click on the link below.
     """
     'descriptionMoreURL': 'https://github.com/daneden/animate.css/'
+    'leftLabelHTML': '<span style="color:#ff0">🎆</span>'
