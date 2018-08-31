@@ -126,14 +126,6 @@
     'leftLabelHTML': '<span style="color:#ff0">🎓</span>'
 
 
-  '[[!]] <script> ... </script>':
-    'prefix': 'lia.quiz.'
-    'body': """
-      [(${1: })] ${2:Add as many elements as you want?}
-      [(${3:X})] ${4:The X marks the correct answer!}
-      [(${5: })] ${6:And only one X is allowed.}
-    """
-
   '<script> /*single choice*/ </script>':
     'prefix': 'lia.quiz.single.js'
     'body': """
@@ -257,66 +249,66 @@
     'leftLabelHTML': '<span style="color:#ff0">🎓</span>'
 
 
-    'single choice quiz with 3 options':
-      'prefix': 'lia.quiz.single.choice.3'
-      'body': """
-        [(${1: })] ${2:This is wrong.}
-        [(${3:X})] ${4:The only correct option.}
-        [(${5: })] ${6:Still not right.}
-      """
+  'single choice quiz with 3 options':
+    'prefix': 'lia.quiz.single.choice.3'
+    'body': """
+      [(${1: })] ${2:This is wrong.}
+      [(${3:X})] ${4:The only correct option.}
+      [(${5: })] ${6:Still not right.}
+    """
     'description': """
       Insert a the following quiz dummy:
 
-      [( )] This is wrong.
-      [(X)] The only correct option.
-      [( )] Still not right.
+        [( )] This is wrong.
+        [(X)] The only correct option.
+        [( )] Still not right.
     """
     'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
     'leftLabelHTML': '<span style="color:#ff0">🎓</span>'
 
 
-    'multiple choice quiz with 4 options':
-      'prefix': 'lia.quiz.multiple.choice.4'
-      'body': """
-        [[${1: }]] ${2:Add as many elements as you want?}
-        [[${3:X}]] ${4:The X marks the correct answer!}
-        [[${5: }]] ${6:... this is wrong ...}
-        [[${7:X}]] ${8:... this has to be selected too ...}
-      """
-      'description': """
-        Insert a the following quiz dummy:
+  'multiple choice quiz with 4 options':
+    'prefix': 'lia.quiz.multiple.choice.4'
+    'body': """
+      [[${1: }]] ${2:Add as many elements as you want?}
+      [[${3:X}]] ${4:The X marks the correct answer!}
+      [[${5: }]] ${6:... this is wrong ...}
+      [[${7:X}]] ${8:... this has to be selected too ...}
+    """
+    'description': """
+      Insert a the following quiz dummy:
 
-        [[ ]] Add as many elements as you want?
-        [[X]] The X marks the correct answer!
-        [[ ]] ... this is wrong ...
-        [[X]] ... this has to be selected too ...
-      """
-      'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
-      'leftLabelHTML': '<span style="color:#ff0">🎓</span>'
+      [[ ]] Add as many elements as you want?
+      [[X]] The X marks the correct answer!
+      [[ ]] ... this is wrong ...
+      [[X]] ... this has to be selected too ...
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">🎓</span>'
 
 
-    '[[!]] <script> ... </script>':
-      'prefix': 'lia.quiz.generic.js'
-      'body': """
-        [[!]]
-        <script>
-          ${1:// you are free to check anything you want
-          true;}
-        </script>
-      """
-      'description': """
-        In some realy realy rare cases, you might want to have something completely different and analyse some other html or code inputs (unit testing). In this case you can apply this generic tag and do in javascript whatever you want. The this quiz is solved if the script gets evaluated to true, not solved by resulting in false (everything else is ignored).
+  '[[!]] <script> ... </script>':
+    'prefix': 'lia.quiz.generic.js'
+    'body': """
+      [[!]]
+      <script>
+        ${1:// you are free to check anything you want
+        true;}
+      </script>
+    """
+    'description': """
+      In some realy realy rare cases, you might want to have something completely different and analyse some other html or code inputs (unit testing). In this case you can apply this generic tag and do in javascript whatever you want. The this quiz is solved if the script gets evaluated to true, not solved by resulting in false (everything else is ignored).
 
-        *Click Me!*<!-- onclick="window['rand'] = Math.random();" -->
+      *Click Me!*<!-- onclick="window['rand'] = Math.random();" -->
 
-        [[!]]
-        <script>
-          alert("your value random value is:", window['rand']);
-          if(window['rand'] > 0.8)
-            true;
-          else
-            false
-        </script>
-      """
-      'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
-      'leftLabelHTML': '<span style="color:#ff0">🎓</span>'
+      [[!]]
+      <script>
+        alert("your value random value is:", window['rand']);
+        if(window['rand'] > 0.8)
+          true;
+        else
+          false
+      </script>
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">🎓</span>'
