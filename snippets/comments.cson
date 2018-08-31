@@ -1,0 +1,97 @@
+'.source.gfm':
+  '--{{number}}--':
+    'prefix': 'lia.comment'
+    'body': """
+                    --{{${1:number}}}--
+      ${2:Enter some **text** that gets read out aloud.
+      Only paragraphs are allowed!}'
+    """
+    'description': """
+      Comments are those elements that get read out aloud in slide and presentation mode and a printed out at the placed position in textbook mode. Only paragraphs are allowed as comments and Markdown can be applied for styling different elements.
+      The default voice is defined within the main header, if not english will be used. This main voice can be changed per section by adding a section comment.
+
+      Example:
+        <!--
+        author:   ...
+        email:    ...
+        ...
+        narrator: UK English Female
+        -->
+
+        # Title
+
+                     --{{0}}--
+        I will speak with a female *UK* accent.
+
+        ## Section
+        <!-- narrator: US English Male -->
+
+                     --{{0}}--
+        This entire section will be spoken aloud american man.
+
+                     --{{1}}--
+        But only this section...
+
+      To simplify the voice-search, simply start typing "voice" and fuzzy search all responsive voice or click on the link below.
+    """
+    'descriptionMoreURL': 'https://responsivevoice.org'
+    'leftLabelHTML': '<span style="color:#ff0">💬</span>'
+
+  '--{{number voice}}--':
+    'prefix': 'lia.comment.voice'
+    'body': """
+                    --{{${1:number} ${2:voice}}}--
+      ${3:Enter some **text** that gets read out aloud with another voice.
+      Only paragraphs are allowed!}'
+    """
+    'description': """
+      You can change the voice also per comment by adding it directly after the number of appearence.
+      Type "voice" for fuzzy searching all responsive voices or click on the link below.
+
+      Example:
+              --{{0 Australian Female}}--
+        I will speak with a female australian accent,
+        no matter what the default language is.
+
+              --{{0 Deutsch Male}}--
+        Und hier äußert sich gerade ein deutscher Mann.
+    """
+    'descriptionMoreURL': 'https://responsivevoice.org'
+    'leftLabelHTML': '<span style="color:#ff0">💬</span>'
+
+
+  '<!-- --{{number}}-- ... -->':
+    'prefix': 'lia.comment.hidden'
+    'body': """
+      <!-- --{{${1:number}}}-- ${2:Enter some **text** that gets read out aloud!} -->
+    """
+    'description': """
+      If you want to speak out some additional text that shal not appear in the textbook mode, then simply put your comment into a html comment tag.
+
+      Example:
+        <!-- --{{2}}--
+        I will speak with the default voice, but not appear
+        elsewhere within the document.
+        -->
+    """
+    'descriptionMoreURL': 'https://responsivevoice.org'
+    'leftLabelHTML': '💬'
+
+  '<!-- --{{number voice}}-- ... -->':
+    'prefix': 'lia.comment.voice.hidden'
+    'body': """
+      <!-- --{{${1:number} ${2:voice}}}-- ${3:Enter some **text** that gets read out aloud!} -->
+    """
+    'description': """
+      If you want to speak out some additional text that shal not appear in the textbook mode and speak with another voice, then simply put your comment with a voice definition into a html comment tag.
+
+      Example:
+        <!-- --{{2 Deutsch Female}}--
+        I will speak with a german voice, but not appear
+        elsewhere within the document.
+        -->
+
+      Type "voice" for fuzzy searching or click on the link below for more information.
+    """
+    'descriptionMoreURL': 'https://responsivevoice.org'
+    'leftLabelHTML': '💬'
