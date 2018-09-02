@@ -1,0 +1,60 @@
+'.source.gfm':
+  '_text_':
+    'prefix': 'lia.text.italic'
+    'body': '_${1:italic}_'
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0"><i>Az</i></span>'
+
+  '*text*':
+    'prefix': 'lia.text.italic2'
+    'body': '*${1:italic}*'
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0"><i>Az</i></span>'
+
+  '__text__':
+    'prefix': 'lia.text.bold'
+    'body': '__${1:bold}__'
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0"><b>Az</b></span>'
+
+  '**text**':
+    'prefix': 'lia.text.bold2'
+    'body': '**${1:bold}**'
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0"><b>Az</b></span>'
+
+  '___text___':
+    'prefix': 'lia.text.italic.bold'
+    'body': '___${1:italic bold}___'
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0"><b><i>Az</i></b></span>'
+
+  '***text***':
+    'prefix': 'lia.text.italic.bold2'
+    'body': '***${1:italic bold}***'
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0"><b><i>Az</i></b></span>'
+
+  '~text~':
+    'prefix': 'lia.text.strike'
+    'body': '~${1:strike}~'
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0"><s>Az</s></span>'
+
+  '~~text~~':
+    'prefix': 'lia.text.underline'
+    'body': '~~${1:underline}~~'
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0"><u>Az</u></span>'
+
+  '~~~text~~~':
+    'prefix': 'lia.text.strike.underline'
+    'body': '~~~${1:strike underline}~~~'
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0"><s><u>Az</u></s></span>'
+
+  '^text^':
+    'prefix': 'lia.text.superscript'
+    'body': '^${1:superscript}^'
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0"><sup>Az</sup></span>'
