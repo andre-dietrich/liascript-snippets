@@ -55,7 +55,7 @@
         ?[singing birds](https://bigsoundbank.com/UPLOAD/mp3/1068.mp3)
     """
     'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
-    'leftLabelHTML': '<span style="color:#ff0">🔉</span>'
+    'leftLabelHTML': '<span style="color:#ff0">🎵</span>'
 
 
   '!?[alt-text](movie-url)':
