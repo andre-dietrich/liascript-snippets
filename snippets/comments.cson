@@ -35,7 +35,7 @@
       To simplify the voice-search, simply start typing "voice" and fuzzy search all responsive voice or click on the link below.
     """
     'descriptionMoreURL': 'https://responsivevoice.org'
-    'leftLabelHTML': '<span style="color:#ff0">💬</span>'
+    'leftLabelHTML': '<span style="color:#ff0">🗯</span>'
 
   '--{{number voice}}--':
     'prefix': 'lia.comment.voice'
@@ -57,7 +57,7 @@
         Und hier äußert sich gerade ein deutscher Mann.
     """
     'descriptionMoreURL': 'https://responsivevoice.org'
-    'leftLabelHTML': '<span style="color:#ff0">💬</span>'
+    'leftLabelHTML': '<span style="color:#ff0">🗯</span>'
 
 
   '<!-- --{{number}}-- ... -->':
@@ -75,7 +75,7 @@
         -->
     """
     'descriptionMoreURL': 'https://responsivevoice.org'
-    'leftLabelHTML': '💬'
+    'leftLabelHTML': '🗯'
 
   '<!-- --{{number voice}}-- ... -->':
     'prefix': 'lia.comment.voice.hidden'
@@ -94,4 +94,4 @@
       Type "voice" for fuzzy searching or click on the link below for more information.
     """
     'descriptionMoreURL': 'https://responsivevoice.org'
-    'leftLabelHTML': '💬'
+    'leftLabelHTML': '🗯'

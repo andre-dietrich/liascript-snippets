@@ -34,3 +34,49 @@ Add a solution explanation __Markdown__!
 [^1]: this is a simple footer
 
           https://de.wikipedia.org/wiki/Fundamentalsatz_der_Analysis
+
+
+liafor
+
+f⟮x⟯  π²
+
+_aZz_
+
+lia
+
+liacod
+liatext
+
+ 〈/〉
+
+ 🤯
+liacod
+ ‹/›
+
+rts 🧠 👁 👀 👂 👃 👄 🗢 👅 🦵 🦶 🦴 🦷
+Speech Bubbles
+💬 💭 🗨 🗩 🗪 🗫 🗬 🗭 🗮 🗯 🗰 🗱
+Emote and Misc
+💢 💦 💧
+💫 💤 💥 💨 💪 🗲
+
+👾 🛸
+
+
+liatext
+𝑓⟮𝑥⟯
+🏛 CLASSICAL BUILDING  ⊞⊟㏀目
+
+liatex 𝐚
+
+vouk
+
+vouk👾 Alien Monster
+
+
+lia
+liaeffect
+
+### ffff
+
+*test*

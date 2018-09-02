@@ -1,0 +1,72 @@
+'.source.gfm':
+  '@author':
+    'prefix': 'lia.macro.author'
+    'body': '@author'
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">🛠</span>'
+
+
+  '@code':
+    'prefix': 'lia.macro.code'
+    'body': '@code'
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">🛠</span>'
+
+
+  '@date':
+    'prefix': 'lia.macro.date'
+    'body': '@date'
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">🛠</span>'
+
+
+  '@email':
+    'prefix': 'lia.macro.email'
+    'body': '@email'
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">🛠</span>'
+
+
+  '@input':
+    'prefix': 'lia.macro.input'
+    'body': '@input'
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">🛠</span>'
+
+
+  '@section':
+    'prefix': 'lia.macro.section'
+    'body': '@section'
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">🛠</span>'
+
+
+  '@uid':
+    'prefix': 'lia.macro.uid'
+    'body': '@uid'
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">🛠</span>'
+
+
+  '@version':
+    'prefix': 'lia.macro.version'
+    'body': '@version'
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">🛠</span>'
+
+
+  '@name: body':
+    'prefix': 'lia.macro.definition'
+    'body': '@${1:name}: ${2:body}'
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">🛠</span>'
+
+  '@name ... body ... @end':
+    'prefix': 'lia.macro.definition2'
+    'body': """
+      @${1:name}
+      ${2:param1 -> __@0__}
+      @end
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">🛠</span>'

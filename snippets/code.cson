@@ -1,27 +1,113 @@
 '.source.gfm':
-  'insert code block':
-    'prefix': 'cod'
-    'description': """
-    Insert an simple JavaScript code block with with syntax highlighting 
 
-    ``` js
-    let i = 0; let rslt = 0;
-    for(i; i<10; i++)
-      rslt = rslt + i;
-    rslt;
-    ```
+  '`code`':
+    'prefix': 'lia.code.inline'
+    'body': '`${1:code}`'
+    'description': """
+      Inline `code` has `back-ticks around` it.
     """
     'descriptionMoreURL': 'http://www.google.de'
-    'leftLabelHTML': '<span style="color:#ff0">LS</span>'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+
+
+  '```lang ... ```':
+    'prefix': 'lia.code.block'
     'body': """
-    ``` ${1:js}
-    ${2:// see more information at:
-    let i = 0; let rslt = 0;
-    for(i; i<10; i++)
-      rslt = rslt + i;
-    rslt;}
-    ```
+      ```${1:javascript}
+      ${2:var s = "JavaScript syntax highlighting";
+      alert(s);}
+      ```
     """
+    'description': """
+      To insert a code block with syntax highlight, enclose your code snippet with three backticks (```) that is followed by a language code. To search all language codes, visit the link below.
+
+      Examples:
+
+        ```javascript
+        var s = "JavaScript syntax highlighting";
+        alert(s);
+        ```
+
+        ```python
+        s = "Python syntax highlighting"
+        print s
+        ```
+
+        ```
+        No language indicated, so no syntax highlighting.
+        But let's throw in a <b>tag</b>.
+        ```
+    """
+    'descriptionMoreURL': 'https://highlightjs.org'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+
+
+  '```lang ... ``` <script>@code</script>':
+    'prefix': 'lia.code.block.js'
+    'body': """
+      ```${1:javascript}
+      ${2:var s = "JavaScript syntax highlighting";
+      alert(s);}
+      ```
+      <script>${3:@code}</script>
+    """
+    'description': """
+      To insert an executable and editable code block with syntax highlight, insert a common Markdown code block with a succeeding <script> tag. The macro @code is replaced with the current user input and gets evaluated in a try and chatch block. Using javascript you can also insert interpreters to other languages or access them. In these cases you will have to change the conntent of the script tag. To get an impression about the posibilities, click on the link below.
+
+      Example:
+
+        ```javascript
+        var s = "JavaScript syntax highlighting";
+        alert(s);
+        ```
+        <script>@code</script>
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+
+
+  '```lang ... ``` <script> ... ':
+    'prefix': 'lia.code.block.jsx'
+    'body': """
+      ```${1:javascript}
+      ${2:var s = "JavaScript syntax highlighting";
+      alert(s);}
+      ```
+      <script>
+        try{
+          eval(`@code`);
+        } catch (e) {
+          var log = e.stack.match(/((.*?):(.*))\n.*?(:(\d+):(\d+)\)\n)/);
+          var err_msg = new LiaError(log[1] + " =>  (" + log[4], 1);
+          err_msg.add_detail(0, log[3], "error", log[5]-1, log[6]);
+          throw err_msg;
+        }
+      </script>
+    """
+    'description': """
+      To insert an executable and editable code block with syntax highlight, insert a common Markdown code block with a succeeding <script> tag. The macro @code is replaced with the current user input and gets evaluated in a try and chatch block. Using javascript you can also insert interpreters to other languages or access them. In these cases you will have to change the conntent of the script tag. To get an impression about the posibilities, click on the link below.
+
+      Example:
+
+        ```javascript
+        var s = "JavaScript syntax highlighting";
+        alert(s);
+        ```
+        <script>
+          try{
+            eval(`@code`);
+          } catch (e) {
+            var log = e.stack.match(/((.*?):(.*))\n.*?(:(\d+):(\d+)\)\n)/);
+            var err_msg = new LiaError(log[1] + " =>  (" + log[4], 1);
+            err_msg.add_detail(0, log[3], "error", log[5]-1, log[6]);
+            throw err_msg;
+          }
+        </script>
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+
+
 
   'insert an executable code block':
     'prefix': 'codx'
