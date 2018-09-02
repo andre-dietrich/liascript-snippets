@@ -44,20 +44,33 @@
     'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
     'leftLabelHTML': '<span style="color:#ff0">🖼</span>'
 
-
-  '!![alt-text](movie-url)':
-    'prefix': 'lia.movie'
-    'body': '!![${1:alt-text}](${2:movie-url})'
+  '?[alt-text](audio-url)':
+    'prefix': 'lia.audio'
+    'body': '?[${1:alt-text}](${2:audio-url})'
     'description': """
-      Include movies similar to images but with two starting exclamation marks (!!) as depicted below. Paths can either be absolute or relative, YouTube can be directly included via the its iframe url. You can add also styles, classes, or any other allowed options to it simply by appending a comment tag.
+      Including audio is done with a starting question mark (?) that is followed a common Markdown link.
 
       Example:
 
-        !![eLab](https://www.youtube.com/embed/bICfKRyKTwE)
+        ?[singing birds](https://bigsoundbank.com/UPLOAD/mp3/1068.mp3)
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">🔉</span>'
 
-        !![relative](./mov/video.mp4)
 
-        !![eLab](https://www.youtube.com/embed/bICfKRyKTwE)<!--
+  '!?[alt-text](movie-url)':
+    'prefix': 'lia.movie'
+    'body': '!?[${1:alt-text}](${2:movie-url})'
+    'description': """
+      Include movies is like combining images and sound by a starting exclamation mark followed by an question mark (!?) as depicted below. Paths can either be absolute or relative, YouTube can be directly included via the its iframe url. You can add also styles, classes, or any other allowed options to it simply by appending a comment tag.
+
+      Example:
+
+        !?[eLab](https://www.youtube.com/embed/bICfKRyKTwE)
+
+        !?[relative](./mov/video.mp4)
+
+        !?[eLab](https://www.youtube.com/embed/bICfKRyKTwE)<!--
             title = "the elab in gray"
             width = "90%"
             style = "border: 10px solid; filter: grayscale(100%);"
