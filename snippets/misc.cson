@@ -17,3 +17,21 @@
     """
     'descriptionMoreURL': 'http://www.google.de'
     'leftLabelHTML': '<span style="color:#ff0">📏</span>'
+
+
+  '> ...':
+    'prefix': 'lia.quote'
+    'body': '> ${1:your quote}'
+    'description': """
+      Insert single line quotes or quote blocks just with the help of a starting (>).
+
+      Example:
+        > Blockquotes are very handy in email to emulate reply text.
+        > This line is part of the same quote.
+
+        Quote break.
+
+        > This is a very long line that will still be quoted properly when it wraps. Oh boy let's keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can *put* **Markdown** into a blockquote.
+    """
+    'descriptionMoreURL': 'https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet'
+    'leftLabelHTML': '<span style="color:#ff0">📌</span>'
