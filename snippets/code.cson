@@ -139,7 +139,7 @@
         try{
           eval(`@code`);
         } catch (e) {
-          var log = e.stack.match(/((.*?):(.*))\n.*?(:(\d+):(\d+)\)\n)/);
+          var log = e.stack.match(/((.*?):(.*))\\\\n.*?(:(\\\\d+):(\\\\d+)\\\\)\\\\n)/);
           var err_msg = new LiaError(log[1] + " =>  (" + log[4], 1);
           err_msg.add_detail(0, log[3], "error", log[5]-1, log[6]);
           throw err_msg;
@@ -160,7 +160,7 @@
           try{
             eval(`@code`);  // <== code to evaluate
           } catch (e) {
-            var log = e.stack.match(/((.*?):(.*))\n.*?(:(\d+):(\d+)\)\n)/);
+            var log = e.stack.match(/((.*?):(.*))\\n.*?(:(\\d+):(\\d+)\\)\\n)/);
             var err_msg = new LiaError(log[1] + " =>  (" + log[4], 1);
             err_msg.add_detail(0, log[3], "error", log[5]-1, log[6]);
             throw err_msg;
@@ -178,7 +178,7 @@
         try{
           eval(`@code`);
         } catch (e) {
-          var log = e.stack.match(/((.*?):(.*))\n.*?(:(\d+):(\d+)\)\n)/);
+          var log = e.stack.match(/((.*?):(.*))\\\\n.*?(:(\\\\d+):(\\\\d+)\\\\)\\\\n)/);
           var err_msg = new LiaError(log[1] + " =>  (" + log[4], 1);
           err_msg.add_detail(0, log[3], "error", log[5]-1, log[6]);
           throw err_msg;
@@ -196,7 +196,7 @@
             eval(`@code`); // code to be evaluated
           } catch (e) {
             // do some pattern matching to get the error string, the line number and column
-            var log = e.stack.match(/((.*?):(.*))\n.*?(:(\d+):(\d+)\)\n)/);
+            var log = e.stack.match(/((.*?):(.*))\\n.*?(:(\\d+):(\\d+)\\)\\n)/);
 
             // create a new LiaError object with
             // param1: an error message string
