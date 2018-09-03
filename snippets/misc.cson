@@ -1,0 +1,19 @@
+'.source.gfm':
+
+  '---':
+    'prefix': 'lia.line.horizontal'
+    'body': '----------------------\n'
+    'description': """
+      Horizontal lines are relaized by adding at least 3 hyphens in a row (---), but more hyphens look a little bit nicer ;)
+
+      Example:
+        This is a horizontal line:
+
+          ---
+
+        And this also:
+
+        ---------------------------------------------
+    """
+    'descriptionMoreURL': 'http://www.google.de'
+    'leftLabelHTML': '<span style="color:#ff0">📏</span>'
