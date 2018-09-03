@@ -19,13 +19,14 @@
       ```
     """
     'description': """
-      To insert a code block with syntax highlight, enclose your code snippet with three backticks (```) that is followed by a language code. To search all language codes, visit the link below.
+      To insert a code block with syntax highlight, enclose your code snippet with three back-ticks (```) that is followed by a language code. To search all language codes, visit the link below, but in most cases you can simply add either the name of the language or the typical file-ending.
 
       Examples:
 
         ```javascript
         var s = "JavaScript syntax highlighting";
         alert(s);
+        s;
         ```
 
         ```python
@@ -47,18 +48,79 @@
     'body': """
       ```${1:javascript}
       ${2:var s = "JavaScript syntax highlighting";
-      alert(s);}
+      alert(s);
+      s;}
       ```
       <script>${3:@code}</script>
     """
     'description': """
       To insert an executable and editable code block with syntax highlight, insert a common Markdown code block with a succeeding <script> tag. The macro @code is replaced with the current user input and gets evaluated in a try and chatch block. Using javascript you can also insert interpreters to other languages or access them. In these cases you will have to change the conntent of the script tag. To get an impression about the posibilities, click on the link below.
+      The result of the script or the error are passed to a commandline like output beneath the code-block.
 
       Example:
 
         ```javascript
         var s = "JavaScript syntax highlighting";
         alert(s);
+        ```
+        <script>@code</script>
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+
+
+  '```lang +name ...```':
+    'prefix': 'lia.code.block.name'
+    'body': """
+      ```${1:javascript} ${2:title.js}
+      ${3:var s = "Named JavaScript syntax highlighting";
+      alert(s);}
+      ```
+    """
+    'description': """
+      You can name your snippets by adding just after the language code. At default it will be visible, but by adding a plus (+) in front of your filename you can make this more expressable, whereby a minus (-) will hide it at first. In this way you can also group multiple files into a (executable) project.
+
+      Examples:
+
+        ```javascript    Visible.js
+        alert("Visble JavaScript file";);
+        ```
+
+        ```javascript   +Visible.js
+        alert("Also visible JavaScript file");
+        ```
+
+        ```javascript   -Hidden.js
+        alert("Hidden JavaScript file on init");
+        ```
+    """
+    'descriptionMoreURL': 'https://highlightjs.org'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+
+
+  '```lang +name ...``` <script>@code</script>':
+    'prefix': 'lia.code.block.name.js'
+    'body': """
+      ```${1:javascript}   ${2:Filename.js}
+      ${3:var s = "Named JavaScript syntax highlighting";
+      alert(s);
+      s;}
+      ```
+      <script>${4:@code}</script>
+    """
+    'description': """
+      To insert a named and executable and code snippet. The macro @code is replaced with the current user input and gets evaluated in a try and chatch block. Using javascript you can also insert interpreters to other languages or access them. In these cases you will have to change the conntent of the script tag. To get an impression about the posibilities, click on the link below.
+      The result of the script or the error are passed to a commandline like output beneath the code-block.
+
+      Example:
+
+        ```javascript   +Tile.js
+        var s = "Visible JavaScript syntax highlighting";
+        ```
+        <script>@code</script>
+
+        ```javascript   +Title.js
+        var s = "Hidden JavaScript syntax highlighting";
         ```
         <script>@code</script>
     """
@@ -85,7 +147,8 @@
       </script>
     """
     'description': """
-      To insert an executable and editable code block with syntax highlight, insert a common Markdown code block with a succeeding <script> tag. The macro @code is replaced with the current user input and gets evaluated in a try and chatch block. Using javascript you can also insert interpreters to other languages or access them. In these cases you will have to change the conntent of the script tag. To get an impression about the posibilities, click on the link below.
+      This is an extended executable version of a code block, it shows how errors can be extracted and fed back by using LiaError to show inline errors, warnings, or information.
+      If you are using a project and want to integrate more than one file into your execution, you will have to use the parametrized @code(int) macro, the integer is defined by the file order (@code defaults to 0).
 
       Example:
 
@@ -95,7 +158,7 @@
         ```
         <script>
           try{
-            eval(`@code`);
+            eval(`@code`);  // <== code to evaluate
           } catch (e) {
             var log = e.stack.match(/((.*?):(.*))\n.*?(:(\d+):(\d+)\)\n)/);
             var err_msg = new LiaError(log[1] + " =>  (" + log[4], 1);
@@ -108,75 +171,104 @@
     'leftLabelHTML': '<span style="color:#ff0">💻</span>'
 
 
-
-  'insert an executable code block':
-    'prefix': 'codx'
+  '<script>...@code...</script>':
+    'prefix': 'lia.code.js'
     'body': """
-    ``` ${1:js}
-    ${2:// see more information at:
-    let i = 0;
-    let rslt = 0;
-    for(i; i<10; i++)
-      rslt = rslt + i;
-
-    rslt;}
-    ```
-    <script>${3:@code}</script>
+      <script>
+        try{
+          eval(`@code`);
+        } catch (e) {
+          var log = e.stack.match(/((.*?):(.*))\n.*?(:(\d+):(\d+)\)\n)/);
+          var err_msg = new LiaError(log[1] + " =>  (" + log[4], 1);
+          err_msg.add_detail(0, log[3], "error", log[5]-1, log[6]);
+          throw err_msg;
+        }
+      </script>
     """
+    'description': """
+      This is an extended executable version of a code block, it shows how errors can be extracted and fed back by using LiaError to show inline errors, warnings, or information.
+      If you are using a project and want to integrate more than one file into your execution, you will have to use the parametrized @code(int) macro, the integer is defined by the file order (@code defaults to 0).
 
-  'insert an executable with JavaScript error handling':
-    'prefix': 'codjs'
+      Example:
+
+        <script>
+          try{
+            eval(`@code`); // code to be evaluated
+          } catch (e) {
+            // do some pattern matching to get the error string, the line number and column
+            var log = e.stack.match(/((.*?):(.*))\n.*?(:(\d+):(\d+)\)\n)/);
+
+            // create a new LiaError object with
+            // param1: an error message string
+            // param2: add the number of files involved as int
+            var err_msg = new LiaError(log[1] + " =>  (" + log[4], 1);
+
+            // add as many information to your error message
+            // param1: file id
+            // param2: additional information string
+            // param3: type, either "error", "info", or "warning"
+            // param4: line number
+            // param5: column number
+            err_msg.add_detail(0, log[3], "error", log[5]-1, log[6]);
+
+            throw err_msg;   // finally just throw it away
+          }
+        </script>
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+
+
+  '``` ... ``` ``` ... ``` ...':
+    'prefix': 'lia.code.project'
     'body': """
-    ``` ${1:js}
-    ${2:// see more information at:
-    let i = 0;
-    let rslt = 0;
-    for(i; i<10; i++)
-      rslt = rslt + i;
+      ``` ${1:js}     ${2:-EvalScript.js}
+      ${3:let who = data.first_name + " " + data.last_name;
 
-    rslt;}
-    ```
-    <script>
-      try{
-        eval(`@code`);
-      } catch (e) {
-        var log = e.stack.match(/((.*?):(.*))\n.*?(:(\d+):(\d+)\)\n)/);
-        var err_msg = new LiaError(log[1] + " =>  (" + log[4], 1);
-        err_msg.add_detail(0, log[3], "error", log[5]-1, log[6]);
-        throw err_msg;
-      }
-    </script>
+      if(data.online) {
+        who + " is online"; \\}
+      else {
+        who + " is NOT online"; \\}}
+      ```
+      ``` ${4:json}    ${5:+Data.json}
+      ${6:{
+        "first_name" :  "Sammy",
+        "last_name"  :  "Shark",
+        "online"     :  true
+      \\}}
+      ```
+      <script>
+        ${7:// insert the JSON dataset into the local variable data
+        let data = @code(1);
+
+        // eval the script that uses this dataset
+        eval(`@code(0)`);}
+      </script>
     """
+    'description': """
+      If you want to create a project and thus seperate data and code into multiple files, simply write multiple code blocks in a sequence. To make them executable as a whole, simply add a script tag to the end and use the parametrized @code(id) macro to compose your project properly. The file id is defined by the order of code blocks.
+      See the link below to see more examples.
 
-  'insert JavaScript tag with error handling':
-    'prefix': 'codscrpt'
-    'body': """
-    <script>
-      try{
-        eval(`@code`);
-      } catch (e) {
-        var log = e.stack.match(/((.*?):(.*))\n.*?(:(\d+):(\d+)\)\n)/);
-        var err_msg = new LiaError(log[1] + " =>  (" + log[4], 1);
-        err_msg.add_detail(0, log[3], "error", log[5]-1, log[6]);
-        throw err_msg;
-      }
-    </script>
+      Example:
+
+        ``` js     -EvalScript.js
+        let who = data.first_name + " " + data.last_name;
+
+        if(data.online) { who + " is online"; }
+        else            { who + " is NOT online"; }
+        ```
+        ``` json    +Data.json
+        { "first_name" :  "Sammy",
+          "last_name"  :  "Shark",
+          "online"     :  true   }
+        ```
+        <script>
+          // insert the JSON dataset into the local variable data
+          let data = @code(1);
+
+          // eval the script that uses this dataset
+          eval(`@code(0)`);
+        </script>
     """
-
-  'insert a code project':
-    'prefix': 'codp'
-    'body': """
-    ``` ${1:js}     ${2:-Script.js}
-    ${3:var json = @code(1);
-
-    `${json.first_name} ${json.last_name} is${json.online ? "" : " not"} online`;}
-    ```
-    ``` ${4:json}     ${5:+Data.json}
-    {
-      "first_name"  :  "Sammy",
-      "last_name"   :  "Shark",
-      "online"      :  true
-    }
-    ```
-    <script>@code(0)</script>
-    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
