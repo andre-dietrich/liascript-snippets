@@ -1,0 +1,42 @@
+'.source.gfm':
+  '1. ... 2. ... 3. ...':
+    'prefix': 'lia.list.ordered'
+    'body': """
+      1. ${1:block}
+      2. ${2:block}
+      3. ${3:block}
+    """
+    'description': """
+      Insert a Markdown ordered list, as depicetd below. Identation is important in this case.
+
+      Example:
+        1. first point
+        2. second point
+        3. some text
+
+           and some image ![image](img/point.jpg)
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">𝌆</span>'
+
+  '* ... + ... - ...':
+    'prefix': 'lia.list.unordered'
+    'body': """
+      + ${1:block}
+      + ${2:block}
+      + ${3:block}
+    """
+    'description': """
+      Insert a Markdown unordered list, as depicetd below. You can use (*+-) to begin every point. Identation is important in this case.
+
+      Example:
+        * first point
+        + second point
+        - some text
+
+          and some image ![image](img/point.jpg)
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">𝌆</span>'
+
+𝌆
