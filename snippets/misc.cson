@@ -15,7 +15,7 @@
 
         ---------------------------------------------
     """
-    'descriptionMoreURL': 'http://www.google.de'
+    'descriptionMoreURL': 'https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet'
     'leftLabelHTML': '<span style="color:#ff0">📏</span>'
 
 

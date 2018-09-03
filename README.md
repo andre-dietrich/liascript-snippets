@@ -80,3 +80,34 @@ liaeffect
 ### ffff
 
 *test*
+
+## project
+<!--
+language: de
+-->
+
+``` js     -EvalScript.js
+var who = data.first_name + " " + data.last_name;
+
+if(data.online) {
+  who + " is online"; }
+else {
+  who + " is NOT online"; }
+```
+``` json    +Data.json
+{
+  "first_name" :  "Sammy",
+  "last_name"  :  "Shark",
+  "online"     :  true
+}
+```
+<script>
+  // insert the JSON dataset into the local variable data
+  let data = @code(1);
+
+  // eval the script that uses this dataset
+  eval(`@code(0)`);
+</script>
+
+
+liaini
