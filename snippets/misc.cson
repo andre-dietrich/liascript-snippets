@@ -1,7 +1,7 @@
 '.source.gfm':
 
   '---':
-    'prefix': 'lia.line.horizontal'
+    'prefix': 'lia.horizontal.line'
     'body': '----------------------\n'
     'description': """
       Horizontal lines are relaized by adding at least 3 hyphens in a row (---), but more hyphens look a little bit nicer ;)
