@@ -1,113 +1,44 @@
-# Test
+# Liascript-Snippets
+
+A snippet-plugin for easing the development of online courses with [LiaScript](https://LiaScript.github.io), and extended Markdown notation.
+
+https://atom.io/packages/liascript-snippets
+
+## Install
 
 
-| Header 1   | Header 2   | Header 3   | Header 4   |
-| :--------- | :--------- | :--------- | :--------- |
-| Item 1     | Item 2     | Item 3     | Item 4     |
+### Command Line
 
-s
+Install Atom 1.22 or newer
 
-[[ ]] Add asdfasasdafdfas many elements as you want?
-[[X]] The X marks the correct answer!
-[[ ]] ... this is wrong ...
-[[X]] ... this has to be selected too ...
-[[X]] not so good
-[[?]] give a *hint1*
-[[?]] give a *hint2*
-[[?]] give a *hint3*
-****************************************
+In the terminal, install the package via apm:
 
-Add a solution explanation __Markdown__!
+    `apm install liascript-snippets`
 
-****************************************
+### GUI
 
-![$name:1]($link:2)
+1. Install Atom 1.22 or newer
+2. Launch Atom
+3. Open Settings View using Cmd+, on macOS or Ctrl+, on other platforms
+4. Click the Install tab on the left side
+5. Enter `liascript-snippets` in the search box and press Enter
+6. Click the "Install" button that appears
 
+## Features
 
-
-## test
-
- this is a text [^1] asfdas
- and this is an [^2](inliner)
+1. Start typing **lia** in your markdown document to see the extenden help, that
+   can be explored via fuzzy-searching. Hit Tab for inserting your selected
+   snippet.
+2. To ease the voice selection for different narrators, start typing **voice**
+   and search through all possible voice settings.
 
 
-[^1]: this is a simple footer
+![screencast](./preview.gif)<!--width= "100%" -->
 
-          https://de.wikipedia.org/wiki/Fundamentalsatz_der_Analysis
+## Related Projects
 
+It is recommended to install also:
 
-liafor
+[liascript-preview](https://atom.io/packages/liascript-preview)
 
-f⟮x⟯  π²
-
-_aZz_
-
-lia
-
-liacod
-liatext
-
- 〈/〉
-
- 🤯
-liacod
- ‹/›
-
-rts 🧠 👁 👀 👂 👃 👄 🗢 👅 🦵 🦶 🦴 🦷
-Speech Bubbles
-💬 💭 🗨 🗩 🗪 🗫 🗬 🗭 🗮 🗯 🗰 🗱
-Emote and Misc
-💢 💦 💧
-💫 💤 💥 💨 💪 🗲
-
-👾 🛸
-
-
-liatext
-𝑓⟮𝑥⟯
-🏛 CLASSICAL BUILDING  ⊞⊟㏀目
-
-liatex 𝐚
-
-vouk
-
-vouk👾 Alien Monster
-
-
-lia
-liaeffect
-
-### ffff
-
-*test*
-
-## project
-<!--
-language: de
--->
-
-``` js     -EvalScript.js
-var who = data.first_name + " " + data.last_name;
-
-if(data.online) {
-  who + " is online"; }
-else {
-  who + " is NOT online"; }
-```
-``` json    +Data.json
-{
-  "first_name" :  "Sammy",
-  "last_name"  :  "Shark",
-  "online"     :  true
-}
-```
-<script>
-  // insert the JSON dataset into the local variable data
-  let data = @code(1);
-
-  // eval the script that uses this dataset
-  eval(`@code(0)`);
-</script>
-
-
-liaini
+A previewer plugin that renders your course directly within the Atom IDE.
