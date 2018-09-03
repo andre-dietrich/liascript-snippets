@@ -1,28 +1,103 @@
 '.source.gfm':
-  'insert a liascript main-header':
-    'prefix': 'hea'
+  '<!-- name: ...':
+    'prefix': 'lia.header.main'
     'body': """
-    <!--
-    author:   ${1:Your Name}
-    email:    ${2:your@email.ya}
-    version:  ${3:1.0.0}
-    language: ${4:en}
-    narrator: ${5:US English Female}
+      <!--
+      author:   ${1:Your Name}
+      email:    ${2:your@email.com}
+      version:  ${3:0.1.0}
+      language: ${4:en}
+      narrator: ${5:US English Female}
 
-    comment:  ${6:This simple description of your course.
-              Multiline is also okay.}
+      comment:  ${6:This simple description of your course.
+                Multiline is also okay.}
 
-    script:   ${7:https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js}
+      link:     ${7:https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css}
 
-    translation: ${8:Français}  ${9:translations/French.md}
-    -->
+      script:   ${8:https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js}
+
+      ${9:translation: Français translations/French.md}
+      -->
     """
-  'insert single line macro definition':
-    'prefix': 'mcs'
-    'body': '@${1:name}: ${2:^__@0__^}'
-  'insert multiline macro definition':
-    'prefix': 'mcm'
+    'description': """
+        The main header is a comment of the following format. You can use it to define defaults, such as authors, emails, where to find translations, what javascript and styles should be loaded additionally, as well as the language of your course.
+        You can change some of these settings within a sub-header for each section individually.
+
+        Default:
+            language: (en) | de | ua
+            narrator: US English Male
+
+        Example:
+
+            <!--
+            author:   Your Name
+            email:    your@email.com
+            version:  0.1.0
+            language: en
+            narrator: US English Female
+
+            comment:  This simple description of your course.
+                      Multiline is also okay.
+
+            link:     https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css
+                      https://...
+
+            script:   https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js
+                      https://...
+
+            translation: Français translations/French.md
+            translation: 日本語    translations/Japanese.md
+            -->
+
+            # Course ...
+
+      And you can refer to these values via the system macros:
+
+          @author
+          @email
+          @version
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">📄</span>'
+
+
+  '<!-- name: ... -->':
+    'prefix': 'lia.header.section'
     'body': """
-    @${1:name}
-    ${2:body}
-    @end"""
+      <!--
+      author:   ${1:Section Author}
+      email:    ${2:section.author@email.com}
+      version:  ${3:0.1.0}
+      narrator: ${4:UK English Female}
+
+      link:     ${5:https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css}
+
+      script:   ${6:https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js}
+      -->
+    """
+    'description': """
+        You can overwrite some of the main header settings as it is listed below. Just attach a comment to the section title and overwrite only those settings, that are relevant to you.
+
+        Example:
+
+            ...
+            # Course
+            ...
+            ## Section
+            <!--
+            narrator: Australian Female
+            -->
+            ...
+            ### Sub Section
+            <!--
+            author:   Section Author
+            email:    section.author@email.com
+            version:  0.1.0
+            narrator: Australian Female
+
+            link:     https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css
+            script:   https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js
+            -->
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">📄</span>'
