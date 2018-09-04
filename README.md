@@ -33,6 +33,8 @@ In the terminal, install the package via apm:
    and search through all possible voice settings.
 
 
+**Screencast Lisascript-snippets and -preview**
+
 ![screencast](./preview.gif)<!--width= "100%" -->
 
 ## Related Projects
@@ -42,3 +44,10 @@ It is recommended to install also:
 [liascript-preview](https://atom.io/packages/liascript-preview)
 
 A previewer plugin that renders your course directly within the Atom IDE.
+
+## Recommended Projects
+
+Since unicode is supported, you can also use any kind of Emoji, so installing
+the following project is recomended...
+
+https://atom.io/packages/autocomplete-emojis
