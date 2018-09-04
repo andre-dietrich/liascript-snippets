@@ -2,13 +2,12 @@
   "name": "liascript-snippets",
   "main": "./lib/liascript-snippets",
   "version": "0.1.0",
-  "description": "A short description of your package",
+  "description": "A collection of snippets for the LiaScript Markdown language...",
   "keywords": [
   ],
   "activationCommands": {
-    "atom-workspace": "liascript-snippets:toggle"
   },
-  "repository": "https://github.com/atom/liascript-snippets",
+  "repository": "https://github.com/andre-dietrich/liascript-snippets",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
