@@ -13,7 +13,7 @@
     'prefix': 'lia.macro.input'
     'body': '@input'
     'description': """
-      Use this only in conjuction with executable code and projects. This macro can only be used in a script tag and gets replaced by the current user input.
+      Use this only in conjuction with executable code and projects or with quizzes. This macro can only be used in a script tag and gets replaced by the current user input.
       To refer to the inputs in a project, use the parametrized macro:
 
         @input(0)   <== equal to @input
@@ -39,13 +39,6 @@
     'description': """
       Gets replaced by the email defined in the header.
     """
-    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
-    'leftLabelHTML': '<span style="color:#ff0">🛠</span>'
-
-
-  '@input':
-    'prefix': 'lia.macro.input'
-    'body': '@input'
     'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
     'leftLabelHTML': '<span style="color:#ff0">🛠</span>'
 
