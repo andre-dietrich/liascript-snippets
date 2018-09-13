@@ -20,7 +20,7 @@
       [[${1:solution}]]
       <script>
         ${2:// @input will be replace by the user input
-        let input_string = @input;
+        let input_string = "@input";
         "solution" == input_string.trim().toLowerCase();}
       </script>
     """
@@ -32,7 +32,7 @@
 
         [[blue]]
         <script>
-          let input_string = @input;
+          let input_string = "@input";
           "BLUE" == input_string.trim().toUpperCase();
         </script>
     """
@@ -223,7 +223,7 @@
       <script>
         ${1:// @input gets replaced by the current quiz input.
         // In case of a:
-        // * text input -> "string"
+        // * text input -> string, that has to be encapsulated with (")
         // * single choice -> int (-1, if nothing is selected)
         // * multiple choice -> array int (0 unchecked, 1 checked)
         let input = @input;
@@ -237,7 +237,7 @@
       <script>
         // @input gets replaced by the current quiz input.
         // In case of a:
-        // * text input -> "string"
+        // * text input -> string, that has to be encapsulated with (")
         // * single choice -> int (-1, if nothing is selected)
         // * multiple choice -> array int (0 unchecked, 1 checked)
         let input = @input;

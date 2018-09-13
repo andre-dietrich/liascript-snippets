@@ -31,7 +31,7 @@ alert(s);
 ```
 <script>
   try{
-    eval(`@code`);
+    eval(`@input`);
   } catch (e) {
     var log = e.stack.match(/((.*?):(.*))\n.*?(:(\d+):(\d+)\)\n)/);
     var err_msg = new LiaError(log[1] + " =>  (" + log[4], 1);

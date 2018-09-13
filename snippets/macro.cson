@@ -9,15 +9,15 @@
     'leftLabelHTML': '<span style="color:#ff0">🛠</span>'
 
 
-  '@code':
-    'prefix': 'lia.macro.code'
-    'body': '@code'
+  '@input':
+    'prefix': 'lia.macro.input'
+    'body': '@input'
     'description': """
       Use this only in conjuction with executable code and projects. This macro can only be used in a script tag and gets replaced by the current user input.
       To refer to the inputs in a project, use the parametrized macro:
 
-        @code(0)   <== equal to @code
-        @code(1)
+        @input(0)   <== equal to @input
+        @input(1)
     """
     'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
     'leftLabelHTML': '<span style="color:#ff0">🛠</span>'
@@ -120,7 +120,7 @@
         evalJS
         <script>
           try{
-            eval(`@code`);
+            eval(`@input`);
           } catch (e) {
             var log = e.stack.match(/((.*?):(.*))\n.*?(:(\d+):(\d+)\)\n)/);
             var err_msg = new LiaError(log[1] + " =>  (" + log[4], 1);
