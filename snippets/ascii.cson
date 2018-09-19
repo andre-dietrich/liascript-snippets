@@ -1,0 +1,61 @@
+'.source.gfm':
+
+  '```` /--=... `````':
+    'prefix': 'lia.ascii.example'
+    'body': """
+      ``````````````````````````````````````````````````
+      ${1:                             .--->  F
+          A       B     C   D     /
+          *-------*-----*---*----*----->  E
+                   \            ^ \
+                    v          /   '--->  G
+                     B --> C -'}
+      ``````````````````````````````````````````````````
+    """
+    'description': """
+      Add ASCII art drawings, sketches, or what ever you want, simply by enclosint it with at least four backtics (````).
+
+      Examples:
+
+        `````````````````````````````````
+                                 .--->  F
+        A       B     C   D     /
+        *-------*-----*---*----*----->  E
+                 \            ^ \
+                  v          /   '--->  G
+                   B --> C -'
+        `````````````````````````````````
+    """
+    'descriptionMoreURL': 'https://github.com/ivanceras/svgbob'
+    'leftLabelHTML': '<span style="color:#ff0">⌨</span>'
+
+  '<!-- style ... --> ```` /--=... `````':
+    'prefix': 'lia.ascii.example.css'
+    'body': """
+      <!-- style="display: block; margin-left: auto; margin-right: auto; max-width: 315px;" -->
+      ``````````````````````````````````````````````````
+      ${1:                             .--->  F
+          A       B     C   D     /
+          *-------*-----*---*----*----->  E
+                   \            ^ \
+                    v          /   '--->  G
+                     B --> C -'}
+      ``````````````````````````````````````````````````
+    """
+    'description': """
+      Add styling to your ASCII art drawings, sketches. Set the maximum size or center it.
+
+      Examples:
+
+        <!-- style="display: block; margin-left: auto; margin-right: auto; max-width: 315px;" -->
+        ``````````````````````````````````````````````````
+        ${1:                             .--->  F
+            A       B     C   D     /
+            *-------*-----*---*----*----->  E
+                     \            ^ \
+                      v          /   '--->  G
+                       B --> C -'}
+        ``````````````````````````````````````````````````
+    """
+    'descriptionMoreURL': 'https://github.com/ivanceras/svgbob'
+    'leftLabelHTML': '<span style="color:#ff0">⌨</span>'
