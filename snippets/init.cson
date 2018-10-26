@@ -151,7 +151,7 @@
         series: [[5, 2, 8, 3]]
       });
       ```
-      <script>@code</script>
+      <script>@input</script>
 
       <div class="ct-chart ct-golden-section" id="chart1"></div>
       <div class="ct-chart ct-golden-section" id="chart2"></div>
@@ -178,10 +178,10 @@
       ```
       <script>
         // insert the JSON dataset into the local variable data
-        let data = @code(1);
+        let data = @input(1);
 
         // eval the script that uses this dataset
-        eval(`@code(0)`);
+        eval(`@input(0)`);
       </script>
 
       ## More
