@@ -1,4 +1,4 @@
-'.source.gfm':
+'.source.gfm, .text.md':
   '[[solution]]':
     'prefix': 'lia.quiz.text'
     'body': '[[${1:solution}]]'

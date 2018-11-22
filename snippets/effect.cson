@@ -1,4 +1,4 @@
-'.source.gfm':
+'.source.gfm, .text.md':
   '{number}{element}':
     'prefix': 'lia.effect.inline'
     'body': '{${1:number}}{${2:__element__}}'

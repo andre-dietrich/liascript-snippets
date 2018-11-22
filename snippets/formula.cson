@@ -1,4 +1,4 @@
-'.source.gfm':
+'.source.gfm, .text.md':
   '$ f(x) = (x^2+5)^3 $':
     'prefix': 'lia.formula.inline'
     'body': '$ ${1:f(a,b,c) = (a^2+b^2+c^2)^3} $'

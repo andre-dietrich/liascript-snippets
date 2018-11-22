@@ -1,4 +1,4 @@
-'.source.gfm':
+'.source.gfm, .text.md':
 
   '---':
     'prefix': 'lia.horizontal.line'
