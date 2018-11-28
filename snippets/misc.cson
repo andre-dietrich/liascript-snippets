@@ -41,7 +41,7 @@
     'prefix': 'lia.title.1'
     'body': '# ${1:Main Title}\n'
     'description': """
-      As in common Markdown, a document is segregated into different parts by its titles. A title starts with hash-tag (#) that is followed by an head-line. The number of subsequent hash-tags defines the order.
+      As in common Markdown, a document is segregated into different parts by its titles. A title starts with hash-tag (#) that is followed by an head-line. The number of subsequent hash-tags defines the order. It is furthermore possible to overwrite some of the definitions from the main header, see more information on this by typing "liaheadersection" ...
 
       Example:
         # Main Title
@@ -49,6 +49,13 @@
         ...
 
         ## Chapter Title
+        <!--
+        comment: This comment is only for demonstrating purposes
+                 and will be overwritten within the next slide...
+
+        author:  New Author
+        email:   notmain@email.com
+        -->
 
         ...
 
@@ -66,7 +73,7 @@
     'prefix': 'lia.title.2'
     'body': '## ${1:Chapter Title}\n'
     'description': """
-      As in common Markdown, a document is segregated into different parts by its titles. A title starts with hash-tag (#) that is followed by an head-line. The number of subsequent hash-tags defines the order.
+      As in common Markdown, a document is segregated into different parts by its titles. A title starts with hash-tag (#) that is followed by an head-line. The number of subsequent hash-tags defines the order. It is furthermore possible to overwrite some of the definitions from the main header, see more information on this by typing "liaheadersection" ...
 
       Example:
         # Main Title
@@ -74,6 +81,13 @@
         ...
 
         ## Chapter Title
+        <!--
+        comment: This comment is only for demonstrating purposes
+                 and will be overwritten within the next slide...
+
+        author:  New Author
+        email:   notmain@email.com
+        -->
 
         ...
 
@@ -91,7 +105,7 @@
     'prefix': 'lia.title.3'
     'body': '### ${1:Section Title}\n'
     'description': """
-      As in common Markdown, a document is segregated into different parts by its titles. A title starts with hash-tag (#) that is followed by an head-line. The number of subsequent hash-tags defines the order.
+      As in common Markdown, a document is segregated into different parts by its titles. A title starts with hash-tag (#) that is followed by an head-line. The number of subsequent hash-tags defines the order. It is furthermore possible to overwrite some of the definitions from the main header, see more information on this by typing "liaheadersection" ...
 
       Example:
         # Main Title
@@ -99,6 +113,13 @@
         ...
 
         ## Chapter Title
+        <!--
+        comment: This comment is only for demonstrating purposes
+                 and will be overwritten within the next slide...
+
+        author:  New Author
+        email:   notmain@email.com
+        -->
 
         ...
 
@@ -116,7 +137,7 @@
     'prefix': 'lia.title.4'
     'body': '#### ${1:SubSection Title}\n'
     'description': """
-      As in common Markdown, a document is segregated into different parts by its titles. A title starts with hash-tag (#) that is followed by an head-line. The number of subsequent hash-tags defines the order.
+      As in common Markdown, a document is segregated into different parts by its titles. A title starts with hash-tag (#) that is followed by an head-line. The number of subsequent hash-tags defines the order. It is furthermore possible to overwrite some of the definitions from the main header, see more information on this by typing "liaheadersection" ...
 
       Example:
         # Main Title
@@ -124,6 +145,13 @@
         ...
 
         ## Chapter Title
+        <!--
+        comment: This comment is only for demonstrating purposes
+                 and will be overwritten within the next slide...
+
+        author:  New Author
+        email:   notmain@email.com
+        -->
 
         ...
 
@@ -141,7 +169,7 @@
     'prefix': 'lia.title.5'
     'body': '##### ${1:Paragraph Title}\n'
     'description': """
-      As in common Markdown, a document is segregated into different parts by its titles. A title starts with hash-tag (#) that is followed by an head-line. The number of subsequent hash-tags defines the order.
+      As in common Markdown, a document is segregated into different parts by its titles. A title starts with hash-tag (#) that is followed by an head-line. The number of subsequent hash-tags defines the order. It is furthermore possible to overwrite some of the definitions from the main header, see more information on this by typing "liaheadersection" ...
 
       Example:
         # Main Title
@@ -149,6 +177,13 @@
         ...
 
         ## Chapter Title
+        <!--
+        comment: This comment is only for demonstrating purposes
+                 and will be overwritten within the next slide...
+
+        author:  New Author
+        email:   notmain@email.com
+        -->
 
         ...
 
@@ -166,7 +201,7 @@
     'prefix': 'lia.title.6'
     'body': '##### ${1:SubParagraph Title}\n'
     'description': """
-      As in common Markdown, a document is segregated into different parts by its titles. A title starts with hash-tag (#) that is followed by an head-line. The number of subsequent hash-tags defines the order.
+      As in common Markdown, a document is segregated into different parts by its titles. A title starts with hash-tag (#) that is followed by an head-line. The number of subsequent hash-tags defines the order. It is furthermore possible to overwrite some of the definitions from the main header, see more information on this by typing "liaheadersection" ...
 
       Example:
         # Main Title
@@ -174,6 +209,13 @@
         ...
 
         ## Chapter Title
+        <!--
+        comment: This comment is only for demonstrating purposes
+                 and will be overwritten within the next slide...
+
+        author:  New Author
+        email:   notmain@email.com
+        -->
 
         ...
 
