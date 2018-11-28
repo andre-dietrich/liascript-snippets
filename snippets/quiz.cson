@@ -44,7 +44,7 @@
     'prefix': 'lia.quiz.single.choice'
     'body': '[(${1: })] ${2:enter your text}'
     'description': """
-      Compose your single choice quizzes out of many lines in the following format:.
+      Compose your single choice quizzes out of many lines in the following format:
 
       Example:
         This is a single choice quiz with three options:
@@ -60,7 +60,7 @@
     'prefix': 'lia.quiz.multiple.choice'
     'body': '[[${1: }]] ${2:enter your text}'
     'description': """
-      Compose your multiple choice quizzes out of many lines in the following format:.
+      Compose your multiple choice quizzes out of many lines in the following format:
 
       Example:
         This is a multiple choice quiz with four options:
@@ -77,7 +77,7 @@
     'prefix': 'lia.quiz.hint'
     'body': '[[?]] ${1:enter your hint}'
     'description': """
-      If a quiz might be a bit tricka, you can add hints directly after any type of quiz and as many hints as you want. The user can decide wheather he or she wants to use it, simply by clicking on the additional question mark, that appears after the check button.
+      If a quiz might be a bit tricky, you can add hints directly after any type of quiz and as many hints as you want. The user can decide whether he or she wants to use it, simply by clicking on the additional question mark, that appears after the check button.
 
       Example:
         This is a text quiz with two hints:
@@ -174,7 +174,7 @@
       <script>
         // @input gets replaced by an array in the
         // form of [0,0,0,1], whereby 0 and 1
-        // define wheather a checkbox is checked
+        // define whether a checkbox is checked
         // or not...
         let input_array = @input;
         ${1:input_array = JSON.stringify(input_array);
@@ -202,7 +202,7 @@
         <script>
           // @input gets replaced by an array in the
           // form of [0,0,0,1], whereby 0 and 1
-          // define wheather a checkbox is checked
+          // define whether a checkbox is checked
           // or not...
           let input_array = @input;
           input_array = JSON.stringify(input_array);
@@ -297,7 +297,7 @@
       </script>
     """
     'description': """
-      In some realy realy rare cases, you might want to have something completely different and analyse some other html or code inputs (unit testing). In this case you can apply this generic tag and do in javascript whatever you want. The this quiz is solved if the script gets evaluated to true, not solved by resulting in false (everything else is ignored).
+      In some rarely rarely rare cases, you might want to have something completely different and analyze some other HTML or code inputs (unit testing). In this case you can apply this generic tag and do in JavaScript whatever you want. The this quiz is solved if the script gets evaluated to true, not solved by resulting in false (everything else is ignored).
 
       *Click Me!*<!-- onclick="window['rand'] = Math.random();" -->
 

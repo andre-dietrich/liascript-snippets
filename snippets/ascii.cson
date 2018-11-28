@@ -13,7 +13,7 @@
       ``````````````````````````````````````````````````
     """
     'description': """
-      Add ASCII art drawings, sketches, or what ever you want, simply by enclosint it with at least four backtics (````).
+      Add ASCII art drawings, sketches, or what ever you want, simply by enclosing it with at least four back tics (````).
 
       Examples:
 

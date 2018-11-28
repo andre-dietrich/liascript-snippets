@@ -37,7 +37,7 @@
 
       ## Markdown
 
-      You can use common [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) syntax to create your cours, such as:
+      You can use common [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) syntax to create your course, such as:
 
       1. Lists
       2. ordered or
@@ -89,12 +89,12 @@
 
       <!-- class = "animated rollIn" style = "animation-delay: 2s; color: purple" -->
       The whole text-block should appear in purple color and with a wobbling effect.
-      Which is a **bad** example, please use it with causion ...
+      Which is a **bad** example, please use it with caution ...
       ~~ only this is red ;-) ~~ <!-- class = "animated infinite bounce" style = "color: red;" -->
 
       ## Charts
 
-      User ASCII-Art to draw diagrams:
+      Use ASCII-Art to draw diagrams:
 
                                           Multiline
           1.9 |    DOTS
@@ -119,7 +119,7 @@
 
       ### Multiple Choice
 
-      Just add as many points as you whish:
+      Just add as many points as you wish:
 
           [[X]] Only the **X** marks the correct point.
           [[ ]] Empty ones are wrong.
@@ -127,7 +127,7 @@
 
       ### Single Choice
 
-      Just add as many points as you whish:
+      Just add as many points as you wish:
 
           [( )] ...
           [(X)] <-- Only the **X** is allowed.
@@ -135,8 +135,7 @@
 
       ## Executable Code
 
-      A drawing example, for demonstrating that any javascript library can be used,
-      also for drawing.
+      A drawing example, for demonstrating that any JavaScript library can be used, also for drawing.
 
       ```javascript
       // Initialize a Line chart in the container with the ID chart1

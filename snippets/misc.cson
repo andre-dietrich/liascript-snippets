@@ -4,7 +4,7 @@
     'prefix': 'lia.horizontal.line'
     'body': '----------------------\n'
     'description': """
-      Horizontal lines are relaized by adding at least 3 hyphens in a row (---), but more hyphens look a little bit nicer ;)
+      Horizontal lines are realized by adding at least 3 hyphens in a row (---), but more hyphens look a little bit nicer ;)
 
       Example:
         This is a horizontal line:
@@ -26,12 +26,12 @@
       Insert single line quotes or quote blocks just with the help of a starting (>).
 
       Example:
-        > Blockquotes are very handy in email to emulate reply text.
+        > Block-quotes are very handy in email to emulate reply text.
         > This line is part of the same quote.
 
         Quote break.
 
-        > This is a very long line that will still be quoted properly when it wraps. Oh boy let's keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can *put* **Markdown** into a blockquote.
+        > This is a very long line that will still be quoted properly when it wraps. Oh boy let's keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can *put* **Markdown** into a block-quote.
     """
     'descriptionMoreURL': 'https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet'
     'leftLabelHTML': '<span style="color:#ff0">📌</span>'

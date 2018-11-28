@@ -89,21 +89,21 @@
       [         ] ${6:text}
     """
     'description': """
-      A list of single choice surveys can be defined as depiceted below. Either numbers have to be put into parentheses or variable names that start with a colon (:). They do not have to be ordered and the number is also variable.
+      A list of single choice surveys can be defined as depicted below. Either numbers have to be put into parentheses or variable names that start with a colon (:). They do not have to be ordered and the number is also variable.
 
       Example:
 
         Give marks:
 
             [(-1)(0)(1)]
-            [          ] liaScript is great?
+            [          ] LiaScript is great?
             [          ] I would use it to make online **courses**?
             [          ] I would use it for online **surveys**?
 
         What is your opinion:
 
             [(:agree)(:unsure)(:maybe not so)]
-            [                                ] liaScript is great?
+            [                                ] LiaScript is great?
             [                                ] I would use it to make online **courses**?
             [                                ] I would use it for online **surveys**?
     """
@@ -120,21 +120,21 @@
       [         ] ${6:text}
     """
     'description': """
-      A list of multiple choice surveys can be defined as depiceted below. Either numbers have to be put into parentheses or variable names that start with a colon (:). They do not have to be ordered and the number is also variable.
+      A list of multiple choice surveys can be defined as depicted below. Either numbers have to be put into parentheses or variable names that start with a colon (:). They do not have to be ordered and the number is also variable.
 
       Example:
 
         Give marks:
 
             [[-1][0][1]]
-            [          ] liaScript is great?
+            [          ] LiaScript is great?
             [          ] I would use it to make online **courses**?
             [          ] I would use it for online **surveys**?
 
         What is your opinion:
 
             [[:agree][:unsure][:maybe not so]]
-            [                                ] liaScript is great?
+            [                                ] LiaScript is great?
             [                                ] I would use it to make online **courses**?
             [                                ] I would use it for online **surveys**?
     """

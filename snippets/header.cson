@@ -20,11 +20,11 @@
       -->
     """
     'description': """
-        The main header is a comment of the following format. You can use it to define defaults, such as authors, emails, where to find translations, what javascript and styles should be loaded additionally, as well as the language of your course.
+        The main header is a comment of the following format. You can use it to define defaults, such as authors, emails, where to find translations, what JavaScript and styles should be loaded additionally, as well as the language of your course.
         You can change some of these settings within a sub-header for each section individually.
 
         Default:
-            language: (en) | de | ua
+            language: (en) | de | ua | fa | hy | bg
             narrator: US English Male
 
         Example:
@@ -76,7 +76,7 @@
       -->
     """
     'description': """
-        You can overwrite some of the main header settings as it is listed below. Just attach a comment to the section title and overwrite only those settings, that are relevant to you.
+        You can overwrite some main header settings as it is listed below. Just attach a comment to the section title and overwrite only those settings, that are relevant to you.
 
         Example:
 

@@ -5,7 +5,7 @@
     'description': """
       Links can be added in many ways to a document (relative or absolute), either in common Markdown style by enclosed brackets ([]) and parentheses (()), or directly if it starts with http or www and matches the common url pattern.
       If you want to navigate within the current document, use hash tag and the number of the slide.
-      And you can add additional html and css options by adding a traling comment.
+      And you can add additional html and css options by adding a trailing comment.
 
       Examples:
         [LiaScript](https://liascript.github.io)
@@ -103,7 +103,7 @@
     'prefix': 'lia.movie'
     'body': '!?[${1:alt-text}](${2:movie-url})'
     'description': """
-      Include movies is like combining images and sound by a starting exclamation mark followed by an question mark (!?) as depicted below. Paths can either be absolute or relative, YouTube can be directly included via the its iframe url. You can add also styles, classes, or any other allowed options to it simply by appending a comment tag.
+      Include movies is like combining images and sound by a starting exclamation mark followed by a question mark (!?) as depicted below. Paths can either be absolute or relative, YouTube can be directly included via its iframe-url. You can add also styles, classes, or any other allowed options to it simply by appending a comment tag.
 
       Example:
 

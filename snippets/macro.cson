@@ -13,8 +13,8 @@
     'prefix': 'lia.macro.input'
     'body': '@input'
     'description': """
-      Use this only in conjuction with executable code and projects or with quizzes. This macro can only be used in a script tag and gets replaced by the current user input.
-      To refer to the inputs in a project, use the parametrized macro:
+      Use this only in conjunction with executable code and projects or with quizzes. This macro can only be used in a script tag and gets replaced by the current user input.
+      To refer to the inputs in a project, use the parameterized macro:
 
         @input(0)   <== equal to @input
         @input(1)
@@ -57,7 +57,7 @@
     'prefix': 'lia.macro.uid'
     'body': '@uid'
     'description': """
-      Generates a uid that can be used to name tags uniqely.
+      Generates a UID that can be used to name tags uniquely.
     """
     'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
     'leftLabelHTML': '<span style="color:#ff0">🛠</span>'
@@ -77,7 +77,7 @@
     'prefix': 'lia.macro.definition.line'
     'body': '@${1:name}: ${2:line}'
     'description': """
-      Use macros to deal with repetitive task and to make the document more readable. You can define your own macros within the main and section headers. Start your macro with an (@) sign and give it a name. Separate the name from the body with a colon (:). If you want to parametrize your macro, use @0, @1, ... for the parameter id. It is a simple string substitution mechanism, and the parameters are seperate by a comma (,). If you have commas in your parameters, then use back-tics (`) to enclose this parameter. And tripple back-tics (```) to enclose multiline parameters.
+      Use macros to deal with repetitive task and to make the document more readable. You can define your own macros within the main and section headers. Start your macro with an (@) sign and give it a name. Separate the name from the body with a colon (:). If you want to parameterize your macro, use @0, @1, ... for the parameter id. It is a simple string substitution mechanism, and the parameters are separated by a comma (,). If you have commas in your parameters, then use back-tics (`) to enclose this parameter. And triple back-tics (```) to enclose multi-line parameters.
 
       Example:
 
@@ -104,7 +104,7 @@
       @end
     """
     'description': """
-      Use macros to deal with repetitive task and to make the document more readable. Multiline macros start with an (@your_name) and end with (@end). Parameters can also be passed as to single line macros.
+      Use macros to deal with repetitive task and to make the document more readable. Multi-line macros start with an (@your_name) and end with (@end). Parameters can also be passed as to single line macros.
 
       Example:
 
@@ -146,7 +146,7 @@
       ```
     """
     'description': """
-      If you have a more complex multiline macro definition, you can also use the following style so that it gets rendered at least in a readable manner by github for example. Thus, you can place your macro call into a code block, the first language parameter gets ignored and on the first line, the macro call has to be defined, whereby the following elements within the block are passed as the last multiline parameter to that call.
+      If you have a more complex multi-line macro definition, you can also use the following style so that it gets rendered at least in a readable manner by Github for example. Thus, you can place your macro call into a code block, the first language parameter gets ignored and on the first line, the macro call has to be defined, whereby the following elements within the block are passed as the last multi-line parameter to that call.
 
       Example:
 

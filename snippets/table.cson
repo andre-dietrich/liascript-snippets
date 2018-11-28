@@ -7,7 +7,7 @@
       | ${2:Item}       |
     """
     'description': """
-      There must be at least 3 dashes separating each header cell. Cells are separated by pipes (|), and you don't need to make the raw Markdown line up prettily. Hyphens (-) are used to seperate the table header from the body, whereby the colons are used to align the columns.
+      There must be at least 3 dashes separating each header cell. Cells are separated by pipes (|), and you don't need to make the raw Markdown line up prettily. Hyphens (-) are used to separate the table header from the body, whereby the colons are used to align the columns.
 
       Example:
 
@@ -29,7 +29,7 @@
       | Item 1     | Item 2     |
     """
     'description': """
-      There must be at least 3 dashes separating each header cell. Cells are separated by pipes (|), and you don't need to make the raw Markdown line up prettily. Hyphens (-) are used to seperate the table header from the body, whereby the colons are used to align the columns.
+      There must be at least 3 dashes separating each header cell. Cells are separated by pipes (|), and you don't need to make the raw Markdown line up prettily. Hyphens (-) are used to separate the table header from the body, whereby the colons are used to align the columns.
 
       Example:
 
@@ -51,7 +51,7 @@
       | Item 1     | Item 2     | Item 3     |
     """
     'description': """
-      There must be at least 3 dashes separating each header cell. Cells are separated by pipes (|), and you don't need to make the raw Markdown line up prettily. Hyphens (-) are used to seperate the table header from the body, whereby the colons are used to align the columns.
+      There must be at least 3 dashes separating each header cell. Cells are separated by pipes (|), and you don't need to make the raw Markdown line up prettily. Hyphens (-) are used to separate the table header from the body, whereby the colons are used to align the columns.
 
       Example:
 
@@ -73,7 +73,7 @@
       | Item 1     | Item 2     | Item 3     | Item 4     |
     """
     'description': """
-      There must be at least 3 dashes separating each header cell. Cells are separated by pipes (|), and you don't need to make the raw Markdown line up prettily. Hyphens (-) are used to seperate the table header from the body, whereby the colons are used to align the columns.
+      There must be at least 3 dashes separating each header cell. Cells are separated by pipes (|), and you don't need to make the raw Markdown line up prettily. Hyphens (-) are used to separate the table header from the body, whereby the colons are used to align the columns.
 
       Example:
 
@@ -95,7 +95,7 @@
       | Item 1     | Item 2     | Item 3     | Item 4     | Item 5     |
     """
     'description': """
-      There must be at least 3 dashes separating each header cell. Cells are separated by pipes (|), and you don't need to make the raw Markdown line up prettily. Hyphens (-) are used to seperate the table header from the body, whereby the colons are used to align the columns.
+      There must be at least 3 dashes separating each header cell. Cells are separated by pipes (|), and you don't need to make the raw Markdown line up prettily. Hyphens (-) are used to separate the table header from the body, whereby the colons are used to align the columns.
 
       Example:
 
@@ -117,7 +117,7 @@
       | Item 1     | Item 2     | Item 3     | Item 4     | Item 5     | Item 6     |
     """
     'description': """
-      There must be at least 3 dashes separating each header cell. Cells are separated by pipes (|), and you don't need to make the raw Markdown line up prettily. Hyphens (-) are used to seperate the table header from the body, whereby the colons are used to align the columns.
+      There must be at least 3 dashes separating each header cell. Cells are separated by pipes (|), and you don't need to make the raw Markdown line up prettily. Hyphens (-) are used to separate the table header from the body, whereby the colons are used to align the columns.
 
       Example:
 
@@ -139,7 +139,7 @@
       | Item 1     | Item 2     | Item 3     | Item 4     | Item 5     | Item 6     | Item 7     |
     """
     'description': """
-      There must be at least 3 dashes separating each header cell. Cells are separated by pipes (|), and you don't need to make the raw Markdown line up prettily. Hyphens (-) are used to seperate the table header from the body, whereby the colons are used to align the columns.
+      There must be at least 3 dashes separating each header cell. Cells are separated by pipes (|), and you don't need to make the raw Markdown line up prettily. Hyphens (-) are used to separate the table header from the body, whereby the colons are used to align the columns.
 
       Example:
 
@@ -161,7 +161,7 @@
       | Item 1     | Item 2     | Item 3     | Item 4     | Item 5     | Item 6     | Item 7     | Item 8     |
     """
     'description': """
-      There must be at least 3 dashes separating each header cell. Cells are separated by pipes (|), and you don't need to make the raw Markdown line up prettily. Hyphens (-) are used to seperate the table header from the body, whereby the colons are used to align the columns.
+      There must be at least 3 dashes separating each header cell. Cells are separated by pipes (|), and you don't need to make the raw Markdown line up prettily. Hyphens (-) are used to separate the table header from the body, whereby the colons are used to align the columns.
 
       Example:
 
@@ -183,7 +183,7 @@
       | Item 1     | Item 2     | Item 3     | Item 4     | Item 5     | Item 6     | Item 7     | Item 8     | Item 9     |
     """
     'description': """
-      There must be at least 3 dashes separating each header cell. Cells are separated by pipes (|), and you don't need to make the raw Markdown line up prettily. Hyphens (-) are used to seperate the table header from the body, whereby the colons are used to align the columns.
+      There must be at least 3 dashes separating each header cell. Cells are separated by pipes (|), and you don't need to make the raw Markdown line up prettily. Hyphens (-) are used to separate the table header from the body, whereby the colons are used to align the columns.
 
       Example:
 

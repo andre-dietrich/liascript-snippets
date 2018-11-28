@@ -7,7 +7,7 @@
       3. ${3:block}
     """
     'description': """
-      Insert a Markdown ordered list, as depicetd below. Identation is important in this case.
+      Insert a Markdown ordered list, as depicted below. Indentation is important in this case.
 
       Example:
         1. first point
@@ -27,7 +27,7 @@
       + ${3:block}
     """
     'description': """
-      Insert a Markdown unordered list, as depicetd below. You can use (*+-) to begin every point. Identation is important in this case.
+      Insert a Markdown unordered list, as depicted below. You can use (*+-) to begin every point. Indentation is important in this case.
 
       Example:
         * first point

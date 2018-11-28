@@ -45,12 +45,12 @@
       Only paragraphs are allowed!}'
     """
     'description': """
-      You can change the voice also per comment by adding it directly after the number of appearence.
+      You can change the voice also per comment by adding it directly after the number of appearance.
       Type "voice" for fuzzy searching all responsive voices or click on the link below.
 
       Example:
               --{{0 Australian Female}}--
-        I will speak with a female australian accent,
+        I will speak with a female Australian accent,
         no matter what the default language is.
 
               --{{0 Deutsch Male}}--
@@ -66,7 +66,7 @@
       <!-- --{{${1:number}}}-- ${2:Enter some **text** that gets read out aloud!} -->
     """
     'description': """
-      If you want to speak out some additional text that shal not appear in the textbook mode, then simply put your comment into a html comment tag.
+      If you want to speak out some additional text that shall not appear in the textbook mode, then simply put your comment into a HTML comment tag.
 
       Example:
         <!-- --{{2}}--
@@ -83,11 +83,11 @@
       <!-- --{{${1:number} ${2:voice}}}-- ${3:Enter some **text** that gets read out aloud!} -->
     """
     'description': """
-      If you want to speak out some additional text that shal not appear in the textbook mode and speak with another voice, then simply put your comment with a voice definition into a html comment tag.
+      If you want to speak out some additional text that shall not appear in the textbook mode and speak with another voice, then simply put your comment with a voice definition into a HTML comment tag.
 
       Example:
         <!-- --{{2 Deutsch Female}}--
-        I will speak with a german voice, but not appear
+        I will speak with a German voice, but not appear
         elsewhere within the document.
         -->
 

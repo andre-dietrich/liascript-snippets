@@ -54,8 +54,8 @@
       <script>${3:@input}</script>
     """
     'description': """
-      To insert an executable and editable code block with syntax highlight, insert a common Markdown code block with a succeeding <script> tag. The macro @input is replaced with the current user input and gets evaluated in a try and chatch block. Using javascript you can also insert interpreters to other languages or access them. In these cases you will have to change the conntent of the script tag. To get an impression about the posibilities, click on the link below.
-      The result of the script or the error are passed to a commandline like output beneath the code-block.
+      To insert an executable and editable code block with syntax highlight, insert a common Markdown code block with a succeeding <script> tag. The macro @input is replaced with the current user input and gets evaluated in a try and catch block. Using JavaScript you can also insert interpreters to other languages or access them. In these cases you will have to change the content of the script tag. To get an impression about the possibilities, click on the link below.
+      The result of the script or the error are passed to a command-line like output beneath the code-block.
 
       Example:
 
@@ -78,7 +78,7 @@
       ```
     """
     'description': """
-      You can name your snippets by adding just after the language code. At default it will be visible, but by adding a plus (+) in front of your filename you can make this more expressable, whereby a minus (-) will hide it at first. In this way you can also group multiple files into a (executable) project.
+      You can name your snippets by adding just after the language code. At default, it will be visible, but by adding a plus (+) in front of your filename you can make this more expressible, whereby a minus (-) will hide it at first. In this way you can also group multiple files into a (executable) project.
 
       Examples:
 
@@ -109,8 +109,8 @@
       <script>${4:@input}</script>
     """
     'description': """
-      To insert a named and executable and code snippet. The macro @input is replaced with the current user input and gets evaluated in a try and chatch block. Using javascript you can also insert interpreters to other languages or access them. In these cases you will have to change the conntent of the script tag. To get an impression about the posibilities, click on the link below.
-      The result of the script or the error are passed to a commandline like output beneath the code-block.
+      To insert a named and executable and code snippet. The macro @input is replaced with the current user input and gets evaluated in a try and catch block. Using JavaScript you can also insert interpreters to other languages or access them. In these cases you will have to change the content of the <script> tag. To get an impression about the possibilities, click on the link below.
+      The result of the script or the error are passed to a command-line like output beneath the code-block.
 
       Example:
 
@@ -148,7 +148,7 @@
     """
     'description': """
       This is an extended executable version of a code block, it shows how errors can be extracted and fed back by using LiaError to show inline errors, warnings, or information.
-      If you are using a project and want to integrate more than one file into your execution, you will have to use the parametrized @input(int) macro, the integer is defined by the file order (@input defaults to 0).
+      If you are using a project and want to integrate more than one file into your execution, you will have to use the parameterized @input(int) macro, the integer is defined by the file order (@input defaults to 0).
 
       Example:
 
@@ -187,7 +187,7 @@
     """
     'description': """
       This is an extended executable version of a code block, it shows how errors can be extracted and fed back by using LiaError to show inline errors, warnings, or information.
-      If you are using a project and want to integrate more than one file into your execution, you will have to use the parametrized @input(int) macro, the integer is defined by the file order (@input defaults to 0).
+      If you are using a project and want to integrate more than one file into your execution, you will have to use the parameterized @input(int) macro, the integer is defined by the file order (@input defaults to 0).
 
       Example:
 
@@ -246,7 +246,7 @@
       </script>
     """
     'description': """
-      If you want to create a project and thus seperate data and code into multiple files, simply write multiple code blocks in a sequence. To make them executable as a whole, simply add a script tag to the end and use the parametrized @input(id) macro to compose your project properly. The file id is defined by the order of code blocks.
+      If you want to create a project and thus separate data and code into multiple files, simply write multiple code blocks in a sequence. To make them executable as a whole, simply add a script tag to the end and use the parameterized @input(id) macro to compose your project properly. The file id is defined by the order of code blocks.
       See the link below to see more examples.
 
       Example:
