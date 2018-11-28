@@ -35,3 +35,153 @@
     """
     'descriptionMoreURL': 'https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet'
     'leftLabelHTML': '<span style="color:#ff0">📌</span>'
+
+
+  '# Main Title':
+    'prefix': 'lia.title.1'
+    'body': '# ${1:Main Title}\n'
+    'description': """
+      As in common Markdown, a document is segregated into different parts by its titles. A title starts with hash-tag (#) that is followed by an head-line. The number of subsequent hash-tags defines the order.
+
+      Example:
+        # Main Title
+
+        ...
+
+        ## Chapter Title
+
+        ...
+
+        ### Section __Title__
+
+        ...
+
+      It is possible to add styling elements to the titles, but this should be used only in some rare cases.
+    """
+    'descriptionMoreURL': 'https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet'
+    'leftLabelHTML': '<span style="color:#ff0">📏</span>'
+
+
+  '## Chapter Title':
+    'prefix': 'lia.title.2'
+    'body': '## ${1:Chapter Title}\n'
+    'description': """
+      As in common Markdown, a document is segregated into different parts by its titles. A title starts with hash-tag (#) that is followed by an head-line. The number of subsequent hash-tags defines the order.
+
+      Example:
+        # Main Title
+
+        ...
+
+        ## Chapter Title
+
+        ...
+
+        ### Section __Title__
+
+        ...
+
+      It is possible to add styling elements to the titles, but this should be used only in some rare cases.
+    """
+    'descriptionMoreURL': 'https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet'
+    'leftLabelHTML': '<span style="color:#ff0">📏</span>'
+
+
+  '### Section Title':
+    'prefix': 'lia.title.3'
+    'body': '### ${1:Section Title}\n'
+    'description': """
+      As in common Markdown, a document is segregated into different parts by its titles. A title starts with hash-tag (#) that is followed by an head-line. The number of subsequent hash-tags defines the order.
+
+      Example:
+        # Main Title
+
+        ...
+
+        ## Chapter Title
+
+        ...
+
+        ### Section __Title__
+
+        ...
+
+      It is possible to add styling elements to the titles, but this should be used only in some rare cases.
+    """
+    'descriptionMoreURL': 'https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet'
+    'leftLabelHTML': '<span style="color:#ff0">📏</span>'
+
+
+  '#### SubSection Title':
+    'prefix': 'lia.title.4'
+    'body': '#### ${1:SubSection Title}\n'
+    'description': """
+      As in common Markdown, a document is segregated into different parts by its titles. A title starts with hash-tag (#) that is followed by an head-line. The number of subsequent hash-tags defines the order.
+
+      Example:
+        # Main Title
+
+        ...
+
+        ## Chapter Title
+
+        ...
+
+        ### Section __Title__
+
+        ...
+
+      It is possible to add styling elements to the titles, but this should be used only in some rare cases.
+    """
+    'descriptionMoreURL': 'https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet'
+    'leftLabelHTML': '<span style="color:#ff0">📏</span>'
+
+
+  '##### Paragraph Title':
+    'prefix': 'lia.title.5'
+    'body': '##### ${1:Paragraph Title}\n'
+    'description': """
+      As in common Markdown, a document is segregated into different parts by its titles. A title starts with hash-tag (#) that is followed by an head-line. The number of subsequent hash-tags defines the order.
+
+      Example:
+        # Main Title
+
+        ...
+
+        ## Chapter Title
+
+        ...
+
+        ### Section __Title__
+
+        ...
+
+      It is possible to add styling elements to the titles, but this should be used only in some rare cases.
+    """
+    'descriptionMoreURL': 'https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet'
+    'leftLabelHTML': '<span style="color:#ff0">📏</span>'
+
+
+  '###### SubParagraph Title':
+    'prefix': 'lia.title.6'
+    'body': '##### ${1:SubParagraph Title}\n'
+    'description': """
+      As in common Markdown, a document is segregated into different parts by its titles. A title starts with hash-tag (#) that is followed by an head-line. The number of subsequent hash-tags defines the order.
+
+      Example:
+        # Main Title
+
+        ...
+
+        ## Chapter Title
+
+        ...
+
+        ### Section __Title__
+
+        ...
+
+      It is possible to add styling elements to the titles, but this should be used only in some rare cases.
+    """
+    'descriptionMoreURL': 'https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet'
+    'leftLabelHTML': '<span style="color:#ff0">📏</span>'
