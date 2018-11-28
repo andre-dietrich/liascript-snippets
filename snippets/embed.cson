@@ -22,6 +22,19 @@
     'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
     'leftLabelHTML': '<span style="color:#ff0">🔗</span>'
 
+  '[name](url "info")':
+    'prefix': 'lia.link.info'
+    'body': '[${1:name}](${2:url} "${3:info}")'
+    'description': """
+      An optional information can be attached to every link by adding double quotes after the link in the parentheses.
+
+      Examples:
+        [LiaScript](https://liascript.github.io "click Me")
+
+        Local navigation: [top](#1 "go back to Chapter 1.1")
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">🔗</span>'
 
   '![alt-text](image-url)':
     'prefix': 'lia.image'
@@ -44,6 +57,21 @@
     'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
     'leftLabelHTML': '<span style="color:#ff0">🖼</span>'
 
+  '![alt-text](image-url "info")':
+    'prefix': 'lia.image.info'
+    'body': '![${1:alt-text}](${2:image-url} "${3:info}")'
+    'description': """
+      An optional information can be attached to every image by adding double quotes after the link in the parentheses.
+
+      Example:
+
+        ![image of a puppy](https://upload.wikimedia.org/wikipedia/commons/c/c7/Puppy_on_Halong_Bay.jpg "looks cute")
+
+        ![relative](./img/puppy.jpg "optional info")
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">🖼</span>'
+
   '?[alt-text](audio-url)':
     'prefix': 'lia.audio'
     'body': '?[${1:alt-text}](${2:audio-url})'
@@ -53,6 +81,19 @@
       Example:
 
         ?[singing birds](https://bigsoundbank.com/UPLOAD/mp3/1068.mp3)
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">🎵</span>'
+
+  '?[alt-text](audio-url "info")':
+    'prefix': 'lia.audio.info'
+    'body': '?[${1:alt-text}](${2:audio-url} "${3:info}")'
+    'description': """
+      An optional information can be attached to every audio file by adding double quotes after the link in the parentheses.
+
+      Example:
+
+        ?[singing birds](https://bigsoundbank.com/UPLOAD/mp3/1068.mp3 "optional infos")
     """
     'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
     'leftLabelHTML': '<span style="color:#ff0">🎵</span>'
