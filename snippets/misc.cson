@@ -66,7 +66,7 @@
       It is possible to add styling elements to the titles, but this should be used only in some rare cases.
     """
     'descriptionMoreURL': 'https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet'
-    'leftLabelHTML': '<span style="color:#ff0">📏</span>'
+    'leftLabelHTML': '<span style="color:#ff0">🗂</span>'
 
 
   '## Chapter Title':
@@ -98,7 +98,7 @@
       It is possible to add styling elements to the titles, but this should be used only in some rare cases.
     """
     'descriptionMoreURL': 'https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet'
-    'leftLabelHTML': '<span style="color:#ff0">📏</span>'
+    'leftLabelHTML': '<span style="color:#ff0">🗂</span>'
 
 
   '### Section Title':
@@ -130,7 +130,7 @@
       It is possible to add styling elements to the titles, but this should be used only in some rare cases.
     """
     'descriptionMoreURL': 'https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet'
-    'leftLabelHTML': '<span style="color:#ff0">📏</span>'
+    'leftLabelHTML': '<span style="color:#ff0">🗂</span>'
 
 
   '#### SubSection Title':
@@ -162,7 +162,7 @@
       It is possible to add styling elements to the titles, but this should be used only in some rare cases.
     """
     'descriptionMoreURL': 'https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet'
-    'leftLabelHTML': '<span style="color:#ff0">📏</span>'
+    'leftLabelHTML': '<span style="color:#ff0">🗂</span>'
 
 
   '##### Paragraph Title':
@@ -194,7 +194,7 @@
       It is possible to add styling elements to the titles, but this should be used only in some rare cases.
     """
     'descriptionMoreURL': 'https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet'
-    'leftLabelHTML': '<span style="color:#ff0">📏</span>'
+    'leftLabelHTML': '<span style="color:#ff0">🗂</span>'
 
 
   '###### SubParagraph Title':
@@ -226,4 +226,4 @@
       It is possible to add styling elements to the titles, but this should be used only in some rare cases.
     """
     'descriptionMoreURL': 'https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet'
-    'leftLabelHTML': '<span style="color:#ff0">📏</span>'
+    'leftLabelHTML': '<span style="color:#ff0">🗂</span>'
