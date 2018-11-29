@@ -1,6 +1,7 @@
 # Liascript-Snippets
 
-A snippet-plugin for easing the development of online courses with [LiaScript](https://LiaScript.github.io), and extended Markdown notation.
+A snippet-plugin for easing the development of online courses with
+[LiaScript](https://LiaScript.github.io), and extended Markdown notation.
 
 https://atom.io/packages/liascript-snippets
 
@@ -52,6 +53,6 @@ A previewer plugin that renders your course directly within the Atom IDE.
 ## Recommended Projects
 
 Since unicode is supported, you can also use any kind of Emoji, so installing
-the following project is recomended...
+the following project is recommended...
 
 https://atom.io/packages/autocomplete-emojis
