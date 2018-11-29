@@ -1,0 +1,759 @@
+'.source.gfm, .text.md':
+  'highlight: actionscript (actionscript)':
+    'prefix': 'highlight.actionscript'
+    'body':   'actionscript'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+  'highlight: as (actionscript)':
+    'prefix': 'highlight.as'
+    'body':   'as'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+
+
+  'highlight: apache (apache_conf)':
+    'prefix': 'highlight.apache'
+    'body':   'apache'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+  'highlight: apacheconf (apache_conf)':
+    'prefix': 'highlight.apacheconf'
+    'body':   'apacheconf'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+
+
+  'highlight: asciidoc (asciidoc)':
+    'prefix': 'highlight.asciidoc'
+    'body':   'asciidoc'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+  'highlight: adoc (asciidoc)':
+    'prefix': 'highlight.adoc'
+    'body':   'adoc'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+
+
+  'highlight: x86asm (assembly_x86)':
+    'prefix': 'highlight.x86asm'
+    'body':   'x86asm'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+  'highlight: armasm (assembly_x86)':
+    'prefix': 'highlight.armasm'
+    'body':   'armasm'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+  'highlight: arm (assembly_x86)':
+    'prefix': 'highlight.arm'
+    'body':   'arm'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+  'highlight: avrasm (assembly_x86)':
+    'prefix': 'highlight.avrasm'
+    'body':   'avrasm'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+  'highlight: asm (assembly_x86)':
+    'prefix': 'highlight.asm'
+    'body':   'asm'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+
+
+  'highlight: bash (batchfile)':
+    'prefix': 'highlight.bash'
+    'body':   'bash'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+  'highlight: sh (batchfile)':
+    'prefix': 'highlight.sh'
+    'body':   'sh'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+  'highlight: zsh (batchfile)':
+    'prefix': 'highlight.zsh'
+    'body':   'zsh'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+
+
+  'highlight: c (c_cpp)':
+    'prefix': 'highlight.c'
+    'body':   'c'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+  'highlight: cc (c_cpp)':
+    'prefix': 'highlight.cc'
+    'body':   'cc'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+  'highlight: cpp (c_cpp)':
+    'prefix': 'highlight.cpp'
+    'body':   'cpp'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+  'highlight: c++ (c_cpp)':
+    'prefix': 'highlight.c++'
+    'body':   'c++'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+  'highlight: h (c_cpp)':
+    'prefix': 'highlight.h'
+    'body':   'h'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+  'highlight: hpp (c_cpp)':
+    'prefix': 'highlight.hpp'
+    'body':   'hpp'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+  'highlight: h++ (c_cpp)':
+    'prefix': 'highlight.h++'
+    'body':   'h++'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+
+
+  'highlight: clojure (clojure)':
+    'prefix': 'highlight.clojure'
+    'body':   'clojure'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+  'highlight: clj (clojure)':
+    'prefix': 'highlight.clj'
+    'body':   'clj'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+
+
+  'highlight: coffeescript (coffee)':
+    'prefix': 'highlight.coffeescript'
+    'body':   'coffeescript'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+  'highlight: coffee (coffee)':
+    'prefix': 'highlight.coffee'
+    'body':   'coffee'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+  'highlight: cson (coffee)':
+    'prefix': 'highlight.cson'
+    'body':   'cson'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+  'highlight: iced (coffee)':
+    'prefix': 'highlight.iced'
+    'body':   'iced'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+
+
+  'highlight: csharp':
+    'prefix': 'highlight.csharp'
+    'body':   'csharp'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+  'highlight: cs':
+    'prefix': 'highlight.cs'
+    'body':   'cs'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+  'highlight: c#':
+    'prefix': 'highlight.c#'
+    'body':   'c#'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+
+
+  'highlight: diff (diff)':
+    'prefix': 'highlight.diff'
+    'body':   'diff'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+  'highlight: patch (diff)':
+    'prefix': 'highlight.patch'
+    'body':   'patch'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+
+
+  'highlight: django (django)':
+    'prefix': 'highlight.django'
+    'body':   'django'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+  'highlight: jinja (django)':
+    'prefix': 'highlight.jinja'
+    'body':   'jinja'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+
+
+  'highlight: dockerfile (dockerfile)':
+    'prefix': 'highlight.dockerfile'
+    'body':   'dockerfile'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+  'highlight: docker (dockerfile)':
+    'prefix': 'highlight.docker'
+    'body':   'docker'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+
+
+  'highlight: elixir (elixir)':
+    'prefix': 'highlight.elixir'
+    'body':   'elixir'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+  'highlight: ex (elixir)':
+    'prefix': 'highlight.ex'
+    'body':   'ex'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+  'highlight: exs (elixir)':
+    'prefix': 'highlight.exs'
+    'body':   'exs'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+
+
+  'highlight: erlang (erlang)':
+    'prefix': 'highlight.erlang'
+    'body':   'erlang'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+  'highlight: erl (erlang)':
+    'prefix': 'highlight.erl'
+    'body':   'erl'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+
+
+  'highlight: fsharp (fsharp)':
+    'prefix': 'highlight.fsharp'
+    'body':   'fsharp'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+  'highlight: fs (fsharp)':
+    'prefix': 'highlight.fs'
+    'body':   'fs'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+  'highlight: f# (fsharp)':
+    'prefix': 'highlight.f#'
+    'body':   'f#'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+
+
+  'highlight: fortran (fortran)':
+    'prefix': 'highlight.fortran'
+    'body':   'fortran'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+  'highlight: f90 (fortran)':
+    'prefix': 'highlight.f90'
+    'body':   'f90'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+  'highlight: f95 (fortran)':
+    'prefix': 'highlight.f95'
+    'body':   'f95'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+
+
+  'highlight: gcode (gcode)':
+    'prefix': 'highlight.gcode'
+    'body':   'gcode'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+  'highlight: nc (gcode)':
+    'prefix': 'highlight.nc'
+    'body':   'nc'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+
+
+  'highlight: golang (golang)':
+    'prefix': 'highlight.golang'
+    'body':   'golang'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+  'highlight: go (golang)':
+    'prefix': 'highlight.go'
+    'body':   'go'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+
+
+  'highlight: handlebars (handlebars)':
+    'prefix': 'highlight.handlebars'
+    'body':   'handlebars'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+  'highlight: hbs (handlebars)':
+    'prefix': 'highlight.hbs'
+    'body':   'hbs'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+  'highlight: html.hbs (handlebars)':
+    'prefix': 'highlight.html.hbs'
+    'body':   'html.hbs'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+  'highlight: html.handlebars (handlebars)':
+    'prefix': 'highlight.html.handlebars'
+    'body':   'html.handlebars'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+
+
+  'highlight: haskell (haskell)':
+    'prefix': 'highlight.haskell'
+    'body':   'haskell'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+  'highlight: hs (haskell)':
+    'prefix': 'highlight.hs'
+    'body':   'hs'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+
+
+  'highlight: haxe (haxe)':
+    'prefix': 'highlight.haxe'
+    'body':   'haxe'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+  'highlight: hx (haxe)':
+    'prefix': 'highlight.hx'
+    'body':   'hx'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+
+
+  'highlight: html (html)':
+    'prefix': 'highlight.html'
+    'body':   'html'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+  'highlight: xhtml (html)':
+    'prefix': 'highlight.xhtml'
+    'body':   'xhtml'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+  'highlight: rss (html)':
+    'prefix': 'highlight.rss'
+    'body':   'rss'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+  'highlight: atom (html)':
+    'prefix': 'highlight.atom'
+    'body':   'atom'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+  'highlight: xjb (html)':
+    'prefix': 'highlight.xjb'
+    'body':   'xjb'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+  'highlight: xsd (html)':
+    'prefix': 'highlight.xsd'
+    'body':   'xsd'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+  'highlight: xsl (html)':
+    'prefix': 'highlight.xsl'
+    'body':   'xsl'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+  'highlight: plist (html)':
+    'prefix': 'highlight.plist'
+    'body':   'plist'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+
+
+  'highlight: javascript (javascript)':
+    'prefix': 'highlight.javascript'
+    'body':   'javascript'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+  'highlight: js (javascript)':
+    'prefix': 'highlight.js'
+    'body':   'js'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+
+
+  'highlight: livescript (livescript)':
+    'prefix': 'highlight.livescript'
+    'body':   'livescript'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+  'highlight: ls (livescript)':
+    'prefix': 'highlight.ls'
+    'body':   'ls'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+
+
+  'highlight: makefile (makefile)':
+    'prefix': 'highlight.makefile'
+    'body':   'makefile'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+  'highlight: mk (makefile)':
+    'prefix': 'highlight.mk'
+    'body':   'mk'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+  'highlight: mak (makefile)':
+    'prefix': 'highlight.mak'
+    'body':   'mak'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+
+
+  'highlight: markdown (markdown)':
+    'prefix': 'highlight.markdown'
+    'body':   'markdown'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+  'highlight: md (markdown)':
+    'prefix': 'highlight.md'
+    'body':   'md'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+  'highlight: mkdown (markdown)':
+    'prefix': 'highlight.mkdown'
+    'body':   'mkdown'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+  'highlight: mkd (markdown)':
+    'prefix': 'highlight.mkd'
+    'body':   'mkd'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+
+
+  'highlight: ocaml (ocaml)':
+    'prefix': 'highlight.ocaml'
+    'body':   'ocaml'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+  'highlight: ml (ocaml)':
+    'prefix': 'highlight.ml'
+    'body':   'ml'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+
+
+  'highlight: objectivec (objectivec)':
+    'prefix': 'highlight.objectivec'
+    'body':   'objectivec'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+  'highlight: mm (objectivec)':
+    'prefix': 'highlight.mm'
+    'body':   'mm'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+  'highlight: objc (objectivec)':
+    'prefix': 'highlight.objc'
+    'body':   'objc'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+  'highlight: obj-c (objectivec)':
+    'prefix': 'highlight.obj-c'
+    'body':   'obj-c'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+
+
+  'highlight: delphi (pascal)':
+    'prefix': 'highlight.delphi'
+    'body':   'delphi'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+  'highlight: dpr (pascal)':
+    'prefix': 'highlight.dpr'
+    'body':   'dpr'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+  'highlight: dfm (pascal)':
+    'prefix': 'highlight.dfm'
+    'body':   'dfm'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+  'highlight: pas (pascal)':
+    'prefix': 'highlight.pas'
+    'body':   'pas'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+  'highlight: pascal (pascal)':
+    'prefix': 'highlight.pascal'
+    'body':   'pascal'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+  'highlight: freepascal (pascal)':
+    'prefix': 'highlight.freepascal'
+    'body':   'freepascal'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+  'highlight: lazarus (pascal)':
+    'prefix': 'highlight.lazarus'
+    'body':   'lazarus'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+  'highlight: lpr (pascal)':
+    'prefix': 'highlight.lpr'
+    'body':   'lpr'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+  'highlight: lfm (pascal)':
+    'prefix': 'highlight.lfm'
+    'body':   'lfm'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+
+
+  'highlight: php (php)':
+    'prefix': 'highlight.php'
+    'body':   'php'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+  'highlight: php3 (php)':
+    'prefix': 'highlight.php3'
+    'body':   'php3'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+  'highlight: php4 (php)':
+    'prefix': 'highlight.php4'
+    'body':   'php4'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+  'highlight: php5 (php)':
+    'prefix': 'highlight.php5'
+    'body':   'php5'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+  'highlight: php6 (php)':
+    'prefix': 'highlight.php6'
+    'body':   'php6'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+
+
+  'highlight: perl (perl)':
+    'prefix': 'highlight.perl'
+    'body':   'perl'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+  'highlight: pl (perl)':
+    'prefix': 'highlight.pl'
+    'body':   'pl'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+  'highlight: pm (perl)':
+    'prefix': 'highlight.pm'
+    'body':   'pm'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+
+
+  'highlight: powershell (powershell)':
+    'prefix': 'highlight.powershell'
+    'body':   'powershell'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+  'highlight: ps (powershell)':
+    'prefix': 'highlight.ps'
+    'body':   'ps'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+
+
+  'highlight: puppet (puppet)':
+    'prefix': 'highlight.puppet'
+    'body':   'puppet'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+  'highlight: pp (puppet)':
+    'prefix': 'highlight.pp'
+    'body':   'pp'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+
+
+  'highlight: python (python)':
+    'prefix': 'highlight.python'
+    'body':   'python'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+  'highlight: py (python)':
+    'prefix': 'highlight.py'
+    'body':   'py'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+  'highlight: gyp (python)':
+    'prefix': 'highlight.gyp'
+    'body':   'gyp'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+
+
+  'highlight: ruby (ruby)':
+    'prefix': 'highlight.ruby'
+    'body':   'ruby'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+  'highlight: rb (ruby)':
+    'prefix': 'highlight.rb'
+    'body':   'rb'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+  'highlight: gemspec (ruby)':
+    'prefix': 'highlight.gemspec'
+    'body':   'gemspec'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+  'highlight: podspec (ruby)':
+    'prefix': 'highlight.podspec'
+    'body':   'podspec'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+  'highlight: thor (ruby)':
+    'prefix': 'highlight.thor'
+    'body':   'thor'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+  'highlight: irb (ruby)':
+    'prefix': 'highlight.irb'
+    'body':   'irb'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+
+
+  'highlight: rust (rust)':
+    'prefix': 'highlight.rust'
+    'body':   'rust'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+  'highlight: rs (rust)':
+    'prefix': 'highlight.rs'
+    'body':   'rs'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+
+
+  'highlight: scad (scad)':
+    'prefix': 'highlight.scad'
+    'body':   'scad'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+  'highlight: openscad (scad)':
+    'prefix': 'highlight.openscad'
+    'body':   'openscad'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+
+
+  'highlight: shell (sh)':
+    'prefix': 'highlight.shell'
+    'body':   'shell'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+  'highlight: console (sh)':
+    'prefix': 'highlight.console'
+    'body':   'console'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+
+
+  'highlight: stylus (stylus)':
+    'prefix': 'highlight.stylus'
+    'body':   'stylus'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+  'highlight: styl (stylus)':
+    'prefix': 'highlight.styl'
+    'body':   'styl'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+
+
+  'highlight: tcl (tcl)':
+    'prefix': 'highlight.tcl'
+    'body':   'tcl'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+  'highlight: tk (tcl)':
+    'prefix': 'highlight.tk'
+    'body':   'tk'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+
+
+  'highlight: twig (twig)':
+    'prefix': 'highlight.twig'
+    'body':   'twig'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+  'highlight: craftcms (twig)':
+    'prefix': 'highlight.craftcms'
+    'body':   'craftcms'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+
+
+  'highlight: typescript (typescript)':
+    'prefix': 'highlight.typescript'
+    'body':   'typescript'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+  'highlight: ts (typescript)':
+    'prefix': 'highlight.ts'
+    'body':   'ts'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+
+
+  'highlight: vbscript (vbscript)':
+    'prefix': 'highlight.vbscript'
+    'body':   'vbscript'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+  'highlight: vbs (vbscript)':
+    'prefix': 'highlight.vbs'
+    'body':   'vbs'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+
+
+  'highlight: verilog (verilog)':
+    'prefix': 'highlight.verilog'
+    'body':   'verilog'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+  'highlight: v (verilog)':
+    'prefix': 'highlight.v'
+    'body':   'v'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+
+
+  'highlight: xpath (xquery)':
+    'prefix': 'highlight.xpath'
+    'body':   'xpath'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
+  'highlight: xq (xquery)':
+    'prefix': 'highlight.xq'
+    'body':   'xq'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+    'descriptionMoreURL': 'https://highlightjs.org'
