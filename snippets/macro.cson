@@ -139,14 +139,13 @@
   '``` @macro ```':
     'prefix': 'lia.macro.call.block'
     'body': """
-      ```${1:lang}
-      @${2:macro}
+      ```${1:lang} @${2:macro}
       ${3:a multiline
       parameter}
       ```
     """
     'description': """
-      If you have a more complex multi-line macro definition, you can also use the following style so that it gets rendered at least in a readable manner by Github for example. Thus, you can place your macro call into a code block, the first language parameter gets ignored and on the first line, the macro call has to be defined, whereby the following elements within the block are passed as the last multi-line parameter to that call.
+      If you have a more complex multi-line macro definition, you can also use the following style so that it gets rendered at least in a readable manner by Github for example. Thus, you can place your macro call into into the code-block header, the first (optional) language parameter gets ignored and, whereby the following elements within the block are passed as the last multi-line parameter to that call.
 
       Example:
 
@@ -170,9 +169,7 @@
           @end
           -->
 
-          ```json
-          @panorama("0",https://pannellum.org/images/cerro-toco-0.jpg)
-
+          ```json @panorama("0",https://pannellum.org/images/cerro-toco-0.jpg)
           {
               "pitch": 14.1,
               "yaw": 1.5,
