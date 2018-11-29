@@ -6,8 +6,8 @@ https://atom.io/packages/liascript-snippets
 
 ## Install
 
-
 ### Command Line
+
 
 Install Atom 1.22 or newer
 
@@ -26,11 +26,15 @@ In the terminal, install the package via apm:
 
 ## Features
 
-1. Start typing **lia** in your markdown document to see the extenden help, that
+1. Start typing **lia** in your markdown document to see the extended help, that
    can be explored via fuzzy-searching. Hit Tab for inserting your selected
    snippet.
 2. To ease the voice selection for different narrators, start typing **voice**
    and search through all possible voice settings.
+3. Syntax highlighting help is offered if you start typing **hili** followed by
+   your language of choice. Since LiaScript applies the ace-editor, there is a
+   matching done between highlight.js and ace. You can select your language from
+   highlight.js, but it will be translated into the text in parentheses.
 
 
 **Screencast Lisascript-snippets and -preview**
