@@ -219,7 +219,7 @@
     'leftLabelHTML': '<span style="color:#ff0">💻</span>'
 
 
-  '```lang @ouput ...```'
+  '```lang @ouput ...```':
     'prefix': 'lia.code.output'
     'body': """
       ``` ${1:text}     ${2:+@output}
