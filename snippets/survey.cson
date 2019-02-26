@@ -31,7 +31,7 @@
       [(${5:3})] ${6:option 3}
     """
     'description': """
-      The definition is similar to a single choice quiz, but instead of an X, either numbers have to be put into parentheses or variable names that start with a colon (:). They do not have to be ordered and the number is also variable.
+      The definition is similar to a single choice quiz, but instead of an X, either numbers have to be put into parentheses or variable names. They do not have to be ordered and the number is also variable.
 
       Example:
 
@@ -43,9 +43,9 @@
 
         What is your favorite color:
 
-          [(:red)]   red?
-          [(:blue)]  blue?
-          [(:green)] green?
+          [(red)]   red?
+          [(blue)]  blue?
+          [(green)] green?
     """
     'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
     'leftLabelHTML': '<span style="color:#ff0">📋</span>'
@@ -59,7 +59,7 @@
       [[${5:3}]] ${6:option 3}
     """
     'description': """
-      The definition is similar to a multiple choice quiz, but instead of an X, either numbers have to be put into parentheses or variable names that start with a colon (:). They do not have to be ordered and the number is also variable.
+      The definition is similar to a multiple choice quiz, but instead of an X, either numbers have to be put into parentheses or variable names. They do not have to be ordered and the number is also variable.
 
       Example:
 
@@ -71,10 +71,10 @@
 
         Mark all colors you like:
 
-          [[:red]]   red?
-          [[:blue]]  blue?
-          [[:green]] green?
-          [[:none]]  None of these ...
+          [[red]]   red?
+          [[blue]]  blue?
+          [[green]] green?
+          [[none]]  None of these ...
     """
     'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
     'leftLabelHTML': '<span style="color:#ff0">📋</span>'
@@ -89,7 +89,7 @@
       [         ] ${6:text}
     """
     'description': """
-      A list of single choice surveys can be defined as depicted below. Either numbers have to be put into parentheses or variable names that start with a colon (:). They do not have to be ordered and the number is also variable.
+      A list of single choice surveys can be defined as depicted below. Either numbers have to be put into parentheses or variable. They do not have to be ordered and the number is also variable.
 
       Example:
 
@@ -102,10 +102,10 @@
 
         What is your opinion:
 
-            [(:agree)(:unsure)(:maybe not so)]
-            [                                ] LiaScript is great?
-            [                                ] I would use it to make online **courses**?
-            [                                ] I would use it for online **surveys**?
+            [(agree)(unsure)(maybe not so)]
+            [                             ] LiaScript is great?
+            [                             ] I would use it to make online **courses**?
+            [                             ] I would use it for online **surveys**?
     """
     'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
     'leftLabelHTML': '<span style="color:#ff0">📋</span>'
@@ -120,7 +120,7 @@
       [         ] ${6:text}
     """
     'description': """
-      A list of multiple choice surveys can be defined as depicted below. Either numbers have to be put into parentheses or variable names that start with a colon (:). They do not have to be ordered and the number is also variable.
+      A list of multiple choice surveys can be defined as depicted below. Either numbers have to be put into parentheses or variable names. They do not have to be ordered and the number is also variable.
 
       Example:
 
@@ -133,10 +133,10 @@
 
         What is your opinion:
 
-            [[:agree][:unsure][:maybe not so]]
-            [                                ] LiaScript is great?
-            [                                ] I would use it to make online **courses**?
-            [                                ] I would use it for online **surveys**?
+            [[agree][unsure][maybe not so]]
+            [                             ] LiaScript is great?
+            [                             ] I would use it to make online **courses**?
+            [                             ] I would use it for online **surveys**?
     """
     'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
     'leftLabelHTML': '<span style="color:#ff0">📋</span>'
