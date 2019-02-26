@@ -219,6 +219,32 @@
     'leftLabelHTML': '<span style="color:#ff0">💻</span>'
 
 
+  '```lang @ouput ...```'
+    'prefix': 'lia.code.output'
+    'body': """
+      ``` ${1:text}     ${2:+@output}
+      ${3:Enter your default output}
+      ```
+    """
+    'description': """
+      In contrast to the @input macro, there is also an @output macro, which can be used to define the initial output of and executable code-block. This block has to be the last and you can use a plus (+) or a minus (-) in front to indicate, whether this output is interpreted as normal stdout or stderr.
+
+      Example:
+
+        ``` js     -EvalScript.js
+        let str = "hello world";
+
+        consolelog(str)
+        ```
+        ``` json    -@ouput
+        There is a error in line 3...
+        ```
+        <script>@input</script>
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+
+
   '``` ... ``` ``` ... ``` ...':
     'prefix': 'lia.code.project'
     'body': """
