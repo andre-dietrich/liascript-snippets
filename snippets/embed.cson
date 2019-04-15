@@ -105,13 +105,15 @@
     'description': """
       Include movies is like combining images and sound by a starting exclamation mark followed by a question mark (!?) as depicted below. Paths can either be absolute or relative, YouTube can be directly included via its iframe-url. You can add also styles, classes, or any other allowed options to it simply by appending a comment tag.
 
+      To simplify the usage, you can directly use the YouTube link, or Vimeo, or TeacherTube. Those resources are atomatically parsed and included appropriately into the document, without searching for an embed-code.
+
       Example:
 
-        !?[eLab](https://www.youtube.com/embed/bICfKRyKTwE)
+        !?[eLab](https://www.youtube.com/watch?v=bICfKRyKTwE)
 
         !?[relative](./mov/video.mp4)
 
-        !?[eLab](https://www.youtube.com/embed/bICfKRyKTwE)<!--
+        !?[eLab](https://www.youtube.com/watch?v=bICfKRyKTwE)<!--
             title = "the elab in gray"
             width = "90%"
             style = "border: 10px solid; filter: grayscale(100%);"
