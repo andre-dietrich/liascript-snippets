@@ -75,7 +75,7 @@
 
   'import':
     'prefix': 'lia.macro.import'
-    'body': 'import: @${1:url}'
+    'body': 'import: ${1:url}'
     'description': """
       You can import the main macros of other courses, simply by using the import command, which is followed by the raw url of the foreign course.
 
@@ -83,13 +83,38 @@
 
         ## section
         <!--
-        import: https://raw.githubusercontent.com/liaScript/rextester_template/master/README.md
+        import: https://raw.githubusercontent.com/liaTemplates/rextester_template/master/README.md
         -->
 
         ``` python
         print("Hello World")
         ```
         @Rextester.eval(@Python)
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/templates/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">🛠</span>'
+
+
+  'attribute':
+    'prefix': 'lia.macro.attribute'
+    'body': 'attribute: ${1:thx}'
+    'description': """
+      Attribution is an important issue. With the attribute command, you can define the attribution that is showed within the info field within the navigation pannel. These elements get also imported if you import the functionality from another course.
+
+      A good attribution might look like the follwing ones...
+
+      Example:
+        <!--
+        attribute: [AlaSQL](https://alasql.org)
+                   by [Andrey Gershun](agershun@gmail.com)
+                   & [Mathias Rangel Wulff](m@rawu.dk)
+                   is licensed under [MIT](https://opensource.org/licenses/MIT)
+
+        attribute: [PapaParse](https://www.papaparse.com)
+                   by [Matthew Holt](https://twitter.com/mholt6)
+                   is licensed under [MIT](https://opensource.org/licenses/MIT)
+        -->
+
     """
     'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/templates/master/README.md'
     'leftLabelHTML': '<span style="color:#ff0">🛠</span>'
