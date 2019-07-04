@@ -40,6 +40,21 @@
     'leftLabelHTML': '<span style="color:#ff0">🎓</span>'
 
 
+  '[[select|_wrong_|(right)]]':
+    'prefix': 'lia.quiz.select'
+    'body': '[[${1:option}|${2:option}]]'
+    'description': """
+      Create a selection field, that contains various different solutions, separated by `|`. Images, formulas everything is allowed, only the correct solution has to be put into parentheses and there can be multiple correct solutions.
+
+      Example:
+        What is the color of the sky?
+
+        [[ red | (__blue__) | green | (black at night)]]
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">🎓</span>'
+
+
   '[( |X)] text':
     'prefix': 'lia.quiz.single.choice'
     'body': '[(${1: })] ${2:enter your text}'
@@ -72,6 +87,29 @@
     """
     'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
     'leftLabelHTML': '<span style="color:#ff0">🎓</span>'
+
+
+  '[[ |X][ |X]...] text':
+    'prefix': 'lia.quiz.matrix.choice'
+    'body': """
+      [[${1: }] [${2: }] [${3: }]]
+      [[${4: }] [${5: }] [${6: }]] ${7: add a line}
+      [(${8: }) (${9: }) (${10: })] ${11: add a line}
+    """
+    'description': """
+      Compose a matrix of quizzes with multiple SingleChoice and MultipleChoice quizzes per row. The column headers have to be put into brackets or parentheses, depending on your passed Markdown content. It is allowed to have different numbers of options per row.
+
+      Example:
+        This is a multiple choice quiz with four options:
+          [[:-)] (:-]) (_bold_)]
+          [ [ ]   [ ]     [X]  ] Only the X marks the correct solution!
+          [ [X]   [ ]     [ ]  ] Multiple- and SingleChoice quizzes in a matrix,
+          [ ( )   ( )     (X)  ] but you have to be consitent per row.
+          [ ( )   ( )     ( )   ( ) ] More or less options than defined in the header are also allowed.
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">🎓</span>'
+
 
   '[[?]] hint':
     'prefix': 'lia.quiz.hint'
