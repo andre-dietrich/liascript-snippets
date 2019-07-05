@@ -67,6 +67,8 @@
           [( )] Add as many lines as you want?
           [(X)] The X marks the only correct answer!
           [( )] ... And only one X is allowed.
+
+      (If you want, you can also have multiple correct options.)
     """
     'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
     'leftLabelHTML': '<span style="color:#ff0">🎓</span>'
