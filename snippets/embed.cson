@@ -12,7 +12,9 @@
 
         Also an accepted link: https://liascript.github.io
 
-        Local navigation: [top](#1)
+        Local navigation by slide number: [top](#1)
+
+        Local navigation by slide title: [top](#some-title)
 
         With styling [LiaScript](https://liascript.github.io)<!--
           title = "click me"
@@ -31,7 +33,9 @@
       Examples:
         [LiaScript](https://liascript.github.io "click Me")
 
-        Local navigation: [top](#1 "go back to Chapter 1.1")
+        Local navigation:
+          [top](#1 "by slide number")
+          [top](#and-the-title-is "by slide title")
     """
     'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
     'leftLabelHTML': '<span style="color:#ff0">🔗</span>'
