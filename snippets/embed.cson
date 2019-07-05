@@ -76,11 +76,13 @@
     'prefix': 'lia.audio'
     'body': '?[${1:alt-text}](${2:audio-url})'
     'description': """
-      Including audio is done with a starting question mark (?) that is followed a common Markdown link.
+      Including audio is done with a starting question mark (?) that is followed a common Markdown link. If you want to include soundcloud, then you only have to refer to the link and the player gets embedded into your course.
 
       Example:
 
         ?[singing birds](https://bigsoundbank.com/UPLOAD/mp3/1068.mp3)
+
+        ?[soundcloud](https://soundcloud.com/glennmorrison/beethoven-moonlight-sonata)
     """
     'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
     'leftLabelHTML': '<span style="color:#ff0">🎵</span>'
@@ -103,7 +105,7 @@
     'prefix': 'lia.movie'
     'body': '!?[${1:alt-text}](${2:movie-url})'
     'description': """
-      Include movies is like combining images and sound by a starting exclamation mark followed by a question mark (!?) as depicted below. Paths can either be absolute or relative, YouTube can be directly included via its iframe-url. You can add also styles, classes, or any other allowed options to it simply by appending a comment tag.
+      Include movies is like combining images and sound by a starting exclamation mark followed by a question mark (!?) as depicted below. Paths can either be absolute or relative. You can add also styles, classes, or any other allowed options to it simply by appending a comment tag.
 
       To simplify the usage, you can directly use the YouTube link, or Vimeo, or TeacherTube. Those resources are atomatically parsed and included appropriately into the document, without searching for an embed-code.
 
