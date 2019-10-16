@@ -120,6 +120,43 @@
     'leftLabelHTML': '<span style="color:#ff0">🛠</span>'
 
 
+  'dark':
+    'prefix': 'lia.macro.dark'
+    'body': 'dark: ${1:true}'
+    'description': """
+      You can change the default appearance of your document, either if you prefer dark mode or light mode. This will not change the user preferences. The default mode is defined by the user settings.
+
+      Example:
+        <!--
+        dark: true
+
+        dark: false
+        -->
+
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/templates/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">🛠</span>'
+
+  'mode':
+    'prefix': 'lia.macro.mode'
+    'body': 'mode: ${1:Presentation}'
+    'description': """
+      You can change the default style of your document, either if you do not have any effects you can set mode to Textbook or start with and interactive Presentation. The three modes a the same as defined within the document at the upper right button. The default mode is defined by the user settings.
+
+      Example:
+        <!--
+        mode: Presentation
+
+        mode: Slides
+
+        mode: Textbook
+        -->
+
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/templates/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">🛠</span>'
+
+
   '@name: one line':
     'prefix': 'lia.macro.definition.line'
     'body': '@${1:name}: ${2:line}'
