@@ -1,6 +1,6 @@
 '.source.gfm, .text.md':
   '1 colum table':
-    'prefix': 'lia.table.1'
+    'prefix': 'lia-table-1'
     'body': """
       | ${1:Header}     |
       | :--------- |
@@ -22,7 +22,7 @@
 
 
   '2 colum table':
-    'prefix': 'lia.table.2'
+    'prefix': 'lia-table-2'
     'body': """
       | Header 1   | Header 2   |
       | :--------- | :--------- |
@@ -44,7 +44,7 @@
 
 
   '3 colum table':
-    'prefix': 'lia.table.3'
+    'prefix': 'lia-table-3'
     'body': """
       | Header 1   | Header 2   | Header 3   |
       | :--------- | :--------- | :--------- |
@@ -66,7 +66,7 @@
 
 
   '4 colum table':
-    'prefix': 'lia.table.4'
+    'prefix': 'lia-table-4'
     'body': """
       | Header 1   | Header 2   | Header 3   | Header 4   |
       | :--------- | :--------- | :--------- | :--------- |
@@ -88,7 +88,7 @@
 
 
   '5 colum table':
-    'prefix': 'lia.table.5'
+    'prefix': 'lia-table-5'
     'body': """
       | Header 1   | Header 2   | Header 3   | Header 4   | Header 5   |
       | :--------- | :--------- | :--------- | :--------- | :--------- |
@@ -110,7 +110,7 @@
 
 
   '6 colum table':
-    'prefix': 'lia.table.6'
+    'prefix': 'lia-table-6'
     'body': """
       | Header 1   | Header 2   | Header 3   | Header 4   | Header 5   | Header 6   |
       | :--------- | :--------- | :--------- | :--------- | :--------- | :--------- |
@@ -132,7 +132,7 @@
 
 
   '7 colum table':
-    'prefix': 'lia.table.7'
+    'prefix': 'lia-table-7'
     'body': """
       | Header 1   | Header 2   | Header 3   | Header 4   | Header 5   | Header 6   | Header 7   |
       | :--------- | :--------- | :--------- | :--------- | :--------- | :--------- | :--------- |
@@ -154,7 +154,7 @@
 
 
   '8 colum table':
-    'prefix': 'lia.table.8'
+    'prefix': 'lia-table-8'
     'body': """
       | Header 1   | Header 2   | Header 3   | Header 4   | Header 5   | Header 6   | Header 7   | Header 8   |
       | :--------- | :--------- | :--------- | :--------- | :--------- | :--------- | :--------- | :--------- |
@@ -176,7 +176,7 @@
 
 
   '9 colum table':
-    'prefix': 'lia.table.9'
+    'prefix': 'lia-table-9'
     'body': """
       | Header 1   | Header 2   | Header 3   | Header 4   | Header 5   | Header 6   | Header 7   | Header 8   | Header 9   |
       | :--------- | :--------- | :--------- | :--------- | :--------- | :--------- | :--------- | :--------- | :--------- |

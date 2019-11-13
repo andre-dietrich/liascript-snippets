@@ -1,7 +1,7 @@
 '.source.gfm, .text.md':
 
   '< ... # ... [':
-    'prefix': 'lia.init'
+    'prefix': 'lia-init'
     'body': """
       <!--
       author:   Your Name

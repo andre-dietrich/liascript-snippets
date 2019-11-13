@@ -1,6 +1,6 @@
 '.source.gfm, .text.md':
   '[name](url)':
-    'prefix': 'lia.link'
+    'prefix': 'lia-link'
     'body': '[${1:name}](${2:url})'
     'description': """
       Links can be added in many ways to a document (relative or absolute), either in common Markdown style by enclosed brackets ([]) and parentheses (()), or directly if it starts with http or www and matches the common url pattern.
@@ -25,7 +25,7 @@
     'leftLabelHTML': '<span style="color:#ff0">🔗</span>'
 
   '[name](url "info")':
-    'prefix': 'lia.link.info'
+    'prefix': 'lia-link-info'
     'body': '[${1:name}](${2:url} "${3:info}")'
     'description': """
       An optional information can be attached to every link by adding double quotes after the link in the parentheses.
@@ -41,7 +41,7 @@
     'leftLabelHTML': '<span style="color:#ff0">🔗</span>'
 
   '![alt-text](image-url)':
-    'prefix': 'lia.image'
+    'prefix': 'lia-image'
     'body': '![${1:alt-text}](${2:image-url})'
     'description': """
       Include images via the common Markdown notation as depicted below, by using absolute or relative paths. In contrast to common Markdown you can add also styles, classes, or any other allowed image tag to it simply by appending a comment tag.
@@ -62,7 +62,7 @@
     'leftLabelHTML': '<span style="color:#ff0">🖼</span>'
 
   '![alt-text](image-url "info")':
-    'prefix': 'lia.image.info'
+    'prefix': 'lia-image-info'
     'body': '![${1:alt-text}](${2:image-url} "${3:info}")'
     'description': """
       An optional information can be attached to every image by adding double quotes after the link in the parentheses.
@@ -77,7 +77,7 @@
     'leftLabelHTML': '<span style="color:#ff0">🖼</span>'
 
   '?[alt-text](audio-url)':
-    'prefix': 'lia.audio'
+    'prefix': 'lia-audio'
     'body': '?[${1:alt-text}](${2:audio-url})'
     'description': """
       Including audio is done with a starting question mark (?) that is followed a common Markdown link. If you want to include soundcloud, then you only have to refer to the link and the player gets embedded into your course.
@@ -92,7 +92,7 @@
     'leftLabelHTML': '<span style="color:#ff0">🎵</span>'
 
   '?[alt-text](audio-url "info")':
-    'prefix': 'lia.audio.info'
+    'prefix': 'lia-audio-info'
     'body': '?[${1:alt-text}](${2:audio-url} "${3:info}")'
     'description': """
       An optional information can be attached to every audio file by adding double quotes after the link in the parentheses.
@@ -106,7 +106,7 @@
 
 
   '!?[alt-text](movie-url)':
-    'prefix': 'lia.movie'
+    'prefix': 'lia-movie'
     'body': '!?[${1:alt-text}](${2:movie-url})'
     'description': """
       Include movies is like combining images and sound by a starting exclamation mark followed by a question mark (!?) as depicted below. Paths can either be absolute or relative. You can add also styles, classes, or any other allowed options to it simply by appending a comment tag.

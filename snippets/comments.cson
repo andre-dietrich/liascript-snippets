@@ -1,6 +1,6 @@
 '.source.gfm, .text.md':
   '--{{number}}--':
-    'prefix': 'lia.comment'
+    'prefix': 'lia-comment'
     'body': """
                     --{{${1:number}}}--
       ${2:Enter some **text** that gets read out aloud.
@@ -38,7 +38,7 @@
     'leftLabelHTML': '<span style="color:#ff0">🗯</span>'
 
   '--{{number voice}}--':
-    'prefix': 'lia.comment.voice'
+    'prefix': 'lia-comment-voice'
     'body': """
                     --{{${1:number} ${2:voice}}}--
       ${3:Enter some **text** that gets read out aloud with another voice.
@@ -61,7 +61,7 @@
 
 
   '<!-- --{{number}}-- ... -->':
-    'prefix': 'lia.comment.hidden'
+    'prefix': 'lia-comment-hidden'
     'body': """
       <!-- --{{${1:number}}}-- ${2:Enter some **text** that gets read out aloud!} -->
     """
@@ -78,7 +78,7 @@
     'leftLabelHTML': '🗯'
 
   '<!-- --{{number voice}}-- ... -->':
-    'prefix': 'lia.comment.voice.hidden'
+    'prefix': 'lia-comment-voice-hidden'
     'body': """
       <!-- --{{${1:number} ${2:voice}}}-- ${3:Enter some **text** that gets read out aloud!} -->
     """

@@ -1,6 +1,6 @@
 '.source.gfm, .text.md':
   'color dot diagram':
-    'prefix': 'lia.diagram.dots'
+    'prefix': 'lia-diagram-dots'
     'body': """
                      Title - dots
       6 | A a B b C c
@@ -31,7 +31,7 @@
 
 
   'multiline diagram':
-    'prefix': 'lia.diagram.multiline'
+    'prefix': 'lia-diagram-multiline'
     'body': """
                                         Multiline
         1.9 |
@@ -70,7 +70,7 @@
 
 
   'simple diagram':
-    'prefix': 'lia.diagram.simple'
+    'prefix': 'lia-diagram-simple'
     'body': """
                     Combining dots and polylines
        1.9 |

@@ -1,6 +1,6 @@
 '.source.gfm, .text.md':
   '[[___ ___]]':
-    'prefix': 'lia.survey.text'
+    'prefix': 'lia-survey-text'
     'body':   '[[___ ___]]'
     'description': """
       Surveys are defined similarly to quizzes by using brackets ([]). A text survey is defined by a multiple number three subsequent underscores (___) that are enclosed by double brackets. The number of underscores defines the number of lines a user has to fill out.
@@ -24,7 +24,7 @@
 
 
   '[(1)]...[(:...)]...':
-    'prefix': 'lia.survey.single.choice'
+    'prefix': 'lia-survey-single-choice'
     'body': """
       [(${1:1})] ${2:option 1}
       [(${3:2})] ${4:option 2}
@@ -52,7 +52,7 @@
 
 
   '[[1]]...[[:...]]...':
-    'prefix': 'lia.survey.multiple.choice'
+    'prefix': 'lia-survey-multiple-choice'
     'body': """
       [[${1:1}]] ${2:option 1}
       [[${3:2}]] ${4:option 2}
@@ -81,7 +81,7 @@
 
 
   '[(1)(2)(0)]':
-    'prefix': 'lia.survey.single.choice.matrix'
+    'prefix': 'lia-survey-single-choice-matrix'
     'body': """
       [(${1:0})(${2:1})(${3:2})]
       [         ] ${4:text}
@@ -112,7 +112,7 @@
 
 
   '[[1][2][0]]':
-    'prefix': 'lia.survey.multiple.choice.matrix'
+    'prefix': 'lia-survey-multiple-choice-matrix'
     'body': """
       [[${1:0}][${2:1}][${3:2}]]
       [         ] ${4:text}

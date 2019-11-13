@@ -1,6 +1,6 @@
 '.source.gfm, .text.md':
   '{number}{element}':
-    'prefix': 'lia.effect.inline'
+    'prefix': 'lia-effect-inline'
     'body': '{${1:number}}{${2:__element__}}'
     'description': """
       Use simple inline effects to highlight specific elements within a Markdown block. Simply enclose your elements within two subsequent braces ({}{}), whereby the first one is used to hold the number of appearance, while the will contain your text, image, video, what so ever ...
@@ -21,7 +21,7 @@
 
 
   '{from-to}{element}':
-    'prefix': 'lia.effect.inline2'
+    'prefix': 'lia-effect-inline2'
     'body': '{${1:from}-${2:to}}{${3:__element__}}'
     'description': """
       Use simple inline effects to highlight specific elements within a Markdown block. Simply enclose your elements within two subsequent braces ({}{}), whereby the first one contains two numbers separated by (-) the first number defines the time of appearance and the second one the time of disappearance. The element contains the Markdown elements for highlighting (text, videos, images, etc.)
@@ -43,7 +43,7 @@
 
 
   '{{number}}':
-    'prefix': 'lia.effect.block'
+    'prefix': 'lia-effect-block'
     'body': '    {${1:number}}\n$2'
     'description': """
       Use block effects to let entire Markdown blocks appear or disappear. It works exactly as simple inline effects. But the number of appearance has to be put in double braces.
@@ -70,7 +70,7 @@
 
 
   '{{from-to}}':
-    'prefix': 'lia.effect.block'
+    'prefix': 'lia-effect-block'
     'body': '    {${1:from}-${2:to}}\n$3'
     'description': """
       Use block effects to let entire Markdown blocks appear or disappear. It works exactly as simple inline effects. But the number of appearance has to be put in double braces, followed by a hyphen (-) and the number of disappearance.
@@ -98,7 +98,7 @@
 
 
   '{{number}} *** ... ***':
-    'prefix': 'lia.effect.multiblock'
+    'prefix': 'lia-effect-multiblock'
     'body': """
                        {{${1:number}}}
       ************************************************
@@ -130,7 +130,7 @@
 
 
   '{{from-to}} *** ... ***':
-    'prefix': 'lia.effect.multiblock2'
+    'prefix': 'lia-effect-multiblock2'
     'body': """
                        {{${1:from}-${2:to}}}
       ************************************************
@@ -162,7 +162,7 @@
     'leftLabelHTML': '<span style="color:#ff0">💫</span>'
 
   '<!-- class="animated rollIn" ... -->':
-    'prefix': 'lia.effect.animate.example'
+    'prefix': 'lia-effect-animate-example'
     'body': '<!-- class="animated rollIn" style="animation-delay: 3s;" -->'
     'description': """
       This is only an example of how Animate.css can be used to tweak your effects. Additional CSS magic can be applied onto single elements or blocks by adding a comment tag either in front of the block or directly after the element.

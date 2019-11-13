@@ -1,7 +1,7 @@
 '.source.gfm, .text.md':
 
   '---':
-    'prefix': 'lia.horizontal.line'
+    'prefix': 'lia-horizontal-line'
     'body': '----------------------\n'
     'description': """
       Horizontal lines are realized by adding at least 3 hyphens in a row (---), but more hyphens look a little bit nicer ;)
@@ -20,7 +20,7 @@
 
 
   '> ...':
-    'prefix': 'lia.quote'
+    'prefix': 'lia-quote'
     'body': '> ${1:your quote}'
     'description': """
       Insert single line quotes or quote blocks just with the help of a starting (>).
@@ -38,7 +38,7 @@
 
 
   '# Main Title':
-    'prefix': 'lia.title.1'
+    'prefix': 'lia-title-1'
     'body': '# ${1:Main Title}\n'
     'description': """
       As in common Markdown, a document is segregated into different parts by its titles. A title starts with hash-tag (#) that is followed by an head-line. The number of subsequent hash-tags defines the order. It is furthermore possible to overwrite some of the definitions from the main header, see more information on this by typing "liaheadersection" ...
@@ -70,7 +70,7 @@
 
 
   '## Chapter Title':
-    'prefix': 'lia.title.2'
+    'prefix': 'lia-title-2'
     'body': '## ${1:Chapter Title}\n'
     'description': """
       As in common Markdown, a document is segregated into different parts by its titles. A title starts with hash-tag (#) that is followed by an head-line. The number of subsequent hash-tags defines the order. It is furthermore possible to overwrite some of the definitions from the main header, see more information on this by typing "liaheadersection" ...
@@ -102,7 +102,7 @@
 
 
   '### Section Title':
-    'prefix': 'lia.title.3'
+    'prefix': 'lia-title-3'
     'body': '### ${1:Section Title}\n'
     'description': """
       As in common Markdown, a document is segregated into different parts by its titles. A title starts with hash-tag (#) that is followed by an head-line. The number of subsequent hash-tags defines the order. It is furthermore possible to overwrite some of the definitions from the main header, see more information on this by typing "liaheadersection" ...
@@ -134,7 +134,7 @@
 
 
   '#### SubSection Title':
-    'prefix': 'lia.title.4'
+    'prefix': 'lia-title-4'
     'body': '#### ${1:SubSection Title}\n'
     'description': """
       As in common Markdown, a document is segregated into different parts by its titles. A title starts with hash-tag (#) that is followed by an head-line. The number of subsequent hash-tags defines the order. It is furthermore possible to overwrite some of the definitions from the main header, see more information on this by typing "liaheadersection" ...
@@ -166,7 +166,7 @@
 
 
   '##### Paragraph Title':
-    'prefix': 'lia.title.5'
+    'prefix': 'lia-title-5'
     'body': '##### ${1:Paragraph Title}\n'
     'description': """
       As in common Markdown, a document is segregated into different parts by its titles. A title starts with hash-tag (#) that is followed by an head-line. The number of subsequent hash-tags defines the order. It is furthermore possible to overwrite some of the definitions from the main header, see more information on this by typing "liaheadersection" ...
@@ -198,7 +198,7 @@
 
 
   '###### SubParagraph Title':
-    'prefix': 'lia.title.6'
+    'prefix': 'lia-title-6'
     'body': '##### ${1:SubParagraph Title}\n'
     'description': """
       As in common Markdown, a document is segregated into different parts by its titles. A title starts with hash-tag (#) that is followed by an head-line. The number of subsequent hash-tags defines the order. It is furthermore possible to overwrite some of the definitions from the main header, see more information on this by typing "liaheadersection" ...

@@ -1,7 +1,7 @@
 '.source.gfm, .text.md':
 
   '`code`':
-    'prefix': 'lia.code.inline'
+    'prefix': 'lia-code-inline'
     'body': '`${1:code}`'
     'description': """
       Inline `code` has `back-ticks around` it.
@@ -11,7 +11,7 @@
 
 
   '```lang ... ```':
-    'prefix': 'lia.code.block'
+    'prefix': 'lia-code-block'
     'body': """
       ```${1:javascript}
       ${2:var s = "JavaScript syntax highlighting";
@@ -44,7 +44,7 @@
 
 
   '```lang ... ``` <script>@input</script>':
-    'prefix': 'lia.code.block.js'
+    'prefix': 'lia-code-block-js'
     'body': """
       ```${1:javascript}
       ${2:var s = "JavaScript syntax highlighting";
@@ -70,7 +70,7 @@
 
 
   '```lang +name ...```':
-    'prefix': 'lia.code.block.name'
+    'prefix': 'lia-code-block-name'
     'body': """
       ```${1:javascript} ${2:title.js}
       ${3:var s = "Named JavaScript syntax highlighting";
@@ -99,7 +99,7 @@
 
 
   '```lang +name ...``` <script>@input</script>':
-    'prefix': 'lia.code.block.name.js'
+    'prefix': 'lia-code-block-name-js'
     'body': """
       ```${1:javascript}   ${2:Filename.js}
       ${3:var s = "Named JavaScript syntax highlighting";
@@ -129,7 +129,7 @@
 
 
   '```lang ... ``` <script> ... ':
-    'prefix': 'lia.code.block.jsx'
+    'prefix': 'lia-code-block-jsx'
     'body': """
       ```${1:javascript}
       ${2:var s = "JavaScript syntax highlighting";
@@ -172,7 +172,7 @@
 
 
   '<script>...@input...</script>':
-    'prefix': 'lia.code.js'
+    'prefix': 'lia-code-js'
     'body': """
       <script>
         try{
@@ -220,7 +220,7 @@
 
 
   '```lang @ouput ...```':
-    'prefix': 'lia.code.output'
+    'prefix': 'lia-code-output'
     'body': """
       ``` ${1:text}     ${2:+@output}
       ${3:Enter your default output}
@@ -246,7 +246,7 @@
 
 
   '``` ... ``` ``` ... ``` ...':
-    'prefix': 'lia.code.project'
+    'prefix': 'lia-code-project'
     'body': """
       ``` ${1:js}     ${2:-EvalScript.js}
       ${3:let who = data.first_name + " " + data.last_name;

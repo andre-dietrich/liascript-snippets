@@ -1,6 +1,6 @@
 '.source.gfm, .text.md':
   '[[solution]]':
-    'prefix': 'lia.quiz.text'
+    'prefix': 'lia-quiz-text'
     'body': '[[${1:solution}]]'
     'description': """
       Simply encompass your solution word into double brackets and you will get a nicely rendered text quiz.
@@ -15,7 +15,7 @@
 
 
   '[[solution]]<script> ... </script>':
-    'prefix': 'lia.quiz.text.js'
+    'prefix': 'lia-quiz-text-js'
     'body': """
       [[${1:solution}]]
       <script>
@@ -41,7 +41,7 @@
 
 
   '[[select|_wrong_|(right)]]':
-    'prefix': 'lia.quiz.select'
+    'prefix': 'lia-quiz-select'
     'body': '[[${1:option}|${2:option}]]'
     'description': """
       Create a selection field, that contains various different solutions, separated by `|`. Images, formulas everything is allowed, only the correct solution has to be put into parentheses and there can be multiple correct solutions.
@@ -56,7 +56,7 @@
 
 
   '[( |X)] text':
-    'prefix': 'lia.quiz.single.choice'
+    'prefix': 'lia-quiz-single-choice'
     'body': '[(${1: })] ${2:enter your text}'
     'description': """
       Compose your single choice quizzes out of many lines in the following format:
@@ -74,7 +74,7 @@
     'leftLabelHTML': '<span style="color:#ff0">🎓</span>'
 
   '[[ |X]] text':
-    'prefix': 'lia.quiz.multiple.choice'
+    'prefix': 'lia-quiz-multiple-choice'
     'body': '[[${1: }]] ${2:enter your text}'
     'description': """
       Compose your multiple choice quizzes out of many lines in the following format:
@@ -92,7 +92,7 @@
 
 
   '[[ |X][ |X]...] text':
-    'prefix': 'lia.quiz.matrix.choice'
+    'prefix': 'lia-quiz-matrix-choice'
     'body': """
       [[${1: }] [${2: }] [${3: }]]
       [[${4: }] [${5: }] [${6: }]] ${7: add a line}
@@ -114,7 +114,7 @@
 
 
   '[[?]] hint':
-    'prefix': 'lia.quiz.hint'
+    'prefix': 'lia-quiz-hint'
     'body': '[[?]] ${1:enter your hint}'
     'description': """
       If a quiz might be a bit tricky, you can add hints directly after any type of quiz and as many hints as you want. The user can decide whether he or she wants to use it, simply by clicking on the additional question mark, that appears after the check button.
@@ -136,7 +136,7 @@
     'leftLabelHTML': '<span style="color:#ff0">🎓</span>'
 
   '*** ... ***':
-    'prefix': 'lia.quiz.solution'
+    'prefix': 'lia-quiz-solution'
     'body': """
       ****************************************
 
@@ -167,7 +167,7 @@
 
 
   '<script> /*single choice*/ </script>':
-    'prefix': 'lia.quiz.single.js'
+    'prefix': 'lia-quiz-single-js'
     'body': """
       <script>
         // @input gets replaced by a single number
@@ -209,7 +209,7 @@
 
 
   '<script> /*single multiple*/ </script>':
-    'prefix': 'lia.quiz.multiple.js'
+    'prefix': 'lia-quiz-multiple-js'
     'body': """
       <script>
         // @input gets replaced by an array in the
@@ -258,7 +258,7 @@
 
 
   '<script> /* quiz */ </script>':
-    'prefix': 'lia.quiz.js'
+    'prefix': 'lia-quiz-js'
     'body': """
       <script>
         ${1:// @input gets replaced by the current quiz input.
@@ -290,7 +290,7 @@
 
 
   'single choice quiz with 3 options':
-    'prefix': 'lia.quiz.single.choice.3'
+    'prefix': 'lia-quiz-single-choice-3'
     'body': """
       [(${1: })] ${2:This is wrong.}
       [(${3:X})] ${4:The only correct option.}
@@ -308,7 +308,7 @@
 
 
   'multiple choice quiz with 4 options':
-    'prefix': 'lia.quiz.multiple.choice.4'
+    'prefix': 'lia-quiz-multiple-choice-4'
     'body': """
       [[${1: }]] ${2:Add as many elements as you want?}
       [[${3:X}]] ${4:The X marks the correct answer!}
@@ -328,7 +328,7 @@
 
 
   '[[!]] <script> ... </script>':
-    'prefix': 'lia.quiz.generic.js'
+    'prefix': 'lia-quiz-generic-js'
     'body': """
       [[!]]
       <script>

@@ -1,6 +1,6 @@
 '.source.gfm, .text.md':
   '@author':
-    'prefix': 'lia.macro.author'
+    'prefix': 'lia-macro-author'
     'body': '@author'
     'description': """
       Gets replaced by the author defined in the header.
@@ -10,7 +10,7 @@
 
 
   '@date':
-    'prefix': 'lia.macro.date'
+    'prefix': 'lia-macro-date'
     'body': '@date'
     'description': """
       Gets replaced by the date defined in the header.
@@ -20,7 +20,7 @@
 
 
   '@email':
-    'prefix': 'lia.macro.email'
+    'prefix': 'lia-macro-email'
     'body': '@email'
     'description': """
       Gets replaced by the email defined in the header.
@@ -30,7 +30,7 @@
 
 
   '@input':
-    'prefix': 'lia.macro.input'
+    'prefix': 'lia-macro-input'
     'body': '@input'
     'description': """
       Use this only in conjunction with executable code and projects or with quizzes. This macro can only be used in a script tag and gets replaced by the current user input.
@@ -44,7 +44,7 @@
 
 
   '@section':
-    'prefix': 'lia.macro.section'
+    'prefix': 'lia-macro-section'
     'body': '@section'
     'description': """
       Gets replaced by the current section number.
@@ -54,7 +54,7 @@
 
 
   '@uid':
-    'prefix': 'lia.macro.uid'
+    'prefix': 'lia-macro-uid'
     'body': '@uid'
     'description': """
       Generates a UID that can be used to name tags uniquely.
@@ -64,7 +64,7 @@
 
 
   '@version':
-    'prefix': 'lia.macro.version'
+    'prefix': 'lia-macro-version'
     'body': '@version'
     'description': """
       Gets replaced by the version defined in the header.
@@ -74,7 +74,7 @@
 
 
   'import':
-    'prefix': 'lia.macro.import'
+    'prefix': 'lia-macro-import'
     'body': 'import: ${1:url}'
     'description': """
       You can import the main macros of other courses, simply by using the import command, which is followed by the raw url of the foreign course.
@@ -96,7 +96,7 @@
 
 
   'attribute':
-    'prefix': 'lia.macro.attribute'
+    'prefix': 'lia-macro-attribute'
     'body': 'attribute: ${1:thx}'
     'description': """
       Attribution is an important issue. With the attribute command, you can define the attribution that is showed within the info field within the navigation pannel. These elements get also imported if you import the functionality from another course.
@@ -121,7 +121,7 @@
 
 
   'dark':
-    'prefix': 'lia.macro.dark'
+    'prefix': 'lia-macro-dark'
     'body': 'dark: ${1:true}'
     'description': """
       You can change the default appearance of your document, either if you prefer dark mode or light mode. This will not change the user preferences. The default mode is defined by the user settings.
@@ -138,7 +138,7 @@
     'leftLabelHTML': '<span style="color:#ff0">🛠</span>'
 
   'mode':
-    'prefix': 'lia.macro.mode'
+    'prefix': 'lia-macro-mode'
     'body': 'mode: ${1:Presentation}'
     'description': """
       You can change the default style of your document, either if you do not have any effects you can set mode to Textbook or start with and interactive Presentation. The three modes a the same as defined within the document at the upper right button. The default mode is defined by the user settings.
@@ -158,7 +158,7 @@
 
 
   '@name: one line':
-    'prefix': 'lia.macro.definition.line'
+    'prefix': 'lia-macro-definition-line'
     'body': '@${1:name}: ${2:line}'
     'description': """
       Use macros to deal with repetitive task and to make the document more readable. You can define your own macros within the main and section headers. Start your macro with an (@) sign and give it a name. Separate the name from the body with a colon (:). If you want to parameterize your macro, use @0, @1, ... for the parameter id. It is a simple string substitution mechanism, and the parameters are separated by a comma (,). If you have commas in your parameters, then use back-tics (`) to enclose this parameter. And triple back-tics (```) to enclose multi-line parameters.
@@ -181,7 +181,7 @@
 
 
   '@name ... body ... @end':
-    'prefix': 'lia.macro.definition.block'
+    'prefix': 'lia-macro-definition-block'
     'body': """
       @${1:name}
       ${2:param1 -> __@0__}
@@ -221,7 +221,7 @@
 
 
   '``` @macro ```':
-    'prefix': 'lia.macro.call.block'
+    'prefix': 'lia-macro-call-block'
     'body': """
       ```${1:lang} @${2:macro}
       ${3:a multiline

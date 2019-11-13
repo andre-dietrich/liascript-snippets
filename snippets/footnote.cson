@@ -1,6 +1,6 @@
 '.source.gfm, .text.md':
   '[^ref](text)':
-    'prefix': 'lia.footnote inline'
+    'prefix': 'lia-footnote-inline'
     'body': '[^${1:ref}](${2:explanation})'
     'description': """
       Inline Footnotes are composed of a reference in brackets with a starting caret. The following text has to be put into parentheses, only one line is allowed.
@@ -11,7 +11,7 @@
     'leftLabelHTML': '<span style="color:#ff0">🐾</span>'
 
   '[^ref]':
-    'prefix': 'lia.footnote.reference'
+    'prefix': 'lia-footnote-reference'
     'body': '[^${1:ref}]'
     'description': """
       Multiline footnotes have to be split into a reference and into a comment. Footnote references are defined by brackets with a starting caret and can appear everywhere within the text. Footnote texts have to be put into the end of each section.
@@ -33,7 +33,7 @@
     'leftLabelHTML': '<span style="color:#ff0">🐾</span>'
 
   '[^ref]: some comments ...':
-    'prefix': 'lia.footnote.text'
+    'prefix': 'lia-footnote-text'
     'body': '[^${1:ref}]: ${2:some comments}'
     'description': """
       Multiline footnotes have to be split into a reference and into a comment. Footnote texts start with a reference "tag", which is followed by a colon. They have to be put into the end of each section otherwise they are not interpreted as footnote texts and multi-block footnotes have to follow the previous indentation.

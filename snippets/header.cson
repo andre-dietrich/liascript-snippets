@@ -1,6 +1,6 @@
 '.source.gfm, .text.md':
   '<!-- name: ...':
-    'prefix': 'lia.header.main'
+    'prefix': 'lia-header-main'
     'body': """
       <!--
       author:   ${1:Your Name}
@@ -62,7 +62,7 @@
 
 
   '<!-- name: ... -->':
-    'prefix': 'lia.header.section'
+    'prefix': 'lia-header-section'
     'body': """
       <!--
       author:   ${1:Section Author}

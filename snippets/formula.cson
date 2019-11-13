@@ -1,6 +1,6 @@
 '.source.gfm, .text.md':
   '$ f(x) = (x^2+5)^3 $':
-    'prefix': 'lia.formula.inline'
+    'prefix': 'lia-formula-inline'
     'body': '$ ${1:f(a,b,c) = (a^2+b^2+c^2)^3} $'
     'description': """
     Insert a mathematical formula (inline) within your text. It has to be enclosed with two single dollar signs, as shown in the example.
@@ -13,7 +13,7 @@
     'leftLabelHTML': '<span style="color:#ff0">𝝅²</span>'
 
   '$$ \\sum_\\{i=1\\}^\\\\infty\\ ... $$':
-    'prefix': 'lia.formula.block'
+    'prefix': 'lia-formula-block'
     'body': """
     $$
        ${1:\\\\sum_\\{i=1\\}^\\\\infty\\\\frac\\{1\\}\\{n^2\\}

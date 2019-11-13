@@ -1,6 +1,6 @@
 '.source.gfm, .text.md':
   '1. ... 2. ... 3. ...':
-    'prefix': 'lia.list.ordered'
+    'prefix': 'lia-list-ordered'
     'body': """
       1. ${1:block}
       2. ${2:block}
@@ -20,7 +20,7 @@
     'leftLabelHTML': '<span style="color:#ff0">𝌆</span>'
 
   '* ... + ... - ...':
-    'prefix': 'lia.list.unordered'
+    'prefix': 'lia-list-unordered'
     'body': """
       + ${1:block}
       + ${2:block}
