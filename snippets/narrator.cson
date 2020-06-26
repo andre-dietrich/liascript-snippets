@@ -53,6 +53,30 @@
     'leftLabelHTML': '<span style="color:#ff0">🇦🇺 👨</span>'
     'descriptionMoreURL': 'https://responsivevoice.org'
 
+  'voice: Bangla Bangladesh Female':
+    'prefix': 'voice-bangla-bangladesh-female'
+    'body':   'Bangla Bangladesh Female'
+    'leftLabelHTML': '<span style="color:#ff0">🇧🇩 👩</span>'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
+  'voice: Bangla Bangladesh Male':
+    'prefix': 'voice-bangla-bangladesh-male'
+    'body':   'Bangla Bangladesh Male'
+    'leftLabelHTML': '<span style="color:#ff0">🇧🇩 👨</span>'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
+  'voice: Bangla India Female':
+    'prefix': 'voice-bangla-india-female'
+    'body':   'Bangla India Female'
+    'leftLabelHTML': '<span style="color:#ff0">🇧🇩 👩</span>'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
+  'voice: Bangla India Male':
+    'prefix': 'voice-bangla-india-male'
+    'body':   'Bangla India Male'
+    'leftLabelHTML': '<span style="color:#ff0">🇧🇩 👨</span>'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
   'voice: Brazilian Portuguese Female':
     'prefix': 'voice-brazilian-portuguese-female'
     'body':   'Brazilian Portuguese Female'
@@ -161,6 +185,18 @@
     'leftLabelHTML': '<span style="color:#ff0">🇳🇱 👨</span>'
     'descriptionMoreURL': 'https://responsivevoice.org'
 
+  'voice: Filipino Female':
+    'prefix': 'voice-filipino-female'
+    'body':   'Filipino Female'
+    'leftLabelHTML': '<span style="color:#ff0">🇵🇭 👩</span>'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
+  'voice: Filipino Male':
+    'prefix': 'voice-filipino-male'
+    'body':   'Filipino Male'
+    'leftLabelHTML': '<span style="color:#ff0">🇵🇭 👨</span>'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
   'voice: Finnish Female':
     'prefix': 'voice-finnish-female'
     'body':   'Finnish Female'
@@ -171,6 +207,18 @@
     'prefix': 'voice-finnisch-male'
     'body':   'Finnish Male'
     'leftLabelHTML': '<span style="color:#ff0">🇫🇮 👨</span>'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
+  'voice: French Canadian Female':
+    'prefix': 'voice-french-vanadian-female'
+    'body':   'French Canadian Female'
+    'leftLabelHTML': '<span style="color:#ff0">🇨🇦 👩</span>'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
+  'voice: French Canadian Male':
+    'prefix': 'voice-french-canadian-male'
+    'body':   'French Male'
+    'leftLabelHTML': '<span style="color:#ff0">🇨🇦 👨</span>'
     'descriptionMoreURL': 'https://responsivevoice.org'
 
   'voice: French Female':
@@ -336,7 +384,7 @@
     'descriptionMoreURL': 'https://responsivevoice.org'
 
   'voice: Russian Male':
-    'prefix': 'voice-russian-female'
+    'prefix': 'voice-russian-male'
     'body':   'Russian Male'
     'leftLabelHTML': '<span style="color:#ff0">🇷🇺 👨</span>'
     'descriptionMoreURL': 'https://responsivevoice.org'
@@ -467,6 +515,12 @@
     'leftLabelHTML': '<span style="color:#ff0">🏁 👨</span>'
     'descriptionMoreURL': 'https://responsivevoice.org'
 
+  'voice: Estonian Male':
+    'prefix': 'voice-estonian-male'
+    'body':   'Estonian Male'
+    'leftLabelHTML': '<span style="color:#ff0">🇪🇪 👨</span>'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
   'voice: Icelandic Male':
     'prefix': 'voice-icelandic-male'
     'body':   'Icelandic Male'
@@ -503,6 +557,18 @@
     'leftLabelHTML': '<span style="color:#ff0">🇲🇪 👨</span>'
     'descriptionMoreURL': 'https://responsivevoice.org'
 
+  'voice: Nepali':
+    'prefix': 'voice-nepali'
+    'body':   'Nepali'
+    'leftLabelHTML': '<span style="color:#ff0">🇳🇵</span>'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
+  'voice: Sinhala':
+    'prefix': 'voice-sinhala'
+    'body':   'Sinhala'
+    'leftLabelHTML': '<span style="color:#ff0">🇱🇰</span>'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
   'voice: Serbian Male':
     'prefix': 'voice-serbian-male'
     'body':   'Serbian Male'
@@ -519,6 +585,12 @@
     'prefix': 'voice-swahili-male'
     'body':   'Swahili Male'
     'leftLabelHTML': '<span style="color:#ff0">🇰🇪 👨🏿</span>'
+    'descriptionMoreURL': 'https://responsivevoice.org'
+
+  'voice: Ukrainian Female':
+    'prefix': 'voice-ukrainian-female'
+    'body':   'Ukrainian Female'
+    'leftLabelHTML': '<span style="color:#ff0">🇺🇦󠁧󠁿 👩</span>'
     'descriptionMoreURL': 'https://responsivevoice.org'
 
   'voice: Welsh Male':
