@@ -9,6 +9,7 @@
 import json
 import sys
 import os
+import html
 
 try:
     import cson
@@ -49,31 +50,66 @@ def parse_replace(node):
 
 def main():
 
-    if len(sys.argv) != 2:
-        print("Usage ./converter.py <file-path>")
+    if len(sys.argv) <= 1:
+        print("Usage ./converter.py <file-path> <file-path> <file-path> ... or --all to add convert all cson files")
         sys.exit(1)
 
-    filename = sys.argv[1]
 
-    if not(os.path.exists(filename) and os.path.isfile(filename)):
-        print("Given file does not exist or is dir!")
-        sys.exit(1)
+    if sys.argv[1] == "--all":
+        sys.argv.pop()
+
+        cson =  [ "ascii.cson"
+                , "code.cson"
+                , "comments.cson"
+                , "diagram.cson"
+                , "effect.cson"
+                , "embed.cson"
+                , "footnote.cson"
+                #, "formula.cson"
+                , "header.cson"
+                #, "highlight.cson"
+                , "init.cson"
+                , "list.cson"
+                , "macro.cson"
+                , "misc.cson"
+                #, "narrator.cson"
+                , "survey.cson"
+                , "table.cson"
+                , "text.cson"
+                , "quiz.cson"
+                ]
+
+        for f in cson:
+           sys.argv += ["snippets/" + f]
 
     root = []
+    for filename in sys.argv[1:]:
 
-    for key, value in load_cson_file(filename).items():
-        for key, item in value.items():
-            new_node = {}
-            new_node["key"] = key
-            new_node["search"] = item["prefix"]
-            new_node["replace"] = item["body"]
-            new_node["helpMsg"] = item["description"]
-            new_node["icon"] = item["leftLabelHTML"]
+        if not(os.path.exists(filename) and os.path.isfile(filename)):
+            print("Given file does not exist or is dir!")
+            sys.exit(1)
 
-            root.append(parse_replace(new_node))
 
-    raw_json = json.dumps(root, indent=4)
-    json_lines = list(map(lambda line: line.replace("\"", "", 2), raw_json.split("\n")))
+
+        for key, value in load_cson_file(filename).items():
+            for key, item in value.items():
+                new_node = {}
+                new_node["key"] = html.escape(key)
+                new_node["search"] = item["prefix"]
+                new_node["replace"] = item["body"]
+                new_node["icon"] = item["leftLabelHTML"]
+                new_node["url"] = item["descriptionMoreURL"]
+
+                try:
+                    new_node["helpMsg"] = html.escape(item["description"])
+                except:
+                    12
+
+
+                root.append(parse_replace(new_node))
+
+        raw_json = json.dumps(root, indent=4)
+        json_lines = list(map(lambda line: line.replace("\"", "", 2), raw_json.split("\n")))
 
     print(os.linesep.join(json_lines))
 
