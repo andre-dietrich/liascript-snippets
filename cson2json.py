@@ -27,21 +27,24 @@ def parse_replace(node):
     remove_next_brace = False
     i = 0
     while i < len(node["replace"]):
-        char = node["replace"][i]
-        if char == "$":
-            next_char = node["replace"][i+1]
-            if next_char == "{":
-                remove_next_brace = True
-                i += 4
-                continue
-            elif next_char.isnumeric():
-                i += 2
-                continue
+        try:
+            char = node["replace"][i]
+            if char == "$":
+                next_char = node["replace"][i+1]
+                if next_char == "{":
+                    remove_next_brace = True
+                    i += 4
+                    continue
+                elif next_char.isnumeric():
+                    i += 2
+                    continue
 
-        if not(remove_next_brace and char == "}"):
-            filtered_replace += char
-        else:
-            remove_next_brace = False
+            if not(remove_next_brace and char == "}"):
+                filtered_replace += char
+            else:
+                remove_next_brace = False
+        except:
+            pass
 
         i += 1
 
@@ -65,7 +68,7 @@ def main():
                 , "effect.cson"
                 , "embed.cson"
                 , "footnote.cson"
-                #, "formula.cson"
+                , "formula.cson"
                 , "header.cson"
                 #, "highlight.cson"
                 , "init.cson"
