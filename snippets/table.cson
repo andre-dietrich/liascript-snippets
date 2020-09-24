@@ -195,3 +195,407 @@
     """
     'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
     'leftLabelHTML': '<span style="color:#ff0">𝌠</span>'
+
+
+  '<!-- data-title="..." -->':
+    'prefix': 'lia-table-diagram-title'
+    'body': """<!-- data-title="${1:title}" -->"""
+    'description': """
+      You can set the diagram title for your plotted document via the data-title parameter, this is only visible if you switch to the diagram mode.
+
+      Example:
+        <!--
+        data-title="Government expenditure on education"
+        data-xlabel="year"
+        data-ylabel="% of GDP"
+        -->
+        | Year | Finland | USA | Germany |   China |
+        | ---- | -------:| ---:| -------:| -------:|
+        | 1995 | 6.80942 |     | 4.42079 | 1.84192 |
+        | 1996 | 6.86052 |     | 4.48319 | 1.85338 |
+        | ...  |     ... | ... |     ... |     ... |
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">𝌠</span>'
+
+
+  '<!-- data-xlabel="..." -->':
+    'prefix': 'lia-table-diagram-xlabel'
+    'body': """<!-- data-xlabel="${1:title}" -->"""
+    'description': """
+      You can overwrite the diagram x-label for your plotted document via the data-xlabel parameter, this is only visible if you switch to the diagram mode.
+
+      Example:
+        <!--
+        data-title="Government expenditure on education"
+        data-xlabel="year"
+        data-ylabel="% of GDP"
+        -->
+        | Year | Finland | USA | Germany |   China |
+        | ---- | -------:| ---:| -------:| -------:|
+        | 1995 | 6.80942 |     | 4.42079 | 1.84192 |
+        | 1996 | 6.86052 |     | 4.48319 | 1.85338 |
+        | ...  |     ... | ... |     ... |     ... |
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">𝌠</span>'
+
+
+  '<!-- data-ylabel="..." -->':
+    'prefix': 'lia-table-diagram-ylabel'
+    'body': """<!-- data-ylabel="${1:title}" -->"""
+    'description': """
+      You can overwrite the diagram y-label for your plotted document via the data-ylabel parameter, this is only visible if you switch to the diagram mode.
+
+      Example:
+        <!--
+        data-title="Government expenditure on education"
+        data-xlabel="year"
+        data-ylabel="% of GDP"
+        -->
+        | Year | Finland | USA | Germany |   China |
+        | ---- | -------:| ---:| -------:| -------:|
+        | 1995 | 6.80942 |     | 4.42079 | 1.84192 |
+        | 1996 | 6.86052 |     | 4.48319 | 1.85338 |
+        | ...  |     ... | ... |     ... |     ... |
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">𝌠</span>'
+
+
+  '<!-- data-type="..." -->':
+    'prefix': 'lia-table-diagram-type'
+    'body': """<!-- data-type="${1:type}" -->"""
+    'description': """
+      You can enforce the visualization of a certain type, even if the sturcture of your table might look different.
+      Currently available data-types are: lineplot, scatterplot, boxplot, barchart, radar, piechart, map, heatmap, parallel, graph, sankey, and none
+      If you do not want to show tables as diagrams, you can also use data-type="None" and only the table will be visible.
+
+      Example:
+        <!-- data-type="pie" -->
+        | Year | Finland | USA | Germany |   China |
+        | ---- | -------:| ---:| -------:| -------:|
+        | 1995 | 6.80942 |     | 4.42079 | 1.84192 |
+        | 1996 | 6.86052 |     | 4.48319 | 1.85338 |
+        | ...  |     ... | ... |     ... |     ... |
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">𝌠</span>'
+
+
+  '<!-- data-type="lineplot" -->':
+    'prefix': 'lia-table-diagram-lineplot'
+    'body': """<!-- data-type="lineplot" -->"""
+    'description': """
+      If the first column contains (not repeating) numbers as well as the other columns, lineplots are used as the default representation, a special tag is not required. If this isn't the case, then you can apply this tag to enforce the visualization as a scatterplot.
+
+      Example:
+        <!-- data-type="lineplot" -->
+        | x's |  some y's  |    dist |
+        | --- |:----------:| -------:|
+        | 1   |    1 \$    | 16 $km$ |
+        | 2.2 |    2 \$    | 12 $km$ |
+        | 3.3 |    5 \$    |  1 $km$ |
+        | 4   | -12.333 \$ |         |
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">𝌠</span>'
+
+
+  '<!-- data-type="scatterplot" -->':
+    'prefix': 'lia-table-diagram-scatterplot'
+    'body': """<!-- data-type="scatterplot" -->"""
+    'description': """
+      If the first column contains repetitive numbers, scatterplots are used as the default representation if further numbers are determine, a special tag is not required.
+
+      Example:
+        <!-- data-type="scatterplot" -->
+        | x's |  some y's  |                              dist |
+        | --- |:----------:| ---------------------------------:|
+        | 1   |    1 \$    |                           16 $km$ |
+        | 2.2 |    2 \$    |                           12 $km$ |
+        | 3.3 |    5 \$    |                            1 $km$ |
+        | 4   | -12.333 \$ | -555$km$ <-- this will be ignored |
+        | 4   |            |                                 1 |
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">𝌠</span>'
+
+
+  '<!-- data-type="barchart" -->':
+    'prefix': 'lia-table-diagram-barchart'
+    'body': """<!-- data-type="barchart" -->"""
+    'description': """
+      In contrast to a line or a scatter plot, if the first colum contains at least one entry thant cannot be parsed as a number, this might be represented also as BarChart. Which works perfectly with the following example. If the maximum values of the columns do not differ to much, then this dataset it represented as a BarChart, otherwise you might end up seeing only one huge bar, while the other bars are indistiguishable from each other. In this case other visualization are chosen.
+
+      Example:
+        <!-- data-type="barchart" -->
+        | Animal          | weight in kg | Lifespan years | Mitogen |
+        | --------------- | ------------:| --------------:| -------:|
+        | Mouse           |        0.028 |              2 |      95 |
+        | Flying squirrel |        0.085 |             15 |      50 |
+        | Brown bat       |        0.020 |             30 |      10 |
+        | Sheep           |           90 |             12 |      95 |
+        | Human           |           68 |             70 |      10 |
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">𝌠</span>'
+
+
+  '<!-- data-type="boxplot" -->':
+    'prefix': 'lia-table-diagram-boxplot'
+    'body': """<!-- data-type="boxplot" -->"""
+    'description': """
+      If you have a ScatterPlot like representation, but actually want to use this data as primary data for your BoxPlot, you can manually change the type of visualization to BoxPlot, simply by adding the follwing attribute to the head of your table, as it is shown in the snippet below. Columns are then treated as datasets and get visualized accordingly.
+
+      Example:
+        <!-- data-type="boxplot" -->
+        | Random |    I |  II |
+        | ------:| ----:| ---:|
+        |    5.0 |  1.0 |   5 |
+        |    6.0 |  1.0 |   4 |
+        |    7.0 |  1.0 |   5 |
+        |    8.0 |  1.0 |   5 |
+        |    9.0 |  1.0 |   4 |
+        |   10.0 |  1.0 |   5 |
+        |    5.0 | 10.0 |   7 |
+        |    6.0 | 10.0 |   8 |
+        |    7.0 | 10.0 |   7 |
+        |    8.0 | 10.0 |   7 |
+        |    9.0 | 10.0 |   8 |
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">𝌠</span>'
+
+
+  '<!-- data-type="radar" -->':
+    'prefix': 'lia-table-diagram-radar'
+    'body': """<!-- data-type="radar" -->"""
+    'description': """
+      If for example humans and sheeps are removed from the dataset, then wheight in kg would not be visible in a BarChart at all. In this case a Radar is selected, that allows to analyze data visually with different "y"-axis.
+
+      Example:
+        <!-- data-type="radar" -->
+        | Animal          | weight in kg | Lifespan years | Mitogen |
+        | --------------- | ------------:| --------------:| -------:|
+        | Mouse           |        0.028 |             02 |      95 |
+        | Flying squirrel |        0.085 |             15 |      50 |
+        | Brown bat       |        0.020 |             30 |      10 |
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">𝌠</span>'
+
+
+  '<!-- data-type="piechart" -->':
+    'prefix': 'lia-table-diagram-piechart'
+    'body': """<!-- data-type="piechart" -->"""
+    'description': """
+      If you have a table with only one row full of numbers, this will be automatically presented as an pie chart. The head represents the categories and the body the quatities.
+
+      Example:
+        | Classic | Country | Reggae | Hip-Hop | Hard-Rock | Samba |
+        | -------:| -------:| ------:| -------:| ---------:| -----:|
+        |      50 |      50 |    100 |     200 |       350 |   250 |
+
+        <!-- data-type="PieChart" -->
+        | Music-Style | Classic | Country | Reggae | Hip-Hop | Hard-Rock | Samba |
+        |:----------- | -------:| -------:| ------:| -------:| ---------:| -----:|
+        | 1994        |      50 |      50 |    100 |     200 |       350 |   250 |
+        | 2014        |      20 |      30 |    100 |     220 |       400 |   230 |
+        | demo 2034   |       5 |      12 |     98 |     293 |       345 |    32 |
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">𝌠</span>'
+
+
+  '<!-- data-type="map" -->':
+    'prefix': 'lia-table-diagram-map'
+    'body': """<!-- data-type="map" -->"""
+    'description': """
+      A map is similar to a BarChart from the table structure, but if you want to depict your data on a real map, you will have to add a geojson-file, that contains all relevant data about the form of your countries, states, cities, etc. The first column has to match the names of your objects in your geojson data, that is attached to your table in the following way:
+
+      Example:
+        <!-- data-type="map" data-src="https://code.highcharts.com/mapdata/custom/europe.geo.json" -->
+        | Country                | percent |
+        | ---------------------- | ------- |
+        | Albania                | 73.5    |
+        | Andorra                | 98.9    |
+        | Armenia                | 72.4    |
+        | ...                    |         |
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">𝌠</span>'
+
+
+  '<!-- data-type="heatmap" -->':
+    'prefix': 'lia-table-diagram-heatmap'
+    'body': """<!-- data-type="heatmap" -->"""
+    'description': """
+      Another type of visualization is a HeatMap, which is used, if the table head and the first column do only contain numbers, in other words coordinates. If you want to use categories instead of coordinate numbers, you can enforce the usage of a heatmap, with the comment shown below:
+
+      Example:
+        <!--
+        data-type="heatmap"
+        data-title="Seattle mean temperature in Fahrenheit"
+        data-show
+        -->
+          | Seattle |  Jan |  Feb |  Mar |  Apr |  May |  ... |
+          | -------:| ----:| ----:| ----:| ----:| ----:| ----:|
+          |       0 | 40.7 | 41.5 | 43.6 | 46.6 | 51.4 |  ... |
+          |       2 |  ... |  ... |  ... |  ... |  ... |  ... |
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">𝌠</span>'
+
+
+  '<!-- data-type="parallel" -->':
+    'prefix': 'lia-table-diagram-parallel'
+    'body': """<!-- data-type="parallel" -->"""
+    'description': """
+      A Parallel representation jumps in, if there are simply too many categories, so that your BarChart would contain only thin lines.
+
+      Example:
+        <!-- data-type="parallel" -->
+        | Country                | GDP growth (%) | Births per woman | Life expectancy ...
+        | ---------------------- | --------------:| ----------------:| -------------------
+        | Albania                |            7.5 |            1.858 |               76.63
+        | Andorra                |          3.570 |            1.260 |                 NaN
+        | Austria                |          2.178 |            1.414 |               80.44
+        | ...                    |            ... |              ... |                 ...
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">𝌠</span>'
+
+
+  '<!-- data-type="graph" -->':
+    'prefix': 'lia-table-diagram-graph'
+    'body': """<!-- data-type="graph" -->"""
+    'description': """
+      If the first column and the head of the table are equal, then the interpreter tries to interpret the content of the table as an adjacency matrix, which defines a graph. If those values are symetrical according to the diagonal, then the matrix defines an "undirected graph".
+      In contrast to this, if those values differ, then the result is simply an an "directed graph", whereby the values define the strength of the line.
+
+      Example:
+        <!-- data-title="Undirected Graph" -->
+        | Graph |  A  |  B  |  C  |  D  |  E  |
+        |:----- |:---:|:---:|:---:|:---:|:---:|
+        | A     |  0  |  1  |  0  |  1  |  0  |
+        | B     |  1  |  0  |  0  |  1  |  0  |
+        | C     |  0  |  0  |  0  |  0  |  0  |
+        | D     |  1  |  1  |  0  |  0  |  1  |
+        | E     |  0  |  0  |  0  |  1  |  0  |
+
+        <!-- data-title="Directed Graph" -->
+        | Graph |  A  |  B  |  C  |  D  |  E  |
+        |:----- |:---:|:---:|:---:|:---:|:---:|
+        | A     |  0  | 12  |  0  |  1  |  0  |
+        | B     | -22 |  0  |  0  | 0.4 |  0  |
+        | C     |  0  |  0  |  0  |  0  |  0  |
+        | D     |  2  | 12  |  0  |  0  |  1  |
+        | E     |  0  |  0  |  0  |  2  |  0  |
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">𝌠</span>'
+
+
+  '<!-- data-type="sankey" -->':
+    'prefix': 'lia-table-diagram-sankey'
+    'body': """<!-- data-type="sankey" -->"""
+    'description': """
+      A Sankey diagram is a special type of directed graph that can be used to streams or the flow of something, such as engergy, money, etc.
+
+      Example:
+        <!-- data-type="sankey" -->
+        | Sankey |  A  |  B  |  C  |  D  |  E  |
+        |:------ |:---:|:---:|:---:|:---:|:---:|
+        | A      |     |  2  |     |     |     |
+        | B      |  3  |     |     |     |     |
+        | C      |  1  |  1  |     |     |     |
+        | D      |     |  1  |  1  |     |     |
+        | E      |  2  |  1  |  1  |  1  |     |
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">𝌠</span>'
+
+
+  '<!-- data-type="none" -->':
+    'prefix': 'lia-table-diagram-none'
+    'body': """<!-- data-type="none" -->"""
+    'description': """
+      Simply data-type="none" to prevent any kind of visualization.
+
+      Example:
+        <!-- data-type="none" -->
+        | Sankey |  A  |  B  |  C  |  D  |  E  |
+        |:------ |:---:|:---:|:---:|:---:|:---:|
+        | A      |     |  2  |     |     |     |
+        | B      |  3  |     |     |     |     |
+        | C      |  1  |  1  |     |     |     |
+        | D      |     |  1  |  1  |     |     |
+        | E      |  2  |  1  |  1  |  1  |     |
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">𝌠</span>'
+
+
+  '<!-- data-show -->':
+    'prefix': 'lia-table-diagram-show'
+    'body': """<!-- data-show -->"""
+    'description': """
+      Simply add this attribute or set it to true (data-show="true"), if you want to visualize your data immediately, without the need to click in the switch-button. It is still possible for your users to switch to the table representation.
+
+      Example:
+        <!-- data-show -->
+        | Sankey |  A  |  B  |  C  |  D  |  E  |
+        |:------ |:---:|:---:|:---:|:---:|:---:|
+        | A      |     |  2  |     |     |     |
+        | B      |  3  |     |     |     |     |
+        | C      |  1  |  1  |     |     |     |
+        | D      |     |  1  |  1  |     |     |
+        | E      |  2  |  1  |  1  |  1  |     |
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">𝌠</span>'
+
+
+  '<!-- data-transpose -->':
+    'prefix': 'lia-table-diagram-transpose'
+    'body': """<!-- data-transpose -->"""
+    'description': """
+      Like in the mathematical sense, set this attribute or set it to true (data-transpose="true"), if you want to switch rows and columns. One benefit is, that you can for example use PieChart and let your table grow vertically instead of using a horizontal monster.
+
+      Example:
+        <!-- data-transpose -->
+        | Music-Style {0-1}{1994} {1}{2014} |      Student rating |
+        |:--------------------------------- | -------------------:|
+        | Classic                           |   {0-1}{50} {1}{20} |
+        | Country                           |   {0-1}{50} {1}{30} |
+        | Reggae                            |                 100 |
+        | Hip-Hop                           | {0-1}{200} {1}{220} |
+        | Hard-Rock                         | {0-1}{350} {1}{400} |
+        | Samba                             | {0-1}{250} {1}{230} |
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">𝌠</span>'
+
+
+  '<!-- data-src=".." -->':
+    'prefix': 'lia-table-diagram-source'
+    'body': """<!-- data-src="${1:url}" -->"""
+    'description': """
+      Currently this attribute is used to refere to your geojson data, if you use the `data-type="Map"` representation, but this might change in the future to load and visualize data directly, such as csv.
+      If you are using geojson files from external websites such as: https://code.highcharts.com/mapdata/
+      It can be usefull to use anycors, if the data cannot be visualized due to CORS restrictions:
+
+      data-src="https://cors-anywhere.herokuapp.com/https://code.highcharts.com/mapdata/custom/europe.geo.json"
+
+      Example:
+        <!-- data-type="map" data-src="https://code.highcharts.com/mapdata/custom/europe.geo.json" -->
+        | Country                | percent |
+        | ---------------------- | ------- |
+        | Albania                | 73.5    |
+        | Andorra                | 98.9    |
+        | Armenia                | 72.4    |
+        | ...                    |         |
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">𝌠</span>'
