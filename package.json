@@ -1,7 +1,7 @@
 {
   "name": "liascript-snippets",
   "main": "./lib/liascript-snippets",
-  "version": "1.0.10",
+  "version": "1.1.0",
   "description": "A collection of snippets for the LiaScript Markdown language...",
   "keywords": [],
   "activationCommands": {},
