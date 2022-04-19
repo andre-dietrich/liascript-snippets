@@ -10,7 +10,7 @@ https://atom.io/packages/liascript-snippets
 ### Command Line
 
 
-Install Atom 1.22 or newer
+Install Atom 1.5 or newer
 
 In the terminal, install the package via apm:
 
@@ -18,7 +18,7 @@ In the terminal, install the package via apm:
 
 ### GUI
 
-1. Install Atom 1.22 or newer
+1. Install Atom 1.5 or newer
 2. Launch Atom
 3. Open Settings View using Cmd+, on macOS or Ctrl+, on other platforms
 4. Click the Install tab on the left side
