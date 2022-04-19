@@ -1,0 +1,56 @@
+'.source.gfm, .text.md':
+  '-[ ] github task':
+    'prefix': 'lia-task'
+    'body':   '-[${1:X}] ${2:line with Markdown}'
+    'description': """
+      Use the GitHub-flavoured Markdown syntax for tasks. If the version of the course is larger than 1, the task-states will be stored persistently.
+
+      You can define as much tasks as you want
+
+      Example:
+
+        -[ ] This is not checked by default
+        -[X] This one is checked by default
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">📋</span>'
+
+  '-[ ] github task ... <script>...</script>':
+    'prefix': 'lia-task-js'
+    'body':   """
+      -[${1:X}] ${2:task-definition}
+      -[${3:X}] ${4:task-definition}
+      <script>
+        ${5:js-code}
+      </script>
+    """
+    'description': """
+      Use the GitHub-flavoured Markdown syntax for tasks in association with JavaScript-code that is executed on every input.
+
+      You can define as much tasks as you want.
+
+      Example:
+
+        - [X] Biology
+        - [ ] Chemistry
+        <script output="tasks">"@input"</script>
+
+        <script style="width: 100%">
+        try {
+          let task = @input(`tasks`) // interpret the output="tasks"
+
+          if(task[0]) {
+            send.liascript(`## Biology
+
+        Hey, great, you want to learn something about Biology.
+
+        * resource 1
+        * resource 2
+
+        The input from the tasks above was: \`[${task}]\``)
+          } else send.clear()
+        } catch(e) { }
+        </script>
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md#Tasks-and-scripting'
+    'leftLabelHTML': '<span style="color:#ff0">📋</span>'
