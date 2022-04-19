@@ -37,6 +37,26 @@
     'leftLabelHTML': '<span style="color:#ff0">📌</span>'
 
 
+  '> ... -- citation':
+    'prefix': 'lia-quote-citation'
+    'body': """
+      > ${1:your quote}
+      >
+      > -- ${2:your citation}
+    """
+    'description': """
+      Insert single line quotes or quote blocks just with the help of a starting (>) and let the final paragraph start with -- to indicate an blockquote citation.
+
+      Example:
+        > “Live as if you were to die tomorrow.
+        > Learn as if you were to live forever.”
+        >
+        > -- Mahatma Gandhi
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md#Citations'
+    'leftLabelHTML': '<span style="color:#ff0">📌</span>'
+
+
   '# Main Title':
     'prefix': 'lia-title-1'
     'body': '# ${1:Main Title}\n'
@@ -224,6 +244,32 @@
         ...
 
       It is possible to add styling elements to the titles, but this should be used only in some rare cases.
+    """
+    'descriptionMoreURL': 'https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet'
+    'leftLabelHTML': '<span style="color:#ff0">🗂</span>'
+
+  '<details><summary>...':
+    'prefix': 'lia-details'
+    'body': """
+      <details>
+
+      <summary>${1:title}</summary>
+
+      ${2:body}
+
+      </details>
+    """
+    'description': """
+      The details and summary tags are standard HTML tags and GitHub also supports their usage with Markdown. These tags offer a neat way to define something what is nowadays called accordion. Thus, your user can click on the summary text to make the body of the details-tag appear.
+
+      Example:
+        <details>
+
+        <summary>**Honest Textbook ads (click to enlarge)**</summary>
+
+        !?[If High School and College Textbooks Were Honest - Honest Ads](https://www.youtube.com/watch?v=lhSjYT7pWkw)
+
+        </details>
     """
     'descriptionMoreURL': 'https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet'
     'leftLabelHTML': '<span style="color:#ff0">🗂</span>'
