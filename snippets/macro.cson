@@ -72,6 +72,19 @@
     'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
     'leftLabelHTML': '<span style="color:#ff0">🛠</span>'
 
+  '@persistent':
+    'prefix': 'lia-macro-persistent'
+    'body': 'persistent: ${1:false}'
+    'description': """
+      If you do not want to store the course state wihin indexeddb and also not within the local course index, you can use this macro within the header, which means that no trace of this course will be stored locally.
+
+      Example:
+        <!--
+        persistent: false
+        -->
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">🛠</span>'
 
   'import':
     'prefix': 'lia-macro-import'
@@ -157,6 +170,69 @@
     'leftLabelHTML': '<span style="color:#ff0">🛠</span>'
 
 
+  'classroom':
+    'prefix': 'lia-macro-classroom'
+    'body': 'classroom: ${1:disable}'
+    'description': """
+      Disable or enable the classroom feature for your course, by using this macro within the header of your course. You can use words like `false`, `disabled`, `0`, `OFF` ... LiaScript will recognize them as negative. All other words like wouldLoveToSeeThisFeature are treated as positive. __But better stick with `false`/`true`, `on`/`off`, `disable`/`enable`__
+
+      Example:
+        <!--
+        classroom: false
+        -->
+
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/templates/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">🛠</span>'
+
+  'translateWithGoogle':
+    'prefix': 'lia-macro-translateWithGoogle'
+    'body': 'translateWithGoogle: ${1:disable}'
+    'description': """
+      Disable or enable the experimental google translation for your course, by using this macro within the header of your course. You can use words like `false`, `disabled`, `0`, `OFF` ... LiaScript will recognize them as negative. All other words like wouldLoveToSeeThisFeature are treated as positive. __But better stick with `false`/`true`, `on`/`off`, `disable`/`enable`__
+
+      Example:
+        <!--
+        translateWithGoogle: false
+        -->
+
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/templates/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">🛠</span>'
+
+
+  'sharing':
+    'prefix': 'lia-macro-sharing'
+    'body': 'sharing: ${1:disable}'
+    'description': """
+      Disable or enable sharing for your course, by using this macro within the header (no share-icon and button will be displayed). You can use words like `false`, `disabled`, `0`, `OFF` ... LiaScript will recognize them as negative. All other words like wouldLoveToSeeThisFeature are treated as positive. __But better stick with `false`/`true`, `on`/`off`, `disable`/`enable`__
+
+      Example:
+        <!--
+        sharing: false
+        -->
+
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/templates/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">🛠</span>'
+
+
+  'repository':
+    'prefix': 'lia-macro-repository'
+    'body': 'repository: ${1:url}'
+    'description': """
+      Use this macro to redefine the respository information of your project, by default the course will display the GitHub, GitLab, or Dropbox origin. By adding this information to the head, you can define a static root for your project, which will also be visible on all exports.
+
+      Example:
+        <!--
+        repository: https://github.com/andre-dietrich/liascript-snippets
+        -->
+
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/templates/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">🛠</span>'
+
+
   '@name: one line':
     'prefix': 'lia-macro-definition-line'
     'body': '@${1:name}: ${2:line}'
@@ -217,6 +293,22 @@
         @evalJS
     """
     'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">🛠</span>'
+
+
+  '``` @[macro](url-param) ```':
+    'prefix': 'lia-macro-call-link'
+    'body': '@[${1:macro}](${2:url-param})'
+    'description': """
+      This type of macro-call comes handy, if you want to refere to a certain URL and want other Markdown readers to show this information as a link. It is also possible to add additional parameters within parentheses, whereby the URL is always used as the last parameter.
+
+      Example:
+
+        @[doSomethingWith](URL)
+
+        @[doSomethingWith(1,2,3)](URL "this will be ignored by now")
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/mermaid_template/master/README.md'
     'leftLabelHTML': '<span style="color:#ff0">🛠</span>'
 
 
