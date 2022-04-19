@@ -40,22 +40,6 @@
     'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
     'leftLabelHTML': '<span style="color:#ff0">💫</span>'
 
-  '{|>}{read this text}':
-    'prefix': 'lia-effect-inline-playback'
-    'body': '{|>}{${1:text to read}}'
-    'description': """
-      With this triangle notation it is possible to add a playback button, which will read out loud the text within the second braces. It is possible to add additional animation definitions and also to change the voice.
-
-      Start typing voice, if you want to change the narrator and the language.
-
-      Examples:
-        Within this block {|>}{this text will be spoken out loud}.
-
-        Nesting is allowed but has to make sense {1-3 |>}{I speak from 1 to 3 {4}{and nesting is also possible}}.
-
-        If you want to {|> Australian Female}{it is also possible to change the voice}.
-    """
-
   '{{number}}':
     'prefix': 'lia-effect-block'
     'body': '    {${1:number}}\n$2'
@@ -193,6 +177,25 @@
     'descriptionMoreURL': 'https://github.com/daneden/animate.css/'
     'leftLabelHTML': '<span style="color:#ff0">💫</span>'
 
+
+  '{|>}{read this text}':
+    'prefix': 'lia-effect-inline-playback'
+    'body': '{|>}{${1:text to read}}'
+    'description': """
+      With this triangle notation it is possible to add a playback button, which will read out loud the text within the second braces. It is possible to add additional animation definitions and also to change the voice.
+
+      Start typing voice, if you want to change the narrator and the language.
+
+      Examples:
+        Within this block {|>}{this text will be spoken out loud}.
+
+        Nesting is allowed but has to make sense {1-3 |>}{I speak from 1 to 3 {4}{and nesting is also possible}}.
+
+        If you want to {|> Australian Female}{it is also possible to change the voice}.
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">💫</span>'
+
   '{{|>}}':
     'prefix': 'lia-effect-block-playback'
     'body': '{{|>}}'
@@ -211,4 +214,5 @@
         This will appear at step 1 and disappear at animation step 2, when the
         users clicks on it, an Australian female voice is used as a narrator.
     """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
     'leftLabelHTML': '<span style="color:#ff0">💫</span>'
