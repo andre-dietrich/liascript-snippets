@@ -65,13 +65,13 @@
     'prefix': 'lia-image-info'
     'body': '![${1:alt-text}](${2:image-url} "${3:info}")'
     'description': """
-      An optional information can be attached to every image by adding double quotes after the link in the parentheses.
+      Optional information can be attached to every image by adding double quotes after the link in the parentheses. This will be attached as a subtitle to this element and can also include Markdown syntax.
 
       Example:
 
-        ![image of a puppy](https://upload.wikimedia.org/wikipedia/commons/c/c7/Puppy_on_Halong_Bay.jpg "looks cute")
+        ![image of a puppy](https://upload.wikimedia.org/wikipedia/commons/c/c7/Puppy_on_Halong_Bay.jpg "This image is free __CC0__")
 
-        ![relative](./img/puppy.jpg "optional info")
+        ![relative](./img/puppy.jpg "A cute image of a __puppy__")
     """
     'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
     'leftLabelHTML': '<span style="color:#ff0">🖼</span>'
@@ -95,7 +95,7 @@
     'prefix': 'lia-audio-info'
     'body': '?[${1:alt-text}](${2:audio-url} "${3:info}")'
     'description': """
-      An optional information can be attached to every audio file by adding double quotes after the link in the parentheses.
+      An optional information can be attached to every audio file by adding double quotes after the link in the parentheses. This will be attached as a subtitle to this element and can also include Markdown syntax.
 
       Example:
 
@@ -128,6 +128,51 @@
       But it is still possible to use HTML to include Videos and other stuff ...
 
         <iframe width="560" height="315" src="https://www.youtube.com/embed/bICfKRyKTwE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">🎞</span>'
+
+  '!?[alt-text](movie-url "info")':
+    'prefix': 'lia-movie-info'
+    'body': '!?[${1:alt-text}](${2:movie-url} "{3:info}")'
+    'description': """
+      Optional information can be attached to every video by adding double quotes after the link in the parentheses. This will be attached as a subtitle to this element and can also include Markdown syntax.
+
+      Example:
+
+        !?[eLab](https://www.youtube.com/watch?v=bICfKRyKTwE "Some information about the previous __eLab__ project.")
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">🎞</span>'
+
+
+  '??[alt-text](url)':
+    'prefix': 'lia-embed'
+    'body': '??[${1:alt-text}](${2:url})'
+    'description': """
+      Embed anything by using two question marks. LiaScript will try to determine if it is possible to use oEmbed for this site, if not, the content will be embedded as an `<iframe>`.
+
+      Example:
+
+        ??[circuit simulator](https://falstad.com/circuit/circuitjs.html?ctz=CQAgjCAMB0l3BWcDoBYDsAmdA2dBOdMMADhzEnxASQusmoFMBaYgKACcQBmTB7yKh58eCTFHCQ2Ac2H8xcniSEMpAJRCYEOTSRKbI+zHokNUDTNCSqoVtgHdF2cbwuYVDp+5CowOzN5Sjq7gxj5+ofrqimBhISQ2Zgx0iXYAxjFxIgEqtvCC+IVFxSU6+ND43CRiejjcOJUkEDBwYJzhOrH6vv6BkvCeIV2aWJFQg9nezpqBbADOI+LD0zkSEAAuHACujGwAZprauvohxlHgVnmYbAD2IPrDSfgPqrBw6E1aEuInbEA)
+
+        ??[Pottery Jar 3D model](https://sketchfab.com/3d-models/pottery-jar-0576d43d28924c948ed3bbae02e4e0cb)
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">🎞</span>'
+
+
+  '![alt-text](url)':
+    'prefix': 'lia-gallery'
+    'body': '![${1:alt-text}](${2:url}) ![${3:alt-text}](${4:url})'
+    'description': """
+      If you group multimedia links within one line or within one block, they will appear as a gallery within LiaScript.
+
+      Example:
+
+        ![image of a puppy](https://upload.wikimedia.org/wikipedia/commons/c/c7/Puppy_on_Halong_Bay.jpg)
+        ??[circuit simulator](https://falstad.com/circuit/circuitjs.html)
+        ??[Pottery Jar 3D model](https://sketchfab.com/3d-models/pottery-jar-0576d43d28924c948ed3bbae02e4e0cb)
     """
     'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
     'leftLabelHTML': '<span style="color:#ff0">🎞</span>'
