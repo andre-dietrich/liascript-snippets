@@ -134,7 +134,7 @@
 
   '!?[alt-text](movie-url "info")':
     'prefix': 'lia-movie-info'
-    'body': '!?[${1:alt-text}](${2:movie-url} "{3:info}")'
+    'body': '!?[${1:alt-text}](${2:movie-url} "${3:info}")'
     'description': """
       Optional information can be attached to every video by adding double quotes after the link in the parentheses. This will be attached as a subtitle to this element and can also include Markdown syntax.
 
