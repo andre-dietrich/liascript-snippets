@@ -1,7 +1,7 @@
 {
   "name": "liascript-snippets",
   "main": "./lib/liascript-snippets",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "A collection of snippets for the LiaScript Markdown language...",
   "publisher": "LiaScript",
   "keywords": [],
@@ -17,18 +17,18 @@
   },
   "dependencies": {},
   "categories": [
-		"Snippets"
-	],
-	"contributes": {
-		"snippets": [
-		  {
+    "Snippets"
+  ],
+  "contributes": {
+    "snippets": [
+      {
         "language": "markdown",
         "path": "./vscode/markdown.code-snippets"
-			},
+      },
       {
         "language": "md",
         "path": "./vscode/markdown.code-snippets"
-			}
-		]
-	}
+      }
+    ]
+  }
 }
