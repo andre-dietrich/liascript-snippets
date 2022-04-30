@@ -75,6 +75,7 @@
   '@persistent':
     'prefix': 'lia-macro-persistent'
     'body': 'persistent: ${1:false}'
+    'body_vscode': 'persistent: ${1|false,true|}'
     'description': """
       If you do not want to store the course state wihin indexeddb and also not within the local course index, you can use this macro within the header, which means that no trace of this course will be stored locally.
 
@@ -136,6 +137,7 @@
   'dark':
     'prefix': 'lia-macro-dark'
     'body': 'dark: ${1:true}'
+    'body_vscode': 'dark: ${1|true,false|}'
     'description': """
       You can change the default appearance of your document, either if you prefer dark mode or light mode. This will not change the user preferences. The default mode is defined by the user settings.
 
@@ -153,6 +155,7 @@
   'mode':
     'prefix': 'lia-macro-mode'
     'body': 'mode: ${1:Presentation}'
+    'body_vscode': 'mode: ${1|Presentation,Slides,Textbook|}'
     'description': """
       You can change the default style of your document, either if you do not have any effects you can set mode to Textbook or start with and interactive Presentation. The three modes a the same as defined within the document at the upper right button. The default mode is defined by the user settings.
 
@@ -173,6 +176,7 @@
   'classroom':
     'prefix': 'lia-macro-classroom'
     'body': 'classroom: ${1:disable}'
+    'body_vscode': 'classroom: ${1|disable,enable|}'
     'description': """
       Disable or enable the classroom feature for your course, by using this macro within the header of your course. You can use words like `false`, `disabled`, `0`, `OFF` ... LiaScript will recognize them as negative. All other words like wouldLoveToSeeThisFeature are treated as positive. __But better stick with `false`/`true`, `on`/`off`, `disable`/`enable`__
 
@@ -188,6 +192,7 @@
   'translateWithGoogle':
     'prefix': 'lia-macro-translateWithGoogle'
     'body': 'translateWithGoogle: ${1:disable}'
+    'body_vscode': 'translateWithGoogle: ${1|disable,enable|}'
     'description': """
       Disable or enable the experimental google translation for your course, by using this macro within the header of your course. You can use words like `false`, `disabled`, `0`, `OFF` ... LiaScript will recognize them as negative. All other words like wouldLoveToSeeThisFeature are treated as positive. __But better stick with `false`/`true`, `on`/`off`, `disable`/`enable`__
 
@@ -204,6 +209,7 @@
   'sharing':
     'prefix': 'lia-macro-sharing'
     'body': 'sharing: ${1:disable}'
+    'body_vscode': 'sharing: ${1|disable,enable|}'
     'description': """
       Disable or enable sharing for your course, by using this macro within the header (no share-icon and button will be displayed). You can use words like `false`, `disabled`, `0`, `OFF` ... LiaScript will recognize them as negative. All other words like wouldLoveToSeeThisFeature are treated as positive. __But better stick with `false`/`true`, `on`/`off`, `disable`/`enable`__
 

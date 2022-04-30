@@ -1,6 +1,6 @@
 {
     "!?[alt-text](movie-url \"info\")": {
-        "body": "!?[${1:alt-text}](${2:movie-url} \"{3:info}\")",
+        "body": "!?[${1:alt-text}](${2:movie-url} \"${3:info}\")",
         "description": "Optional information can be attached to every video by adding double quotes after the link in the parentheses. This will be attached as a subtitle to this element and can also include Markdown syntax.\n\nExample:\n\n  !?[eLab](https://www.youtube.com/watch?v=bICfKRyKTwE \"Some information about the previous __eLab__ project.\")",
         "prefix": "lia-movie-info"
     },
@@ -92,7 +92,7 @@
         "prefix": "lia-horizontal-line"
     },
     "--{{number voice}}--": {
-        "body": "              --{{${1:number} ${2:voice}}}--\n${3:Enter some **text** that gets read out aloud with another voice.\nOnly paragraphs are allowed!}'",
+        "body": "              --{{${1:number} ${2|UK English Female,UK English Male,US English Female,US English Male,Afrikaans Male,Albanian Male,Arabic Female,Arabic Male,Armenian Male,Australian Female,Australian Male,Bangla Bangladesh Female,Bangla Bangladesh Male,Bangla India Female,Bangla India Male,Bosnian Male,Brazilian Portuguese Female,Brazilian Portuguese Male,Catalan Male,Chinese Female,Chinese Male,Chinese (Hong Kong) Female,Chinese (Hong Kong) Male,Chinese Taiwan Female,Chinese Taiwan Male,Croatian Male,Czech Female,Czech Male,Danish Female,Danish Male,Deutsch Female,Deutsch Male,Dutch Female,Dutch Male,Esperanto Male,Estonian Male,Filipino Female,Finnish Female,Finnish Male,French Canadian Female,French Canadian Male,French Female,French Male,Greek Female,Greek Male,Hindi Female,Hindi Male,Hungarian Female,Hungarian Male,Icelandic Male,Indonesian Female,Indonesian Male,Italian Female,Italian Male,Japanese Female,Japanese Male,Korean Female,Korean Male,Latin Female,Latin Male,Latvian Male,Macedonian Male,Moldavian Female,Moldavian Male,Montenegrin Male,Nepali,Nepali,Norwegian Female,Norwegian Male,Polish Female,Polish Male,Portuguese Female,Portuguese Male,Romanian Female,Romanian Male,Russian Female,Russian Male,Serbian Male,Serbo-Croatian Male,Sinhala,Sinhala,Slovak Female,Slovak Male,Spanish Female,Spanish Male,Spanish Latin American Female,Spanish Latin American Male,Swahili Male,Swedish Female,Swedish Male,Tamil Female,Tamil Male,Thai Female,Thai Male,Turkish Female,Turkish Male,Ukrainian Female,Vietnamese Female,Vietnamese Male,Welsh Male|}}}--\n${3:Enter some **text** that gets read out aloud with another voice.\nOnly paragraphs are allowed!}'",
         "description": "You can change the voice also per comment by adding it directly after the number of appearance.\nType \"voice\" for fuzzy searching all responsive voices or click on the link below.\n\nExample:\n        --{{0 Australian Female}}--\n  I will speak with a female Australian accent,\n  no matter what the default language is.\n\n        --{{0 Deutsch Male}}--\n  Und hier äußert sich gerade ein deutscher Mann.",
         "prefix": "lia-comment-voice"
     },
@@ -167,7 +167,7 @@
         "prefix": "lia-init"
     },
     "<!-- --{{number voice}}-- ... -->": {
-        "body": "<!-- --{{${1:number} ${2:voice}}}-- ${3:Enter some **text** that gets read out aloud!} -->",
+        "body": "<!-- --{{${1:number} ${2|UK English Female,UK English Male,US English Female,US English Male,Afrikaans Male,Albanian Male,Arabic Female,Arabic Male,Armenian Male,Australian Female,Australian Male,Bangla Bangladesh Female,Bangla Bangladesh Male,Bangla India Female,Bangla India Male,Bosnian Male,Brazilian Portuguese Female,Brazilian Portuguese Male,Catalan Male,Chinese Female,Chinese Male,Chinese (Hong Kong) Female,Chinese (Hong Kong) Male,Chinese Taiwan Female,Chinese Taiwan Male,Croatian Male,Czech Female,Czech Male,Danish Female,Danish Male,Deutsch Female,Deutsch Male,Dutch Female,Dutch Male,Esperanto Male,Estonian Male,Filipino Female,Finnish Female,Finnish Male,French Canadian Female,French Canadian Male,French Female,French Male,Greek Female,Greek Male,Hindi Female,Hindi Male,Hungarian Female,Hungarian Male,Icelandic Male,Indonesian Female,Indonesian Male,Italian Female,Italian Male,Japanese Female,Japanese Male,Korean Female,Korean Male,Latin Female,Latin Male,Latvian Male,Macedonian Male,Moldavian Female,Moldavian Male,Montenegrin Male,Nepali,Nepali,Norwegian Female,Norwegian Male,Polish Female,Polish Male,Portuguese Female,Portuguese Male,Romanian Female,Romanian Male,Russian Female,Russian Male,Serbian Male,Serbo-Croatian Male,Sinhala,Sinhala,Slovak Female,Slovak Male,Spanish Female,Spanish Male,Spanish Latin American Female,Spanish Latin American Male,Swahili Male,Swedish Female,Swedish Male,Tamil Female,Tamil Male,Thai Female,Thai Male,Turkish Female,Turkish Male,Ukrainian Female,Vietnamese Female,Vietnamese Male,Welsh Male|}}}-- ${3:Enter some **text** that gets read out aloud!} -->",
         "description": "If you want to speak out some additional text that shall not appear in the textbook mode and speak with another voice, then simply put your comment with a voice definition into a HTML comment tag.\n\nExample:\n  <!-- --{{2 Deutsch Female}}--\n  I will speak with a German voice, but not appear\n  elsewhere within the document.\n  -->\n\nType \"voice\" for fuzzy searching or click on the link below for more information.",
         "prefix": "lia-comment-voice-hidden"
     },
@@ -372,7 +372,7 @@
         "prefix": "lia-macro-definition-line"
     },
     "@persistent": {
-        "body": "persistent: ${1:false}",
+        "body": "persistent: ${1|false,true|}",
         "description": "If you do not want to store the course state wihin indexeddb and also not within the local course index, you can use this macro within the header, which means that no trace of this course will be stored locally.\n\nExample:\n  <!--\n  persistent: false\n  -->",
         "prefix": "lia-macro-persistent"
     },
@@ -518,17 +518,17 @@
         "prefix": "lia-ascii-example"
     },
     "```lang +name ...```": {
-        "body": "```${1:javascript} ${2:title.js}\n${3:var s = \"Named JavaScript syntax highlighting\";\nalert(s);}\n```",
+        "body": "```${1|abap,abc,actionscript,ada,adoc,ahk,alda,angelscript,apache,apache_conf,apacheconf,apex,applescript,aql,arduino,arm,armasm,as,asc,asciidoc,asl,asm,aspectj,atom,autohotkey,avrasm,bash,basic,bat,batchfile,c,c#,c++,c9search,cc,cirru,cjs,clj,clojure,cmake,cmake.in,cmd,cobol,coffee,coffeescript,coldfusion,console,cpp,cr,craftcms,crm,crmsh,crystal,cs,csharp,cson,csound_document,csound_orchestra,csound_score,csp,css,curly,cxx,d,dart,delphi,dfm,diff,django,docker,dockerfile,dos,dot,dpr,drools,edifact,edn,eiffel,ejs,elixir,elm,erl,erlang,ex,exs,f#,f90,f95,feature,forth,fortran,fs,fsharp,fsl,ftl,gcode,gemspec,gherkin,gitignore,glsl,go,gobstones,golang,graphqlschema,groovy,gyp,h,h++,haml,handlebars,haskell,haskell_cabal,haxe,hbs,hh,hjson,hpp,hs,html,htmlbars,html_elixir,html.handlebars,html.hbs,html_ruby,hx,hxx,hy,hylang,iced,ini,ino,io,ipython,irb,jack,jade,java,javascript,jinja,js,json,json5,jsoniq,jsp,jssm,jsx,julia,kot,kotlin,kt,kts,latex,latte,less,liquid,lisp,livescript,logiql,logtalk,ls,lsl,lua,luapage,lucene,mak,make,makefile,markdown,mask,matlab,maze,md,mediawiki,mel,mips,mipsasm,mixal,mjs,mk,mkd,mkdown,ml,mm,mushcode,mysql,nc,nginx,nginxconf,nim,nix,nixos,nsis,nunjacks,obj-c,obj-c++,objc,objective-c++,objectivec,ocaml,openscad,osascript,pas,pascal,patch,pb,pbi,pcmk,pde,perl,pgsql,php,php_laravel_blade,pig,pl,plaintext,plist,pm,podspec,postgres,postgresql,powershell,pp,praat,prisma,processing,prolog,properties,protobuf,ps,ps1,puppet,purebasic,pwsh,py,python,qml,qt,r,raku,razor,rb,rdoc,red,redshift,rest,rhtml,rs,rss,rst,ruby,rust,sass,scad,scala,scheme,scss,sh,shell,shellsession,sjs,slim,smarty,smithy,soy,space,sparql,sql,sqlserver,styl,stylus,svg,swift,tcl,terraform,tex,text,textile,thor,tk,toml,ts,tsx,turtle,twig,txt,typescript,vala,vb,vbnet,vbs,vbscript,velocity,verilog,vhdl,visualforce,wollok,wsf,x86asm,xhtml,xjb,xml,xpath,xq,xquery,xsd,xsl,yaml,yml,zeek|} ${2:title.js}\n${3:var s = \"Named JavaScript syntax highlighting\";\nalert(s);}\n```",
         "description": "You can name your snippets by adding just after the language code. At default, it will be visible, but by adding a plus (+) in front of your filename you can make this more expressible, whereby a minus (-) will hide it at first. In this way you can also group multiple files into a (executable) project.\n\nExamples:\n\n  ```javascript    Visible.js\n  alert(\"Visble JavaScript file\";);\n  ```\n\n  ```javascript   +Visible.js\n  alert(\"Also visible JavaScript file\");\n  ```\n\n  ```javascript   -Hidden.js\n  alert(\"Hidden JavaScript file on init\");\n  ```",
         "prefix": "lia-code-block-name"
     },
     "```lang +name ...``` <script>@input</script>": {
-        "body": "```${1:javascript}   ${2:Filename.js}\n${3:var s = \"Named JavaScript syntax highlighting\";\nalert(s);\ns;}\n```\n<script>${4:@input}</script>",
+        "body": "```${1|abap,abc,actionscript,ada,adoc,ahk,alda,angelscript,apache,apache_conf,apacheconf,apex,applescript,aql,arduino,arm,armasm,as,asc,asciidoc,asl,asm,aspectj,atom,autohotkey,avrasm,bash,basic,bat,batchfile,c,c#,c++,c9search,cc,cirru,cjs,clj,clojure,cmake,cmake.in,cmd,cobol,coffee,coffeescript,coldfusion,console,cpp,cr,craftcms,crm,crmsh,crystal,cs,csharp,cson,csound_document,csound_orchestra,csound_score,csp,css,curly,cxx,d,dart,delphi,dfm,diff,django,docker,dockerfile,dos,dot,dpr,drools,edifact,edn,eiffel,ejs,elixir,elm,erl,erlang,ex,exs,f#,f90,f95,feature,forth,fortran,fs,fsharp,fsl,ftl,gcode,gemspec,gherkin,gitignore,glsl,go,gobstones,golang,graphqlschema,groovy,gyp,h,h++,haml,handlebars,haskell,haskell_cabal,haxe,hbs,hh,hjson,hpp,hs,html,htmlbars,html_elixir,html.handlebars,html.hbs,html_ruby,hx,hxx,hy,hylang,iced,ini,ino,io,ipython,irb,jack,jade,java,javascript,jinja,js,json,json5,jsoniq,jsp,jssm,jsx,julia,kot,kotlin,kt,kts,latex,latte,less,liquid,lisp,livescript,logiql,logtalk,ls,lsl,lua,luapage,lucene,mak,make,makefile,markdown,mask,matlab,maze,md,mediawiki,mel,mips,mipsasm,mixal,mjs,mk,mkd,mkdown,ml,mm,mushcode,mysql,nc,nginx,nginxconf,nim,nix,nixos,nsis,nunjacks,obj-c,obj-c++,objc,objective-c++,objectivec,ocaml,openscad,osascript,pas,pascal,patch,pb,pbi,pcmk,pde,perl,pgsql,php,php_laravel_blade,pig,pl,plaintext,plist,pm,podspec,postgres,postgresql,powershell,pp,praat,prisma,processing,prolog,properties,protobuf,ps,ps1,puppet,purebasic,pwsh,py,python,qml,qt,r,raku,razor,rb,rdoc,red,redshift,rest,rhtml,rs,rss,rst,ruby,rust,sass,scad,scala,scheme,scss,sh,shell,shellsession,sjs,slim,smarty,smithy,soy,space,sparql,sql,sqlserver,styl,stylus,svg,swift,tcl,terraform,tex,text,textile,thor,tk,toml,ts,tsx,turtle,twig,txt,typescript,vala,vb,vbnet,vbs,vbscript,velocity,verilog,vhdl,visualforce,wollok,wsf,x86asm,xhtml,xjb,xml,xpath,xq,xquery,xsd,xsl,yaml,yml,zeek|}   ${2:Filename.js}\n${3:var s = \"Named JavaScript syntax highlighting\";\nalert(s);\ns;}\n```\n<script>${4:@input}</script>",
         "description": "To insert a named and executable and code snippet. The macro @input is replaced with the current user input and gets evaluated in a try and catch block. Using JavaScript you can also insert interpreters to other languages or access them. In these cases you will have to change the content of the <script> tag. To get an impression about the possibilities, click on the link below.\nThe result of the script or the error are passed to a command-line like output beneath the code-block.\n\nExample:\n\n  ```javascript   +Tile.js\n  var s = \"Visible JavaScript syntax highlighting\";\n  ```\n  <script>@input</script>\n\n  ```javascript   +Title.js\n  var s = \"Hidden JavaScript syntax highlighting\";\n  ```\n  <script>@input</script>",
         "prefix": "lia-code-block-name-js"
     },
     "```lang ... ```": {
-        "body": "```${1:javascript}\n${2:var s = \"JavaScript syntax highlighting\";\nalert(s);}\n```",
+        "body": "```${1|abap,abc,actionscript,ada,adoc,ahk,alda,angelscript,apache,apache_conf,apacheconf,apex,applescript,aql,arduino,arm,armasm,as,asc,asciidoc,asl,asm,aspectj,atom,autohotkey,avrasm,bash,basic,bat,batchfile,c,c#,c++,c9search,cc,cirru,cjs,clj,clojure,cmake,cmake.in,cmd,cobol,coffee,coffeescript,coldfusion,console,cpp,cr,craftcms,crm,crmsh,crystal,cs,csharp,cson,csound_document,csound_orchestra,csound_score,csp,css,curly,cxx,d,dart,delphi,dfm,diff,django,docker,dockerfile,dos,dot,dpr,drools,edifact,edn,eiffel,ejs,elixir,elm,erl,erlang,ex,exs,f#,f90,f95,feature,forth,fortran,fs,fsharp,fsl,ftl,gcode,gemspec,gherkin,gitignore,glsl,go,gobstones,golang,graphqlschema,groovy,gyp,h,h++,haml,handlebars,haskell,haskell_cabal,haxe,hbs,hh,hjson,hpp,hs,html,htmlbars,html_elixir,html.handlebars,html.hbs,html_ruby,hx,hxx,hy,hylang,iced,ini,ino,io,ipython,irb,jack,jade,java,javascript,jinja,js,json,json5,jsoniq,jsp,jssm,jsx,julia,kot,kotlin,kt,kts,latex,latte,less,liquid,lisp,livescript,logiql,logtalk,ls,lsl,lua,luapage,lucene,mak,make,makefile,markdown,mask,matlab,maze,md,mediawiki,mel,mips,mipsasm,mixal,mjs,mk,mkd,mkdown,ml,mm,mushcode,mysql,nc,nginx,nginxconf,nim,nix,nixos,nsis,nunjacks,obj-c,obj-c++,objc,objective-c++,objectivec,ocaml,openscad,osascript,pas,pascal,patch,pb,pbi,pcmk,pde,perl,pgsql,php,php_laravel_blade,pig,pl,plaintext,plist,pm,podspec,postgres,postgresql,powershell,pp,praat,prisma,processing,prolog,properties,protobuf,ps,ps1,puppet,purebasic,pwsh,py,python,qml,qt,r,raku,razor,rb,rdoc,red,redshift,rest,rhtml,rs,rss,rst,ruby,rust,sass,scad,scala,scheme,scss,sh,shell,shellsession,sjs,slim,smarty,smithy,soy,space,sparql,sql,sqlserver,styl,stylus,svg,swift,tcl,terraform,tex,text,textile,thor,tk,toml,ts,tsx,turtle,twig,txt,typescript,vala,vb,vbnet,vbs,vbscript,velocity,verilog,vhdl,visualforce,wollok,wsf,x86asm,xhtml,xjb,xml,xpath,xq,xquery,xsd,xsl,yaml,yml,zeek|}\n${2:var s = \"JavaScript syntax highlighting\";\nalert(s);}\n```",
         "description": "To insert a code block with syntax highlight, enclose your code snippet with three back-ticks (```) that is followed by a language code. To search all language codes, visit the link below, but in most cases you can simply add either the name of the language or the typical file-ending.\n\nExamples:\n\n  ```javascript\n  var s = \"JavaScript syntax highlighting\";\n  alert(s);\n  s;\n  ```\n\n  ```python\n  s = \"Python syntax highlighting\"\n  print s\n  ```\n\n  ```\n  No language indicated, so no syntax highlighting.\n  But let's throw in a <b>tag</b>.\n  ```",
         "prefix": "lia-code-block"
     },
@@ -538,7 +538,7 @@
         "prefix": "lia-code-block-jsx"
     },
     "```lang ... ``` <script>@input</script>": {
-        "body": "```${1:javascript}\n${2:var s = \"JavaScript syntax highlighting\";\nalert(s);\ns;}\n```\n<script>${3:@input}</script>",
+        "body": "```${1|abap,abc,actionscript,ada,adoc,ahk,alda,angelscript,apache,apache_conf,apacheconf,apex,applescript,aql,arduino,arm,armasm,as,asc,asciidoc,asl,asm,aspectj,atom,autohotkey,avrasm,bash,basic,bat,batchfile,c,c#,c++,c9search,cc,cirru,cjs,clj,clojure,cmake,cmake.in,cmd,cobol,coffee,coffeescript,coldfusion,console,cpp,cr,craftcms,crm,crmsh,crystal,cs,csharp,cson,csound_document,csound_orchestra,csound_score,csp,css,curly,cxx,d,dart,delphi,dfm,diff,django,docker,dockerfile,dos,dot,dpr,drools,edifact,edn,eiffel,ejs,elixir,elm,erl,erlang,ex,exs,f#,f90,f95,feature,forth,fortran,fs,fsharp,fsl,ftl,gcode,gemspec,gherkin,gitignore,glsl,go,gobstones,golang,graphqlschema,groovy,gyp,h,h++,haml,handlebars,haskell,haskell_cabal,haxe,hbs,hh,hjson,hpp,hs,html,htmlbars,html_elixir,html.handlebars,html.hbs,html_ruby,hx,hxx,hy,hylang,iced,ini,ino,io,ipython,irb,jack,jade,java,javascript,jinja,js,json,json5,jsoniq,jsp,jssm,jsx,julia,kot,kotlin,kt,kts,latex,latte,less,liquid,lisp,livescript,logiql,logtalk,ls,lsl,lua,luapage,lucene,mak,make,makefile,markdown,mask,matlab,maze,md,mediawiki,mel,mips,mipsasm,mixal,mjs,mk,mkd,mkdown,ml,mm,mushcode,mysql,nc,nginx,nginxconf,nim,nix,nixos,nsis,nunjacks,obj-c,obj-c++,objc,objective-c++,objectivec,ocaml,openscad,osascript,pas,pascal,patch,pb,pbi,pcmk,pde,perl,pgsql,php,php_laravel_blade,pig,pl,plaintext,plist,pm,podspec,postgres,postgresql,powershell,pp,praat,prisma,processing,prolog,properties,protobuf,ps,ps1,puppet,purebasic,pwsh,py,python,qml,qt,r,raku,razor,rb,rdoc,red,redshift,rest,rhtml,rs,rss,rst,ruby,rust,sass,scad,scala,scheme,scss,sh,shell,shellsession,sjs,slim,smarty,smithy,soy,space,sparql,sql,sqlserver,styl,stylus,svg,swift,tcl,terraform,tex,text,textile,thor,tk,toml,ts,tsx,turtle,twig,txt,typescript,vala,vb,vbnet,vbs,vbscript,velocity,verilog,vhdl,visualforce,wollok,wsf,x86asm,xhtml,xjb,xml,xpath,xq,xquery,xsd,xsl,yaml,yml,zeek|}\n${2:var s = \"JavaScript syntax highlighting\";\nalert(s);\ns;}\n```\n<script>${3:@input}</script>",
         "description": "To insert an executable and editable code block with syntax highlight, insert a common Markdown code block with a succeeding <script> tag. The macro @input is replaced with the current user input and gets evaluated in a try and catch block. Using JavaScript you can also insert interpreters to other languages or access them. In these cases you will have to change the content of the script tag. To get an impression about the possibilities, click on the link below.\nThe result of the script or the error are passed to a command-line like output beneath the code-block.\n\nExample:\n\n  ```javascript\n  var s = \"JavaScript syntax highlighting\";\n  alert(s);\n  ```\n  <script>@input</script>",
         "prefix": "lia-code-block-js"
     },
@@ -622,7 +622,7 @@
         "prefix": "hili-cc"
     },
     "classroom": {
-        "body": "classroom: ${1:disable}",
+        "body": "classroom: ${1|disable,enable|}",
         "description": "Disable or enable the classroom feature for your course, by using this macro within the header of your course. You can use words like `false`, `disabled`, `0`, `OFF` ... LiaScript will recognize them as negative. All other words like wouldLoveToSeeThisFeature are treated as positive. __But better stick with `false`/`true`, `on`/`off`, `disable`/`enable`__\n\nExample:\n  <!--\n  classroom: false\n  -->\n",
         "prefix": "lia-macro-classroom"
     },
@@ -672,7 +672,7 @@
         "prefix": "hili-cson"
     },
     "dark": {
-        "body": "dark: ${1:true}",
+        "body": "dark: ${1|true,false|}",
         "description": "You can change the default appearance of your document, either if you prefer dark mode or light mode. This will not change the user preferences. The default mode is defined by the user settings.\n\nExample:\n  <!--\n  dark: true\n\n  dark: false\n  -->\n",
         "prefix": "lia-macro-dark"
     },
@@ -902,7 +902,7 @@
         "prefix": "hili-mm"
     },
     "mode": {
-        "body": "mode: ${1:Presentation}",
+        "body": "mode: ${1|Presentation,Slides,Textbook|}",
         "description": "You can change the default style of your document, either if you do not have any effects you can set mode to Textbook or start with and interactive Presentation. The three modes a the same as defined within the document at the upper right button. The default mode is defined by the user settings.\n\nExample:\n  <!--\n  mode: Presentation\n\n  mode: Slides\n\n  mode: Textbook\n  -->\n",
         "prefix": "lia-macro-mode"
     },
@@ -1050,7 +1050,7 @@
         "prefix": "hili-sh"
     },
     "sharing": {
-        "body": "sharing: ${1:disable}",
+        "body": "sharing: ${1|disable,enable|}",
         "description": "Disable or enable sharing for your course, by using this macro within the header (no share-icon and button will be displayed). You can use words like `false`, `disabled`, `0`, `OFF` ... LiaScript will recognize them as negative. All other words like wouldLoveToSeeThisFeature are treated as positive. __But better stick with `false`/`true`, `on`/`off`, `disable`/`enable`__\n\nExample:\n  <!--\n  sharing: false\n  -->\n",
         "prefix": "lia-macro-sharing"
     },
@@ -1089,7 +1089,7 @@
         "prefix": "hili-tk"
     },
     "translateWithGoogle": {
-        "body": "translateWithGoogle: ${1:disable}",
+        "body": "translateWithGoogle: ${1|disable,enable|}",
         "description": "Disable or enable the experimental google translation for your course, by using this macro within the header of your course. You can use words like `false`, `disabled`, `0`, `OFF` ... LiaScript will recognize them as negative. All other words like wouldLoveToSeeThisFeature are treated as positive. __But better stick with `false`/`true`, `on`/`off`, `disable`/`enable`__\n\nExample:\n  <!--\n  translateWithGoogle: false\n  -->\n",
         "prefix": "lia-macro-translateWithGoogle"
     },

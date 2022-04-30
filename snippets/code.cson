@@ -18,6 +18,12 @@
       alert(s);}
       ```
     """
+    'body_vscode': """
+      ```${1|abap,abc,actionscript,ada,adoc,ahk,alda,angelscript,apache,apache_conf,apacheconf,apex,applescript,aql,arduino,arm,armasm,as,asc,asciidoc,asl,asm,aspectj,atom,autohotkey,avrasm,bash,basic,bat,batchfile,c,c#,c++,c9search,cc,cirru,cjs,clj,clojure,cmake,cmake.in,cmd,cobol,coffee,coffeescript,coldfusion,console,cpp,cr,craftcms,crm,crmsh,crystal,cs,csharp,cson,csound_document,csound_orchestra,csound_score,csp,css,curly,cxx,d,dart,delphi,dfm,diff,django,docker,dockerfile,dos,dot,dpr,drools,edifact,edn,eiffel,ejs,elixir,elm,erl,erlang,ex,exs,f#,f90,f95,feature,forth,fortran,fs,fsharp,fsl,ftl,gcode,gemspec,gherkin,gitignore,glsl,go,gobstones,golang,graphqlschema,groovy,gyp,h,h++,haml,handlebars,haskell,haskell_cabal,haxe,hbs,hh,hjson,hpp,hs,html,htmlbars,html_elixir,html.handlebars,html.hbs,html_ruby,hx,hxx,hy,hylang,iced,ini,ino,io,ipython,irb,jack,jade,java,javascript,jinja,js,json,json5,jsoniq,jsp,jssm,jsx,julia,kot,kotlin,kt,kts,latex,latte,less,liquid,lisp,livescript,logiql,logtalk,ls,lsl,lua,luapage,lucene,mak,make,makefile,markdown,mask,matlab,maze,md,mediawiki,mel,mips,mipsasm,mixal,mjs,mk,mkd,mkdown,ml,mm,mushcode,mysql,nc,nginx,nginxconf,nim,nix,nixos,nsis,nunjacks,obj-c,obj-c++,objc,objective-c++,objectivec,ocaml,openscad,osascript,pas,pascal,patch,pb,pbi,pcmk,pde,perl,pgsql,php,php_laravel_blade,pig,pl,plaintext,plist,pm,podspec,postgres,postgresql,powershell,pp,praat,prisma,processing,prolog,properties,protobuf,ps,ps1,puppet,purebasic,pwsh,py,python,qml,qt,r,raku,razor,rb,rdoc,red,redshift,rest,rhtml,rs,rss,rst,ruby,rust,sass,scad,scala,scheme,scss,sh,shell,shellsession,sjs,slim,smarty,smithy,soy,space,sparql,sql,sqlserver,styl,stylus,svg,swift,tcl,terraform,tex,text,textile,thor,tk,toml,ts,tsx,turtle,twig,txt,typescript,vala,vb,vbnet,vbs,vbscript,velocity,verilog,vhdl,visualforce,wollok,wsf,x86asm,xhtml,xjb,xml,xpath,xq,xquery,xsd,xsl,yaml,yml,zeek|}
+      ${2:var s = "JavaScript syntax highlighting";
+      alert(s);}
+      ```
+    """
     'description': """
       To insert a code block with syntax highlight, enclose your code snippet with three back-ticks (```) that is followed by a language code. To search all language codes, visit the link below, but in most cases you can simply add either the name of the language or the typical file-ending.
 
@@ -53,6 +59,14 @@
       ```
       <script>${3:@input}</script>
     """
+    'body_vscode': """
+      ```${1|abap,abc,actionscript,ada,adoc,ahk,alda,angelscript,apache,apache_conf,apacheconf,apex,applescript,aql,arduino,arm,armasm,as,asc,asciidoc,asl,asm,aspectj,atom,autohotkey,avrasm,bash,basic,bat,batchfile,c,c#,c++,c9search,cc,cirru,cjs,clj,clojure,cmake,cmake.in,cmd,cobol,coffee,coffeescript,coldfusion,console,cpp,cr,craftcms,crm,crmsh,crystal,cs,csharp,cson,csound_document,csound_orchestra,csound_score,csp,css,curly,cxx,d,dart,delphi,dfm,diff,django,docker,dockerfile,dos,dot,dpr,drools,edifact,edn,eiffel,ejs,elixir,elm,erl,erlang,ex,exs,f#,f90,f95,feature,forth,fortran,fs,fsharp,fsl,ftl,gcode,gemspec,gherkin,gitignore,glsl,go,gobstones,golang,graphqlschema,groovy,gyp,h,h++,haml,handlebars,haskell,haskell_cabal,haxe,hbs,hh,hjson,hpp,hs,html,htmlbars,html_elixir,html.handlebars,html.hbs,html_ruby,hx,hxx,hy,hylang,iced,ini,ino,io,ipython,irb,jack,jade,java,javascript,jinja,js,json,json5,jsoniq,jsp,jssm,jsx,julia,kot,kotlin,kt,kts,latex,latte,less,liquid,lisp,livescript,logiql,logtalk,ls,lsl,lua,luapage,lucene,mak,make,makefile,markdown,mask,matlab,maze,md,mediawiki,mel,mips,mipsasm,mixal,mjs,mk,mkd,mkdown,ml,mm,mushcode,mysql,nc,nginx,nginxconf,nim,nix,nixos,nsis,nunjacks,obj-c,obj-c++,objc,objective-c++,objectivec,ocaml,openscad,osascript,pas,pascal,patch,pb,pbi,pcmk,pde,perl,pgsql,php,php_laravel_blade,pig,pl,plaintext,plist,pm,podspec,postgres,postgresql,powershell,pp,praat,prisma,processing,prolog,properties,protobuf,ps,ps1,puppet,purebasic,pwsh,py,python,qml,qt,r,raku,razor,rb,rdoc,red,redshift,rest,rhtml,rs,rss,rst,ruby,rust,sass,scad,scala,scheme,scss,sh,shell,shellsession,sjs,slim,smarty,smithy,soy,space,sparql,sql,sqlserver,styl,stylus,svg,swift,tcl,terraform,tex,text,textile,thor,tk,toml,ts,tsx,turtle,twig,txt,typescript,vala,vb,vbnet,vbs,vbscript,velocity,verilog,vhdl,visualforce,wollok,wsf,x86asm,xhtml,xjb,xml,xpath,xq,xquery,xsd,xsl,yaml,yml,zeek|}
+      ${2:var s = "JavaScript syntax highlighting";
+      alert(s);
+      s;}
+      ```
+      <script>${3:@input}</script>
+    """
     'description': """
       To insert an executable and editable code block with syntax highlight, insert a common Markdown code block with a succeeding <script> tag. The macro @input is replaced with the current user input and gets evaluated in a try and catch block. Using JavaScript you can also insert interpreters to other languages or access them. In these cases you will have to change the content of the script tag. To get an impression about the possibilities, click on the link below.
       The result of the script or the error are passed to a command-line like output beneath the code-block.
@@ -73,6 +87,12 @@
     'prefix': 'lia-code-block-name'
     'body': """
       ```${1:javascript} ${2:title.js}
+      ${3:var s = "Named JavaScript syntax highlighting";
+      alert(s);}
+      ```
+    """
+    'body_vscode': """
+      ```${1|abap,abc,actionscript,ada,adoc,ahk,alda,angelscript,apache,apache_conf,apacheconf,apex,applescript,aql,arduino,arm,armasm,as,asc,asciidoc,asl,asm,aspectj,atom,autohotkey,avrasm,bash,basic,bat,batchfile,c,c#,c++,c9search,cc,cirru,cjs,clj,clojure,cmake,cmake.in,cmd,cobol,coffee,coffeescript,coldfusion,console,cpp,cr,craftcms,crm,crmsh,crystal,cs,csharp,cson,csound_document,csound_orchestra,csound_score,csp,css,curly,cxx,d,dart,delphi,dfm,diff,django,docker,dockerfile,dos,dot,dpr,drools,edifact,edn,eiffel,ejs,elixir,elm,erl,erlang,ex,exs,f#,f90,f95,feature,forth,fortran,fs,fsharp,fsl,ftl,gcode,gemspec,gherkin,gitignore,glsl,go,gobstones,golang,graphqlschema,groovy,gyp,h,h++,haml,handlebars,haskell,haskell_cabal,haxe,hbs,hh,hjson,hpp,hs,html,htmlbars,html_elixir,html.handlebars,html.hbs,html_ruby,hx,hxx,hy,hylang,iced,ini,ino,io,ipython,irb,jack,jade,java,javascript,jinja,js,json,json5,jsoniq,jsp,jssm,jsx,julia,kot,kotlin,kt,kts,latex,latte,less,liquid,lisp,livescript,logiql,logtalk,ls,lsl,lua,luapage,lucene,mak,make,makefile,markdown,mask,matlab,maze,md,mediawiki,mel,mips,mipsasm,mixal,mjs,mk,mkd,mkdown,ml,mm,mushcode,mysql,nc,nginx,nginxconf,nim,nix,nixos,nsis,nunjacks,obj-c,obj-c++,objc,objective-c++,objectivec,ocaml,openscad,osascript,pas,pascal,patch,pb,pbi,pcmk,pde,perl,pgsql,php,php_laravel_blade,pig,pl,plaintext,plist,pm,podspec,postgres,postgresql,powershell,pp,praat,prisma,processing,prolog,properties,protobuf,ps,ps1,puppet,purebasic,pwsh,py,python,qml,qt,r,raku,razor,rb,rdoc,red,redshift,rest,rhtml,rs,rss,rst,ruby,rust,sass,scad,scala,scheme,scss,sh,shell,shellsession,sjs,slim,smarty,smithy,soy,space,sparql,sql,sqlserver,styl,stylus,svg,swift,tcl,terraform,tex,text,textile,thor,tk,toml,ts,tsx,turtle,twig,txt,typescript,vala,vb,vbnet,vbs,vbscript,velocity,verilog,vhdl,visualforce,wollok,wsf,x86asm,xhtml,xjb,xml,xpath,xq,xquery,xsd,xsl,yaml,yml,zeek|} ${2:title.js}
       ${3:var s = "Named JavaScript syntax highlighting";
       alert(s);}
       ```
@@ -102,6 +122,14 @@
     'prefix': 'lia-code-block-name-js'
     'body': """
       ```${1:javascript}   ${2:Filename.js}
+      ${3:var s = "Named JavaScript syntax highlighting";
+      alert(s);
+      s;}
+      ```
+      <script>${4:@input}</script>
+    """
+    'body_vscode': """
+      ```${1|abap,abc,actionscript,ada,adoc,ahk,alda,angelscript,apache,apache_conf,apacheconf,apex,applescript,aql,arduino,arm,armasm,as,asc,asciidoc,asl,asm,aspectj,atom,autohotkey,avrasm,bash,basic,bat,batchfile,c,c#,c++,c9search,cc,cirru,cjs,clj,clojure,cmake,cmake.in,cmd,cobol,coffee,coffeescript,coldfusion,console,cpp,cr,craftcms,crm,crmsh,crystal,cs,csharp,cson,csound_document,csound_orchestra,csound_score,csp,css,curly,cxx,d,dart,delphi,dfm,diff,django,docker,dockerfile,dos,dot,dpr,drools,edifact,edn,eiffel,ejs,elixir,elm,erl,erlang,ex,exs,f#,f90,f95,feature,forth,fortran,fs,fsharp,fsl,ftl,gcode,gemspec,gherkin,gitignore,glsl,go,gobstones,golang,graphqlschema,groovy,gyp,h,h++,haml,handlebars,haskell,haskell_cabal,haxe,hbs,hh,hjson,hpp,hs,html,htmlbars,html_elixir,html.handlebars,html.hbs,html_ruby,hx,hxx,hy,hylang,iced,ini,ino,io,ipython,irb,jack,jade,java,javascript,jinja,js,json,json5,jsoniq,jsp,jssm,jsx,julia,kot,kotlin,kt,kts,latex,latte,less,liquid,lisp,livescript,logiql,logtalk,ls,lsl,lua,luapage,lucene,mak,make,makefile,markdown,mask,matlab,maze,md,mediawiki,mel,mips,mipsasm,mixal,mjs,mk,mkd,mkdown,ml,mm,mushcode,mysql,nc,nginx,nginxconf,nim,nix,nixos,nsis,nunjacks,obj-c,obj-c++,objc,objective-c++,objectivec,ocaml,openscad,osascript,pas,pascal,patch,pb,pbi,pcmk,pde,perl,pgsql,php,php_laravel_blade,pig,pl,plaintext,plist,pm,podspec,postgres,postgresql,powershell,pp,praat,prisma,processing,prolog,properties,protobuf,ps,ps1,puppet,purebasic,pwsh,py,python,qml,qt,r,raku,razor,rb,rdoc,red,redshift,rest,rhtml,rs,rss,rst,ruby,rust,sass,scad,scala,scheme,scss,sh,shell,shellsession,sjs,slim,smarty,smithy,soy,space,sparql,sql,sqlserver,styl,stylus,svg,swift,tcl,terraform,tex,text,textile,thor,tk,toml,ts,tsx,turtle,twig,txt,typescript,vala,vb,vbnet,vbs,vbscript,velocity,verilog,vhdl,visualforce,wollok,wsf,x86asm,xhtml,xjb,xml,xpath,xq,xquery,xsd,xsl,yaml,yml,zeek|}   ${2:Filename.js}
       ${3:var s = "Named JavaScript syntax highlighting";
       alert(s);
       s;}
