@@ -9,6 +9,22 @@ https://atom.io/packages/liascript-snippets
 
 Simply to to the marketplace in [Atom](https://Atom.io) and [VSCode](https://code.visualstudio.com/) and search for "liascript-snippets".
 
+### VSCode
+
+To enable this snippet, you have to add the following configuration to your settings.json ... Simply hit "Ctrl-Shift-P" and then type settings.
+
+``` json
+...
+
+   "[markdown]": {
+      "editor.tabCompletion": "on",
+      "editor.quickSuggestions": true,
+      "editor.snippetSuggestions": "top"
+   },
+
+...
+```
+
 ### Atom
 #### Command Line
 

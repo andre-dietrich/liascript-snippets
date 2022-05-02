@@ -1,37 +1,48 @@
 {
-  "name": "liascript-snippets",
-  "displayName": "LiaScript-Snippets",
-  "version": "1.5.0",
-  "description": "A collection of snippets for the LiaScript Markdown language...",
-  "publisher": "LiaScript",
-  "keywords": ["LiaScript", "Markdown", "OER", "education"],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/andre-dietrich/liascript-snippets"
-  },
-  "license": "MIT",
-  "engines": {
-    "atom": ">=1.0.0 <2.0.0",
-    "vscode": "^1.66.0"
-  },
-  "dependencies": {},
-  "categories": [
-    "Snippets"
-  ],
-  "icon": "icon.png",
-  "contributes": {
-    "snippets": [
-      {
-        "language": "markdown",
-        "path": "./vscode/markdown.code-snippets"
-      },
-      {
-        "language": "md",
-        "path": "./vscode/markdown.code-snippets"
-      }
-    ]
-  },
-  "scripts": {
-    "pack": "vsce package"
-  }
+	"name": "liascript-snippets",
+	"displayName": "LiaScript-Snippets",
+	"version": "1.5.0",
+	"description": "A collection of snippets for the LiaScript Markdown language...",
+	"publisher": "LiaScript",
+	"keywords": [
+		"LiaScript",
+		"Markdown",
+		"OER",
+		"education"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/andre-dietrich/liascript-snippets"
+	},
+	"license": "MIT",
+	"engines": {
+		"atom": ">=1.0.0 <2.0.0",
+		"vscode": "^1.66.0"
+	},
+	"dependencies": {},
+	"categories": [
+		"Snippets"
+	],
+	"icon": "icon.png",
+	"contributes": {
+		"snippets": [
+			{
+				"language": "markdown",
+				"path": "./vscode/markdown.code-snippets"
+			},
+			{
+				"language": "md",
+				"path": "./vscode/markdown.code-snippets"
+			}
+		]
+	},
+	"scripts": {
+		"pack": "vsce package"
+	},
+	"__metadata": {
+		"id": "4fdeb1cb-d1bb-4dc4-942d-f740286d0a63",
+		"publisherDisplayName": "LiaScript",
+		"publisherId": "885a7ea1-97f0-4081-ab98-cf3d9503d445",
+		"isPreReleaseVersion": false
+	}
 }
