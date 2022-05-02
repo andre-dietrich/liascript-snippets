@@ -1,13 +1,16 @@
-# Liascript-Snippets
+# LiaScript-Snippets
 
-A snippet-plugin for easing the development of online courses with
+A snippet-plugin for [Atom](https://Atom.io) and [VSCode](https://code.visualstudio.com), easing the development of online courses with
 [LiaScript](https://LiaScript.github.io), and extended Markdown notation.
 
 https://atom.io/packages/liascript-snippets
 
 ## Install
 
-### Command Line
+Simply to to the marketplace in [Atom](https://Atom.io) and [VSCode](https://code.visualstudio.com/) and search for "liascript-snippets".
+
+### Atom
+#### Command Line
 
 
 Install Atom 1.5 or newer
@@ -16,7 +19,7 @@ In the terminal, install the package via apm:
 
     `apm install liascript-snippets`
 
-### GUI
+#### GUI
 
 1. Install Atom 1.5 or newer
 2. Launch Atom
@@ -46,9 +49,12 @@ In the terminal, install the package via apm:
 
 It is recommended to install also:
 
-[liascript-preview](https://atom.io/packages/liascript-preview)
+liascript-preview
 
-A previewer plugin that renders your course directly within the Atom IDE.
+* for [Atom](https://atom.io/packages/liascript-preview)
+* for VSCode
+
+A previewer plugin that renders your course directly within the Atom IDE or which starts the development server from VSCode.
 
 ## Recommended Projects
 
