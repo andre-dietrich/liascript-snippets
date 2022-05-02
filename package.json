@@ -1,11 +1,9 @@
 {
   "name": "liascript-snippets",
-  "main": "./lib/liascript-snippets",
   "version": "1.5.0",
   "description": "A collection of snippets for the LiaScript Markdown language...",
   "publisher": "LiaScript",
-  "keywords": [],
-  "activationCommands": {},
+  "keywords": ["LiaScript", "Markdown", "OER", "education"],
   "repository": {
     "type": "git",
     "url": "https://github.com/andre-dietrich/liascript-snippets"
