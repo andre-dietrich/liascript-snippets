@@ -1,17 +1,17 @@
 # LiaScript-Snippets
 
-A snippet-plugin for [Atom](https://Atom.io) and [VSCode](https://code.visualstudio.com), easing the development of online courses with
-[LiaScript](https://LiaScript.github.io), and extended Markdown notation.
+A snippet-plugin for [Atom](https://Atom.io) and [VSCode](https://code.visualstudio.com), easing the development of online courses with [LiaScript](https://LiaScript.github.io), and extended Markdown notation.
 
-https://atom.io/packages/liascript-snippets
+https://github.com/andre-dietrich/liascript-snippets
 
 ## Install
 
-Simply to to the marketplace in [Atom](https://Atom.io) and [VSCode](https://code.visualstudio.com/) and search for "liascript-snippets".
+
 
 ### VSCode
 
-To enable this snippet, you have to add the following configuration to your settings.json ... Simply hit "Ctrl-Shift-P" and then type settings.
+Simply go to the marketplace in [VSCode](https://code.visualstudio.com/) and search for "liascript-snippets".
+To enable this snippet, you have to add the following configuration to your settings.json ... To get there, simply hit "Ctrl-Shift-P" and then type settings.
 
 ``` json
 ...
@@ -25,7 +25,17 @@ To enable this snippet, you have to add the following configuration to your sett
 ...
 ```
 
+For more information, check out the [help](https://aizac.herokuapp.com/install-visual-studio-code-with-liascript/).
+
 ### Atom
+
+This has to be installed directly from the github repository.
+Thus, got to the settings by hitting [Ctrl+Shift+P] and then type `settings` into the fuzzy search to get to the settings.
+From there you have to select the install tab and insert `andre-dietrich/liascript-snippets` to install this plugin directly from GitHub.
+Before that, make sure that you have [git](https://git-scm.com/downloads) installed.
+
+If you need more information, then check out this [help](https://aizac.herokuapp.com/install-atom-with-liascript/).
+
 #### Command Line
 
 
@@ -67,8 +77,8 @@ It is recommended to install also:
 
 liascript-preview
 
-* for [Atom](https://atom.io/packages/liascript-preview)
-* for VSCode
+* for [Atom](https://github.com/andre-dietrich/liascript-preview)
+* for [VSCode](https://marketplace.visualstudio.com/items?itemName=LiaScript.liascript-preview)
 
 A previewer plugin that renders your course directly within the Atom IDE or which starts the development server from VSCode.
 
