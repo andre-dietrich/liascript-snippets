@@ -20,6 +20,12 @@
             =\\\\frac\\{\\\\pi^2\\}\\{6\\}}
     $$
     """
+    'body2': """
+    $$
+       \\sum_{i=1}^\\infty\\frac{1}{n^2}
+            =\\frac{\\pi^2}{6}
+    $$
+    """
     'description': """
     Insert a more multiline mathematical formula as a block, which is automatically centered within your document. It has to be enclosed with two dollar signs, as shown in the example.
 

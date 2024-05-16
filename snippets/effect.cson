@@ -43,6 +43,7 @@
   '{{number}}':
     'prefix': 'lia-effect-block'
     'body': '    {${1:number}}\n$2'
+    'body2': '    {{number}}'
     'description': """
       Use block effects to let entire Markdown blocks appear or disappear. It works exactly as simple inline effects. But the number of appearance has to be put in double braces.
       The entire block can also be styled and the animation tweaked, but the required comment tag has to be defined before the Markdown block. Animate.css is included at default.
@@ -70,6 +71,7 @@
   '{{from-to}}':
     'prefix': 'lia-effect-block'
     'body': '    {${1:from}-${2:to}}\n$3'
+    'body2': '    {{from-to}}'
     'description': """
       Use block effects to let entire Markdown blocks appear or disappear. It works exactly as simple inline effects. But the number of appearance has to be put in double braces, followed by a hyphen (-) and the number of disappearance.
       The entire block can also be styled and the animation tweaked, but the required comment tag has to be defined before the Markdown block. Animate.css is included at default.

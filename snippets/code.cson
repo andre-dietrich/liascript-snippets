@@ -299,6 +299,32 @@
         eval(`@input(0)`);}
       </script>
     """
+    'body2': """
+      ``` js     -EvalScript.js
+      let who = data.first_name + " " + data.last_name;
+
+      if(data.online) {
+        who + " is online";
+      }
+      else {
+        who + " is NOT online";
+      }
+      ```
+      ``` json    Data.json
+      {
+        "first_name" :  "Sammy",
+        "last_name"  :  "Shark",
+        "online"     :  true
+      }
+      ```
+      <script>
+        // insert the JSON dataset into the local variable data
+        let data = @input(1);
+
+        // eval the script that uses this dataset
+        eval(`@input(0)`);
+      </script>
+    """
     'description': """
       If you want to create a project and thus separate data and code into multiple files, simply write multiple code blocks in a sequence. To make them executable as a whole, simply add a script tag to the end and use the parameterized @input(id) macro to compose your project properly. The file id is defined by the order of code blocks.
       See the link below to see more examples.
