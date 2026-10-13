@@ -1,23 +1,37 @@
 '.source.gfm, .text.md':
-  '[[___ ___]]':
-    'prefix': 'lia-survey-text'
-    'body':   '[[___ ___]]'
+  '[[___]]':
+    'prefix': 'lia-survey-text-line'
+    'body':   '[[___]]'
     'description': """
-      Surveys are defined similarly to quizzes by using brackets ([]). A text survey is defined by a multiple number three subsequent underscores (___) that are enclosed by double brackets. The number of underscores defines the number of lines a user has to fill out.
+      Surveys use the quiz brackets but have no correct answer, only a submit button. Three or more underscores in double brackets create a one-line text input.
+
+      In a live classroom session, the answers of one-line inputs are shown as a word cloud, where comma-separated terms are counted. Use it for keywords or short phrases.
 
       Example:
+        Which programming languages do you know? Separate them with commas.
 
-        A single line text survey:
+            [[___]]
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">📋</span>'
 
-          [[___]]
 
-        A two line text survey:
+  '[[___ ___]]':
+    'prefix': 'lia-survey-text'
+    'body':   '[[___ ___ ___]]'
+    'description': """
+      A multi-line text survey (textarea). Every group of underscores separated by a space adds one row. The number of groups sets the number of rows, the length of a group does not matter. One pair of double brackets always creates exactly one input field. For several fields, write several surveys, each with its own question above it.
 
-          [[___ ___]]
+      In a live classroom session, the answers of a textarea are listed one below the other, which suits longer answers.
 
-        And a six liner:
+      Example:
+        A two-line text survey:
 
-          [[___ ___ ___ ___ ___ ___ ]]
+            [[___ ___]]
+
+        Please describe your opinion in a few sentences:
+
+            [[___ ___ ___ ___ ___ ___]]
     """
     'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
     'leftLabelHTML': '<span style="color:#ff0">📋</span>'
@@ -31,7 +45,7 @@
       [(${5:3})] ${6:option 3}
     """
     'description': """
-      The definition is similar to a single choice quiz, but instead of an X, either numbers have to be put into parentheses or variable names. They do not have to be ordered and the number is also variable.
+      Single-choice survey: like a single-choice quiz, but the parentheses contain an identifier instead of an X. Numeric identifiers let the classroom view plot the results as a distribution, while text identifiers are shown as categories. Identifiers do not have to be ordered or sequential.
 
       Example:
 
@@ -59,7 +73,7 @@
       [[${5:3}]] ${6:option 3}
     """
     'description': """
-      The definition is similar to a multiple choice quiz, but instead of an X, either numbers have to be put into parentheses or variable names. They do not have to be ordered and the number is also variable.
+      Multiple-choice survey: like a multiple-choice quiz, but the brackets contain an identifier instead of an X. Start an identifier with a number (e.g. [[1 red]]) to get a numeric instead of a categorical representation in the classroom view.
 
       Example:
 
@@ -89,7 +103,7 @@
       [         ] ${6:text}
     """
     'description': """
-      A list of single choice surveys can be defined as depicted below. Either numbers have to be put into parentheses or variable. They do not have to be ordered and the number is also variable.
+      Single-choice matrix survey: the header contains the column identifiers in parentheses, every following row ([ ] + text) becomes its own single-choice question. Identifiers can be numbers or words.
 
       Example:
 
@@ -120,7 +134,7 @@
       [         ] ${6:text}
     """
     'description': """
-      A list of multiple choice surveys can be defined as depicted below. Either numbers have to be put into parentheses or variable names. They do not have to be ordered and the number is also variable.
+      Multiple-choice matrix survey: the header contains the column identifiers in brackets, every following row ([ ] + text) becomes its own multiple-choice question. Identifiers can be numbers or words.
 
       Example:
 
@@ -137,6 +151,43 @@
             [                             ] LiaScript is great?
             [                             ] I would use it to make online **courses**?
             [                             ] I would use it for online **surveys**?
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">📋</span>'
+
+
+  'survey + <script> validation':
+    'prefix': 'lia-survey-js'
+    'body': """
+      [[___]]
+      <script>
+        let input = `@input`.trim();
+
+        ${1:if (input.length > 4) {
+          true
+        \\} else if (input.length == 0) {
+          send.lia("Please enter some text", [], false)
+        \\} else {
+          send.lia("Please provide some meaningful input", [], false)
+        \\}}
+      </script>
+    """
+    'description': """
+      A script directly after a survey can check or process the input before it is accepted. Empty input is rejected by default. The last expression decides:
+
+        true                              -> accept the input
+        false                             -> reject it silently
+        send.lia("message", [], false)    -> reject it with a message
+
+      Wrap @input in backticks for text surveys. For choice surveys @input is the selected value(s). console.log does not show anything here, use alert(...) while developing.
+
+      Example:
+            [[___]]
+            <script>
+              let input = `@input`.trim();
+              if (input.length > 4) true
+              else send.lia("Please provide some meaningful input", [], false)
+            </script>
     """
     'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
     'leftLabelHTML': '<span style="color:#ff0">📋</span>'

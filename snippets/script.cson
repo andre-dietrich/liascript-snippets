@@ -1,0 +1,256 @@
+'.source.gfm, .text.md':
+  '<script>...</script> inline':
+    'prefix': 'lia-script-inline'
+    'body': '<script>${1:Math.sin(Math.PI / 2)}</script>'
+    'description': """
+      A <script> tag in the text (without a code block) is a JavaScript component. It runs automatically when the slide is shown, and the value of its last expression is displayed in place, like an inline element. If the result is undefined, nothing is shown.
+
+      Every script has its own scope. To share values between scripts, attach them to window. Scripts can be combined with animations ({1}{<script>...</script>}) to run them at a certain step.
+
+      Example:
+        $ \\sin(\\frac{\\pi}{2}) = $ <script>Math.sin(Math.PI / 2)</script>
+
+        Today is <script>new Date().toLocaleDateString()</script>.
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">⚙</span>'
+
+
+  '<script input="type">':
+    'prefix': 'lia-script-input'
+    'body': """
+      <script input="${1:text}" value="${2:Hello World}">
+      ${3:let str = "@input"
+      str.split("").reverse().join("")}
+      </script>
+    """
+    'body_vscode': """
+      <script input="${1|text,number,range,checkbox,radio,select,button,submit,date,time,datetime-local,color,email,password,search,tel,url,week,month|}" value="${2:Hello World}">
+      ${3:let str = "@input"
+      str.split("").reverse().join("")}
+      </script>
+    """
+    'description': """
+      Turns a script into a small interactive widget. input="..." selects an HTML5 input type, value="..." sets the initial value, and @input is replaced by the current value before the script runs. The result is shown next to the input.
+
+      text, number, range, radio, select and checkbox run on every change. button runs on load and on every click. submit only runs when clicked. The other types (date, time, color, ...) run when the field loses focus.
+
+      Extra attributes: min, max, step, options="a|b|c" (radio/select), default="..." (text shown before the first run of button/submit).
+
+      Example:
+        <script input="number" value="1" min="0" max="100">
+        let i = @input
+        "Square of " + i + " = " + i * i
+        </script>
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">⚙</span>'
+
+
+  '<script input="range">':
+    'prefix': 'lia-script-input-range'
+    'body': """
+      <script input="range" value="${1:0}" min="${2:0}" max="${3:360}" step="${4:1}">
+      ${5:let deg = @input
+      "sin(" + deg + "°) = " + Math.sin(deg * Math.PI / 180).toFixed(3)}
+      </script>
+    """
+    'description': """
+      A slider that re-runs the script on every change. @input is replaced by the current number.
+
+      Example:
+        <script input="range" value="0" min="0" max="360" step="1">
+        let deg = @input
+        "sin(" + deg + "°) = " + Math.sin(deg * Math.PI / 180).toFixed(3)
+        </script>
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">⚙</span>'
+
+
+  '<script input="select" options="...">':
+    'prefix': 'lia-script-input-select'
+    'body': """
+      <script input="${1:select}" value="${2:red}" options="${3:red|green|blue}">
+      ${4:"Selected color: @input"}
+      </script>
+    """
+    'body_vscode': """
+      <script input="${1|select,radio|}" value="${2:red}" options="${3:red|green|blue}">
+      ${4:"Selected color: @input"}
+      </script>
+    """
+    'description': """
+      A dropdown (select) or a group of radio buttons. The options are separated by | in the options attribute, value sets the initial selection.
+
+      Example:
+        <script input="radio" value="1" options="1|2|3|Hello World">
+        "Selected option: @input"
+        </script>
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">⚙</span>'
+
+
+  '<script input="submit" default="...">':
+    'prefix': 'lia-script-input-submit'
+    'body': """
+      <script input="submit" default="${1:roll the dice}">
+      ${2:Math.floor(Math.random() * 6) + 1}
+      </script>
+    """
+    'description': """
+      A button that runs the script only when it is clicked. default sets the text that is shown before the first click. Use input="button" instead to run it also once on load.
+
+      Example:
+        <script input="submit" default="roll the dice">
+        Math.floor(Math.random() * 6) + 1
+        </script>
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">⚙</span>'
+
+
+  '<script output="name"> ... @input(`name`)':
+    'prefix': 'lia-script-connect'
+    'body': """
+      <script input="${1:number}" value="${2:2}" output="${3:a}">
+      @input
+      </script>
+      ${4:squared is}
+      <script>
+      ${5:@input(`a`) ** 2}
+      </script>
+    """
+    'description': """
+      Connect scripts: a script with output="name" publishes its current result. Other scripts on the same slide can read it with @input(`name`) (with backticks) and re-run automatically when it changes.
+
+      If two scripts depend on each other, give both a default="..." value. Otherwise the first calculation fails.
+
+      Example:
+        <script input="checkbox" value="true" output="P" default="true">
+        @input
+        </script>
+        AND
+        <script input="checkbox" value="false" output="Q" default="false">
+        @input
+        </script>
+        =
+        <script>
+        @input(`P`) && @input(`Q`)
+        </script>
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">⚙</span>'
+
+
+  '<script format="..." locale="...">':
+    'prefix': 'lia-script-format'
+    'body': """
+      <script format="${1:number}" locale="${2:de-DE}">
+      ${3:1234567.891}
+      </script>
+    """
+    'body_vscode': """
+      <script format="${1|number,datetime,relativetime,list,pluralrules|}" locale="${2:de-DE}">
+      ${3:1234567.891}
+      </script>
+    """
+    'description': """
+      Formats the result of a script with the JavaScript Intl API for the given locale. Only the display changes, connected scripts still get the raw value.
+
+        format="number"        1234.5 -> 1.234,5 (de-DE)
+        format="datetime"      dates and times
+        format="relativetime"  "in 3 days"
+        format="list"          "a, b and c"
+        format="pluralrules"   plural category
+
+      Example:
+        <script input="date" value="2024-05-16" format="datetime" locale="de">
+        "@input"
+        </script>
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">⚙</span>'
+
+
+  '<script> send.output ... "LIA: wait" </script>':
+    'prefix': 'lia-script-counter'
+    'body': """
+      <script>
+      let i = 0
+      setInterval(function() {
+        ${1:i++
+        send.output("counting " + i)}
+      }, ${2:1000})
+      "LIA: wait"
+      </script>
+    """
+    'description': """
+      A self-updating script component: return "LIA: wait" (or call send.wait()) to keep it running, then call send.output(...) for every update. The process keeps running in the background when the user switches slides, until send.stop() is called.
+
+      send.output only works in standalone scripts, not in scripts of code blocks (use send.lia there).
+
+      Shortcuts: send.wait(), send.stop(), send.clear()
+
+      Example:
+        <script>
+        setInterval(() => send.output(new Date().toLocaleTimeString()), 1000)
+        "LIA: wait"
+        </script>
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">⚙</span>'
+
+
+  '<script> window.x = ... </script>':
+    'prefix': 'lia-script-window'
+    'body': """
+      <script>
+      window.${1:shared} = ${2:22 ** 3}
+      </script>
+      <script>
+      window.${1:shared} / 2
+      </script>
+    """
+    'description': """
+      Every script runs in its own local scope, so variables of one script are not visible in another. To share values between scripts, attach them to window explicitly. For live updates between scripts, prefer output="..." and @input(`...`) (see lia-script-connect).
+
+      Example:
+        <script> window.a = 22 ** 3 </script>
+        <script> window.a / 2 </script>
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">⚙</span>'
+
+
+  'LIA.classroom publish/subscribe':
+    'prefix': 'lia-script-classroom'
+    'body': """
+      <script>
+      if (LIA.classroom.connected) {
+        const id = LIA.classroom.subscribe("${1:topic}", (message) => {
+          ${2:send.output(JSON.stringify(message))}
+        })
+        LIA.classroom.publish("${1:topic}", ${3:{ hello: "world" \\}})
+      }
+      "LIA: wait"
+      </script>
+    """
+    'description': """
+      LIA.classroom lets scripts exchange messages with all participants of a live classroom session (peer-to-peer). It is only active while a classroom is connected.
+
+        LIA.classroom.connected                 true if a session is active
+        LIA.classroom.on("connect", cb)         also "disconnect"
+        LIA.classroom.publish("topic", data)    send to all peers
+        LIA.classroom.subscribe("topic", cb)    returns an id
+        LIA.classroom.unsubscribe(id)
+
+      Example:
+        <script>
+        LIA.classroom.on("connect", () => send.output("connected"))
+        "LIA: wait"
+        </script>
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">⚙</span>'

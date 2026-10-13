@@ -7,7 +7,6 @@ https://github.com/andre-dietrich/liascript-snippets
 ## Install
 
 
-
 ### VSCode
 
 Simply go to the marketplace in [VSCode](https://code.visualstudio.com/) and search for "liascript-snippets".
@@ -38,12 +37,11 @@ If you need more information, then check out this [help](https://aizac.herokuapp
 
 #### Command Line
 
-
 Install Atom 1.5 or newer
 
 In the terminal, install the package via apm:
 
-    `apm install liascript-snippets`
+`apm install liascript-snippets`
 
 #### GUI
 
@@ -65,6 +63,23 @@ In the terminal, install the package via apm:
    your language of choice. Since LiaScript applies the ace-editor, there is a
    matching done between highlight.js and ace. You can select your language from
    highlight.js, but it will be translated into the text in parentheses.
+
+The snippets cover the whole LiaScript syntax, for example:
+
+| Prefix               | Topic                                                         |
+| -------------------- | ------------------------------------------------------------- |
+| `lia-init`           | a complete example course to start with                       |
+| `lia-header-`        | main and section headers, `lia-macro-` for single fields      |
+| `lia-quiz-`          | text, choice, matrix, selection and gap-text quizzes, hints, solutions, scripts |
+| `lia-survey-`        | text, choice and matrix surveys, input validation             |
+| `lia-effect-`        | animations, presentation pattern, playback                   |
+| `lia-comment-`       | narration, hidden narration, recorded audio                   |
+| `lia-code-`          | executable code, projects, `@output`, async, terminal, styling |
+| `lia-script-`        | JavaScript components, interactive inputs, connected scripts  |
+| `lia-table-`         | tables and diagrams (`data-type`, `data-show`, ...), `lia-chart` |
+| `lia-ascii-`, `lia-svg` | ASCII art and SVG with embedded LiaScript                  |
+| `lia-alert-`         | GitHub-style alerts (note, tip, important, warning, caution)  |
+| `lia-formula-`       | KaTeX formulas, chemistry, formula macros                     |
 
 
 **Screencast Lisascript-snippets and -preview**

@@ -1,0 +1,2187 @@
+[
+    {
+        "documentation": "ASCII art drawings are rendered as SVG images. This variant uses a fence of many backticks. The shorter form is a code block with the language ascii (see lia-ascii). The fence must not be indented.\n\nExamples:\n\n  `````````````````````````````````\n                           .--->  F\n  A       B     C   D     /\n  *-------*-----*---*----*----->  E\n           \\            ^ \\\n            v          /   '--->  G\n             B --> C -'\n  `````````````````````````````````",
+        "insertText": "``````````````````````````````````````````````````\n                             .--->  F\n    A       B     C   D     /\n    *-------*-----*---*----*----->  E\n             \\            ^ \\\n              v          /   '--->  G\n               B --> C -'\n``````````````````````````````````````````````````",
+        "label": "lia-ascii-example"
+    },
+    {
+        "documentation": "Style an ASCII art drawing with an HTML comment directly above it, e.g. to center it, limit its width or change the colors of lines (stroke) and filled shapes (fill).\n\nExamples:\n\n  <!-- style=\"display: block;\n              margin-left: auto;\n              margin-right: auto;\n              max-width: 315px;\" -->\n  ``` ascii\n                           .--->  F\n      A       B     C   D     /\n      *-------*-----*---*----*----->  E\n               \\            ^ \\\n                v          /   '--->  G\n                 B --> C -'\n  ```",
+        "insertText": "<!-- style=\"display: block; margin-left: auto; margin-right: auto; max-width: 315px;\" -->\n``````````````````````````````````````````````````\n                             .--->  F\n    A       B     C   D     /\n    *-------*-----*---*----*----->  E\n             \\            ^ \\\n              v          /   '--->  G\n               B --> C -'\n``````````````````````````````````````````````````",
+        "label": "lia-ascii-example-css"
+    },
+    {
+        "documentation": "A code block with the language ascii is rendered as an SVG image (svgbob). The fence must start at the left margin, an indented block is shown as plain code.\n\nDrawing vocabulary:\n  - _ |  \\ /       lines\n  +                 square corner\n  . , ' `           rounded corners\n  * # o O           dots, also as arrow ends\n  < > ^ v V A       arrow heads\n  Unicode box-drawing characters and emojis are also allowed.\n\nExample:\n  ``` ascii\n  +------+   +-----+\n  | Foo  +-->| Bar |\n  +------+   +--+--+\n                |\n                v\n          .-----------.\n          |  rounded  |\n          '-----------'\n  ```",
+        "insertText": "``` ascii\n+------+   +-----+   +-----+\n|      |   |     |   |     |\n| Foo  +-->| Bar +-->| Baz |\n|      |   |     |   |     |\n+------+   +-----+   +-----+\n```",
+        "label": "lia-ascii"
+    },
+    {
+        "documentation": "Text after the language ascii (on the same line as the opening fence) is shown as a caption below the image. It can contain Markdown.\n\nExample:\n  ``` ascii  Fig.: A __simple__ box\n  +-----+\n  | Box |\n  +-----+\n  ```",
+        "insertText": "``` ascii  Fig.: Working with branches in git\nnew feature      .---#---.\n                 |       |\ndevelopment    .-o---o---o----o----o-.\nmain   *---*-+-*---*---*-------------*----\n```",
+        "label": "lia-ascii-title"
+    },
+    {
+        "documentation": "Text in double quotes inside an ASCII drawing is not drawn, but rendered as LiaScript on top of the image: Markdown, formulas, animations, quizzes, ... Lines whose quotes start at the same column form one multi-line block. The placement is not pixel-precise, so adjust the quotes and the frame by hand.\n\nExample:\n  ``` ascii\n  +-------------------------------------------+\n  | \"$ \\sum_{i=1}^n i = \\frac{n(n+1)}{2} $\"   |\n  +-------------------------------------------+\n  | \"Gauss found this at the age of __9__.\"   |\n  +-------------------------------------------+\n  ```",
+        "insertText": "``` ascii\n+-----------------------------+\n| \"**Markdown** and formulas\"    |\n| \"can be placed in quotes\"      |\n+-----------------------------+\n```",
+        "label": "lia-ascii-embed"
+    },
+    {
+        "documentation": "Inline `code` has `back-ticks around` it.",
+        "insertText": "`code`",
+        "label": "lia-code-inline"
+    },
+    {
+        "documentation": "To insert a code block with syntax highlight, enclose your code snippet with three back-ticks (```) that is followed by a language code. To search all language codes, visit the link below, but in most cases you can simply add either the name of the language or the typical file-ending.\n\nExamples:\n\n  ```javascript\n  var s = \"JavaScript syntax highlighting\";\n  alert(s);\n  s;\n  ```\n\n  ```python\n  s = \"Python syntax highlighting\"\n  print(s)\n  ```\n\n  ```\n  No language indicated, so no syntax highlighting.\n  But let's throw in a <b>tag</b>.\n  ```",
+        "insertText": "```javascript\nvar s = \"JavaScript syntax highlighting\";\nalert(s);\n```",
+        "label": "lia-code-block"
+    },
+    {
+        "documentation": "To insert an executable and editable code block with syntax highlight, insert a common Markdown code block with a succeeding <script> tag. The macro @input is replaced with the current user input and gets evaluated in a try and catch block. Using JavaScript you can also insert interpreters to other languages or access them. In these cases you will have to change the content of the script tag. To get an impression about the possibilities, click on the link below.\nThe result of the script or the error are passed to a command-line like output beneath the code-block.\n\nExample:\n\n  ```javascript\n  var s = \"JavaScript syntax highlighting\";\n  alert(s);\n  ```\n  <script>@input</script>",
+        "insertText": "```javascript\nvar s = \"JavaScript syntax highlighting\";\nalert(s);\ns;\n```\n<script>@input</script>",
+        "label": "lia-code-block-js"
+    },
+    {
+        "documentation": "You can name your snippets by adding just after the language code. At default, it will be visible, but by adding a plus (+) in front of your filename you can make this more expressible, whereby a minus (-) will hide it at first. In this way you can also group multiple files into a (executable) project.\n\nExamples:\n\n  ```javascript    Visible.js\n  alert(\"Visible JavaScript file\");\n  ```\n\n  ```javascript   +Visible.js\n  alert(\"Also visible JavaScript file\");\n  ```\n\n  ```javascript   -Hidden.js\n  alert(\"Hidden JavaScript file on init\");\n  ```",
+        "insertText": "```javascript title.js\nvar s = \"Named JavaScript syntax highlighting\";\nalert(s);\n```",
+        "label": "lia-code-block-name"
+    },
+    {
+        "documentation": "To insert a named and executable and code snippet. The macro @input is replaced with the current user input and gets evaluated in a try and catch block. Using JavaScript you can also insert interpreters to other languages or access them. In these cases you will have to change the content of the <script> tag. To get an impression about the possibilities, click on the link below.\nThe result of the script or the error are passed to a command-line like output beneath the code-block.\n\nExample:\n\n  ```javascript   +Visible.js\n  var s = \"Visible JavaScript syntax highlighting\";\n  ```\n  <script>@input</script>\n\n  ```javascript   -Hidden.js\n  var s = \"Hidden JavaScript syntax highlighting\";\n  ```\n  <script>@input</script>",
+        "insertText": "```javascript   Filename.js\nvar s = \"Named JavaScript syntax highlighting\";\nalert(s);\ns;\n```\n<script>@input</script>",
+        "label": "lia-code-block-name-js"
+    },
+    {
+        "documentation": "This is an extended executable version of a code block, it shows how errors can be extracted and fed back by using LiaError to show inline errors, warnings, or information.\nIf you are using a project and want to integrate more than one file into your execution, you will have to use the parameterized @input(int) macro, the integer is defined by the file order (@input defaults to 0).\n\nExample:\n\n  ```javascript\n  var s = \"JavaScript syntax highlighting\";\n  alert(s);\n  ```\n  <script>\n    try{\n      eval(`@input`);  // <== code to evaluate\n    } catch (e) {\n      var log = e.stack.match(/((.*?):(.*))\\n.*?(:(\\d+):(\\d+)\\)\\n)/);\n      var err_msg = new LiaError(log[1] + \" =>  (\" + log[4], 1);\n      err_msg.add_detail(0, log[3], \"error\", log[5]-1, log[6]);\n      throw err_msg;\n    }\n  </script>",
+        "insertText": "```javascript\nvar s = \"JavaScript syntax highlighting\";\nalert(s);\n```\n<script>\n  try{\n    eval(`@input`);\n  } catch (e) {\n    var log = e.stack.match(/((.*?):(.*))\\n.*?(:(\\d+):(\\d+)\\)\\n)/);\n    var err_msg = new LiaError(log[1] + \" =>  (\" + log[4], 1);\n    err_msg.add_detail(0, log[3], \"error\", log[5]-1, log[6]);\n    throw err_msg;\n  }\n</script>",
+        "label": "lia-code-block-jsx"
+    },
+    {
+        "documentation": "This is an extended executable version of a code block, it shows how errors can be extracted and fed back by using LiaError to show inline errors, warnings, or information.\nIf you are using a project and want to integrate more than one file into your execution, you will have to use the parameterized @input(int) macro, the integer is defined by the file order (@input defaults to 0).\n\nExample:\n\n  <script>\n    try{\n      eval(`@input`); // code to be evaluated\n    } catch (e) {\n      // do some pattern matching to get the error string, the line number and column\n      var log = e.stack.match(/((.*?):(.*))\\n.*?(:(\\d+):(\\d+)\\)\\n)/);\n\n      // create a new LiaError object with\n      // param1: an error message string\n      // param2: add the number of files involved as int\n      var err_msg = new LiaError(log[1] + \" =>  (\" + log[4], 1);\n\n      // add as many information to your error message\n      // param1: file id\n      // param2: additional information string\n      // param3: type, either \"error\", \"info\", or \"warning\"\n      // param4: line number\n      // param5: column number\n      err_msg.add_detail(0, log[3], \"error\", log[5]-1, log[6]);\n\n      throw err_msg;   // finally just throw it away\n    }\n  </script>",
+        "insertText": "<script>\n  try{\n    eval(`@input`);\n  } catch (e) {\n    var log = e.stack.match(/((.*?):(.*))\\n.*?(:(\\d+):(\\d+)\\)\\n)/);\n    var err_msg = new LiaError(log[1] + \" =>  (\" + log[4], 1);\n    err_msg.add_detail(0, log[3], \"error\", log[5]-1, log[6]);\n    throw err_msg;\n  }\n</script>",
+        "label": "lia-code-js"
+    },
+    {
+        "documentation": "Default output: a code block with @output after the language is not shown as code, its content is shown in the terminal of an executable project when the slide loads. It is replaced by the real result after the first execution. This is useful for courses that are read offline or on GitHub, where nothing can be executed. The @output block has to be the last block of the project. A plus (+) shows the content as normal output (stdout), a minus (-) as an error (stderr).\n\nExample:\n\n  ``` js     -EvalScript.js\n  let str = \"hello world\";\n\n  consolelog(str)\n  ```\n  ``` text    -@output\n  There is an error in line 3 ...\n  ```\n  <script>@input</script>",
+        "insertText": "``` text     +@output\nEnter your default output\n```",
+        "label": "lia-code-output"
+    },
+    {
+        "documentation": "If you want to create a project and thus separate data and code into multiple files, simply write multiple code blocks in a sequence. To make them executable as a whole, simply add a script tag to the end and use the parameterized @input(id) macro to compose your project properly. The file id is defined by the order of code blocks.\nSee the link below to see more examples.\n\nExample:\n\n  ``` js     -EvalScript.js\n  let who = data.first_name + \" \" + data.last_name;\n\n  if(data.online) { who + \" is online\"; }\n  else            { who + \" is NOT online\"; }\n  ```\n  ``` json    +Data.json\n  { \"first_name\" :  \"Sammy\",\n    \"last_name\"  :  \"Shark\",\n    \"online\"     :  true   }\n  ```\n  <script>\n    // insert the JSON dataset into the local variable data\n    let data = @input(1);\n\n    // eval the script that uses this dataset\n    eval(`@input(0)`);\n  </script>",
+        "insertText": "``` js     -EvalScript.js\nlet who = data.first_name + \" \" + data.last_name;\n\nif(data.online) {\n  who + \" is online\";\n}\nelse {\n  who + \" is NOT online\";\n}\n```\n``` json    Data.json\n{\n  \"first_name\" :  \"Sammy\",\n  \"last_name\"  :  \"Shark\",\n  \"online\"     :  true\n}\n```\n<script>\n  // insert the JSON dataset into the local variable data\n  let data = @input(1);\n\n  // eval the script that uses this dataset\n  eval(`@input(0)`);\n</script>",
+        "label": "lia-code-project"
+    },
+    {
+        "documentation": "Executable code with asynchronous results. End the script with \"LIA: wait\", so that LiaScript keeps the code block in the running state. Send output later with send.lia(...) or console.log(...) and finish with send.lia(\"LIA: stop\").\n\nUseful control strings and functions:\n  \"LIA: wait\"                  keep running (async)\n  \"LIA: stop\"                  finish the execution\n  \"LIA: clear\"                 clear the terminal\n  send.lia(\"text\")             print output and keep running\n  send.lia(\"text\", [], true)   print as success\n  send.lia(\"text\", [], false)  print as error\n  send.liascript(\"## md\")      render LiaScript in the output\n  send.lia(\"HTML: <b>x</b>\")   render raw HTML in the output\n  console.log/warn/error/debug(...)\n\nExample:\n  ```js\n  let i = 0\n  const id = setInterval(() => console.log(i++), 500)\n  setTimeout(() => { clearInterval(id); send.lia(\"LIA: stop\") }, 3000)\n  ```\n  <script>\n    eval(`@input`)\n    \"LIA: wait\"\n  </script>",
+        "insertText": "```js\n// asynchronous code\nsetTimeout(() => console.log(\"done\"), 1000)\n```\n<script>\n  eval(`@input`)\n  setTimeout(() => send.lia(\"LIA: stop\"), 2000)\n  \"LIA: wait\"\n</script>",
+        "label": "lia-code-async"
+    },
+    {
+        "documentation": "An interactive terminal (REPL): ending the script with \"LIA: terminal\" opens an input line below the output after execution. send.handle(\"input\", callback) is called for every line the user sends, send.handle(\"stop\", callback) when the user stops the execution.\n\nExample:\n  ```js\n  // execute me and type 2+2 into the terminal\n  ```\n  <script>\n    send.handle(\"input\", (input) => send.lia(String(eval(input))))\n    \"LIA: terminal\"\n  </script>",
+        "insertText": "```js\n// type JavaScript into the terminal after executing this block\n```\n<script>\n  send.handle(\"input\", (input) => {\n    send.lia(String(eval(input)))\n  })\n  send.handle(\"stop\", (e) => {\n    console.log(\"stopped\")\n  })\n  \"LIA: terminal\"\n</script>",
+        "label": "lia-code-terminal"
+    },
+    {
+        "documentation": "Code blocks (executable or not) are rendered with the Ace editor. An HTML comment directly above the block configures it:\n\n  data-showGutter=\"false\"         hide the line numbers\n  data-theme=\"monokai\"            any Ace theme\n  data-marker=\"y1 x1 y2 x2 color type;\"\n                                  highlight a range, repeatable with ;\n                                  color: error, log, warn, debug, info\n                                         or rgba(...) without spaces\n                                  type:  fullLine (default), text,\n                                         screenLine\n  data-tabSize, data-fontSize, data-firstLineNumber\n\nExample:\n  <!-- data-theme=\"chaos\" data-marker=\"1 0 1 12 warn;\" -->\n  ```js\n  let a = 1\n  a = a + 1\n  ```",
+        "insertText": "<!-- data-showGutter=\"false\" data-theme=\"chaos\" data-marker=\"1 0 2 20 error text;\" -->\n```js\nlet a = 1\nlet b = a +\n```",
+        "label": "lia-code-style"
+    },
+    {
+        "documentation": "A multi-file project with a default output. Blocks written directly one after another (no blank line) form a project with one shared script. @input(n) refers to the n-th block (counting from 0). A file name with - starts minimized, with + (default) visible. The last block marked with @output is shown in the terminal before the first execution.\n\nExample:\n  ``` js     -EvalScript.js\n  let who = data.first_name + \" \" + data.last_name;\n  data.online ? who + \" is online\" : who + \" is NOT online\"\n  ```\n  ``` json   +Data.json\n  { \"first_name\": \"Sammy\", \"last_name\": \"Shark\", \"online\": true }\n  ```\n  ``` text   +@output\n  Is Sammy Shark really online?\n  ```\n  <script>\n    let data = @input(1);\n    @input(0)\n  </script>",
+        "insertText": "``` js     -EvalScript.js\nlet who = data.first_name + \" \" + data.last_name;\ndata.online ? who + \" is online\" : who + \" is NOT online\"\n```\n``` json   +Data.json\n{ \"first_name\": \"Sammy\", \"last_name\": \"Shark\", \"online\": true }\n```\n``` text     +@output\nIs Sammy Shark really online? Press execute.\n```\n<script>\n  let data = @input(1);\n  @input(0)\n</script>",
+        "label": "lia-code-project-output"
+    },
+    {
+        "documentation": "Narration comments: the paragraph below --{{n}}-- is read out loud by the text-to-speech engine when animation step n is reached. Only one paragraph is allowed per comment, Markdown can be used inside.\n\nIn Presentation mode the text is spoken and hidden, in Slides mode it is spoken and shown in a side panel, and in Textbook mode it is shown in place. A comment never reveals anything on the slide by itself, so pair it with a {{n}} block for the same step (see lia-effect-presentation). Several comments with the same number are read one after another.\nThe default voice is defined within the main header, if not english will be used. This main voice can be changed per section by adding a section comment.\n\nExample:\n  <!--\n  author:   ...\n  email:    ...\n  ...\n  narrator: UK English Female\n  -->\n\n  # Title\n\n               --{{0}}--\n  I will speak with a female *UK* accent.\n\n  ## Section\n  <!-- narrator: US English Male -->\n\n               --{{0}}--\n  This entire section will be spoken by an American man.\n\n               --{{1}}--\n  But only this section...\n\nTo simplify the voice-search, simply start typing \"voice\" and fuzzy search all responsive voice or click on the link below.",
+        "insertText": "              --{{number}}--\nEnter some **text** that gets read out aloud.\nOnly paragraphs are allowed!",
+        "label": "lia-comment"
+    },
+    {
+        "documentation": "You can change the voice also per comment by adding it directly after the number of appearance.\nType \"voice\" for fuzzy searching all responsive voices or click on the link below.\n\nExample:\n        --{{0 Australian Female}}--\n  I will speak with a female Australian accent,\n  no matter what the default language is.\n\n        --{{0 Deutsch Male}}--\n  Und hier äußert sich gerade ein deutscher Mann.",
+        "insertText": "              --{{number voice}}--\nEnter some **text** that gets read out aloud with another voice.\nOnly paragraphs are allowed!",
+        "label": "lia-comment-voice"
+    },
+    {
+        "documentation": "If you want to speak out some additional text that shall not appear in the textbook mode, then simply put your comment into a HTML comment tag.\n\nExample:\n  <!-- --{{2}}--\n  I will speak with the default voice, but not appear\n  elsewhere within the document.\n  -->",
+        "insertText": "<!-- --{{number}}-- Enter some **text** that gets read out aloud! -->",
+        "label": "lia-comment-hidden"
+    },
+    {
+        "documentation": "If you want to speak out some additional text that shall not appear in the textbook mode and speak with another voice, then simply put your comment with a voice definition into a HTML comment tag.\n\nExample:\n  <!-- --{{2 Deutsch Female}}--\n  I will speak with a German voice, but not appear\n  elsewhere within the document.\n  -->\n\nType \"voice\" for fuzzy searching or click on the link below for more information.",
+        "insertText": "<!-- --{{number voice}}-- Enter some **text** that gets read out aloud! -->",
+        "label": "lia-comment-voice-hidden"
+    },
+    {
+        "documentation": "Multimedia comment: attach an audio (or video) link at the end of a narration comment to play your own recording at this animation step instead of the text-to-speech voice. The file is only loaded and played when the step is reached in Presentation or Slides mode. It never shows up as a visible player. For a visible player, put the audio link outside of a comment.\n\nExample:\n      --{{1}}--\n  To play an audio file during your animation step,\n  simply attach the link at the end of your comment.\n  ?[⏯](recording/audio_1.mp3)",
+        "insertText": "              --{{number}}--\nThis text is not spoken, the recording is played instead.\n?[⏯](audio.mp3)",
+        "label": "lia-comment-media"
+    },
+    {
+        "documentation": "The character is used as a color code, such as r stands for red, w for white, etc. Uppercase and lowercase characters define the size of the plotted dots. And if there is only one character, then it is plotted as a single dot only.\n\nExample:\n                  Colored - Dots\n     6 | A a B b C c\n       | D d E e F f G g H h I i\ny-axis | J j K k L l M m N n o O\n       | P p Q q R r S s T t U u\n       | V v W w X x Y y Z Z   *\n     1 +------------------------\n       0        x-axis        24\n\nThe definition of the title, x and y labels and their limits is optional, but the number of used pipes (|) and hyphens (-) define the resolution of the diagram.",
+        "insertText": "               Title - dots\n6 | A a B b C c\n  | D d E e F f G g H h I i\n  | J j K k L l M m N n o O\n  | P p Q q R r S s T t U u\n  | V v W w X x Y y Z Z   *\n1 +------------------------\n  0                      24",
+        "label": "lia-diagram-dots"
+    },
+    {
+        "documentation": "The character is used as a color code, such as r stands for red, B for blue, etc. Uppercase and lowercase characters define the size of the plotted dots. A sequence of equal characters gets interpreted as a poly-line, there are more than two characters and if there are no two characters at the same x position.\n\nExample:\n                                  Multiline\n  1.9 |\n      |                 ***\n    y |               *     *\n    - | r r r r r r r*r r r r*r r r r r r r\n    a |             *         *\n    x |            *           *\n    i | B B B B B * B B B B B B * B B B B B\n    s |         *                 *\n      | *  * *                       * *  *\n   -1 +------------------------------------\n      0            x-axis                 1\n\nThe definition of the title, x and y labels and their limits is optional, but the number of used pipes (|) and hyphens (-) define the resolution of the diagram.",
+        "insertText": "                                Multiline\n1.9 |\n    |                 ***\n  y |               *     *\n  - | r r r r r r r*r r r r*r r r r r r r\n  a |             *         *\n  x |            *           *\n  i | B B B B B * B B B B B B * B B B B B\n  s |         *                 *\n    | *  * *                       * *  *\n -1 +------------------------------------\n    0              x-axis               1",
+        "label": "lia-diagram-multiline"
+    },
+    {
+        "documentation": "Simple dots and poly-line representations can be applied together in one diagram, if they use different characters.\n\nExample:\n              Combining dots and poly-lines\n  1.9 |\n      |     DOTS\n    y |                                *\n    - |\n    a |                         *\n    x |                  *\n    i |         *\n    s |\n      | *\n   -1 +------------------------------------\n      0            x-axis                 1\n\nThe definition of the title, x and y labels and their limits is optional, but the number of used pipes (|) and hyphens (-) define the resolution of the diagram.",
+        "insertText": "             Combining dots and polylines\n1.9 |\n    |     DOTS\n  y |                                *\n  - |\n  a |                         *\n  x |                  *\n  i |         *\n  s |\n    | *\n -1 +------------------------------------\n    0            x-axis                 1",
+        "label": "lia-diagram-simple"
+    },
+    {
+        "documentation": "Use simple inline effects to highlight specific elements within a Markdown block. Simply enclose your elements within two subsequent braces ({}{}), whereby the first one is used to hold the number of appearance, while the will contain your text, image, video, what so ever ...\nYou can tweak your effects with additional animations and styling. Animate.css is included at default.\n\nExamples:\n  This block contains some {1}{inline __effects__} that will appear {2}{subsequently}.\n\n  Inline effects can also contain more effects {1}{I will appear first {2}{and I as a second}}.\n\n  With styling ++ {3}{bouncing red and delayed}<!--\n        class = \"animated infinite bounce\"\n        style = \"animation-delay: 3s; color: red;\"\n      -->",
+        "insertText": "{number}{__element__}",
+        "label": "lia-effect-inline"
+    },
+    {
+        "documentation": "Use simple inline effects to highlight specific elements within a Markdown block. Simply enclose your elements within two subsequent braces ({}{}), whereby the first one contains two numbers separated by (-) the first number defines the time of appearance and the second one the time of disappearance. The element contains the Markdown elements for highlighting (text, videos, images, etc.)\nYou can tweak your effects with additional animations and styling. Animate.css is included at default.\n\nExamples:\n  This block contains some {1-2}{I appear at fragment 1 and disapper at 2}.\n\n  Nesting is allowed but has to make sense {1-3}{I will rest from 1 to 3 {4}{I will not be visible}}.\n\n  With styling ++ {1-3}{bouncing red and delayed}<!--\n        class = \"animated infinite bounce\"\n        style = \"animation-delay: 3s; color: red;\"\n      -->",
+        "insertText": "{from-to}{__element__}",
+        "label": "lia-effect-inline2"
+    },
+    {
+        "documentation": "Use block effects to let an entire Markdown block appear at a certain animation step. Put the step number in double braces on its own line directly above the block. Indent it by 4 or more spaces, so that other Markdown viewers show it as code and not as text. In Textbook mode all blocks are visible and tagged with their step number.\nThe entire block can also be styled and the animation tweaked, but the required comment tag has to be defined before the Markdown block. Animate.css is included at default.\n\nExamples:\n                    {{1}}\n  This entire block will appear with the first\n  fragment. And remain till the end of this slide.\n\n                    {{2}}\n  ```js\n  // this works with any markdown block\n  ```\n\n  <!-- class = \"animated rollIn\" -->\n       {{3}}\n  | Also | with  |\n  |------|-------|\n  | any  | table |",
+        "insertText": "    {{number}}",
+        "label": "lia-effect-block"
+    },
+    {
+        "documentation": "Use block effects with a range to let an entire Markdown block appear at the first step and disappear at the second. Put both numbers, separated by a hyphen, in double braces directly above the block.\nThe entire block can also be styled and the animation tweaked, but the required comment tag has to be defined before the Markdown block. Animate.css is included at default.\n\nExamples:\n                   {{1-4}}\n  This entire block will appear with the first fragment.\n  And remain until the fourth fragment of this slide.\n\n                   {{0-1}}\n  ```js\n  // I will be present immediately and disappear on the\n  // 1st fragment.\n  ```\n\n  <!-- class = \"animated rollIn\" -->\n       {{3-4}}\n  | Also | with  |\n  |------|-------|\n  | any  | table |",
+        "insertText": "    {{from-to}}",
+        "label": "lia-effect-block2"
+    },
+    {
+        "documentation": "Bundle multiple blocks into one animation step by enclosing them in two lines of three or more asterisks (*). The effect definition goes above the opening line. Alternatively, use a <section> ... </section> wrapper instead of the asterisks (see lia-effect-section).\nThe entire block can also be styled and the animation tweaked, but the required comment tag has to be defined before the Markdown block. Animate.css is included at default.\n\nExamples:\n                    {{1}}\n  *************************************************\n\n  Both blocks will appear at once. Nesting of other\n  {2}{inline} and block effects is also allowed.\n\n\n  | Also | with  |\n  |------|-------|\n  | any  | table |\n\n  **************************************************",
+        "insertText": "                 {{number}}\n************************************************\n\nInsert your Markdown blocks in here ...\n\n************************************************",
+        "label": "lia-effect-multiblock"
+    },
+    {
+        "documentation": "Bundle multiple blocks into one animation step by enclosing them in two lines of three or more asterisks (*). The effect definition goes above the opening line. Alternatively, use a <section> ... </section> wrapper instead of the asterisks (see lia-effect-section).\nThe entire block can also be styled and the animation tweaked, but the required comment tag has to be defined before the Markdown block. Animate.css is included at default.\n\nExamples:\n                    {{1-3}}\n  *************************************************\n\n  Both blocks will appear at once and disappear at\n  the third fragment. Nesting of other {2}{inline}\n  and block effects is also allowed.\n\n\n  | Also | with  |\n  |------|-------|\n  | any  | table |\n\n  **************************************************",
+        "insertText": "                 {{from-to}}\n************************************************\n\nInsert your Markdown blocks in here ...\n\n************************************************",
+        "label": "lia-effect-multiblock2"
+    },
+    {
+        "documentation": "This is only an example of how Animate.css can be used to tweak your effects. Additional CSS magic can be applied onto single elements or blocks by adding a comment tag either in front of the block or directly after the element.\n\nExample:\n\n  <!-- class = \"animated rollIn\" style = \"animation-delay: 3s; color: purple\" -->\n  The whole text-block should appear in purple color and with a wobbling effect.\n  Which is a **bad** example, please use it with caution ...\n  ~~ Jumping red ~~ <!-- class = \"animated infinite bounce\" style = \"color: red;\" -->\n\nFor more information how to change the animation styles, click on the link below.",
+        "insertText": "<!-- class=\"animated rollIn\" style=\"animation-delay: 3s;\" -->",
+        "label": "lia-effect-animate-example"
+    },
+    {
+        "documentation": "With this triangle notation it is possible to add a playback button, which will read out loud the text within the second braces. It is possible to add additional animation definitions and also to change the voice.\n\nStart typing voice, if you want to change the narrator and the language.\n\nExamples:\n  Within this block {|>}{this text will be spoken out loud}.\n\n  Nesting is allowed but has to make sense {1-3 |>}{I speak from 1 to 3 {4}{and nesting is also possible}}.\n\n  If you want to {|> Australian Female}{it is also possible to change the voice}.",
+        "insertText": "{|>}{text to read}",
+        "label": "lia-effect-inline-playback"
+    },
+    {
+        "documentation": "Use the `|>` or `!>` to indicate, that the entire block below should be read out loud in the default language. It is also possible to add effect-numbers to indicate the appearance and also to add another language. Start typing \"voice\" to select another narrator and language.\n\nExample:\n\n     {{|>}}\n  Read this block after the user has clicked the play button.\n\n     {{3 |>}}\n  This block will only appear at the 3rd animation step.\n\n     {{1-2 |> Australian Female}}\n  This will appear at step 1 and disappear at animation step 2, when the\n  users clicks on it, an Australian female voice is used as a narrator.",
+        "insertText": "{{|>}}",
+        "label": "lia-effect-block-playback"
+    },
+    {
+        "documentation": "Adds a play button to the block below, which reads it out loud with the given voice instead of the default narrator. The button works in every mode and does not depend on the animation steps.\n\nType \"voice\" to search all available voices.\n\nExample:\n      {{|> Australian Female}}\n  This paragraph is read with an Australian voice.\n\n      {{1 |> Deutsch Female}}\n  Dieser Absatz erscheint bei Schritt 1 und wird auf Deutsch vorgelesen.",
+        "insertText": "    {{|> voice}}\n",
+        "label": "lia-effect-block-playback-voice"
+    },
+    {
+        "documentation": "Groups multiple blocks into one animation step with an HTML section tag instead of two lines of asterisks. Leave a blank line after <section> and before </section>, so that the content is parsed as Markdown.\n\nExample:\n                    {{1}}\n  <section>\n\n  This paragraph and the table below appear together.\n\n  | Also | with  |\n  |------|-------|\n  | any  | table |\n\n  </section>",
+        "insertText": "                 {{number}}\n<section>\n\nInsert your Markdown blocks in here ...\n\n</section>",
+        "label": "lia-effect-section"
+    },
+    {
+        "documentation": "A slide that works as a presentation and as a textbook: every visible step {{n}} is paired with a narration --{{n}}-- for the same step. Think of {{n}} as the bullet point and --{{n}}-- as the speaker notes for it.\n\nHow the narration is shown depends on the mode:\n  Presentation -> spoken, text hidden\n  Slides       -> spoken, text shown in the side panel\n  Textbook     -> not spoken, text shown in place\n\nA --{{n}}-- comment alone never reveals anything on the slide, so always pair it with a {{n}} block. Step 0 introduces the slide.\n\nExample:\n  ## Photosynthesis\n\n               --{{0}}--\n  Plants turn light into sugar. Let us look at the inputs.\n\n                 {{1}}\n  * Light, water and CO2 go in\n\n               --{{1}}--\n  Three things are needed: light, water and carbon dioxide.",
+        "insertText": "## Slide Title\n\n             --{{0}}--\nIntroduction, spoken when the slide is opened.\n\n               {{1}}\n* First bullet point\n\n             --{{1}}--\nNarration for the first bullet point.\n\n               {{2}}\n* Second bullet point\n\n             --{{2}}--\nNarration for the second bullet point.",
+        "label": "lia-effect-presentation"
+    },
+    {
+        "documentation": "Links can be added in many ways to a document (relative or absolute), either in common Markdown style by enclosed brackets ([]) and parentheses (()), or directly if it starts with http or www and matches the common url pattern.\nIf you want to navigate within the current document, use hash tag and the number of the slide.\nAnd you can add additional html and css options by adding a trailing comment.\n\nExamples:\n  [LiaScript](https://liascript.github.io)\n\n  Also an accepted link: https://liascript.github.io\n\n  Local navigation by slide number: [top](#1)\n\n  Local navigation by slide title: [top](#some-title)\n\n  Autolink, no escaping of parentheses needed: <https://example.com/path_(with_parens)>\n\n  With styling [LiaScript](https://liascript.github.io)<!--\n    title = \"click me\"\n    style = \"color: red;\"\n  -->",
+        "insertText": "[name](url)",
+        "label": "lia-link"
+    },
+    {
+        "documentation": "An optional information can be attached to every link by adding double quotes after the link in the parentheses.\n\nExamples:\n  [LiaScript](https://liascript.github.io \"click Me\")\n\n  Local navigation:\n    [top](#1 \"by slide number\")\n    [top](#and-the-title-is \"by slide title\")",
+        "insertText": "[name](url \"info\")",
+        "label": "lia-link-info"
+    },
+    {
+        "documentation": "Include images via the common Markdown notation as depicted below, by using absolute or relative paths. In contrast to common Markdown you can add also styles, classes, or any other allowed image tag to it simply by appending a comment tag.\n\nExample:\n\n  ![image of a puppy](https://upload.wikimedia.org/wikipedia/commons/c/c7/Puppy_on_Halong_Bay.jpg)\n\n  ![relative](./img/puppy.jpg)\n\n  ![with styling](./img/puppy.jpg)<!--\n      title = \"a gray puppy\"\n      width = \"300px\"\n      style = \"border: 10px solid; filter: grayscale(100%);\"\n    -->",
+        "insertText": "![alt-text](image-url)",
+        "label": "lia-image"
+    },
+    {
+        "documentation": "Optional information can be attached to every image by adding double quotes after the link in the parentheses. This will be attached as a subtitle to this element and can also include Markdown syntax.\n\nExample:\n\n  ![image of a puppy](https://upload.wikimedia.org/wikipedia/commons/c/c7/Puppy_on_Halong_Bay.jpg \"This image is free __CC0__\")\n\n  ![relative](./img/puppy.jpg \"A cute image of a __puppy__\")",
+        "insertText": "![alt-text](image-url \"info\")",
+        "label": "lia-image-info"
+    },
+    {
+        "documentation": "Including audio is done with a starting question mark (?) that is followed a common Markdown link. If you want to include soundcloud, then you only have to refer to the link and the player gets embedded into your course.\n\nExample:\n\n  ?[singing birds](https://bigsoundbank.com/UPLOAD/mp3/1068.mp3)\n\n  ?[soundcloud](https://soundcloud.com/glennmorrison/beethoven-moonlight-sonata)",
+        "insertText": "?[alt-text](audio-url)",
+        "label": "lia-audio"
+    },
+    {
+        "documentation": "An optional information can be attached to every audio file by adding double quotes after the link in the parentheses. This will be attached as a subtitle to this element and can also include Markdown syntax.\n\nExample:\n\n  ?[singing birds](https://bigsoundbank.com/UPLOAD/mp3/1068.mp3 \"optional infos\")",
+        "insertText": "?[alt-text](audio-url \"info\")",
+        "label": "lia-audio-info"
+    },
+    {
+        "documentation": "Include movies is like combining images and sound by a starting exclamation mark followed by a question mark (!?) as depicted below. Paths can either be absolute or relative. You can add also styles, classes, or any other allowed options to it simply by appending a comment tag.\n\nTo simplify the usage, you can directly use the YouTube link, or Vimeo, or TeacherTube. Those resources are atomatically parsed and included appropriately into the document, without searching for an embed-code.\n\nExample:\n\n  !?[eLab](https://www.youtube.com/watch?v=bICfKRyKTwE)\n\n  !?[relative](./mov/video.mp4)\n\n  !?[eLab](https://www.youtube.com/watch?v=bICfKRyKTwE)<!--\n      title = \"the elab in gray\"\n      width = \"90%\"\n      style = \"border: 10px solid; filter: grayscale(100%);\"\n    -->\n\nBut it is still possible to use HTML to include Videos and other stuff ...\n\n  <iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/bICfKRyKTwE\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>",
+        "insertText": "!?[alt-text](movie-url)",
+        "label": "lia-movie"
+    },
+    {
+        "documentation": "Optional information can be attached to every video by adding double quotes after the link in the parentheses. This will be attached as a subtitle to this element and can also include Markdown syntax.\n\nExample:\n\n  !?[eLab](https://www.youtube.com/watch?v=bICfKRyKTwE \"Some information about the previous __eLab__ project.\")",
+        "insertText": "!?[alt-text](movie-url \"info\")",
+        "label": "lia-movie-info"
+    },
+    {
+        "documentation": "Embed anything by using two question marks. LiaScript will try to determine if it is possible to use oEmbed for this site, if not, the content will be embedded as an `<iframe>`.\n\nExample:\n\n  ??[circuit simulator](https://falstad.com/circuit/circuitjs.html?ctz=CQAgjCAMB0l3BWcDoBYDsAmdA2dBOdMMADhzEnxASQusmoFMBaYgKACcQBmTB7yKh58eCTFHCQ2Ac2H8xcniSEMpAJRCYEOTSRKbI+zHokNUDTNCSqoVtgHdF2cbwuYVDp+5CowOzN5Sjq7gxj5+ofrqimBhISQ2Zgx0iXYAxjFxIgEqtvCC+IVFxSU6+ND43CRiejjcOJUkEDBwYJzhOrH6vv6BkvCeIV2aWJFQg9nezpqBbADOI+LD0zkSEAAuHACujGwAZprauvohxlHgVnmYbAD2IPrDSfgPqrBw6E1aEuInbEA)\n\n  ??[Pottery Jar 3D model](https://sketchfab.com/3d-models/pottery-jar-0576d43d28924c948ed3bbae02e4e0cb)",
+        "insertText": "??[alt-text](url)",
+        "label": "lia-embed"
+    },
+    {
+        "documentation": "If you group multimedia links within one line or within one block, they will appear as a gallery within LiaScript.\n\nExample:\n\n  ![image of a puppy](https://upload.wikimedia.org/wikipedia/commons/c/c7/Puppy_on_Halong_Bay.jpg)\n  ??[circuit simulator](https://falstad.com/circuit/circuitjs.html)\n  ??[Pottery Jar 3D model](https://sketchfab.com/3d-models/pottery-jar-0576d43d28924c948ed3bbae02e4e0cb)",
+        "insertText": "![alt-text](url) ![alt-text](url)",
+        "label": "lia-gallery"
+    },
+    {
+        "documentation": "A link with the text qr-code is rendered as a QR code for its URL, e.g. so that students in a lecture can open a link on their phones. Other Markdown viewers show a normal link.\n\nExample:\n  [qr-code](https://liascript.github.io)",
+        "insertText": "[qr-code](https://liascript.github.io)",
+        "label": "lia-qr-code"
+    },
+    {
+        "documentation": "A link with the text preview-lia to the raw URL of another LiaScript course is rendered as a preview card with the title, description, logo and author taken from the course header. Clicking the card opens the course.\n\nExample:\n  [preview-lia](https://raw.githubusercontent.com/liaScript/docs/master/README.md)",
+        "insertText": "[preview-lia](https://raw.githubusercontent.com/liaScript/docs/master/README.md)",
+        "label": "lia-preview-lia"
+    },
+    {
+        "documentation": "Links with mailto: open the email program, links with tel: start a phone call on mobile devices.\n\nExample:\n  [Write me](mailto:you@example.com)\n\n  [Call me](tel:+491234567890)",
+        "insertText": "[Write me](mailto:you@example.com)",
+        "label": "lia-mailto"
+    },
+    {
+        "documentation": "Two-column layout: an image followed directly by text (no blank line between them) forms one paragraph. The image floats to the left with up to 50% of the width and the text flows beside it. A blank line between image and text puts the text below the image instead.\n\nExample:\n  ![A lion](img/lion.jpg \"The king of the jungle\")\n  Lions live in groups called prides. This text is shown\n  to the right of the image.",
+        "insertText": "![alt-text](image-url \"caption\")\nThis text has no blank line before it, so it stays in the same\nparagraph as the image and flows beside it.",
+        "label": "lia-image-float"
+    },
+    {
+        "documentation": "Inline Footnotes are composed of a reference in brackets with a starting caret. The following text has to be put into parentheses, only one line is allowed.\n\n   Example with [^1](inline _footnote_) and some more text.",
+        "insertText": "[^ref](explanation)",
+        "label": "lia-footnote-inline"
+    },
+    {
+        "documentation": "Multiline footnotes have to be split into a reference and into a comment. Footnote references are defined by brackets with a starting caret and can appear everywhere within the text. Footnote texts have to be put at the end of the same section, because LiaScript parses every slide on its own. The id can be a number, a word or even an emoji.\n\nExample:\n\nHere is a footnote reference, [^1] and another.[^longnote]\n\n...\n\n[^1]: Here is the footnote text.\n\n[^longnote]: Here's one with multiple blocks.\n\n               Subsequent paragraphs are indented to show that they\n               belong to the previous footnote.",
+        "insertText": "[^ref]",
+        "label": "lia-footnote-reference"
+    },
+    {
+        "documentation": "Multiline footnotes have to be split into a reference and into a comment. Footnote texts start with a reference \"tag\", which is followed by a colon. They have to be put into the end of each section otherwise they are not interpreted as footnote texts and multi-block footnotes have to follow the previous indentation.\nExample:\n...\n\n[^1]: Here is the footnote text.\n\n[^longnote]: Here's one with multiple blocks.\n\n               Subsequent paragraphs are indented to show that they\n               belong to the previous footnote.",
+        "insertText": "[^ref]: some comments",
+        "label": "lia-footnote-text"
+    },
+    {
+        "documentation": "Insert a mathematical formula (inline) within your text. It has to be enclosed with two single dollar signs, as shown in the example.\n\nExample: $ f(a,b,c) = (a^2+b^2+c^2)^3 $\n\nFormulas are rendered with KaTeX. Only LaTeX is allowed between the dollar signs, no Markdown or HTML. Click on the link below for all supported commands.",
+        "insertText": "$ f(a,b,c) = (a^2+b^2+c^2)^3 $",
+        "label": "lia-formula-inline"
+    },
+    {
+        "documentation": "Insert a more multiline mathematical formula as a block, which is automatically centered within your document. It has to be enclosed with two dollar signs, as shown in the example.\n\nExample:\n\n$$\n   \\sum_{i=1}^\\infty\\frac{1}{n^2}\n        =\\frac{\\pi^2}{6}\n$$\n\nFormulas are rendered with KaTeX. Only LaTeX is allowed between the dollar signs, no Markdown or HTML. Click on the link below for all supported commands.",
+        "insertText": "$$\n   \\sum_{i=1}^\\infty\\frac{1}{n^2}\n        =\\frac{\\pi^2}{6}\n$$",
+        "label": "lia-formula-block"
+    },
+    {
+        "documentation": "Chemical equations with the mhchem extension of KaTeX: write the formula inside \\ce{...}. Arrows, charges, states and isotopes are supported.\n\nExample:\n  $\\ce{CO2 + C -> 2 CO}$\n\n  $\\ce{Hg^2+ ->[I-] HgI2 ->[I-] [Hg^{II}I4]^2-}$",
+        "insertText": "$\\ce{CO2 + C -> 2 CO}$",
+        "label": "lia-formula-chem"
+    },
+    {
+        "documentation": "Define your own KaTeX macros in the main header (or a section header) with formula:. They can be used in every formula of the course. The line can be repeated for more macros.\n\nExample:\n  <!--\n  formula: \\R      \\mathbb{R}\n  formula: \\norm   \\left\\lVert #1 \\right\\rVert\n  -->\n\n  # Main\n\n  $ x \\in \\R $ and $ \\norm{x} $",
+        "insertText": "formula: \\R  \\mathbb{R}",
+        "label": "lia-formula-macro"
+    },
+    {
+        "documentation": "The main header is an HTML comment at the very top of the document. It defines the defaults of the course: authors, contact, version, language, the narrator voice, additional JavaScript and CSS, macros and more. Continuation lines have to be indented. Most settings can be overwritten per section (see lia-header-section).\n\nCommon fields:\n  author      separate multiple authors with ;\n  email       contact shown in the info panel\n  version     0.x.x = development, nothing is stored;\n              >= 1.0.0 = quiz, code and task states are stored\n              (bump the major version when you move quizzes)\n  language    UI language and typography (en, de, fr, es, ...)\n  narrator    default text-to-speech voice (type \"voice\")\n  comment     short description for the course card\n  logo        image for the course card\n  icon        replaces the default LiaScript icon\n  mode        Presentation | Slides | Textbook\n  repository  link to the source repository\n  edit        true or a URL to edit the course online\n  link        additional CSS files, one per line\n  script      additional JavaScript files, one per line\n  import      macros of other courses/templates\n  translation link to a translated version\n\nType \"lia-macro-\" to find snippets for single header fields.\n\nExample:\n  <!--\n  author:   Your Name\n  email:    your@email.com\n  version:  0.1.0\n  language: en\n  narrator: US English Female\n\n  comment:  A short description of your course.\n            Multiline is also okay.\n\n  logo:     ./img/logo.png\n\n  link:     https://cdn.example.com/library.css\n  script:   https://cdn.example.com/library.js\n\n  translation: Deutsch  translations/German.md\n  -->\n\n  # Course Title\n\nThe values can be referred to by the macros @author, @email, @version and @date.",
+        "insertText": "<!--\nauthor:   Your Name\nemail:    your@email.com\nversion:  0.1.0\nlanguage: en\nnarrator: US English Female\n\ncomment:  A short description of your course.\n          Multiline is also okay.\n\nlogo:     ./img/logo.png\n-->",
+        "label": "lia-header-main"
+    },
+    {
+        "documentation": "A section header is an HTML comment directly after a heading. It overwrites settings of the main header for this section only, e.g. the author, the narrator voice, macros, additional scripts or styles (link, script), formula macros or persistent.\n\nExample:\n  # Course\n\n  ## Section\n  <!--\n  narrator: Australian Female\n  -->\n\n  This section is read with an Australian voice.\n\n  ### Sub Section\n  <!--\n  author:     Section Author\n  email:      section.author@email.com\n  persistent: true\n  -->",
+        "insertText": "<!--\nauthor:   Section Author\nnarrator: UK English Female\n-->",
+        "label": "lia-header-section"
+    },
+    {
+        "documentation": "",
+        "insertText": "actionscript",
+        "label": "hili-actionscript"
+    },
+    {
+        "documentation": "",
+        "insertText": "as",
+        "label": "hili-as"
+    },
+    {
+        "documentation": "",
+        "insertText": "apache",
+        "label": "hili-apache"
+    },
+    {
+        "documentation": "",
+        "insertText": "apacheconf",
+        "label": "hili-apacheconf"
+    },
+    {
+        "documentation": "",
+        "insertText": "asciidoc",
+        "label": "hili-asciidoc"
+    },
+    {
+        "documentation": "",
+        "insertText": "adoc",
+        "label": "hili-adoc"
+    },
+    {
+        "documentation": "",
+        "insertText": "x86asm",
+        "label": "hili-x86asm"
+    },
+    {
+        "documentation": "",
+        "insertText": "armasm",
+        "label": "hili-armasm"
+    },
+    {
+        "documentation": "",
+        "insertText": "arm",
+        "label": "hili-arm"
+    },
+    {
+        "documentation": "",
+        "insertText": "avrasm",
+        "label": "hili-avrasm"
+    },
+    {
+        "documentation": "",
+        "insertText": "asm",
+        "label": "hili-asm"
+    },
+    {
+        "documentation": "",
+        "insertText": "bash",
+        "label": "hili-bash"
+    },
+    {
+        "documentation": "",
+        "insertText": "sh",
+        "label": "hili-sh"
+    },
+    {
+        "documentation": "",
+        "insertText": "zsh",
+        "label": "hili-zsh"
+    },
+    {
+        "documentation": "",
+        "insertText": "c",
+        "label": "hili-c"
+    },
+    {
+        "documentation": "",
+        "insertText": "cc",
+        "label": "hili-cc"
+    },
+    {
+        "documentation": "",
+        "insertText": "cpp",
+        "label": "hili-cpp"
+    },
+    {
+        "documentation": "",
+        "insertText": "c++",
+        "label": "hili-c++"
+    },
+    {
+        "documentation": "",
+        "insertText": "h",
+        "label": "hili-h"
+    },
+    {
+        "documentation": "",
+        "insertText": "hpp",
+        "label": "hili-hpp"
+    },
+    {
+        "documentation": "",
+        "insertText": "h++",
+        "label": "hili-h++"
+    },
+    {
+        "documentation": "",
+        "insertText": "clojure",
+        "label": "hili-clojure"
+    },
+    {
+        "documentation": "",
+        "insertText": "clj",
+        "label": "hili-clj"
+    },
+    {
+        "documentation": "",
+        "insertText": "coffeescript",
+        "label": "hili-coffeescript"
+    },
+    {
+        "documentation": "",
+        "insertText": "coffee",
+        "label": "hili-coffee"
+    },
+    {
+        "documentation": "",
+        "insertText": "cson",
+        "label": "hili-cson"
+    },
+    {
+        "documentation": "",
+        "insertText": "iced",
+        "label": "hili-iced"
+    },
+    {
+        "documentation": "",
+        "insertText": "csharp",
+        "label": "hili-csharp"
+    },
+    {
+        "documentation": "",
+        "insertText": "cs",
+        "label": "hili-cs"
+    },
+    {
+        "documentation": "",
+        "insertText": "c#",
+        "label": "hili-c#"
+    },
+    {
+        "documentation": "",
+        "insertText": "diff",
+        "label": "hili-diff"
+    },
+    {
+        "documentation": "",
+        "insertText": "patch",
+        "label": "hili-patch"
+    },
+    {
+        "documentation": "",
+        "insertText": "django",
+        "label": "hili-django"
+    },
+    {
+        "documentation": "",
+        "insertText": "jinja",
+        "label": "hili-jinja"
+    },
+    {
+        "documentation": "",
+        "insertText": "dockerfile",
+        "label": "hili-dockerfile"
+    },
+    {
+        "documentation": "",
+        "insertText": "docker",
+        "label": "hili-docker"
+    },
+    {
+        "documentation": "",
+        "insertText": "elixir",
+        "label": "hili-elixir"
+    },
+    {
+        "documentation": "",
+        "insertText": "ex",
+        "label": "hili-ex"
+    },
+    {
+        "documentation": "",
+        "insertText": "exs",
+        "label": "hili-exs"
+    },
+    {
+        "documentation": "",
+        "insertText": "erlang",
+        "label": "hili-erlang"
+    },
+    {
+        "documentation": "",
+        "insertText": "erl",
+        "label": "hili-erl"
+    },
+    {
+        "documentation": "",
+        "insertText": "fsharp",
+        "label": "hili-fsharp"
+    },
+    {
+        "documentation": "",
+        "insertText": "fs",
+        "label": "hili-fs"
+    },
+    {
+        "documentation": "",
+        "insertText": "f#",
+        "label": "hili-f#"
+    },
+    {
+        "documentation": "",
+        "insertText": "fortran",
+        "label": "hili-fortran"
+    },
+    {
+        "documentation": "",
+        "insertText": "f90",
+        "label": "hili-f90"
+    },
+    {
+        "documentation": "",
+        "insertText": "f95",
+        "label": "hili-f95"
+    },
+    {
+        "documentation": "",
+        "insertText": "gcode",
+        "label": "hili-gcode"
+    },
+    {
+        "documentation": "",
+        "insertText": "nc",
+        "label": "hili-nc"
+    },
+    {
+        "documentation": "",
+        "insertText": "golang",
+        "label": "hili-golang"
+    },
+    {
+        "documentation": "",
+        "insertText": "go",
+        "label": "hili-go"
+    },
+    {
+        "documentation": "",
+        "insertText": "handlebars",
+        "label": "hili-handlebars"
+    },
+    {
+        "documentation": "",
+        "insertText": "hbs",
+        "label": "hili-hbs"
+    },
+    {
+        "documentation": "",
+        "insertText": "html.hbs",
+        "label": "hili-html.hbs"
+    },
+    {
+        "documentation": "",
+        "insertText": "html.handlebars",
+        "label": "hili-html.handlebars"
+    },
+    {
+        "documentation": "",
+        "insertText": "haskell",
+        "label": "hili-haskell"
+    },
+    {
+        "documentation": "",
+        "insertText": "hs",
+        "label": "hili-hs"
+    },
+    {
+        "documentation": "",
+        "insertText": "haxe",
+        "label": "hili-haxe"
+    },
+    {
+        "documentation": "",
+        "insertText": "hx",
+        "label": "hili-hx"
+    },
+    {
+        "documentation": "",
+        "insertText": "html",
+        "label": "hili-html"
+    },
+    {
+        "documentation": "",
+        "insertText": "xhtml",
+        "label": "hili-xhtml"
+    },
+    {
+        "documentation": "",
+        "insertText": "rss",
+        "label": "hili-rss"
+    },
+    {
+        "documentation": "",
+        "insertText": "atom",
+        "label": "hili-atom"
+    },
+    {
+        "documentation": "",
+        "insertText": "xjb",
+        "label": "hili-xjb"
+    },
+    {
+        "documentation": "",
+        "insertText": "xsd",
+        "label": "hili-xsd"
+    },
+    {
+        "documentation": "",
+        "insertText": "xsl",
+        "label": "hili-xsl"
+    },
+    {
+        "documentation": "",
+        "insertText": "plist",
+        "label": "hili-plist"
+    },
+    {
+        "documentation": "",
+        "insertText": "javascript",
+        "label": "hili-javascript"
+    },
+    {
+        "documentation": "",
+        "insertText": "js",
+        "label": "hili-js"
+    },
+    {
+        "documentation": "",
+        "insertText": "livescript",
+        "label": "hili-livescript"
+    },
+    {
+        "documentation": "",
+        "insertText": "ls",
+        "label": "hili-ls"
+    },
+    {
+        "documentation": "",
+        "insertText": "makefile",
+        "label": "hili-makefile"
+    },
+    {
+        "documentation": "",
+        "insertText": "mk",
+        "label": "hili-mk"
+    },
+    {
+        "documentation": "",
+        "insertText": "mak",
+        "label": "hili-mak"
+    },
+    {
+        "documentation": "",
+        "insertText": "markdown",
+        "label": "hili-markdown"
+    },
+    {
+        "documentation": "",
+        "insertText": "md",
+        "label": "hili-md"
+    },
+    {
+        "documentation": "",
+        "insertText": "mkdown",
+        "label": "hili-mkdown"
+    },
+    {
+        "documentation": "",
+        "insertText": "mkd",
+        "label": "hili-mkd"
+    },
+    {
+        "documentation": "",
+        "insertText": "ocaml",
+        "label": "hili-ocaml"
+    },
+    {
+        "documentation": "",
+        "insertText": "ml",
+        "label": "hili-ml"
+    },
+    {
+        "documentation": "",
+        "insertText": "objectivec",
+        "label": "hili-objectivec"
+    },
+    {
+        "documentation": "",
+        "insertText": "mm",
+        "label": "hili-mm"
+    },
+    {
+        "documentation": "",
+        "insertText": "objc",
+        "label": "hili-objc"
+    },
+    {
+        "documentation": "",
+        "insertText": "obj-c",
+        "label": "hili-obj-c"
+    },
+    {
+        "documentation": "",
+        "insertText": "delphi",
+        "label": "hili-delphi"
+    },
+    {
+        "documentation": "",
+        "insertText": "dpr",
+        "label": "hili-dpr"
+    },
+    {
+        "documentation": "",
+        "insertText": "dfm",
+        "label": "hili-dfm"
+    },
+    {
+        "documentation": "",
+        "insertText": "pas",
+        "label": "hili-pas"
+    },
+    {
+        "documentation": "",
+        "insertText": "pascal",
+        "label": "hili-pascal"
+    },
+    {
+        "documentation": "",
+        "insertText": "freepascal",
+        "label": "hili-freepascal"
+    },
+    {
+        "documentation": "",
+        "insertText": "lazarus",
+        "label": "hili-lazarus"
+    },
+    {
+        "documentation": "",
+        "insertText": "lpr",
+        "label": "hili-lpr"
+    },
+    {
+        "documentation": "",
+        "insertText": "lfm",
+        "label": "hili-lfm"
+    },
+    {
+        "documentation": "",
+        "insertText": "php",
+        "label": "hili-php"
+    },
+    {
+        "documentation": "",
+        "insertText": "php3",
+        "label": "hili-php3"
+    },
+    {
+        "documentation": "",
+        "insertText": "php4",
+        "label": "hili-php4"
+    },
+    {
+        "documentation": "",
+        "insertText": "php5",
+        "label": "hili-php5"
+    },
+    {
+        "documentation": "",
+        "insertText": "php6",
+        "label": "hili-php6"
+    },
+    {
+        "documentation": "",
+        "insertText": "perl",
+        "label": "hili-perl"
+    },
+    {
+        "documentation": "",
+        "insertText": "pl",
+        "label": "hili-pl"
+    },
+    {
+        "documentation": "",
+        "insertText": "pm",
+        "label": "hili-pm"
+    },
+    {
+        "documentation": "",
+        "insertText": "powershell",
+        "label": "hili-powershell"
+    },
+    {
+        "documentation": "",
+        "insertText": "ps",
+        "label": "hili-ps"
+    },
+    {
+        "documentation": "",
+        "insertText": "puppet",
+        "label": "hili-puppet"
+    },
+    {
+        "documentation": "",
+        "insertText": "pp",
+        "label": "hili-pp"
+    },
+    {
+        "documentation": "",
+        "insertText": "python",
+        "label": "hili-python"
+    },
+    {
+        "documentation": "",
+        "insertText": "py",
+        "label": "hili-py"
+    },
+    {
+        "documentation": "",
+        "insertText": "gyp",
+        "label": "hili-gyp"
+    },
+    {
+        "documentation": "",
+        "insertText": "ruby",
+        "label": "hili-ruby"
+    },
+    {
+        "documentation": "",
+        "insertText": "rb",
+        "label": "hili-rb"
+    },
+    {
+        "documentation": "",
+        "insertText": "gemspec",
+        "label": "hili-gemspec"
+    },
+    {
+        "documentation": "",
+        "insertText": "podspec",
+        "label": "hili-podspec"
+    },
+    {
+        "documentation": "",
+        "insertText": "thor",
+        "label": "hili-thor"
+    },
+    {
+        "documentation": "",
+        "insertText": "irb",
+        "label": "hili-irb"
+    },
+    {
+        "documentation": "",
+        "insertText": "rust",
+        "label": "hili-rust"
+    },
+    {
+        "documentation": "",
+        "insertText": "rs",
+        "label": "hili-rs"
+    },
+    {
+        "documentation": "",
+        "insertText": "scad",
+        "label": "hili-scad"
+    },
+    {
+        "documentation": "",
+        "insertText": "openscad",
+        "label": "hili-openscad"
+    },
+    {
+        "documentation": "",
+        "insertText": "shell",
+        "label": "hili-shell"
+    },
+    {
+        "documentation": "",
+        "insertText": "console",
+        "label": "hili-console"
+    },
+    {
+        "documentation": "",
+        "insertText": "stylus",
+        "label": "hili-stylus"
+    },
+    {
+        "documentation": "",
+        "insertText": "styl",
+        "label": "hili-styl"
+    },
+    {
+        "documentation": "",
+        "insertText": "tcl",
+        "label": "hili-tcl"
+    },
+    {
+        "documentation": "",
+        "insertText": "tk",
+        "label": "hili-tk"
+    },
+    {
+        "documentation": "",
+        "insertText": "twig",
+        "label": "hili-twig"
+    },
+    {
+        "documentation": "",
+        "insertText": "craftcms",
+        "label": "hili-craftcms"
+    },
+    {
+        "documentation": "",
+        "insertText": "typescript",
+        "label": "hili-typescript"
+    },
+    {
+        "documentation": "",
+        "insertText": "ts",
+        "label": "hili-ts"
+    },
+    {
+        "documentation": "",
+        "insertText": "vbscript",
+        "label": "hili-vbscript"
+    },
+    {
+        "documentation": "",
+        "insertText": "vbs",
+        "label": "hili-vbs"
+    },
+    {
+        "documentation": "",
+        "insertText": "verilog",
+        "label": "hili-verilog"
+    },
+    {
+        "documentation": "",
+        "insertText": "v",
+        "label": "hili-v"
+    },
+    {
+        "documentation": "",
+        "insertText": "xpath",
+        "label": "hili-xpath"
+    },
+    {
+        "documentation": "",
+        "insertText": "xq",
+        "label": "hili-xq"
+    },
+    {
+        "documentation": "Initialize your file with a complete example course (header and body), which can be used as a starting point. It shows the most important features: narration and animations, media, ASCII art, charts, quizzes, surveys and executable code.\n\nExample:\n\n    <!--\n    author:   Your Name\n    email:    your@mail.org\n    version:  0.0.1\n    language: en\n    narrator: US English Female\n    ...\n    -->\n\n    # Course Main Title\n\n    This is your course initialization stub...",
+        "insertText": "<!--\nauthor:   Your Name\n\nemail:    your@mail.org\n\nversion:  0.0.1\n\nlanguage: en\n\nnarrator: US English Female\n\ncomment:  Try to write a short comment about\n          your course, multiline is also okay.\n-->\n\n# Course Main Title\n\nThis is your **course** initialization stub.\n\nPlease see the [Docs](https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md)\nto find out what is possible in [LiaScript](https://liascript.github.io).\n\n> [!TIP]\n> Type **lia** in your editor to see all available snippets,\n> **voice** for all narrator voices and **hili** for syntax highlighting.\n\n> [!NOTE]\n> A version 0.x.x marks a course in development, nothing is stored.\n> Switch to 1.0.0 when you publish the course, then the states of\n> quizzes, tasks and code are stored in the browser.\n\n## Markdown\n\nYou can use common [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) syntax to create your course, such as:\n\n1. Lists\n2. ordered or\n\n   * unordered\n   * ones ...\n\n\n| Header 1   | Header 2   |\n| :--------- | :--------- |\n| Item 1     | Item 2     |\n\n\nImages:\n\n![images](https://farm2.static.flickr.com/1618/26701766821_7bea494826.jpg)\n\n\n## Presentation\n\n             --{{0}}--\nThis text is spoken when the slide is opened. In Textbook mode it is\nshown as normal text.\n\n     {{1}}\n* The first point appears at step 1.\n\n             --{{1}}--\nAnd this text explains the first point.\n\n     {{2}}\n* The second point appears at step 2.\n\n             --{{2}}--\nInsert any kind of audio file:\n\n     {{3}}\n?[audio](https://bigsoundbank.com/UPLOAD/mp3/1068.mp3)\n\n     {{4}}\n!?[video](https://www.youtube.com/watch?v=bICfKRyKTwE)\n\n\n### Styling\n\n<!-- class = \"animated rollIn\" style = \"animation-delay: 2s; color: purple\" -->\nThe whole text-block should appear in purple color and with a wobbling effect.\nWhich is a **bad** example, please use it with caution ...\n~~ only this is red ;-) ~~ <!-- class = \"animated infinite bounce\" style = \"color: red;\" -->\n\n## Diagrams\n\n``` ascii  Fig.: ASCII art is rendered as an image\n+------+   +-----+   +-----+\n|      |   |     |   |     |\n| Foo  +-->| Bar +-->| Baz |\n|      |   |     |   |     |\n+------+   +-----+   +-----+\n```\n\nTables with numbers can be shown as charts:\n\n<!-- data-show data-title=\"Powers\" data-xlabel=\"x\" data-ylabel=\"y\" -->\n| x | square | cube |\n| - | -----: | ---: |\n| 0 |      0 |    0 |\n| 1 |      1 |    1 |\n| 2 |      4 |    8 |\n| 3 |      9 |   27 |\n\n## Quizzes\n\n### A Textquiz\n\nWhat did the **fish** say when he hit a **concrete wall**?\n\n    [[dam]]\n    [[?]] It is a pun.\n\n### Multiple Choice\n\nJust add as many points as you wish:\n\n    [[X]] Only the **X** marks the correct point.\n    [[ ]] Empty ones are wrong.\n    [[X]] ...\n\n### Single Choice\n\nJust add as many points as you wish:\n\n    [( )] ...\n    [(X)] <-- Only the **X** is correct.\n    [( )] ...\n\n### Gap Text\n\nThe capital of France is [[ Paris ]] and of Italy [[ (Rome) | Milan | Naples ]].\n\n## Survey\n\nHow do you like LiaScript so far?\n\n    [(1)] great\n    [(2)] okay\n    [(3)] not yet\n\n## Executable Code\n\nCode blocks with a script tag can be edited and executed:\n\n```javascript\nlet sum = 0;\nfor (let i = 1; i <= 10; i++) { sum += i; }\nsum;\n```\n<script>@input</script>\n\n\n### Projects\n\nYou can make your code executable and define projects:\n\n``` js     -EvalScript.js\nlet who = data.first_name + \" \" + data.last_name;\n\nif(data.online) {\n  who + \" is online\"; }\nelse {\n  who + \" is NOT online\"; }\n```\n``` json    +Data.json\n{\n  \"first_name\" :  \"Sammy\",\n  \"last_name\"  :  \"Shark\",\n  \"online\"     :  true\n}\n```\n<script>\n  // insert the JSON dataset into the local variable data\n  let data = @input(1);\n\n  // eval the script that uses this dataset\n  eval(`@input(0)`);\n</script>\n\n## More\n\nFind out what else you can do:\n\nhttps://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md",
+        "label": "lia-init"
+    },
+    {
+        "documentation": "Insert a Markdown ordered list. LiaScript keeps the numbers you write, so a list can be interrupted and continued, and 0. is a valid start. Indent continuation lines and nested lists to the text of the item.\n\nExample:\n  1. first point\n  2. second point\n  3. some text\n\n     and some image ![image](img/point.jpg)",
+        "insertText": "1. block\n2. block\n3. block",
+        "label": "lia-list-ordered"
+    },
+    {
+        "documentation": "Insert a Markdown unordered list, as depicted below. You can use (*+-) to begin every point. Indentation is important in this case.\n\nExample:\n  * first point\n  + second point\n  - some text\n\n    and some image ![image](img/point.jpg)",
+        "insertText": "+ block\n+ block\n+ block",
+        "label": "lia-list-unordered"
+    },
+    {
+        "documentation": "Change the numbering style of an ordered list with an attribute comment directly above it:\n\n  type=\"a\" / \"A\"   letters\n  type=\"i\" / \"I\"   roman numerals\n\nAny CSS list style works as well, e.g. <!-- style=\"list-style-type: lower-greek\" -->.\n\nExample:\n  <!-- type=\"i\" -->\n  1. first\n  2. second",
+        "insertText": "<!-- type=\"a\" -->\n1. first\n2. second\n3. third",
+        "label": "lia-list-type"
+    },
+    {
+        "documentation": "Gets replaced by the author defined in the header.",
+        "insertText": "@author",
+        "label": "lia-macro-author"
+    },
+    {
+        "documentation": "Gets replaced by the date defined in the header.",
+        "insertText": "@date",
+        "label": "lia-macro-date"
+    },
+    {
+        "documentation": "Gets replaced by the email defined in the header.",
+        "insertText": "@email",
+        "label": "lia-macro-email"
+    },
+    {
+        "documentation": "Use this only in conjunction with executable code and projects or with quizzes. This macro can only be used in a script tag and gets replaced by the current user input.\nTo refer to the inputs in a project, use the parameterized macro:\n\n  @input(0)   <== equal to @input\n  @input(1)",
+        "insertText": "@input",
+        "label": "lia-macro-input"
+    },
+    {
+        "documentation": "Gets replaced by the current section number.",
+        "insertText": "@section",
+        "label": "lia-macro-section"
+    },
+    {
+        "documentation": "Generates a UID that can be used to name tags uniquely.",
+        "insertText": "@uid",
+        "label": "lia-macro-uid"
+    },
+    {
+        "documentation": "Gets replaced by the version defined in the header.",
+        "insertText": "@version",
+        "label": "lia-macro-version"
+    },
+    {
+        "documentation": "persistent can be used in two places:\n\nIn a section header, persistent: true keeps the section alive when the user navigates to another slide. Scripts, widgets and animations are not re-created when the user comes back. This is also needed if scripts on other slides should be able to send events to this section.\n\nIn the main header, persistent: false prevents that anything of this course (states and the entry in the local course index) is stored in the browser.\n\nExample:\n  ## Live Clock\n  <!--\n  persistent: true\n  -->\n\n  <script>\n  setInterval(() => send.output(new Date().toLocaleTimeString()), 1000)\n  \"LIA: wait\"\n  </script>",
+        "insertText": "persistent: true",
+        "label": "lia-macro-persistent"
+    },
+    {
+        "documentation": "Imports the main header of another course or template: its macros, script and link entries, attributions and @onload code, but not its content. Templates of the LiaTemplates collection add features such as music notation, programming languages or 3D models. Use one import line per URL.\n\nPin a tag or commit in the URL instead of master/main, so that your course does not break when the template changes.\n\nExample:\n  <!--\n  import: https://raw.githubusercontent.com/liaTemplates/ABCjs/main/README.md\n  -->\n\n  ``` abc  @ABCJS.render\n  X: 1\n  T: Test Tune\n  M: C\n  L: 1/8\n  K: F\n  \"F\"[A3F3][AF] ([AF][GE][AF])[BG] |\n  ```\n\nSee https://github.com/topics/liascript-template for more templates.",
+        "insertText": "import: https://raw.githubusercontent.com/liaTemplates/ABCjs/main/README.md",
+        "label": "lia-macro-import"
+    },
+    {
+        "documentation": "Attribution is an important issue. With the attribute command, you can define the attribution that is showed within the info field within the navigation pannel. These elements get also imported if you import the functionality from another course.\n\nA good attribution might look like the follwing ones...\n\nExample:\n  <!--\n  attribute: [AlaSQL](https://alasql.org)\n             by [Andrey Gershun](agershun@gmail.com)\n             & [Mathias Rangel Wulff](m@rawu.dk)\n             is licensed under [MIT](https://opensource.org/licenses/MIT)\n\n  attribute: [PapaParse](https://www.papaparse.com)\n             by [Matthew Holt](https://twitter.com/mholt6)\n             is licensed under [MIT](https://opensource.org/licenses/MIT)\n  -->\n",
+        "insertText": "attribute: thx",
+        "label": "lia-macro-attribute"
+    },
+    {
+        "documentation": "You can change the default appearance of your document, either if you prefer dark mode or light mode. This will not change the user preferences. The default mode is defined by the user settings.\n\nExample:\n  <!--\n  dark: true\n\n  dark: false\n  -->\n",
+        "insertText": "dark: true",
+        "label": "lia-macro-dark"
+    },
+    {
+        "documentation": "You can change the default style of your document, either if you do not have any effects you can set mode to Textbook or start with and interactive Presentation. The three modes a the same as defined within the document at the upper right button. The default mode is defined by the user settings.\n\nExample:\n  <!--\n  mode: Presentation\n\n  mode: Slides\n\n  mode: Textbook\n  -->\n",
+        "insertText": "mode: Presentation",
+        "label": "lia-macro-mode"
+    },
+    {
+        "documentation": "Disable or enable the classroom feature for your course, by using this macro within the header of your course. You can use words like `false`, `disabled`, `0`, `OFF` ... LiaScript will recognize them as negative. All other words like wouldLoveToSeeThisFeature are treated as positive. __But better stick with `false`/`true`, `on`/`off`, `disable`/`enable`__\n\nExample:\n  <!--\n  classroom: false\n  -->\n",
+        "insertText": "classroom: disable",
+        "label": "lia-macro-classroom"
+    },
+    {
+        "documentation": "Disable or enable the experimental google translation for your course, by using this macro within the header of your course. You can use words like `false`, `disabled`, `0`, `OFF` ... LiaScript will recognize them as negative. All other words like wouldLoveToSeeThisFeature are treated as positive. __But better stick with `false`/`true`, `on`/`off`, `disable`/`enable`__\n\nExample:\n  <!--\n  translateWithGoogle: false\n  -->\n",
+        "insertText": "translateWithGoogle: disable",
+        "label": "lia-macro-translateWithGoogle"
+    },
+    {
+        "documentation": "Disable or enable sharing for your course, by using this macro within the header (no share-icon and button will be displayed). You can use words like `false`, `disabled`, `0`, `OFF` ... LiaScript will recognize them as negative. All other words like wouldLoveToSeeThisFeature are treated as positive. __But better stick with `false`/`true`, `on`/`off`, `disable`/`enable`__\n\nExample:\n  <!--\n  sharing: false\n  -->\n",
+        "insertText": "sharing: disable",
+        "label": "lia-macro-sharing"
+    },
+    {
+        "documentation": "Use this macro to redefine the respository information of your project, by default the course will display the GitHub, GitLab, or Dropbox origin. By adding this information to the head, you can define a static root for your project, which will also be visible on all exports.\n\nExample:\n  <!--\n  repository: https://github.com/andre-dietrich/liascript-snippets\n  -->\n",
+        "insertText": "repository: url",
+        "label": "lia-macro-repository"
+    },
+    {
+        "documentation": "Use macros to deal with repetitive task and to make the document more readable. You can define your own macros within the main and section headers. Start your macro with an (@) sign and give it a name. Separate the name from the body with a colon (:). If you want to parameterize your macro, use @0, @1, ... for the parameter id. It is a simple string substitution mechanism, and the parameters are separated by a comma (,). If you have commas in your parameters, then use back-tics (`) to enclose this parameter. And triple back-tics (```) to enclose multi-line parameters.\n\nExample:\n\n  ## section\n  <!--\n  @red: <!-- style=\"color: red;\" -->\n\n  @bold_italic: __@0__ _@1_\n  -->\n\n  @red\n  This whole paragraph will be read and this will be:\n  @bold_italic(I am Bold,`I am Italic,, I am too`).",
+        "insertText": "@name: line",
+        "label": "lia-macro-definition-line"
+    },
+    {
+        "documentation": "Use macros to deal with repetitive task and to make the document more readable. Multi-line macros start with an (@your_name) and end with (@end). Parameters can also be passed as to single line macros.\n\nExample:\n\n  ## section\n  <!--\n  @evalJS\n  <script>\n    try{\n      eval(`@input`);\n    } catch (e) {\n      var log = e.stack.match(/((.*?):(.*))\n.*?(:(d+):(d+))\n)/);\n      var err_msg = new LiaError(log[1] + \" =>  (\" + log[4], 1);\n      err_msg.add_detail(0, log[3], \"error\", log[5]-1, log[6]);\n      throw err_msg;\n    }\n  </script>\n  @end\n  -->\n\n  eval this code with erros:\n\n  ```js\n  let x = 12;\n  x * c;\n  ```\n  @evalJS",
+        "insertText": "@name\nparam1 -> __@0__\n@end",
+        "label": "lia-macro-definition-block"
+    },
+    {
+        "documentation": "This type of macro-call comes handy, if you want to refere to a certain URL and want other Markdown readers to show this information as a link. It is also possible to add additional parameters within parentheses, whereby the URL is always used as the last parameter.\n\nExample:\n\n  @[doSomethingWith](URL)\n\n  @[doSomethingWith(1,2,3)](URL \"this will be ignored by now\")",
+        "insertText": "@[macro](url-param)",
+        "label": "lia-macro-call-link"
+    },
+    {
+        "documentation": "If you have a more complex multi-line macro definition, you can also use the following style so that it gets rendered at least in a readable manner by Github for example. Thus, you can place your macro call into into the code-block header, the first (optional) language parameter gets ignored and, whereby the following elements within the block are passed as the last multi-line parameter to that call.\n\nExample:\n\n    ## Macro\n    <!--\n    link:   https://pannellum.org/css/style.css\n            https://cdn.pannellum.org/2.4/pannellum.css\n\n    script: https://cdn.pannellum.org/2.4/pannellum.js\n\n    @panorama\n    <div id=\"panorama_@0\" style=\"width: 100%; height: 400px;\"></div>\n    <script>\n    pannellum.viewer('panorama_@0', {\n        \"type\": \"equirectangular\",\n        \"panorama\": \"@1\",\n        \"autoLoad\": false,\n        \"hotSpots\": [@2]\n    });\n    </script>\n    @end\n    -->\n\n    ```json @panorama(\"0\",https://pannellum.org/images/cerro-toco-0.jpg)\n    {\n        \"pitch\": 14.1,\n        \"yaw\": 1.5,\n        \"type\": \"info\",\n        \"text\": \"Baltimore Museum of Art\",\n        \"URL\": \"https://artbma.org/\"\n    },\n    {\n        \"pitch\": -0.9,\n        \"yaw\": 144.4,\n        \"type\": \"info\",\n        \"text\": \"North Charles Street\"\n    }\n    ```",
+        "insertText": "```lang @macro\na multiline\nparameter\n```",
+        "label": "lia-macro-call-block"
+    },
+    {
+        "documentation": "Header field: an image (relative or absolute URL) that is used as the background of the course card, e.g. in the LiaScript course index or in preview-lia links.\n\nExample:\n  <!--\n  logo: ./img/logo.png\n  -->",
+        "insertText": "logo: ./img/logo.png",
+        "label": "lia-macro-logo"
+    },
+    {
+        "documentation": "Header field: replaces the default LiaScript (hummingbird) icon in the top left corner with your own image.\n\nExample:\n  <!--\n  icon: https://example.com/my-icon.png\n  -->",
+        "insertText": "icon: ./img/icon.png",
+        "label": "lia-macro-icon"
+    },
+    {
+        "documentation": "Header field: adds an edit button to the course. true links the current document to the LiaScript LiveEditor, a URL links to any other place where the course can be edited (e.g. the file on GitHub).\n\nExample:\n  <!--\n  edit: true\n  -->",
+        "insertText": "edit: true",
+        "label": "lia-macro-edit"
+    },
+    {
+        "documentation": "Header field: a short description that is shown on the course card. Continuation lines have to be indented, only the first paragraph is used.\n\nExample:\n  <!--\n  comment:  An introduction to LiaScript.\n            Learn how to write interactive courses\n            with Markdown.\n  -->",
+        "insertText": "comment:  A short description of your course.",
+        "label": "lia-macro-comment"
+    },
+    {
+        "documentation": "Header field: loads additional CSS files, e.g. web fonts or styles of a JavaScript library. Use one URL per line or repeat the field.\n\nExample:\n  <!--\n  link:     https://fonts.googleapis.com/css2?family=Roboto\n            ./css/custom.css\n  -->",
+        "insertText": "link:     https://cdn.example.com/style.css",
+        "label": "lia-macro-link"
+    },
+    {
+        "documentation": "Header field: loads additional JavaScript files before the course is rendered. The libraries are then globally available in all scripts. Use one URL per line or repeat the field. Pin a version in CDN URLs.\n\nExample:\n  <!--\n  script:   https://cdn.jsdelivr.net/npm/algebrite@1.4.0/dist/algebrite.bundle-for-browser.js\n  -->\n\n  ```\n  integral(x^2)\n  ```\n  <script>Algebrite.run(`@input`)</script>",
+        "insertText": "script:   https://cdn.example.com/library.js",
+        "label": "lia-macro-script"
+    },
+    {
+        "documentation": "Header field: links a translated version of the course, which is offered in the translation menu. Repeat it for every language: name of the language followed by the (relative) path or URL.\n\nExample:\n  <!--\n  translation: Deutsch   translations/German.md\n  translation: Français  translations/French.md\n  -->",
+        "insertText": "translation: Deutsch  translations/German.md",
+        "label": "lia-macro-translation"
+    },
+    {
+        "documentation": "Header field: the language of the course as a locale code. It sets the language of the user interface, the typographic quotes and the default target for translations.\n\nExample:\n  <!--\n  language: de\n  -->\n\nAll supported languages: https://github.com/liaScript/lia-localization",
+        "insertText": "language: en",
+        "label": "lia-macro-language"
+    },
+    {
+        "documentation": "Header field: the default text-to-speech voice for narration comments (--{{n}}--) and playback buttons. Can be overwritten per section and per comment. Type \"voice\" to search all voices.\n\nExample:\n  <!--\n  narrator: Deutsch Female\n  -->",
+        "insertText": "narrator: US English Female",
+        "label": "lia-macro-narrator"
+    },
+    {
+        "documentation": "Header block: JavaScript that is executed once when the course is loaded, e.g. to configure a library or to define global helper functions. It is also imported by other courses that import this one.\n\nExample:\n  <!--\n  script: https://cdn.example.com/library.js\n\n  @onload\n  window.greet = (name) => \"Hello \" + name\n  @end\n  -->\n\n  <script>greet(\"World\")</script>",
+        "insertText": "@onload\nwindow.myGlobal = 42\n@end",
+        "label": "lia-macro-onload"
+    },
+    {
+        "documentation": "Header block: CSS rules for the whole course. Combine it with class attributes to style single elements.\n\nExample:\n  <!--\n  @style\n  .highlight {\n    color: crimson;\n    font-weight: bold;\n  }\n  @end\n  -->\n\n  This is **important**<!-- class=\"highlight\" -->.",
+        "insertText": "@style\n.highlight {\n  color: crimson;\n  font-weight: bold;\n}\n@end",
+        "label": "lia-macro-style"
+    },
+    {
+        "documentation": "Calls a macro with parameters. Inside the definition, @0, @1, ... are replaced by the parameters in order. The last parameter can also be passed as a code block directly above the call (see lia-macro-call-block).\n\nCommas inside a parameter can be protected with backticks, but this is not reliable in every LiaScript version. If possible, avoid commas in parameters.\n\nExample:\n  <!--\n  @highlight: <b style=\"color: @0\">@1</b>\n  -->\n\n  @highlight(red, simple text)",
+        "insertText": "@name(param1, param2)",
+        "label": "lia-macro-call-params"
+    },
+    {
+        "documentation": "Debugging: an additional @ in front of a macro call shows the expanded result as code instead of executing it. Useful to find out what a macro (or an imported template) really produces.\n\nExample:\n  @@highlight(red, show me the expansion)",
+        "insertText": "@@name(params)",
+        "label": "lia-macro-debug"
+    },
+    {
+        "documentation": "An apostrophe after the @ escapes the result of a macro, so that it can be used safely inside a JavaScript string or template literal (quotes, backticks and backslashes are escaped). Works with @'input, @'input(1), @'0 or @'MacroName(...). Use it only once, otherwise characters are escaped twice.\n\nExample:\n  ```text\n  He said \"hello\" and left.\n  ```\n  <script>\n    let text = `@'input`\n    text.length\n  </script>",
+        "insertText": "@'input",
+        "label": "lia-macro-escape"
+    },
+    {
+        "documentation": "Horizontal lines are realized by adding at least 3 hyphens in a row (---), but more hyphens look a little bit nicer ;)\n\nExample:\n  This is a horizontal line:\n\n    ---\n\n  And this also:\n\n  ---------------------------------------------",
+        "insertText": "----------------------\n",
+        "label": "lia-horizontal-line"
+    },
+    {
+        "documentation": "Insert single line quotes or quote blocks just with the help of a starting (>).\n\nExample:\n  > Block-quotes are very handy in email to emulate reply text.\n  > This line is part of the same quote.\n\n  Quote break.\n\n  > This is a very long line that will still be quoted properly when it wraps. Oh boy let's keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can *put* **Markdown** into a block-quote.",
+        "insertText": "> your quote",
+        "label": "lia-quote"
+    },
+    {
+        "documentation": "Insert single line quotes or quote blocks just with the help of a starting (>) and let the final paragraph start with -- to indicate an blockquote citation.\n\nExample:\n  > “Live as if you were to die tomorrow.\n  > Learn as if you were to live forever.”\n  >\n  > -- Mahatma Gandhi",
+        "insertText": "> your quote\n>\n> -- your citation",
+        "label": "lia-quote-citation"
+    },
+    {
+        "documentation": "As in common Markdown, a document is segregated into different parts by its titles. A title starts with hash-tag (#) that is followed by an head-line. The number of subsequent hash-tags defines the order. It is furthermore possible to overwrite some of the definitions from the main header, see more information on this by typing \"liaheadersection\" ...\n\nExample:\n  # Main Title\n\n  ...\n\n  ## Chapter Title\n  <!--\n  comment: This comment is only for demonstrating purposes\n           and will be overwritten within the next slide...\n\n  author:  New Author\n  email:   notmain@email.com\n  -->\n\n  ...\n\n  ### Section __Title__\n\n  ...\n\nIt is possible to add styling elements to the titles, but this should be used only in some rare cases.",
+        "insertText": "# Main Title\n",
+        "label": "lia-title-1"
+    },
+    {
+        "documentation": "As in common Markdown, a document is segregated into different parts by its titles. A title starts with hash-tag (#) that is followed by an head-line. The number of subsequent hash-tags defines the order. It is furthermore possible to overwrite some of the definitions from the main header, see more information on this by typing \"liaheadersection\" ...\n\nExample:\n  # Main Title\n\n  ...\n\n  ## Chapter Title\n  <!--\n  comment: This comment is only for demonstrating purposes\n           and will be overwritten within the next slide...\n\n  author:  New Author\n  email:   notmain@email.com\n  -->\n\n  ...\n\n  ### Section __Title__\n\n  ...\n\nIt is possible to add styling elements to the titles, but this should be used only in some rare cases.",
+        "insertText": "## Chapter Title\n",
+        "label": "lia-title-2"
+    },
+    {
+        "documentation": "As in common Markdown, a document is segregated into different parts by its titles. A title starts with hash-tag (#) that is followed by an head-line. The number of subsequent hash-tags defines the order. It is furthermore possible to overwrite some of the definitions from the main header, see more information on this by typing \"liaheadersection\" ...\n\nExample:\n  # Main Title\n\n  ...\n\n  ## Chapter Title\n  <!--\n  comment: This comment is only for demonstrating purposes\n           and will be overwritten within the next slide...\n\n  author:  New Author\n  email:   notmain@email.com\n  -->\n\n  ...\n\n  ### Section __Title__\n\n  ...\n\nIt is possible to add styling elements to the titles, but this should be used only in some rare cases.",
+        "insertText": "### Section Title\n",
+        "label": "lia-title-3"
+    },
+    {
+        "documentation": "As in common Markdown, a document is segregated into different parts by its titles. A title starts with hash-tag (#) that is followed by an head-line. The number of subsequent hash-tags defines the order. It is furthermore possible to overwrite some of the definitions from the main header, see more information on this by typing \"liaheadersection\" ...\n\nExample:\n  # Main Title\n\n  ...\n\n  ## Chapter Title\n  <!--\n  comment: This comment is only for demonstrating purposes\n           and will be overwritten within the next slide...\n\n  author:  New Author\n  email:   notmain@email.com\n  -->\n\n  ...\n\n  ### Section __Title__\n\n  ...\n\nIt is possible to add styling elements to the titles, but this should be used only in some rare cases.",
+        "insertText": "#### SubSection Title\n",
+        "label": "lia-title-4"
+    },
+    {
+        "documentation": "As in common Markdown, a document is segregated into different parts by its titles. A title starts with hash-tag (#) that is followed by an head-line. The number of subsequent hash-tags defines the order. It is furthermore possible to overwrite some of the definitions from the main header, see more information on this by typing \"liaheadersection\" ...\n\nExample:\n  # Main Title\n\n  ...\n\n  ## Chapter Title\n  <!--\n  comment: This comment is only for demonstrating purposes\n           and will be overwritten within the next slide...\n\n  author:  New Author\n  email:   notmain@email.com\n  -->\n\n  ...\n\n  ### Section __Title__\n\n  ...\n\nIt is possible to add styling elements to the titles, but this should be used only in some rare cases.",
+        "insertText": "##### Paragraph Title\n",
+        "label": "lia-title-5"
+    },
+    {
+        "documentation": "As in common Markdown, a document is segregated into different parts by its titles. A title starts with hash-tag (#) that is followed by an head-line. The number of subsequent hash-tags defines the order. It is furthermore possible to overwrite some of the definitions from the main header, see more information on this by typing \"liaheadersection\" ...\n\nExample:\n  # Main Title\n\n  ...\n\n  ## Chapter Title\n  <!--\n  comment: This comment is only for demonstrating purposes\n           and will be overwritten within the next slide...\n\n  author:  New Author\n  email:   notmain@email.com\n  -->\n\n  ...\n\n  ### Section __Title__\n\n  ...\n\nIt is possible to add styling elements to the titles, but this should be used only in some rare cases.",
+        "insertText": "###### SubParagraph Title\n",
+        "label": "lia-title-6"
+    },
+    {
+        "documentation": "The details and summary tags are standard HTML tags and GitHub also supports their usage with Markdown. These tags offer a neat way to define something what is nowadays called accordion. Thus, your user can click on the summary text to make the body of the details-tag appear.\n\nExample:\n  <details>\n\n  <summary>**Honest Textbook ads (click to enlarge)**</summary>\n\n  !?[If High School and College Textbooks Were Honest - Honest Ads](https://www.youtube.com/watch?v=lhSjYT7pWkw)\n\n  </details>",
+        "insertText": "<details>\n\n<summary>title</summary>\n\nbody\n\n</details>",
+        "label": "lia-details"
+    },
+    {
+        "documentation": "GitHub-style alert box: a blockquote that starts with [!NOTE]. Useful information that users should know, even when skimming the content. An optional title or emoji can follow the keyword on the same line (GitLab style). The alert renders as a normal quote in other Markdown viewers.\n\nAvailable types: NOTE, TIP, IMPORTANT, WARNING, CAUTION\n\nExample:\n  > [!NOTE]\n  > Useful information that users should know, even when skimming the content.\n\n  > [!NOTE] ℹ️ Custom title\n  > The title replaces the default one.",
+        "insertText": "> [!NOTE]\n> Useful information that users should know, even when skimming the content.",
+        "label": "lia-alert-note"
+    },
+    {
+        "documentation": "GitHub-style alert box: a blockquote that starts with [!TIP]. Helpful advice for doing things better or more easily. An optional title or emoji can follow the keyword on the same line (GitLab style). The alert renders as a normal quote in other Markdown viewers.\n\nAvailable types: NOTE, TIP, IMPORTANT, WARNING, CAUTION\n\nExample:\n  > [!TIP]\n  > Helpful advice for doing things better or more easily.\n\n  > [!TIP] 💡 Custom title\n  > The title replaces the default one.",
+        "insertText": "> [!TIP]\n> Helpful advice for doing things better or more easily.",
+        "label": "lia-alert-tip"
+    },
+    {
+        "documentation": "GitHub-style alert box: a blockquote that starts with [!IMPORTANT]. Key information users need to know to achieve their goal. An optional title or emoji can follow the keyword on the same line (GitLab style). The alert renders as a normal quote in other Markdown viewers.\n\nAvailable types: NOTE, TIP, IMPORTANT, WARNING, CAUTION\n\nExample:\n  > [!IMPORTANT]\n  > Key information users need to know to achieve their goal.\n\n  > [!IMPORTANT] ❗ Custom title\n  > The title replaces the default one.",
+        "insertText": "> [!IMPORTANT]\n> Key information users need to know to achieve their goal.",
+        "label": "lia-alert-important"
+    },
+    {
+        "documentation": "GitHub-style alert box: a blockquote that starts with [!WARNING]. Urgent information that needs immediate attention to avoid problems. An optional title or emoji can follow the keyword on the same line (GitLab style). The alert renders as a normal quote in other Markdown viewers.\n\nAvailable types: NOTE, TIP, IMPORTANT, WARNING, CAUTION\n\nExample:\n  > [!WARNING]\n  > Urgent information that needs immediate attention to avoid problems.\n\n  > [!WARNING] ⚠️ Custom title\n  > The title replaces the default one.",
+        "insertText": "> [!WARNING]\n> Urgent information that needs immediate attention to avoid problems.",
+        "label": "lia-alert-warning"
+    },
+    {
+        "documentation": "GitHub-style alert box: a blockquote that starts with [!CAUTION]. Advice about risks or negative outcomes of certain actions. An optional title or emoji can follow the keyword on the same line (GitLab style). The alert renders as a normal quote in other Markdown viewers.\n\nAvailable types: NOTE, TIP, IMPORTANT, WARNING, CAUTION\n\nExample:\n  > [!CAUTION]\n  > Advice about risks or negative outcomes of certain actions.\n\n  > [!CAUTION] 🛑 Custom title\n  > The title replaces the default one.",
+        "insertText": "> [!CAUTION]\n> Advice about risks or negative outcomes of certain actions.",
+        "label": "lia-alert-caution"
+    },
+    {
+        "documentation": "Every heading (#, ##, ###, ...) starts a new slide. To use headings inside a slide without creating new slides, wrap them in a <section> or <article> tag. Leave blank lines around the content, so that it is parsed as Markdown.\n\nExample:\n  # Slide Title\n\n  <section>\n\n  ## Part A\n\n  Some text.\n\n  </section>",
+        "insertText": "<section>\n\n## Grouped Sub-Heading\n\nContent that stays on this slide.\n\n</section>",
+        "label": "lia-section"
+    },
+    {
+        "documentation": "Setext-style headings (text underlined with === or ---) do not start a new slide and do not appear in the table of contents. Use them for local structure within a slide.\n\n  ===   -> large local heading\n  ---   -> smaller local heading\n\nExample:\n  ## Section Title\n\n  Local Subsection\n  ================\n\n  Local Sub-Subsection\n  --------------------",
+        "insertText": "Local Subsection\n====================",
+        "label": "lia-title-setext"
+    },
+    {
+        "documentation": "Everything inside <lia-keep> is passed through as raw HTML: no Markdown parsing and no indentation checks. Useful for complex hand-written HTML, such as tables with rowspan or colspan.\n\nExample:\n  <lia-keep>\n  <table>\n    <tr><td rowspan=\"2\">A</td><td>B</td></tr>\n    <tr><td>C</td></tr>\n  </table>\n  </lia-keep>",
+        "insertText": "<lia-keep>\n<table>\n  <tr><td rowspan=\"2\">raw</td><td>HTML</td></tr>\n  <tr><td>without Markdown parsing</td></tr>\n</table>\n</lia-keep>",
+        "label": "lia-keep"
+    },
+    {
+        "documentation": "A comment that starts with three or more dashes (<!--- ... --->) is dropped completely by LiaScript. A normal HTML comment (<!-- ... -->) is read as attributes for the next element. Use it for notes to yourself or to comment out content.\n\nImportant: always leave a blank line between this comment and any other HTML comment (e.g. a styling or chart comment). Two comments without a blank line are merged by the Markdown parser and the following element is shown as plain text.\n\nExample:\n  <!---\n  TODO: add a better picture here\n  --->\n\n  <!-- data-type=\"LinePlot\" -->\n  | x | y |\n  |---|---|\n  | 1 | 2 |",
+        "insertText": "<!---\nThis note is ignored by LiaScript.\n--->",
+        "label": "lia-comment-ignore"
+    },
+    {
+        "documentation": "Style any block (paragraph, list, table, quote, code, ...) by placing an HTML comment with attributes directly above it. Any HTML attribute works, e.g. style, class or id. The comment is invisible in other Markdown viewers.\n\nExample:\n  <!-- style=\"color: purple; font-size: 1.2em\" class=\"animated rollIn\" -->\n  This whole paragraph is styled.\n\n  <!-- style=\"width: 50%\" -->\n  | <!-- style=\"background: azure\" --> Header 1 | Header 2 |\n  |:--------------------------------------------|:---------|\n  | <!-- style=\"background: coral\" --> Item 1   | Item 2   |",
+        "insertText": "<!-- style=\"color: purple; font-size: 1.2em;\" class=\"animated rollIn\" -->\nThis whole paragraph is styled.",
+        "label": "lia-style-block"
+    },
+    {
+        "documentation": "Style an inline element (bold text, a link, an image, a formula, ...) by placing an HTML comment with attributes directly after it, without a space.\n\nExample:\n  This **is important**<!-- style=\"color: red\" --> text.\n\n  ![a lion](lion.svg)<!-- style=\"width: 300px;\" class=\"animated bounce\" -->",
+        "insertText": "<!-- style=\"color: red;\" -->",
+        "label": "lia-style-inline"
+    },
+    {
+        "documentation": "",
+        "insertText": "UK English Female",
+        "label": "voice-uk-english-female"
+    },
+    {
+        "documentation": "",
+        "insertText": "UK English Male",
+        "label": "voice-uk-english-male"
+    },
+    {
+        "documentation": "",
+        "insertText": "US English Female",
+        "label": "voice-us-english-female"
+    },
+    {
+        "documentation": "",
+        "insertText": "US English Male",
+        "label": "voice-us-english-male"
+    },
+    {
+        "documentation": "",
+        "insertText": "Arabic Female",
+        "label": "voice-arabic-female"
+    },
+    {
+        "documentation": "",
+        "insertText": "Arabic Male",
+        "label": "voice-arabic-male"
+    },
+    {
+        "documentation": "",
+        "insertText": "Armenian Male",
+        "label": "voice-armenian-male"
+    },
+    {
+        "documentation": "",
+        "insertText": "Australian Female",
+        "label": "voice-australian-english-female"
+    },
+    {
+        "documentation": "",
+        "insertText": "Australian Male",
+        "label": "voice-australian-english-male"
+    },
+    {
+        "documentation": "",
+        "insertText": "Bangla Bangladesh Female",
+        "label": "voice-bangla-bangladesh-female"
+    },
+    {
+        "documentation": "",
+        "insertText": "Bangla Bangladesh Male",
+        "label": "voice-bangla-bangladesh-male"
+    },
+    {
+        "documentation": "",
+        "insertText": "Bangla India Female",
+        "label": "voice-bangla-india-female"
+    },
+    {
+        "documentation": "",
+        "insertText": "Bangla India Male",
+        "label": "voice-bangla-india-male"
+    },
+    {
+        "documentation": "",
+        "insertText": "Brazilian Portuguese Female",
+        "label": "voice-brazilian-portuguese-female"
+    },
+    {
+        "documentation": "",
+        "insertText": "Brazilian Portuguese Male",
+        "label": "voice-brazilian-portuguese-male"
+    },
+    {
+        "documentation": "",
+        "insertText": "Chinese Female",
+        "label": "voice-chinese-female"
+    },
+    {
+        "documentation": "",
+        "insertText": "Chinese Male",
+        "label": "voice-chinese-male"
+    },
+    {
+        "documentation": "",
+        "insertText": "Chinese (Hong Kong) Female",
+        "label": "voice-chinese-hong-kong-female"
+    },
+    {
+        "documentation": "",
+        "insertText": "Chinese (Hong Kong) Male",
+        "label": "voice-chinese-hong-kong-male"
+    },
+    {
+        "documentation": "",
+        "insertText": "Chinese Taiwan Female",
+        "label": "voice-chinese-taiwan-female"
+    },
+    {
+        "documentation": "",
+        "insertText": "Chinese Taiwan Male",
+        "label": "voice-chinese-taiwan-male"
+    },
+    {
+        "documentation": "",
+        "insertText": "Czech Female",
+        "label": "voice-czech-female"
+    },
+    {
+        "documentation": "",
+        "insertText": "Czech Male",
+        "label": "voice-czech-male"
+    },
+    {
+        "documentation": "",
+        "insertText": "Danish Female",
+        "label": "voice-danish-female"
+    },
+    {
+        "documentation": "",
+        "insertText": "Danish Male",
+        "label": "voice-danish-male"
+    },
+    {
+        "documentation": "",
+        "insertText": "Deutsch Female",
+        "label": "voice-deutsch-female"
+    },
+    {
+        "documentation": "",
+        "insertText": "Deutsch Male",
+        "label": "voice-deutsch-male"
+    },
+    {
+        "documentation": "",
+        "insertText": "Deutsch Female",
+        "label": "voice-german-female"
+    },
+    {
+        "documentation": "",
+        "insertText": "Deutsch Male",
+        "label": "voice-german-male"
+    },
+    {
+        "documentation": "",
+        "insertText": "Dutch Female",
+        "label": "voice-dutch-female"
+    },
+    {
+        "documentation": "",
+        "insertText": "Dutch Male",
+        "label": "voice-dutch-male"
+    },
+    {
+        "documentation": "",
+        "insertText": "Filipino Female",
+        "label": "voice-filipino-female"
+    },
+    {
+        "documentation": "",
+        "insertText": "Filipino Male",
+        "label": "voice-filipino-male"
+    },
+    {
+        "documentation": "",
+        "insertText": "Finnish Female",
+        "label": "voice-finnish-female"
+    },
+    {
+        "documentation": "",
+        "insertText": "Finnish Male",
+        "label": "voice-finnish-male"
+    },
+    {
+        "documentation": "",
+        "insertText": "French Canadian Female",
+        "label": "voice-french-canadian-female"
+    },
+    {
+        "documentation": "",
+        "insertText": "French Male",
+        "label": "voice-french-canadian-male"
+    },
+    {
+        "documentation": "",
+        "insertText": "French Female",
+        "label": "voice-french-female"
+    },
+    {
+        "documentation": "",
+        "insertText": "French Male",
+        "label": "voice-french-male"
+    },
+    {
+        "documentation": "",
+        "insertText": "Greek Female",
+        "label": "voice-greek-female"
+    },
+    {
+        "documentation": "",
+        "insertText": "Greek Male",
+        "label": "voice-greek-male"
+    },
+    {
+        "documentation": "",
+        "insertText": "Hindi Female",
+        "label": "voice-hindi-female"
+    },
+    {
+        "documentation": "",
+        "insertText": "Hindi Male",
+        "label": "voice-hindi-male"
+    },
+    {
+        "documentation": "",
+        "insertText": "Hungarian Female",
+        "label": "voice-hungarian-female"
+    },
+    {
+        "documentation": "",
+        "insertText": "Hungarian Male",
+        "label": "voice-hungarian-male"
+    },
+    {
+        "documentation": "",
+        "insertText": "Indonesian Female",
+        "label": "voice-indonesian-female"
+    },
+    {
+        "documentation": "",
+        "insertText": "Indonesian Male",
+        "label": "voice-indonesian-male"
+    },
+    {
+        "documentation": "",
+        "insertText": "Italian Female",
+        "label": "voice-italian-female"
+    },
+    {
+        "documentation": "",
+        "insertText": "Italian Male",
+        "label": "voice-italian-male"
+    },
+    {
+        "documentation": "",
+        "insertText": "Japanese Female",
+        "label": "voice-japanese-female"
+    },
+    {
+        "documentation": "",
+        "insertText": "Japanese Male",
+        "label": "voice-japanese-male"
+    },
+    {
+        "documentation": "",
+        "insertText": "Korean Female",
+        "label": "voice-korean-female"
+    },
+    {
+        "documentation": "",
+        "insertText": "Korean Male",
+        "label": "voice-korean-male"
+    },
+    {
+        "documentation": "",
+        "insertText": "Latin Female",
+        "label": "voice-latin-female"
+    },
+    {
+        "documentation": "",
+        "insertText": "Latin Male",
+        "label": "voice-latin-male"
+    },
+    {
+        "documentation": "",
+        "insertText": "Norwegian Female",
+        "label": "voice-norwegian-female"
+    },
+    {
+        "documentation": "",
+        "insertText": "Norwegian Male",
+        "label": "voice-norwegian-male"
+    },
+    {
+        "documentation": "",
+        "insertText": "Polish Female",
+        "label": "voice-polish-female"
+    },
+    {
+        "documentation": "",
+        "insertText": "Polish Male",
+        "label": "voice-polish-male"
+    },
+    {
+        "documentation": "",
+        "insertText": "Portuguese Female",
+        "label": "voice-portuguese-female"
+    },
+    {
+        "documentation": "",
+        "insertText": "Portuguese Male",
+        "label": "voice-portuguese-male"
+    },
+    {
+        "documentation": "",
+        "insertText": "Romanian Female",
+        "label": "voice-romanian-female"
+    },
+    {
+        "documentation": "",
+        "insertText": "Romanian Male",
+        "label": "voice-romanian-male"
+    },
+    {
+        "documentation": "",
+        "insertText": "Russian Female",
+        "label": "voice-russian-female"
+    },
+    {
+        "documentation": "",
+        "insertText": "Russian Male",
+        "label": "voice-russian-male"
+    },
+    {
+        "documentation": "",
+        "insertText": "Slovak Female",
+        "label": "voice-slovak-female"
+    },
+    {
+        "documentation": "",
+        "insertText": "Slovak Male",
+        "label": "voice-slovak-male"
+    },
+    {
+        "documentation": "",
+        "insertText": "Spanish Female",
+        "label": "voice-spanish-female"
+    },
+    {
+        "documentation": "",
+        "insertText": "Spanish Male",
+        "label": "voice-spanish-male"
+    },
+    {
+        "documentation": "",
+        "insertText": "Spanish Latin American Female",
+        "label": "voice-spanish-latin-america-female"
+    },
+    {
+        "documentation": "",
+        "insertText": "Spanish Latin American Male",
+        "label": "voice-spanish-latin-america-male"
+    },
+    {
+        "documentation": "",
+        "insertText": "Swedish Female",
+        "label": "voice-swedish-female"
+    },
+    {
+        "documentation": "",
+        "insertText": "Swedish Male",
+        "label": "voice-swedish-male"
+    },
+    {
+        "documentation": "",
+        "insertText": "Tamil Male",
+        "label": "voice-tamil-male"
+    },
+    {
+        "documentation": "",
+        "insertText": "Thai Female",
+        "label": "voice-tamil-female"
+    },
+    {
+        "documentation": "",
+        "insertText": "Thai Male",
+        "label": "voice-thai-male"
+    },
+    {
+        "documentation": "",
+        "insertText": "Turkish Female",
+        "label": "voice-turkish-female"
+    },
+    {
+        "documentation": "",
+        "insertText": "Turkish Male",
+        "label": "voice-turkish-male"
+    },
+    {
+        "documentation": "",
+        "insertText": "Vietnamese Female",
+        "label": "voice-vietnamese-female"
+    },
+    {
+        "documentation": "",
+        "insertText": "Vietnamese Male",
+        "label": "voice-vietnamese-male"
+    },
+    {
+        "documentation": "",
+        "insertText": "Afrikaans Male",
+        "label": "voice-afrikaans-male"
+    },
+    {
+        "documentation": "",
+        "insertText": "Albanian Male",
+        "label": "voice-albanian-male"
+    },
+    {
+        "documentation": "",
+        "insertText": "Bosnian Male",
+        "label": "voice-bosnian-male"
+    },
+    {
+        "documentation": "",
+        "insertText": "Catalan Male",
+        "label": "voice-catalan-male"
+    },
+    {
+        "documentation": "",
+        "insertText": "Croatian Male",
+        "label": "voice-croatian-male"
+    },
+    {
+        "documentation": "",
+        "insertText": "Esperanto Male",
+        "label": "voice-esperanto-male"
+    },
+    {
+        "documentation": "",
+        "insertText": "Estonian Male",
+        "label": "voice-estonian-male"
+    },
+    {
+        "documentation": "",
+        "insertText": "Icelandic Male",
+        "label": "voice-icelandic-male"
+    },
+    {
+        "documentation": "",
+        "insertText": "Latvian Male",
+        "label": "voice-latvian-male"
+    },
+    {
+        "documentation": "",
+        "insertText": "Macedonian Male",
+        "label": "voice-macedonian-male"
+    },
+    {
+        "documentation": "",
+        "insertText": "Moldavian Female",
+        "label": "voice-moldavian-female"
+    },
+    {
+        "documentation": "",
+        "insertText": "Moldavian Male",
+        "label": "voice-moldavian-male"
+    },
+    {
+        "documentation": "",
+        "insertText": "Montenegrin Male",
+        "label": "voice-montenegrin-male"
+    },
+    {
+        "documentation": "",
+        "insertText": "Nepali",
+        "label": "voice-nepali"
+    },
+    {
+        "documentation": "",
+        "insertText": "Sinhala",
+        "label": "voice-sinhala"
+    },
+    {
+        "documentation": "",
+        "insertText": "Serbian Male",
+        "label": "voice-serbian-male"
+    },
+    {
+        "documentation": "",
+        "insertText": "Serbo-Croatian Male",
+        "label": "voice-serbo-croatian-male"
+    },
+    {
+        "documentation": "",
+        "insertText": "Swahili Male",
+        "label": "voice-swahili-male"
+    },
+    {
+        "documentation": "",
+        "insertText": "Ukrainian Female",
+        "label": "voice-ukrainian-female"
+    },
+    {
+        "documentation": "",
+        "insertText": "Welsh Male",
+        "label": "voice-welsh-male"
+    },
+    {
+        "documentation": "A <script> tag in the text (without a code block) is a JavaScript component. It runs automatically when the slide is shown, and the value of its last expression is displayed in place, like an inline element. If the result is undefined, nothing is shown.\n\nEvery script has its own scope. To share values between scripts, attach them to window. Scripts can be combined with animations ({1}{<script>...</script>}) to run them at a certain step.\n\nExample:\n  $ \\sin(\\frac{\\pi}{2}) = $ <script>Math.sin(Math.PI / 2)</script>\n\n  Today is <script>new Date().toLocaleDateString()</script>.",
+        "insertText": "<script>Math.sin(Math.PI / 2)</script>",
+        "label": "lia-script-inline"
+    },
+    {
+        "documentation": "Turns a script into a small interactive widget. input=\"...\" selects an HTML5 input type, value=\"...\" sets the initial value, and @input is replaced by the current value before the script runs. The result is shown next to the input.\n\ntext, number, range, radio, select and checkbox run on every change. button runs on load and on every click. submit only runs when clicked. The other types (date, time, color, ...) run when the field loses focus.\n\nExtra attributes: min, max, step, options=\"a|b|c\" (radio/select), default=\"...\" (text shown before the first run of button/submit).\n\nExample:\n  <script input=\"number\" value=\"1\" min=\"0\" max=\"100\">\n  let i = @input\n  \"Square of \" + i + \" = \" + i * i\n  </script>",
+        "insertText": "<script input=\"text\" value=\"Hello World\">\nlet str = \"@input\"\nstr.split(\"\").reverse().join(\"\")\n</script>",
+        "label": "lia-script-input"
+    },
+    {
+        "documentation": "A slider that re-runs the script on every change. @input is replaced by the current number.\n\nExample:\n  <script input=\"range\" value=\"0\" min=\"0\" max=\"360\" step=\"1\">\n  let deg = @input\n  \"sin(\" + deg + \"°) = \" + Math.sin(deg * Math.PI / 180).toFixed(3)\n  </script>",
+        "insertText": "<script input=\"range\" value=\"0\" min=\"0\" max=\"360\" step=\"1\">\nlet deg = @input\n\"sin(\" + deg + \"°) = \" + Math.sin(deg * Math.PI / 180).toFixed(3)\n</script>",
+        "label": "lia-script-input-range"
+    },
+    {
+        "documentation": "A dropdown (select) or a group of radio buttons. The options are separated by | in the options attribute, value sets the initial selection.\n\nExample:\n  <script input=\"radio\" value=\"1\" options=\"1|2|3|Hello World\">\n  \"Selected option: @input\"\n  </script>",
+        "insertText": "<script input=\"select\" value=\"red\" options=\"red|green|blue\">\n\"Selected color: @input\"\n</script>",
+        "label": "lia-script-input-select"
+    },
+    {
+        "documentation": "A button that runs the script only when it is clicked. default sets the text that is shown before the first click. Use input=\"button\" instead to run it also once on load.\n\nExample:\n  <script input=\"submit\" default=\"roll the dice\">\n  Math.floor(Math.random() * 6) + 1\n  </script>",
+        "insertText": "<script input=\"submit\" default=\"roll the dice\">\nMath.floor(Math.random() * 6) + 1\n</script>",
+        "label": "lia-script-input-submit"
+    },
+    {
+        "documentation": "Connect scripts: a script with output=\"name\" publishes its current result. Other scripts on the same slide can read it with @input(`name`) (with backticks) and re-run automatically when it changes.\n\nIf two scripts depend on each other, give both a default=\"...\" value. Otherwise the first calculation fails.\n\nExample:\n  <script input=\"checkbox\" value=\"true\" output=\"P\" default=\"true\">\n  @input\n  </script>\n  AND\n  <script input=\"checkbox\" value=\"false\" output=\"Q\" default=\"false\">\n  @input\n  </script>\n  =\n  <script>\n  @input(`P`) && @input(`Q`)\n  </script>",
+        "insertText": "<script input=\"number\" value=\"2\" output=\"a\">\n@input\n</script>\nsquared is\n<script>\n@input(`a`) ** 2\n</script>",
+        "label": "lia-script-connect"
+    },
+    {
+        "documentation": "Formats the result of a script with the JavaScript Intl API for the given locale. Only the display changes, connected scripts still get the raw value.\n\n  format=\"number\"        1234.5 -> 1.234,5 (de-DE)\n  format=\"datetime\"      dates and times\n  format=\"relativetime\"  \"in 3 days\"\n  format=\"list\"          \"a, b and c\"\n  format=\"pluralrules\"   plural category\n\nExample:\n  <script input=\"date\" value=\"2024-05-16\" format=\"datetime\" locale=\"de\">\n  \"@input\"\n  </script>",
+        "insertText": "<script format=\"number\" locale=\"de-DE\">\n1234567.891\n</script>",
+        "label": "lia-script-format"
+    },
+    {
+        "documentation": "A self-updating script component: return \"LIA: wait\" (or call send.wait()) to keep it running, then call send.output(...) for every update. The process keeps running in the background when the user switches slides, until send.stop() is called.\n\nsend.output only works in standalone scripts, not in scripts of code blocks (use send.lia there).\n\nShortcuts: send.wait(), send.stop(), send.clear()\n\nExample:\n  <script>\n  setInterval(() => send.output(new Date().toLocaleTimeString()), 1000)\n  \"LIA: wait\"\n  </script>",
+        "insertText": "<script>\nlet i = 0\nsetInterval(function() {\n  i++\n  send.output(\"counting \" + i)\n}, 1000)\n\"LIA: wait\"\n</script>",
+        "label": "lia-script-counter"
+    },
+    {
+        "documentation": "Every script runs in its own local scope, so variables of one script are not visible in another. To share values between scripts, attach them to window explicitly. For live updates between scripts, prefer output=\"...\" and @input(`...`) (see lia-script-connect).\n\nExample:\n  <script> window.a = 22 ** 3 </script>\n  <script> window.a / 2 </script>",
+        "insertText": "<script>\nwindow.shared = 22 ** 3\n</script>\n<script>\nwindow.shared / 2\n</script>",
+        "label": "lia-script-window"
+    },
+    {
+        "documentation": "LIA.classroom lets scripts exchange messages with all participants of a live classroom session (peer-to-peer). It is only active while a classroom is connected.\n\n  LIA.classroom.connected                 true if a session is active\n  LIA.classroom.on(\"connect\", cb)         also \"disconnect\"\n  LIA.classroom.publish(\"topic\", data)    send to all peers\n  LIA.classroom.subscribe(\"topic\", cb)    returns an id\n  LIA.classroom.unsubscribe(id)\n\nExample:\n  <script>\n  LIA.classroom.on(\"connect\", () => send.output(\"connected\"))\n  \"LIA: wait\"\n  </script>",
+        "insertText": "<script>\nif (LIA.classroom.connected) {\n  const id = LIA.classroom.subscribe(\"topic\", (message) => {\n    send.output(JSON.stringify(message))\n  })\n  LIA.classroom.publish(\"topic\", { hello: \"world\" })\n}\n\"LIA: wait\"\n</script>",
+        "label": "lia-script-classroom"
+    },
+    {
+        "documentation": "Surveys use the quiz brackets but have no correct answer, only a submit button. Three or more underscores in double brackets create a one-line text input.\n\nIn a live classroom session, the answers of one-line inputs are shown as a word cloud, where comma-separated terms are counted. Use it for keywords or short phrases.\n\nExample:\n  Which programming languages do you know? Separate them with commas.\n\n      [[___]]",
+        "insertText": "[[___]]",
+        "label": "lia-survey-text-line"
+    },
+    {
+        "documentation": "A multi-line text survey (textarea). Every group of underscores separated by a space adds one row. The number of groups sets the number of rows, the length of a group does not matter. One pair of double brackets always creates exactly one input field. For several fields, write several surveys, each with its own question above it.\n\nIn a live classroom session, the answers of a textarea are listed one below the other, which suits longer answers.\n\nExample:\n  A two-line text survey:\n\n      [[___ ___]]\n\n  Please describe your opinion in a few sentences:\n\n      [[___ ___ ___ ___ ___ ___]]",
+        "insertText": "[[___ ___ ___]]",
+        "label": "lia-survey-text"
+    },
+    {
+        "documentation": "Single-choice survey: like a single-choice quiz, but the parentheses contain an identifier instead of an X. Numeric identifiers let the classroom view plot the results as a distribution, while text identifiers are shown as categories. Identifiers do not have to be ordered or sequential.\n\nExample:\n\n  Choose between different options:\n\n    [(1)] option 1\n    [(2)] option 2\n    [(0)] option 3\n\n  What is your favorite color:\n\n    [(red)]   red?\n    [(blue)]  blue?\n    [(green)] green?",
+        "insertText": "[(1)] option 1\n[(2)] option 2\n[(3)] option 3",
+        "label": "lia-survey-single-choice"
+    },
+    {
+        "documentation": "Multiple-choice survey: like a multiple-choice quiz, but the brackets contain an identifier instead of an X. Start an identifier with a number (e.g. [[1 red]]) to get a numeric instead of a categorical representation in the classroom view.\n\nExample:\n\n  Choose as many options as your want:\n\n    [[1]] option 1\n    [[2]] option 2\n    [[0]] option 0\n\n  Mark all colors you like:\n\n    [[red]]   red?\n    [[blue]]  blue?\n    [[green]] green?\n    [[none]]  None of these ...",
+        "insertText": "[[1]] option 1\n[[2]] option 2\n[[3]] option 3",
+        "label": "lia-survey-multiple-choice"
+    },
+    {
+        "documentation": "Single-choice matrix survey: the header contains the column identifiers in parentheses, every following row ([ ] + text) becomes its own single-choice question. Identifiers can be numbers or words.\n\nExample:\n\n  Give marks:\n\n      [(-1)(0)(1)]\n      [          ] LiaScript is great?\n      [          ] I would use it to make online **courses**?\n      [          ] I would use it for online **surveys**?\n\n  What is your opinion:\n\n      [(agree)(unsure)(maybe not so)]\n      [                             ] LiaScript is great?\n      [                             ] I would use it to make online **courses**?\n      [                             ] I would use it for online **surveys**?",
+        "insertText": "[(0)(1)(2)]\n[         ] text\n[         ] text\n[         ] text",
+        "label": "lia-survey-single-choice-matrix"
+    },
+    {
+        "documentation": "Multiple-choice matrix survey: the header contains the column identifiers in brackets, every following row ([ ] + text) becomes its own multiple-choice question. Identifiers can be numbers or words.\n\nExample:\n\n  Give marks:\n\n      [[-1][0][1]]\n      [          ] LiaScript is great?\n      [          ] I would use it to make online **courses**?\n      [          ] I would use it for online **surveys**?\n\n  What is your opinion:\n\n      [[agree][unsure][maybe not so]]\n      [                             ] LiaScript is great?\n      [                             ] I would use it to make online **courses**?\n      [                             ] I would use it for online **surveys**?",
+        "insertText": "[[0][1][2]]\n[         ] text\n[         ] text\n[         ] text",
+        "label": "lia-survey-multiple-choice-matrix"
+    },
+    {
+        "documentation": "A script directly after a survey can check or process the input before it is accepted. Empty input is rejected by default. The last expression decides:\n\n  true                              -> accept the input\n  false                             -> reject it silently\n  send.lia(\"message\", [], false)    -> reject it with a message\n\nWrap @input in backticks for text surveys. For choice surveys @input is the selected value(s). console.log does not show anything here, use alert(...) while developing.\n\nExample:\n      [[___]]\n      <script>\n        let input = `@input`.trim();\n        if (input.length > 4) true\n        else send.lia(\"Please provide some meaningful input\", [], false)\n      </script>",
+        "insertText": "[[___]]\n<script>\n  let input = `@input`.trim();\n\n  if (input.length > 4) {\n    true\n  } else if (input.length == 0) {\n    send.lia(\"Please enter some text\", [], false)\n  } else {\n    send.lia(\"Please provide some meaningful input\", [], false)\n  }\n</script>",
+        "label": "lia-survey-js"
+    },
+    {
+        "documentation": "SVG can be written directly into the document. It must not be put into a code block, otherwise it is shown as code. Use viewBox to make the image scale with the slide width.\n\nDark mode inverts the colors of LiaScript but not the hard-coded colors of an SVG, so set a background and explicit colors on the svg element.\n\nExample:\n  <svg viewBox=\"0 0 200 100\" style=\"background: white;\">\n    <circle cx=\"50\" cy=\"50\" r=\"40\" fill=\"lightblue\" stroke=\"blue\"/>\n    <text x=\"50\" y=\"55\" font-size=\"10\" text-anchor=\"middle\">Circle</text>\n  </svg>",
+        "insertText": "<svg viewBox=\"0 0 200 100\" style=\"background: white;\">\n  <circle cx=\"50\" cy=\"50\" r=\"40\" fill=\"lightblue\" stroke=\"blue\" stroke-width=\"2\"/>\n  <rect x=\"110\" y=\"10\" width=\"80\" height=\"80\" fill=\"lightgreen\" stroke=\"green\" stroke-width=\"2\"/>\n</svg>",
+        "label": "lia-svg"
+    },
+    {
+        "documentation": "foreignObject places LiaScript content (Markdown, formulas, quizzes, animations, ...) at a position inside an SVG. x, y, width and height are required and use the coordinates of the viewBox.\n\nExample:\n  <svg viewBox=\"0 0 280 200\" style=\"background: white;\">\n  <foreignObject x=\"130\" y=\"0\" width=\"200\" height=\"80\">\n  Circumference:\n\n  $$C = 2 \\pi r$$\n  </foreignObject>\n  <circle cx=\"100\" cy=\"100\" r=\"80\" fill=\"lightblue\" stroke=\"blue\"/>\n  <line x1=\"100\" y1=\"100\" x2=\"180\" y2=\"100\" stroke=\"red\"/>\n  <foreignObject x=\"110\" y=\"78\" width=\"100\" height=\"30\"> Radius: $r$ </foreignObject>\n  </svg>",
+        "insertText": "<svg viewBox=\"0 0 280 200\" style=\"background: white;\">\n<circle cx=\"100\" cy=\"100\" r=\"80\" fill=\"lightblue\" stroke=\"blue\" stroke-width=\"2\"/>\n<line x1=\"100\" y1=\"100\" x2=\"180\" y2=\"100\" stroke=\"red\" stroke-width=\"2\"/>\n<foreignObject x=\"110\" y=\"70\" width=\"100\" height=\"30\">\nRadius: $r$\n</foreignObject>\n</svg>",
+        "label": "lia-svg-foreignobject"
+    },
+    {
+        "documentation": "There must be at least 3 dashes separating each header cell. Cells are separated by pipes (|), and you don't need to make the raw Markdown line up prettily. Hyphens (-) are used to separate the table header from the body, whereby the colons are used to align the columns.\n\nExample:\n\n| Tables        | Are           | Cool  |\n| ------------- |:-------------:| -----:|\n| col 3 is      | right-aligned | $1600 |\n| col 2 is      | centered      |   $12 |\n| zebra stripes | are neat      |    $1 |",
+        "insertText": "| Header     |\n| :--------- |\n| Item       |",
+        "label": "lia-table-1"
+    },
+    {
+        "documentation": "There must be at least 3 dashes separating each header cell. Cells are separated by pipes (|), and you don't need to make the raw Markdown line up prettily. Hyphens (-) are used to separate the table header from the body, whereby the colons are used to align the columns.\n\nExample:\n\n| Tables        | Are           | Cool  |\n| ------------- |:-------------:| -----:|\n| col 3 is      | right-aligned | $1600 |\n| col 2 is      | centered      |   $12 |\n| zebra stripes | are neat      |    $1 |",
+        "insertText": "| Header 1   | Header 2   |\n| :--------- | :--------- |\n| Item 1     | Item 2     |",
+        "label": "lia-table-2"
+    },
+    {
+        "documentation": "There must be at least 3 dashes separating each header cell. Cells are separated by pipes (|), and you don't need to make the raw Markdown line up prettily. Hyphens (-) are used to separate the table header from the body, whereby the colons are used to align the columns.\n\nExample:\n\n| Tables        | Are           | Cool  |\n| ------------- |:-------------:| -----:|\n| col 3 is      | right-aligned | $1600 |\n| col 2 is      | centered      |   $12 |\n| zebra stripes | are neat      |    $1 |",
+        "insertText": "| Header 1   | Header 2   | Header 3   |\n| :--------- | :--------- | :--------- |\n| Item 1     | Item 2     | Item 3     |",
+        "label": "lia-table-3"
+    },
+    {
+        "documentation": "There must be at least 3 dashes separating each header cell. Cells are separated by pipes (|), and you don't need to make the raw Markdown line up prettily. Hyphens (-) are used to separate the table header from the body, whereby the colons are used to align the columns.\n\nExample:\n\n| Tables        | Are           | Cool  |\n| ------------- |:-------------:| -----:|\n| col 3 is      | right-aligned | $1600 |\n| col 2 is      | centered      |   $12 |\n| zebra stripes | are neat      |    $1 |",
+        "insertText": "| Header 1   | Header 2   | Header 3   | Header 4   |\n| :--------- | :--------- | :--------- | :--------- |\n| Item 1     | Item 2     | Item 3     | Item 4     |",
+        "label": "lia-table-4"
+    },
+    {
+        "documentation": "There must be at least 3 dashes separating each header cell. Cells are separated by pipes (|), and you don't need to make the raw Markdown line up prettily. Hyphens (-) are used to separate the table header from the body, whereby the colons are used to align the columns.\n\nExample:\n\n| Tables        | Are           | Cool  |\n| ------------- |:-------------:| -----:|\n| col 3 is      | right-aligned | $1600 |\n| col 2 is      | centered      |   $12 |\n| zebra stripes | are neat      |    $1 |",
+        "insertText": "| Header 1   | Header 2   | Header 3   | Header 4   | Header 5   |\n| :--------- | :--------- | :--------- | :--------- | :--------- |\n| Item 1     | Item 2     | Item 3     | Item 4     | Item 5     |",
+        "label": "lia-table-5"
+    },
+    {
+        "documentation": "There must be at least 3 dashes separating each header cell. Cells are separated by pipes (|), and you don't need to make the raw Markdown line up prettily. Hyphens (-) are used to separate the table header from the body, whereby the colons are used to align the columns.\n\nExample:\n\n| Tables        | Are           | Cool  |\n| ------------- |:-------------:| -----:|\n| col 3 is      | right-aligned | $1600 |\n| col 2 is      | centered      |   $12 |\n| zebra stripes | are neat      |    $1 |",
+        "insertText": "| Header 1   | Header 2   | Header 3   | Header 4   | Header 5   | Header 6   |\n| :--------- | :--------- | :--------- | :--------- | :--------- | :--------- |\n| Item 1     | Item 2     | Item 3     | Item 4     | Item 5     | Item 6     |",
+        "label": "lia-table-6"
+    },
+    {
+        "documentation": "There must be at least 3 dashes separating each header cell. Cells are separated by pipes (|), and you don't need to make the raw Markdown line up prettily. Hyphens (-) are used to separate the table header from the body, whereby the colons are used to align the columns.\n\nExample:\n\n| Tables        | Are           | Cool  |\n| ------------- |:-------------:| -----:|\n| col 3 is      | right-aligned | $1600 |\n| col 2 is      | centered      |   $12 |\n| zebra stripes | are neat      |    $1 |",
+        "insertText": "| Header 1   | Header 2   | Header 3   | Header 4   | Header 5   | Header 6   | Header 7   |\n| :--------- | :--------- | :--------- | :--------- | :--------- | :--------- | :--------- |\n| Item 1     | Item 2     | Item 3     | Item 4     | Item 5     | Item 6     | Item 7     |",
+        "label": "lia-table-7"
+    },
+    {
+        "documentation": "There must be at least 3 dashes separating each header cell. Cells are separated by pipes (|), and you don't need to make the raw Markdown line up prettily. Hyphens (-) are used to separate the table header from the body, whereby the colons are used to align the columns.\n\nExample:\n\n| Tables        | Are           | Cool  |\n| ------------- |:-------------:| -----:|\n| col 3 is      | right-aligned | $1600 |\n| col 2 is      | centered      |   $12 |\n| zebra stripes | are neat      |    $1 |",
+        "insertText": "| Header 1   | Header 2   | Header 3   | Header 4   | Header 5   | Header 6   | Header 7   | Header 8   |\n| :--------- | :--------- | :--------- | :--------- | :--------- | :--------- | :--------- | :--------- |\n| Item 1     | Item 2     | Item 3     | Item 4     | Item 5     | Item 6     | Item 7     | Item 8     |",
+        "label": "lia-table-8"
+    },
+    {
+        "documentation": "There must be at least 3 dashes separating each header cell. Cells are separated by pipes (|), and you don't need to make the raw Markdown line up prettily. Hyphens (-) are used to separate the table header from the body, whereby the colons are used to align the columns.\n\nExample:\n\n| Tables        | Are           | Cool  |\n| ------------- |:-------------:| -----:|\n| col 3 is      | right-aligned | $1600 |\n| col 2 is      | centered      |   $12 |\n| zebra stripes | are neat      |    $1 |",
+        "insertText": "| Header 1   | Header 2   | Header 3   | Header 4   | Header 5   | Header 6   | Header 7   | Header 8   | Header 9   |\n| :--------- | :--------- | :--------- | :--------- | :--------- | :--------- | :--------- | :--------- | :--------- |\n| Item 1     | Item 2     | Item 3     | Item 4     | Item 5     | Item 6     | Item 7     | Item 8     | Item 9     |",
+        "label": "lia-table-9"
+    },
+    {
+        "documentation": "You can set the diagram title for your plotted document via the data-title parameter, this is only visible if you switch to the diagram mode.\n\nExample:\n  <!--\n  data-title=\"Government expenditure on education\"\n  data-xlabel=\"year\"\n  data-ylabel=\"% of GDP\"\n  -->\n  | Year | Finland | USA | Germany |   China |\n  | ---- | -------:| ---:| -------:| -------:|\n  | 1995 | 6.80942 |     | 4.42079 | 1.84192 |\n  | 1996 | 6.86052 |     | 4.48319 | 1.85338 |\n  | ...  |     ... | ... |     ... |     ... |",
+        "insertText": "<!-- data-title=\"title\" -->",
+        "label": "lia-table-diagram-title"
+    },
+    {
+        "documentation": "You can overwrite the diagram x-label for your plotted document via the data-xlabel parameter, this is only visible if you switch to the diagram mode.\n\nExample:\n  <!--\n  data-title=\"Government expenditure on education\"\n  data-xlabel=\"year\"\n  data-ylabel=\"% of GDP\"\n  -->\n  | Year | Finland | USA | Germany |   China |\n  | ---- | -------:| ---:| -------:| -------:|\n  | 1995 | 6.80942 |     | 4.42079 | 1.84192 |\n  | 1996 | 6.86052 |     | 4.48319 | 1.85338 |\n  | ...  |     ... | ... |     ... |     ... |",
+        "insertText": "<!-- data-xlabel=\"title\" -->",
+        "label": "lia-table-diagram-xlabel"
+    },
+    {
+        "documentation": "You can overwrite the diagram y-label for your plotted document via the data-ylabel parameter, this is only visible if you switch to the diagram mode.\n\nExample:\n  <!--\n  data-title=\"Government expenditure on education\"\n  data-xlabel=\"year\"\n  data-ylabel=\"% of GDP\"\n  -->\n  | Year | Finland | USA | Germany |   China |\n  | ---- | -------:| ---:| -------:| -------:|\n  | 1995 | 6.80942 |     | 4.42079 | 1.84192 |\n  | 1996 | 6.86052 |     | 4.48319 | 1.85338 |\n  | ...  |     ... | ... |     ... |     ... |",
+        "insertText": "<!-- data-ylabel=\"title\" -->",
+        "label": "lia-table-diagram-ylabel"
+    },
+    {
+        "documentation": "You can enforce the visualization of a certain type, even if the structure of your table might look different.\nCurrently available data-types are (case-insensitive): lineplot (line), scatterplot (scatter), barchart (bar), boxplot, radar, piechart (pie), funnel, map, heatmap, parallel, graph, sankey, and none\nIf you do not want to show tables as diagrams, you can also use data-type=\"None\" and only the table will be visible.\n\nExample:\n  <!-- data-type=\"pie\" -->\n  | Year | Finland | USA | Germany |   China |\n  | ---- | -------:| ---:| -------:| -------:|\n  | 1995 | 6.80942 |     | 4.42079 | 1.84192 |\n  | 1996 | 6.86052 |     | 4.48319 | 1.85338 |\n  | ...  |     ... | ... |     ... |     ... |",
+        "insertText": "<!-- data-type=\"type\" -->",
+        "label": "lia-table-diagram-type"
+    },
+    {
+        "documentation": "If the first column contains (not repeating) numbers as well as the other columns, lineplots are used as the default representation, a special tag is not required. If this isn't the case, then you can apply this tag to enforce the visualization as a lineplot.\n\nExample:\n  <!-- data-type=\"lineplot\" -->\n  | x's |  some y's  |    dist |\n  | --- |:----------:| -------:|\n  | 1   |    1 $    | 16 $km$ |\n  | 2.2 |    2 $    | 12 $km$ |\n  | 3.3 |    5 $    |  1 $km$ |\n  | 4   | -12.333 $ |         |",
+        "insertText": "<!-- data-type=\"lineplot\" -->",
+        "label": "lia-table-diagram-lineplot"
+    },
+    {
+        "documentation": "If the first column contains repetitive numbers, scatterplots are used as the default representation if further numbers are determine, a special tag is not required.\n\nExample:\n  <!-- data-type=\"scatterplot\" -->\n  | x's |  some y's  |                              dist |\n  | --- |:----------:| ---------------------------------:|\n  | 1   |    1 $    |                           16 $km$ |\n  | 2.2 |    2 $    |                           12 $km$ |\n  | 3.3 |    5 $    |                            1 $km$ |\n  | 4   | -12.333 $ | -555$km$ <-- this will be ignored |\n  | 4   |            |                                 1 |",
+        "insertText": "<!-- data-type=\"scatterplot\" -->",
+        "label": "lia-table-diagram-scatterplot"
+    },
+    {
+        "documentation": "In contrast to a line or a scatter plot, if the first colum contains at least one entry thant cannot be parsed as a number, this might be represented also as BarChart. Which works perfectly with the following example. If the maximum values of the columns do not differ to much, then this dataset it represented as a BarChart, otherwise you might end up seeing only one huge bar, while the other bars are indistiguishable from each other. In this case other visualization are chosen.\n\nExample:\n  <!-- data-type=\"barchart\" -->\n  | Animal          | weight in kg | Lifespan years | Mitogen |\n  | --------------- | ------------:| --------------:| -------:|\n  | Mouse           |        0.028 |              2 |      95 |\n  | Flying squirrel |        0.085 |             15 |      50 |\n  | Brown bat       |        0.020 |             30 |      10 |\n  | Sheep           |           90 |             12 |      95 |\n  | Human           |           68 |             70 |      10 |",
+        "insertText": "<!-- data-type=\"barchart\" -->",
+        "label": "lia-table-diagram-barchart"
+    },
+    {
+        "documentation": "If you have a ScatterPlot like representation, but actually want to use this data as primary data for your BoxPlot, you can manually change the type of visualization to BoxPlot, simply by adding the follwing attribute to the head of your table, as it is shown in the snippet below. Columns are then treated as datasets and get visualized accordingly.\n\nExample:\n  <!-- data-type=\"boxplot\" -->\n  | Random |    I |  II |\n  | ------:| ----:| ---:|\n  |    5.0 |  1.0 |   5 |\n  |    6.0 |  1.0 |   4 |\n  |    7.0 |  1.0 |   5 |\n  |    8.0 |  1.0 |   5 |\n  |    9.0 |  1.0 |   4 |\n  |   10.0 |  1.0 |   5 |\n  |    5.0 | 10.0 |   7 |\n  |    6.0 | 10.0 |   8 |\n  |    7.0 | 10.0 |   7 |\n  |    8.0 | 10.0 |   7 |\n  |    9.0 | 10.0 |   8 |",
+        "insertText": "<!-- data-type=\"boxplot\" -->",
+        "label": "lia-table-diagram-boxplot"
+    },
+    {
+        "documentation": "A radar chart draws one polygon per row with one axis per column. It is useful if the columns have very different scales (e.g. weight in kg and lifespan in years), which would make a BarChart unreadable. Do not rely on the automatic detection, set the type explicitly. Use at least 3 numeric columns.\n\nExample:\n  <!-- data-type=\"radar\" -->\n  | Animal          | weight in kg | Lifespan years | Mitogen |\n  | --------------- | ------------:| --------------:| -------:|\n  | Mouse           |        0.028 |              2 |      95 |\n  | Flying squirrel |        0.085 |             15 |      50 |\n  | Brown bat       |        0.020 |             30 |      10 |",
+        "insertText": "<!-- data-type=\"radar\" -->",
+        "label": "lia-table-diagram-radar"
+    },
+    {
+        "documentation": "If you have a table with only one row full of numbers, this will be automatically presented as an pie chart. The head represents the categories and the body the quatities.\n\nExample:\n  | Classic | Country | Reggae | Hip-Hop | Hard-Rock | Samba |\n  | -------:| -------:| ------:| -------:| ---------:| -----:|\n  |      50 |      50 |    100 |     200 |       350 |   250 |\n\n  <!-- data-type=\"PieChart\" -->\n  | Music-Style | Classic | Country | Reggae | Hip-Hop | Hard-Rock | Samba |\n  |:----------- | -------:| -------:| ------:| -------:| ---------:| -----:|\n  | 1994        |      50 |      50 |    100 |     200 |       350 |   250 |\n  | 2014        |      20 |      30 |    100 |     220 |       400 |   230 |\n  | demo 2034   |       5 |      12 |     98 |     293 |       345 |    32 |",
+        "insertText": "<!-- data-type=\"piechart\" -->",
+        "label": "lia-table-diagram-piechart"
+    },
+    {
+        "documentation": "A map is similar to a BarChart from the table structure, but if you want to depict your data on a real map, you will have to add a geojson-file, that contains all relevant data about the form of your countries, states, cities, etc. The first column has to match the names of your objects in your geojson data, that is attached to your table in the following way:\n\nExample:\n  <!-- data-type=\"map\" data-src=\"https://code.highcharts.com/mapdata/custom/europe.geo.json\" -->\n  | Country                | percent |\n  | ---------------------- | ------- |\n  | Albania                | 73.5    |\n  | Andorra                | 98.9    |\n  | Armenia                | 72.4    |\n  | ...                    |         |",
+        "insertText": "<!-- data-type=\"map\" -->",
+        "label": "lia-table-diagram-map"
+    },
+    {
+        "documentation": "Another type of visualization is a HeatMap, which is used, if the table head and the first column do only contain numbers, in other words coordinates. If you want to use categories instead of coordinate numbers, you can enforce the usage of a heatmap, with the comment shown below:\n\nExample:\n  <!--\n  data-type=\"heatmap\"\n  data-title=\"Seattle mean temperature in Fahrenheit\"\n  data-show\n  -->\n    | Seattle |  Jan |  Feb |  Mar |  Apr |  May |  ... |\n    | -------:| ----:| ----:| ----:| ----:| ----:| ----:|\n    |       0 | 40.7 | 41.5 | 43.6 | 46.6 | 51.4 |  ... |\n    |       2 |  ... |  ... |  ... |  ... |  ... |  ... |",
+        "insertText": "<!-- data-type=\"heatmap\" -->",
+        "label": "lia-table-diagram-heatmap"
+    },
+    {
+        "documentation": "A parallel coordinates plot draws one vertical axis per column and one line per row. It is useful if there are too many categories for a readable BarChart. Do not rely on the automatic detection, set the type explicitly.\n\nExample:\n  <!-- data-type=\"parallel\" -->\n  | Country                | GDP growth (%) | Births per woman | Life expectancy ...\n  | ---------------------- | --------------:| ----------------:| -------------------\n  | Albania                |            7.5 |            1.858 |               76.63\n  | Andorra                |          3.570 |            1.260 |                 NaN\n  | Austria                |          2.178 |            1.414 |               80.44\n  | ...                    |            ... |              ... |                 ...",
+        "insertText": "<!-- data-type=\"parallel\" -->",
+        "label": "lia-table-diagram-parallel"
+    },
+    {
+        "documentation": "If the first column and the head of the table are equal, then the interpreter tries to interpret the content of the table as an adjacency matrix, which defines a graph. If those values are symetrical according to the diagonal, then the matrix defines an \"undirected graph\".\nIn contrast to this, if those values differ, then the result is simply an an \"directed graph\", whereby the values define the strength of the line.\n\nExample:\n  <!-- data-title=\"Undirected Graph\" -->\n  | Graph |  A  |  B  |  C  |  D  |  E  |\n  |:----- |:---:|:---:|:---:|:---:|:---:|\n  | A     |  0  |  1  |  0  |  1  |  0  |\n  | B     |  1  |  0  |  0  |  1  |  0  |\n  | C     |  0  |  0  |  0  |  0  |  0  |\n  | D     |  1  |  1  |  0  |  0  |  1  |\n  | E     |  0  |  0  |  0  |  1  |  0  |\n\n  <!-- data-title=\"Directed Graph\" -->\n  | Graph |  A  |  B  |  C  |  D  |  E  |\n  |:----- |:---:|:---:|:---:|:---:|:---:|\n  | A     |  0  | 12  |  0  |  1  |  0  |\n  | B     | -22 |  0  |  0  | 0.4 |  0  |\n  | C     |  0  |  0  |  0  |  0  |  0  |\n  | D     |  2  | 12  |  0  |  0  |  1  |\n  | E     |  0  |  0  |  0  |  2  |  0  |",
+        "insertText": "<!-- data-type=\"graph\" -->",
+        "label": "lia-table-diagram-graph"
+    },
+    {
+        "documentation": "A Sankey diagram is a special type of directed graph that can be used to streams or the flow of something, such as engergy, money, etc.\n\nExample:\n  <!-- data-type=\"sankey\" -->\n  | Sankey |  A  |  B  |  C  |  D  |  E  |\n  |:------ |:---:|:---:|:---:|:---:|:---:|\n  | A      |     |  2  |     |     |     |\n  | B      |  3  |     |     |     |     |\n  | C      |  1  |  1  |     |     |     |\n  | D      |     |  1  |  1  |     |     |\n  | E      |  2  |  1  |  1  |  1  |     |",
+        "insertText": "<!-- data-type=\"sankey\" -->",
+        "label": "lia-table-diagram-sankey"
+    },
+    {
+        "documentation": "Simply data-type=\"none\" to prevent any kind of visualization.\n\nExample:\n  <!-- data-type=\"none\" -->\n  | Sankey |  A  |  B  |  C  |  D  |  E  |\n  |:------ |:---:|:---:|:---:|:---:|:---:|\n  | A      |     |  2  |     |     |     |\n  | B      |  3  |     |     |     |     |\n  | C      |  1  |  1  |     |     |     |\n  | D      |     |  1  |  1  |     |     |\n  | E      |  2  |  1  |  1  |  1  |     |",
+        "insertText": "<!-- data-type=\"none\" -->",
+        "label": "lia-table-diagram-none"
+    },
+    {
+        "documentation": "Simply add this attribute or set it to true (data-show=\"true\"), if you want to visualize your data immediately, without the need to click in the switch-button. It is still possible for your users to switch to the table representation.\n\nExample:\n  <!-- data-show -->\n  | Sankey |  A  |  B  |  C  |  D  |  E  |\n  |:------ |:---:|:---:|:---:|:---:|:---:|\n  | A      |     |  2  |     |     |     |\n  | B      |  3  |     |     |     |     |\n  | C      |  1  |  1  |     |     |     |\n  | D      |     |  1  |  1  |     |     |\n  | E      |  2  |  1  |  1  |  1  |     |",
+        "insertText": "<!-- data-show -->",
+        "label": "lia-table-diagram-show"
+    },
+    {
+        "documentation": "Like in the mathematical sense, set this attribute or set it to true (data-transpose=\"true\"), if you want to switch rows and columns. One benefit is, that you can for example use PieChart and let your table grow vertically instead of using a horizontal monster.\n\nExample:\n  <!-- data-transpose -->\n  | Music-Style {0-1}{1994} {1}{2014} |      Student rating |\n  |:--------------------------------- | -------------------:|\n  | Classic                           |   {0-1}{50} {1}{20} |\n  | Country                           |   {0-1}{50} {1}{30} |\n  | Reggae                            |                 100 |\n  | Hip-Hop                           | {0-1}{200} {1}{220} |\n  | Hard-Rock                         | {0-1}{350} {1}{400} |\n  | Samba                             | {0-1}{250} {1}{230} |",
+        "insertText": "<!-- data-transpose -->",
+        "label": "lia-table-diagram-transpose"
+    },
+    {
+        "documentation": "Currently this attribute is used to refere to your geojson data, if you use the `data-type=\"Map\"` representation, but this might change in the future to load and visualize data directly, such as csv.\nIf you are using geojson files from external websites such as: https://code.highcharts.com/mapdata/\nIt can be usefull to use anycors, if the data cannot be visualized due to CORS restrictions:\n\ndata-src=\"https://cors-anywhere.herokuapp.com/https://code.highcharts.com/mapdata/custom/europe.geo.json\"\n\nExample:\n  <!-- data-type=\"map\" data-src=\"https://code.highcharts.com/mapdata/custom/europe.geo.json\" -->\n  | Country                | percent |\n  | ---------------------- | ------- |\n  | Albania                | 73.5    |\n  | Andorra                | 98.9    |\n  | Armenia                | 72.4    |\n  | ...                    |         |",
+        "insertText": "<!-- data-src=\"url\" -->",
+        "label": "lia-table-diagram-source"
+    },
+    {
+        "documentation": "A funnel (pyramid) chart uses the same table shape as a PieChart: a header with the categories and one row of numbers. It is never selected automatically.\n\nExample:\n  <!-- data-type=\"funnel\" data-show -->\n  | Visits | Sign-ups | Trials | Customers |\n  | ------:| --------:| ------:| ---------:|\n  |   1000 |      400 |    150 |        40 |",
+        "insertText": "<!-- data-type=\"funnel\" -->",
+        "label": "lia-table-diagram-funnel"
+    },
+    {
+        "documentation": "Sets the range of the x-axis. One side can be left empty to determine it automatically, e.g. data-xlim=\",12\".\n\nExample:\n  <!-- data-show data-xlim=\"1994,2000\" -->\n  | Year | Finland | Germany |\n  | ---- | -------:| -------:|\n  | 1995 |     6.8 |     4.4 |\n  | 1996 |     6.9 |     4.5 |",
+        "insertText": "<!-- data-xlim=\"0,100\" -->",
+        "label": "lia-table-diagram-xlim"
+    },
+    {
+        "documentation": "Sets the range of the y-axis. One side can be left empty to determine it automatically, e.g. data-ylim=\"0,\".\n\nExample:\n  <!-- data-show data-ylim=\"0,10\" -->\n  | Year | Finland | Germany |\n  | ---- | -------:| -------:|\n  | 1995 |     6.8 |     4.4 |\n  | 1996 |     6.9 |     4.5 |",
+        "insertText": "<!-- data-ylim=\"0,100\" -->",
+        "label": "lia-table-diagram-ylim"
+    },
+    {
+        "documentation": "Flips a BarChart: the bars are drawn horizontally and the categories are listed on the y-axis. Useful for long category names.\n\nExample:\n  <!-- data-show data-orientation=\"horizontal\" -->\n  | Animal          | weight in kg | Lifespan years |\n  | --------------- | ------------:| --------------:|\n  | Mouse           |        0.028 |              2 |\n  | Flying squirrel |        0.085 |             15 |",
+        "insertText": "<!-- data-orientation=\"horizontal\" -->",
+        "label": "lia-table-diagram-orientation"
+    },
+    {
+        "documentation": "Tables can be sorted by clicking on a header cell. data-sortable=\"false\" in the table comment turns this off for the whole table. It can also be set for single columns in a comment inside the header cell.\n\nExample:\n  <!-- data-sortable=\"false\" -->\n  | Rank | Name  |\n  | ---- | ----- |\n  | 1    | Alice |\n  | 2    | Bob   |",
+        "insertText": "<!-- data-sortable=\"false\" -->",
+        "label": "lia-table-diagram-sortable"
+    },
+    {
+        "documentation": "A table that is shown as a diagram right away. All settings go into one HTML comment directly above the table:\n\n  data-show            show the diagram instead of the table\n  data-type            chart type (see lia-table-diagram-type)\n  data-title           title of the diagram\n  data-xlabel/ylabel   axis labels\n  data-xlim/ylim       axis ranges, e.g. \"0,10\"\n  data-transpose       swap rows and columns\n  data-orientation     \"horizontal\" bars\n\nUsers can still switch between table and diagram.\n\nDo not put another HTML comment directly above this one without a blank line, otherwise the table is shown as plain text.",
+        "insertText": "<!--\ndata-show\ndata-type=\"lineplot\"\ndata-title=\"Government expenditure on education\"\ndata-xlabel=\"year\"\ndata-ylabel=\"% of GDP\"\n-->\n| Year | Finland | Germany |\n| ---- | -------:| -------:|\n| 1995 |     6.8 |     4.4 |\n| 1996 |     6.9 |     4.5 |\n| 1997 |     6.5 |     4.6 |",
+        "label": "lia-table-diagram-full"
+    },
+    {
+        "documentation": "For diagrams that cannot be generated from a table, use the lia-chart element directly. The option attribute takes a complete Apache ECharts configuration. Scripts can also generate it dynamically: return \"HTML: <lia-chart option='...'></lia-chart>\".\n\nExample:\n  <lia-chart option=\"{\n    title: { text: 'Squares' },\n    xAxis: { type: 'value' },\n    yAxis: { type: 'value' },\n    series: [{ type: 'line', data: [[0,0],[1,1],[2,4],[3,9]] }]\n  }\"></lia-chart>",
+        "insertText": "<lia-chart option=\"{\n  title: { text: 'Custom ECharts diagram' },\n  xAxis: { type: 'value' },\n  yAxis: { type: 'value' },\n  series: [{ type: 'line', data: [[0,0],[1,1],[2,4],[3,9]] }]\n}\"></lia-chart>",
+        "label": "lia-chart"
+    },
+    {
+        "documentation": "Task lists use the GitHub-flavoured Markdown syntax: a list item that starts with [ ] (open) or [X] (done). Users can check and uncheck the boxes. If the course version is 1.0.0 or higher, the states are stored persistently in the browser.\n\nExample:\n  - [ ] This is not checked by default\n  - [X] This one is checked by default\n  - [ ] Tasks can contain __Markdown__",
+        "insertText": "- [ ] line with Markdown",
+        "label": "lia-task"
+    },
+    {
+        "documentation": "A script directly after a task list runs every time a box is checked or unchecked, but its result is not shown. Give it an output=\"name\", then other scripts on the same slide can read the states with @input(`name`) and react to them. The value is an array of booleans, one per task, e.g. [true, false].\n\nExample:\n  - [X] Biology\n  - [ ] Chemistry\n  <script output=\"tasks\">\"@input\"</script>\n\n  <script style=\"width: 100%\">\n  try {\n    let task = @input(`tasks`)\n\n    if (task[0]) {\n      send.liascript(`## Biology\n\n  Hey, great, you want to learn something about Biology.\n\n  * resource 1\n  * resource 2`)\n    } else send.clear()\n  } catch(e) { }\n  </script>",
+        "insertText": "- [ ] task-definition\n- [ ] task-definition\n<script output=\"tasks\">\"@input\"</script>\n\n<script>\n  let tasks = @input(`tasks`)\n  tasks.every(done => done) ? \"All done!\" : \"Keep going ...\"\n</script>",
+        "label": "lia-task-js"
+    },
+    {
+        "documentation": "Italic text, enclosed by single underscores. Equivalent to *text*.\n\nEvery emphasis span has to stay on one physical line. If the closing marker lands on the next line, stray markers will show up in the rendered text.\n\nExample:\n  This is _italic_ and this is _also **bold** inside_.",
+        "insertText": "_italic_",
+        "label": "lia-text-italic"
+    },
+    {
+        "documentation": "Italic text, enclosed by single asterisks. Equivalent to _text_.\n\nEvery emphasis span has to stay on one physical line.\n\nExample:\n  This is *italic* text.",
+        "insertText": "*italic*",
+        "label": "lia-text-italic2"
+    },
+    {
+        "documentation": "Bold text, enclosed by double underscores. Equivalent to **text**.\n\nEvery emphasis span has to stay on one physical line.\n\nExample:\n  This is __bold__ and __bold with _italic_ inside__.",
+        "insertText": "__bold__",
+        "label": "lia-text-bold"
+    },
+    {
+        "documentation": "Bold text, enclosed by double asterisks. Equivalent to __text__.\n\nEvery emphasis span has to stay on one physical line.\n\nExample:\n  This is **bold** text.",
+        "insertText": "**bold**",
+        "label": "lia-text-bold2"
+    },
+    {
+        "documentation": "Bold and italic text, enclosed by triple underscores. Equivalent to ***text***.\n\nExample:\n  This is ___bold and italic___.",
+        "insertText": "___italic bold___",
+        "label": "lia-text-italic-bold"
+    },
+    {
+        "documentation": "Bold and italic text, enclosed by triple asterisks. Equivalent to ___text___.\n\nNote: a line that contains only *** (three or more asterisks) is not text, it groups blocks for animations or marks a quiz solution.\n\nExample:\n  This is ***bold and italic***.",
+        "insertText": "***italic bold***",
+        "label": "lia-text-italic-bold2"
+    },
+    {
+        "documentation": "Strike-through text, enclosed by single tildes. This is a LiaScript extension.\n\nExample:\n  The price was ~20 €~ and is now 15 €.",
+        "insertText": "~strike~",
+        "label": "lia-text-strike"
+    },
+    {
+        "documentation": "Underlined text, enclosed by double tildes. This is a LiaScript extension, other Markdown viewers (e.g. GitHub) show it as strike-through.\n\nExample:\n  This is ~~underlined~~ text.",
+        "insertText": "~~underline~~",
+        "label": "lia-text-underline"
+    },
+    {
+        "documentation": "Strike-through and underlined text, enclosed by triple tildes. This is a LiaScript extension.\n\nExample:\n  This is ~~~struck and underlined~~~.",
+        "insertText": "~~~strike underline~~~",
+        "label": "lia-text-strike-underline"
+    },
+    {
+        "documentation": "Superscript text, enclosed by carets. This is a LiaScript extension. For subscripts or more complex notation use a formula ($ x_i $).\n\nExample:\n  E = mc^2^ and the 1^st^ of May.",
+        "insertText": "^superscript^",
+        "label": "lia-text-superscript"
+    },
+    {
+        "documentation": "Text quiz: put the solution into double brackets and the user gets an input field. The answer is compared with the solution string. Text quizzes do not support a starting dash.\n\nExample:\n  What is the color of the sky?\n\n      [[blue]]\n\nIf several answers should be accepted, add a script (lia-quiz-text-js) or use a selection (lia-quiz-select).",
+        "insertText": "[[solution]]",
+        "label": "lia-quiz-text"
+    },
+    {
+        "documentation": "Text quiz with a custom check. The script is placed directly after the quiz. Before it runs, @input is replaced by the raw text the user typed, so wrap it in backticks (`@input`) to get a JavaScript string. The last expression of the script has to be true (solved) or false (not solved).\n\nExample:\n  What is the color of the sky?\n\n      [[blue]]\n      <script>\n        let input = `@input`.trim().toLowerCase();\n        input === \"blue\" || input === \"azure\";\n      </script>",
+        "insertText": "[[solution]]\n<script>\n  // @input is replaced by the raw user input, so wrap it in backticks\n  let input = `@input`.trim().toLowerCase();\n  input === \"solution\" || input === \"answer\";\n</script>",
+        "label": "lia-quiz-text-js"
+    },
+    {
+        "documentation": "Selection quiz: a dropdown with options separated by `|`. The correct option is put into parentheses, and more than one option can be correct. Options may contain Markdown, images or formulas. Selections do not support a starting dash.\n\nExample:\n  What is the color of the sky?\n\n      [[ red | (__blue__) | green | (black at night) ]]\n\n  What is the derivative of $f(x) = x^6$?\n\n      [[ $f'(x) = 6$ | ( $f'(x) = 6x^5$ ) | $f'(x) = 5x^6$ ]]",
+        "insertText": "[[ option | (correct option) | option ]]",
+        "label": "lia-quiz-select"
+    },
+    {
+        "documentation": "Gap text: text and selection quizzes can be placed inline, anywhere inside a paragraph, a list or a table. The width of the input field matches the length of the placeholder, so add spaces to make a gap wider. All gaps of one block are checked together.\n\nText around the brackets is ordinary text. To give hints, use [[?]] lines after the block.\n\nExample:\n  __I [[  have been learning  ]] English for seven years now.__\n\n  The capital of France is [[ Paris ]] and of Italy [[ Rome ]].\n  [[?]] Both are famous for their food.",
+        "insertText": "I [[ have been learning ]] English for seven years now.",
+        "label": "lia-quiz-gap-text"
+    },
+    {
+        "documentation": "Gap text with a dropdown: use the selection syntax inline. To accept several answers, put every acceptable option into parentheses.\n\nExample:\n  I [[ (have been learning) | ('ve been learning) | learned ]] English for seven years now.",
+        "insertText": "I [[ (have been learning) | ('ve been learning) | learned ]] English for seven years now.",
+        "label": "lia-quiz-gap-select"
+    },
+    {
+        "documentation": "Single-choice quiz (radio buttons): one line per option. [(X)] or [(x)] marks a correct option, [( )] a wrong one. If more than one option is marked, the user has to select only one of them. A starting dash (- [( )] ...) is allowed.\n\nExample:\n  This is a single choice quiz with three options:\n\n      [( )] Add as many lines as you want.\n      [(X)] The X marks the correct answer!\n      [( )] This one is wrong.",
+        "insertText": "[( )] enter your text",
+        "label": "lia-quiz-single-choice"
+    },
+    {
+        "documentation": "Multiple-choice quiz (checkboxes): one line per option. [[X]] or [[x]] marks an option that has to be checked, [[ ]] one that has to stay unchecked. A starting dash (- [[ ]] ...) is allowed.\n\nExample:\n  This is a multiple choice quiz with four options:\n\n      [[ ]] Add as many lines as you want.\n      [[X]] The X marks the options that have to be checked!\n      [[X]] There can be several of them.\n      [[ ]] Empty brackets have to stay unchecked.",
+        "insertText": "[[ ]] enter your text",
+        "label": "lia-quiz-multiple-choice"
+    },
+    {
+        "documentation": "Matrix quiz: the first line holds the column labels. Every following row starts with [ and ends with ] followed by the row text. The cells of a row define its type: [ ] / [X] cells make a multiple-choice row, ( ) / (X) cells a single-choice row. All cells of one row must use the same type. Spacing is only cosmetic.\n\nThe brackets in the header are only labels. Use [...] or (...) so that you can put the other type of bracket into a label as text.\n\nExample:\n  - [[male (der)] (female [die]) [neuter (das)]]\n  - [    [X]           [ ]             [ ]     ]  Mann - German for man\n  - [    ( )           (X)             ( )     ]  Frau - German for woman",
+        "insertText": "[[column 1] [column 2] [column 3]]\n[    [X]          [ ]          [ ]     ] multiple-choice row\n[    ( )          (X)          ( )     ] single-choice row",
+        "label": "lia-quiz-matrix-choice"
+    },
+    {
+        "documentation": "Hints can be added directly after any type of quiz, as many as you want. They are revealed one at a time when the user clicks the hint button. A starting dash (- [[?]] ...) is allowed.\n\nExample:\n  A text quiz with two hints:\n\n      [[solution]]\n      [[?]] This is the first hint\n      [[?]] This is a second hint\n\n  And a multiple choice quiz with one hint:\n\n      [[X]] This is correct!\n      [[ ]] This is wrong!\n      [[?]] Click on the first option!",
+        "insertText": "[[?]] enter your hint",
+        "label": "lia-quiz-hint"
+    },
+    {
+        "documentation": "A solution block is shown after the quiz was solved or resolved. Enclose any Markdown blocks (text, images, code, ...) between two lines of three or more asterisks.\n\nImportant: there must not be a blank line between the last line of the quiz (answer, hint or script) and the opening asterisks. Otherwise the block is not recognized and the solution is visible all the time. Blank lines inside the block are fine.\n\nExample:\n  What is the color of the sky?\n\n      [[blue]]\n      [[?]] Look up!\n      *************************************\n\n      During the day the color is blue, if\n      it is not cloudy.\n\n      ![blue sky](./img/sunny.jpg)\n\n      *************************************",
+        "insertText": "****************************************\n\nAdd a solution explanation, any __Markdown__ is allowed!\n\n****************************************",
+        "label": "lia-quiz-solution"
+    },
+    {
+        "documentation": "A complete quiz template that combines everything: a question, the quiz, hints, a script that checks the input and a solution block. Remember: no blank line before the opening asterisks of the solution.\n\nExample:\n  What is $37 + 15$?\n\n      [[52]]\n      [[?]] The solution is larger than 50.\n      [[?]] It is an even number.\n      <script>\n        let input = `@input`.trim();\n        input === \"52\"\n      </script>\n      ****************************************\n\n      $37 + 15 = 52$\n\n      ****************************************",
+        "insertText": "What is 37 + 15?\n\n[[52]]\n[[?]] The solution is larger than 50.\n[[?]] It is an even number.\n<script>\n  let input = `@input`.trim();\n  input === \"52\"\n</script>\n****************************************\n\n37 + 15 = 52, since 30 + 10 = 40 and 7 + 5 = 12.\n\n****************************************",
+        "label": "lia-quiz-complete"
+    },
+    {
+        "documentation": "A script after a single-choice quiz can change how it is checked, e.g. to accept other answers or to count trials. @input is replaced by a number (unquoted):\n\n  -1 -> nothing selected\n   0 -> the first option\n   1 -> the second option ...\n\nThe last expression has to be true (solved) or false (not solved).\n\nExample:\n      [( )] Check this ...\n      [(X)] ... or this\n      <script>\n        let selected = @input;\n        selected === 0 || selected === 1\n      </script>",
+        "insertText": "<script>\n  // @input is replaced by the index of the selected option\n  // (0 = first option, -1 = nothing selected)\n  let selected = @input;\n\n  selected === 1\n</script>",
+        "label": "lia-quiz-single-js"
+    },
+    {
+        "documentation": "A script after a multiple-choice quiz can change how it is checked, e.g. to let partially correct answers pass. @input is replaced by an array (unquoted) with one entry per option:\n\n  1 -> checked\n  0 -> unchecked\n\nThe last expression has to be true (solved) or false (not solved).\n\nExample:\n  Get at least one right ...\n\n      [[ ]] Wrong.\n      [[X]] Right.\n      [[ ]] Wrong.\n      [[X]] Right.\n      <script>\n        let checked = @input;\n        (checked[1] === 1 || checked[3] === 1) &&\n        checked[0] === 0 && checked[2] === 0\n      </script>",
+        "insertText": "<script>\n  // @input is replaced by an array such as [0,1,0,1],\n  // with 1 for a checked and 0 for an unchecked box\n  let checked = @input;\n\n  // accept every answer with at least one correct option\n  checked[1] === 1 || checked[3] === 1\n</script>",
+        "label": "lia-quiz-multiple-js"
+    },
+    {
+        "documentation": "A generic script that can be attached directly after any quiz. Before it runs, @input is replaced as text, so its form depends on the quiz type:\n\n  text / gap text  -> raw text, wrap it in backticks: `@input`\n  single choice    -> number (-1 if nothing is selected)\n  selection        -> number of the selected option\n  multiple choice  -> array, e.g. [0,1,1] (1 = checked)\n  matrix           -> nested array, e.g. [[1,0,0], 1]\n\nThe last expression has to be true (solved) or false (not solved).\n\nExample:\n      [[52]]\n      <script>\n        Number(`@input`) === 52\n      </script>",
+        "insertText": "<script>\n  // @input is replaced by the current quiz input:\n  // * text / gap text  -> raw text, use it as `@input`\n  // * single choice    -> number (-1 if nothing selected)\n  // * selection        -> number of the selected option\n  // * multiple choice  -> array, e.g. [0,1,1] (1 = checked)\n  // * matrix           -> nested array, one entry per row\n  let input = @input;\n\n  true; // return true if solved, otherwise false\n</script>",
+        "label": "lia-quiz-js"
+    },
+    {
+        "documentation": "Inserts a single-choice quiz with three options:\n\n      [( )] This is wrong.\n      [(X)] The correct option.\n      [( )] Still not right.",
+        "insertText": "[( )] This is wrong.\n[(X)] The correct option.\n[( )] Still not right.",
+        "label": "lia-quiz-single-choice-3"
+    },
+    {
+        "documentation": "Inserts a multiple-choice quiz with four options:\n\n      [[ ]] Add as many options as you want.\n      [[X]] The X marks the correct answer!\n      [[ ]] ... this is wrong ...\n      [[X]] ... this has to be checked too ...",
+        "insertText": "[[ ]] Add as many options as you want.\n[[X]] The X marks the correct answer!\n[[ ]] ... this is wrong ...\n[[X]] ... this has to be checked too ...",
+        "label": "lia-quiz-multiple-choice-4"
+    },
+    {
+        "documentation": "Generic quiz: [[!]] has no input element of its own. The quiz is solved if the script evaluates to true and not solved if it evaluates to false. Use it for checks that do not fit the other quiz types, e.g. to test the state of an interactive element or the result of a code block.\n\nUse alert(...) to inspect values while developing.\n\nExample:\n  Only lucky people can solve this quiz:\n\n      [[!]]\n      <script>\n        Math.random() < 0.2\n      </script>",
+        "insertText": "[[!]]\n<script>\n  // check anything you want and return true or false\n  true;\n</script>",
+        "label": "lia-quiz-generic-js"
+    }
+]

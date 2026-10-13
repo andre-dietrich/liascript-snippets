@@ -7,7 +7,7 @@
       3. ${3:block}
     """
     'description': """
-      Insert a Markdown ordered list, as depicted below. Indentation is important in this case.
+      Insert a Markdown ordered list. LiaScript keeps the numbers you write, so a list can be interrupted and continued, and 0. is a valid start. Indent continuation lines and nested lists to the text of the item.
 
       Example:
         1. first point
@@ -38,3 +38,35 @@
     """
     'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
     'leftLabelHTML': '<span style="color:#ff0">𝌆</span>'
+
+
+  '<!-- type="a" --> 1. ...':
+    'prefix': 'lia-list-type'
+    'body': """
+      <!-- type="${1:a}" -->
+      1. ${2:first}
+      2. ${3:second}
+      3. ${4:third}
+    """
+    'body_vscode': """
+      <!-- type="${1|a,A,i,I,1|}" -->
+      1. ${2:first}
+      2. ${3:second}
+      3. ${4:third}
+    """
+    'description': """
+      Change the numbering style of an ordered list with an attribute comment directly above it:
+
+        type="a" / "A"   letters
+        type="i" / "I"   roman numerals
+
+      Any CSS list style works as well, e.g. <!-- style="list-style-type: lower-greek" -->.
+
+      Example:
+        <!-- type="i" -->
+        1. first
+        2. second
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">𝌆</span>'
+

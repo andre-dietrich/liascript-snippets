@@ -6,7 +6,7 @@
     'description': """
       Inline `code` has `back-ticks around` it.
     """
-    'descriptionMoreURL': 'http://www.google.de'
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
     'leftLabelHTML': '<span style="color:#ff0">💻</span>'
 
 
@@ -37,7 +37,7 @@
 
         ```python
         s = "Python syntax highlighting"
-        print s
+        print(s)
         ```
 
         ```
@@ -103,7 +103,7 @@
       Examples:
 
         ```javascript    Visible.js
-        alert("Visble JavaScript file";);
+        alert("Visible JavaScript file");
         ```
 
         ```javascript   +Visible.js
@@ -142,12 +142,12 @@
 
       Example:
 
-        ```javascript   +Tile.js
+        ```javascript   +Visible.js
         var s = "Visible JavaScript syntax highlighting";
         ```
         <script>@input</script>
 
-        ```javascript   +Title.js
+        ```javascript   -Hidden.js
         var s = "Hidden JavaScript syntax highlighting";
         ```
         <script>@input</script>
@@ -247,7 +247,7 @@
     'leftLabelHTML': '<span style="color:#ff0">💻</span>'
 
 
-  '```lang @ouput ...```':
+  '```lang @output ...```':
     'prefix': 'lia-code-output'
     'body': """
       ``` ${1:text}     ${2:+@output}
@@ -255,7 +255,7 @@
       ```
     """
     'description': """
-      In contrast to the @input macro, there is also an @output macro, which can be used to define the initial output of and executable code-block. This block has to be the last and you can use a plus (+) or a minus (-) in front to indicate, whether this output is interpreted as normal stdout or stderr.
+      Default output: a code block with @output after the language is not shown as code, its content is shown in the terminal of an executable project when the slide loads. It is replaced by the real result after the first execution. This is useful for courses that are read offline or on GitHub, where nothing can be executed. The @output block has to be the last block of the project. A plus (+) shows the content as normal output (stdout), a minus (-) as an error (stderr).
 
       Example:
 
@@ -264,8 +264,8 @@
 
         consolelog(str)
         ```
-        ``` json    -@ouput
-        There is a error in line 3...
+        ``` text    -@output
+        There is an error in line 3 ...
         ```
         <script>@input</script>
     """
@@ -348,6 +348,161 @@
 
           // eval the script that uses this dataset
           eval(`@input(0)`);
+        </script>
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+
+
+  '<script> async ... "LIA: wait" </script>':
+    'prefix': 'lia-code-async'
+    'body': """
+      ```${1:js}
+      ${2:// asynchronous code
+      setTimeout(() => console.log("done"), 1000)}
+      ```
+      <script>
+        ${3:eval(`@input`)
+        setTimeout(() => send.lia("LIA: stop"), 2000)}
+        "LIA: wait"
+      </script>
+    """
+    'description': """
+      Executable code with asynchronous results. End the script with "LIA: wait", so that LiaScript keeps the code block in the running state. Send output later with send.lia(...) or console.log(...) and finish with send.lia("LIA: stop").
+
+      Useful control strings and functions:
+        "LIA: wait"                  keep running (async)
+        "LIA: stop"                  finish the execution
+        "LIA: clear"                 clear the terminal
+        send.lia("text")             print output and keep running
+        send.lia("text", [], true)   print as success
+        send.lia("text", [], false)  print as error
+        send.liascript("## md")      render LiaScript in the output
+        send.lia("HTML: <b>x</b>")   render raw HTML in the output
+        console.log/warn/error/debug(...)
+
+      Example:
+        ```js
+        let i = 0
+        const id = setInterval(() => console.log(i++), 500)
+        setTimeout(() => { clearInterval(id); send.lia("LIA: stop") }, 3000)
+        ```
+        <script>
+          eval(`@input`)
+          "LIA: wait"
+        </script>
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+
+
+  '<script> "LIA: terminal" + send.handle </script>':
+    'prefix': 'lia-code-terminal'
+    'body': """
+      ```${1:js}
+      ${2:// type JavaScript into the terminal after executing this block}
+      ```
+      <script>
+        send.handle("input", (input) => {
+          ${3:send.lia(String(eval(input)))}
+        })
+        send.handle("stop", (e) => {
+          ${4:console.log("stopped")}
+        })
+        "LIA: terminal"
+      </script>
+    """
+    'description': """
+      An interactive terminal (REPL): ending the script with "LIA: terminal" opens an input line below the output after execution. send.handle("input", callback) is called for every line the user sends, send.handle("stop", callback) when the user stops the execution.
+
+      Example:
+        ```js
+        // execute me and type 2+2 into the terminal
+        ```
+        <script>
+          send.handle("input", (input) => send.lia(String(eval(input))))
+          "LIA: terminal"
+        </script>
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+
+
+  '<!-- data-marker ... --> ```lang ... ```':
+    'prefix': 'lia-code-style'
+    'body': """
+      <!-- data-showGutter="${1:false}" data-theme="${2:chaos}" data-marker="${3:1 0 2 20 error text;}" -->
+      ```${4:js}
+      ${5:let a = 1
+      let b = a +}
+      ```
+    """
+    'body_vscode': """
+      <!-- data-showGutter="${1|false,true|}" data-theme="${2|chaos,monokai,github,dracula,solarized_light,solarized_dark,tomorrow,twilight,xcode|}" data-marker="${3:1 0 2 20 error text;}" -->
+      ```${4:js}
+      ${5:let a = 1
+      let b = a +}
+      ```
+    """
+    'description': """
+      Code blocks (executable or not) are rendered with the Ace editor. An HTML comment directly above the block configures it:
+
+        data-showGutter="false"         hide the line numbers
+        data-theme="monokai"            any Ace theme
+        data-marker="y1 x1 y2 x2 color type;"
+                                        highlight a range, repeatable with ;
+                                        color: error, log, warn, debug, info
+                                               or rgba(...) without spaces
+                                        type:  fullLine (default), text,
+                                               screenLine
+        data-tabSize, data-fontSize, data-firstLineNumber
+
+      Example:
+        <!-- data-theme="chaos" data-marker="1 0 1 12 warn;" -->
+        ```js
+        let a = 1
+        a = a + 1
+        ```
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">💻</span>'
+
+
+  'project with @output':
+    'prefix': 'lia-code-project-output'
+    'body': """
+      ``` ${1:js}     ${2:-EvalScript.js}
+      ${3:let who = data.first_name + " " + data.last_name;
+      data.online ? who + " is online" : who + " is NOT online"}
+      ```
+      ``` ${4:json}   ${5:+Data.json}
+      ${6:{ "first_name": "Sammy", "last_name": "Shark", "online": true \\}}
+      ```
+      ``` text     +@output
+      ${7:Is Sammy Shark really online? Press execute.}
+      ```
+      <script>
+        let data = @input(1);
+        @input(0)
+      </script>
+    """
+    'description': """
+      A multi-file project with a default output. Blocks written directly one after another (no blank line) form a project with one shared script. @input(n) refers to the n-th block (counting from 0). A file name with - starts minimized, with + (default) visible. The last block marked with @output is shown in the terminal before the first execution.
+
+      Example:
+        ``` js     -EvalScript.js
+        let who = data.first_name + " " + data.last_name;
+        data.online ? who + " is online" : who + " is NOT online"
+        ```
+        ``` json   +Data.json
+        { "first_name": "Sammy", "last_name": "Shark", "online": true }
+        ```
+        ``` text   +@output
+        Is Sammy Shark really online?
+        ```
+        <script>
+          let data = @input(1);
+          @input(0)
         </script>
     """
     'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'

@@ -80,6 +80,18 @@
         ],
         "prefix": "lia-gallery"
     },
+    "![image](url) + text beside it": {
+        "body": "![${1:alt-text}](${2:image-url} \"${3:caption}\")\n${4:This text has no blank line before it, so it stays in the same\nparagraph as the image and flows beside it.}",
+        "description": [
+            "Two-column layout: an image followed directly by text (no blank line between them) forms one paragraph. The image floats to the left with up to 50% of the width and the text flows beside it. A blank line between image and text puts the text below the image instead.",
+            "",
+            "Example:",
+            "  ![A lion](img/lion.jpg \"The king of the jungle\")",
+            "  Lions live in groups called prides. This text is shown",
+            "  to the right of the image."
+        ],
+        "prefix": "lia-image-float"
+    },
     "# Main Title": {
         "body": "# ${1:Main Title}\n",
         "description": [
@@ -226,7 +238,7 @@
         "prefix": "lia-title-5"
     },
     "###### SubParagraph Title": {
-        "body": "##### ${1:SubParagraph Title}\n",
+        "body": "###### ${1:SubParagraph Title}\n",
         "description": [
             "As in common Markdown, a document is segregated into different parts by its titles. A title starts with hash-tag (#) that is followed by an head-line. The number of subsequent hash-tags defines the order. It is furthermore possible to overwrite some of the definitions from the main header, see more information on this by typing \"liaheadersection\" ...",
             "",
@@ -261,12 +273,12 @@
             "",
             "Example: $ f(a,b,c) = (a^2+b^2+c^2)^3 $",
             "",
-            "Formulas are rendered with KaTex, so click on the link below to get more information and examples on the applied notation."
+            "Formulas are rendered with KaTeX. Only LaTeX is allowed between the dollar signs, no Markdown or HTML. Click on the link below for all supported commands."
         ],
         "prefix": "lia-formula-inline"
     },
-    "$$ \\sum_\\{i=1\\}^\\\\infty\\ ... $$": {
-        "body": "$$\n   ${1:\\\\sum_\\{i=1\\}^\\\\infty\\\\frac\\{1\\}\\{n^2\\}\n        =\\\\frac\\{\\\\pi^2\\}\\{6\\}}\n$$",
+    "$$ \\sum_{i=1}^\\infty ... $$": {
+        "body": "$$\n   ${1:\\\\sum_{i=1\\}^\\\\infty\\\\frac{1\\}{n^2\\}\n        =\\\\frac{\\\\pi^2\\}{6\\}}\n$$",
         "description": [
             "Insert a more multiline mathematical formula as a block, which is automatically centered within your document. It has to be enclosed with two dollar signs, as shown in the example.",
             "",
@@ -277,9 +289,21 @@
             "        =\\frac{\\pi^2}{6}",
             "$$",
             "",
-            "Formulas are rendered with KaTex, so click on the link below to get more information and examples on the applied notation."
+            "Formulas are rendered with KaTeX. Only LaTeX is allowed between the dollar signs, no Markdown or HTML. Click on the link below for all supported commands."
         ],
         "prefix": "lia-formula-block"
+    },
+    "$\\ce{...}$": {
+        "body": "$\\\\ce{${1:CO2 + C -> 2 CO}}$",
+        "description": [
+            "Chemical equations with the mhchem extension of KaTeX: write the formula inside \\ce{...}. Arrows, charges, states and isotopes are supported.",
+            "",
+            "Example:",
+            "  $\\ce{CO2 + C -> 2 CO}$",
+            "",
+            "  $\\ce{Hg^2+ ->[I-] HgI2 ->[I-] [Hg^{II}I4]^2-}$"
+        ],
+        "prefix": "lia-formula-chem"
     },
     "* ... + ... - ...": {
         "body": "+ ${1:block}\n+ ${2:block}\n+ ${3:block}",
@@ -296,38 +320,102 @@
         "prefix": "lia-list-unordered"
     },
     "*** ... ***": {
-        "body": "****************************************\n\n${1:Add a solution explanation __Markdown__!}\n\n****************************************",
+        "body": "****************************************\n\n${1:Add a solution explanation, any __Markdown__ is allowed!}\n\n****************************************",
         "description": [
-            "If the user solved a quiz or clicked onto resolve, the correct answer gets automatically revealed, but you can add additional information to your solution by adding two lines to the end of your quiz that can contain multiple Markdown blocks as explanation.",
+            "A solution block is shown after the quiz was solved or resolved. Enclose any Markdown blocks (text, images, code, ...) between two lines of three or more asterisks.",
+            "",
+            "Important: there must not be a blank line between the last line of the quiz (answer, hint or script) and the opening asterisks. Otherwise the block is not recognized and the solution is visible all the time. Blank lines inside the block are fine.",
             "",
             "Example:",
             "  What is the color of the sky?",
             "",
-            "    [[blue]]",
-            "    [[?]] Enter blue!",
-            "    *************************************",
+            "      [[blue]]",
+            "      [[?]] Look up!",
+            "      *************************************",
             "",
-            "    During the day the color is blue, if",
-            "    it is not cloudy. See the following",
-            "    picture ...",
+            "      During the day the color is blue, if",
+            "      it is not cloudy.",
             "",
-            "    ![blue sky](./img/sunny.jpg)",
+            "      ![blue sky](./img/sunny.jpg)",
             "",
-            "    *************************************"
+            "      *************************************"
         ],
         "prefix": "lia-quiz-solution"
     },
     "***text***": {
         "body": "***${1:italic bold}***",
+        "description": [
+            "Bold and italic text, enclosed by triple asterisks. Equivalent to ___text___.",
+            "",
+            "Note: a line that contains only *** (three or more asterisks) is not text, it groups blocks for animations or marks a quiz solution.",
+            "",
+            "Example:",
+            "  This is ***bold and italic***."
+        ],
         "prefix": "lia-text-italic-bold2"
     },
     "**text**": {
         "body": "**${1:bold}**",
+        "description": [
+            "Bold text, enclosed by double asterisks. Equivalent to __text__.",
+            "",
+            "Every emphasis span has to stay on one physical line.",
+            "",
+            "Example:",
+            "  This is **bold** text."
+        ],
         "prefix": "lia-text-bold2"
     },
     "*text*": {
         "body": "*${1:italic}*",
+        "description": [
+            "Italic text, enclosed by single asterisks. Equivalent to _text_.",
+            "",
+            "Every emphasis span has to stay on one physical line.",
+            "",
+            "Example:",
+            "  This is *italic* text."
+        ],
         "prefix": "lia-text-italic2"
+    },
+    "- [ ] github task": {
+        "body": "- [${1: }] ${2:line with Markdown}",
+        "description": [
+            "Task lists use the GitHub-flavoured Markdown syntax: a list item that starts with [ ] (open) or [X] (done). Users can check and uncheck the boxes. If the course version is 1.0.0 or higher, the states are stored persistently in the browser.",
+            "",
+            "Example:",
+            "  - [ ] This is not checked by default",
+            "  - [X] This one is checked by default",
+            "  - [ ] Tasks can contain __Markdown__"
+        ],
+        "prefix": "lia-task"
+    },
+    "- [ ] github task ... <script>...</script>": {
+        "body": "- [${1: }] ${2:task-definition}\n- [${3: }] ${4:task-definition}\n<script output=\"${5:tasks}\">\"@input\"</script>\n\n<script>\n  let tasks = @input(`${5:tasks}`)\n  ${6:tasks.every(done => done) ? \"All done!\" : \"Keep going ...\"}\n</script>",
+        "description": [
+            "A script directly after a task list runs every time a box is checked or unchecked, but its result is not shown. Give it an output=\"name\", then other scripts on the same slide can read the states with @input(`name`) and react to them. The value is an array of booleans, one per task, e.g. [true, false].",
+            "",
+            "Example:",
+            "  - [X] Biology",
+            "  - [ ] Chemistry",
+            "  <script output=\"tasks\">\"@input\"</script>",
+            "",
+            "  <script style=\"width: 100%\">",
+            "  try {",
+            "    let task = @input(`tasks`)",
+            "",
+            "    if (task[0]) {",
+            "      send.liascript(`## Biology",
+            "",
+            "  Hey, great, you want to learn something about Biology.",
+            "",
+            "  * resource 1",
+            "  * resource 2`)",
+            "    } else send.clear()",
+            "  } catch(e) { }",
+            "  </script>"
+        ],
+        "prefix": "lia-task-js"
     },
     "---": {
         "body": "----------------------\n",
@@ -346,7 +434,7 @@
         "prefix": "lia-horizontal-line"
     },
     "--{{number voice}}--": {
-        "body": "              --{{${1:number} ${2|UK English Female,UK English Male,US English Female,US English Male,Afrikaans Male,Albanian Male,Arabic Female,Arabic Male,Armenian Male,Australian Female,Australian Male,Bangla Bangladesh Female,Bangla Bangladesh Male,Bangla India Female,Bangla India Male,Bosnian Male,Brazilian Portuguese Female,Brazilian Portuguese Male,Catalan Male,Chinese Female,Chinese Male,Chinese (Hong Kong) Female,Chinese (Hong Kong) Male,Chinese Taiwan Female,Chinese Taiwan Male,Croatian Male,Czech Female,Czech Male,Danish Female,Danish Male,Deutsch Female,Deutsch Male,Dutch Female,Dutch Male,Esperanto Male,Estonian Male,Filipino Female,Finnish Female,Finnish Male,French Canadian Female,French Canadian Male,French Female,French Male,Greek Female,Greek Male,Hindi Female,Hindi Male,Hungarian Female,Hungarian Male,Icelandic Male,Indonesian Female,Indonesian Male,Italian Female,Italian Male,Japanese Female,Japanese Male,Korean Female,Korean Male,Latin Female,Latin Male,Latvian Male,Macedonian Male,Moldavian Female,Moldavian Male,Montenegrin Male,Nepali,Nepali,Norwegian Female,Norwegian Male,Polish Female,Polish Male,Portuguese Female,Portuguese Male,Romanian Female,Romanian Male,Russian Female,Russian Male,Serbian Male,Serbo-Croatian Male,Sinhala,Sinhala,Slovak Female,Slovak Male,Spanish Female,Spanish Male,Spanish Latin American Female,Spanish Latin American Male,Swahili Male,Swedish Female,Swedish Male,Tamil Female,Tamil Male,Thai Female,Thai Male,Turkish Female,Turkish Male,Ukrainian Female,Vietnamese Female,Vietnamese Male,Welsh Male|}}}--\n${3:Enter some **text** that gets read out aloud with another voice.\nOnly paragraphs are allowed!}'",
+        "body": "              --{{${1:number} ${2|UK English Female,UK English Male,US English Female,US English Male,Afrikaans Male,Albanian Male,Arabic Female,Arabic Male,Armenian Male,Australian Female,Australian Male,Bangla Bangladesh Female,Bangla Bangladesh Male,Bangla India Female,Bangla India Male,Bosnian Male,Brazilian Portuguese Female,Brazilian Portuguese Male,Catalan Male,Chinese Female,Chinese Male,Chinese (Hong Kong) Female,Chinese (Hong Kong) Male,Chinese Taiwan Female,Chinese Taiwan Male,Croatian Male,Czech Female,Czech Male,Danish Female,Danish Male,Deutsch Female,Deutsch Male,Dutch Female,Dutch Male,Esperanto Male,Estonian Male,Filipino Female,Finnish Female,Finnish Male,French Canadian Female,French Canadian Male,French Female,French Male,Greek Female,Greek Male,Hindi Female,Hindi Male,Hungarian Female,Hungarian Male,Icelandic Male,Indonesian Female,Indonesian Male,Italian Female,Italian Male,Japanese Female,Japanese Male,Korean Female,Korean Male,Latin Female,Latin Male,Latvian Male,Macedonian Male,Moldavian Female,Moldavian Male,Montenegrin Male,Nepali,Nepali,Norwegian Female,Norwegian Male,Polish Female,Polish Male,Portuguese Female,Portuguese Male,Romanian Female,Romanian Male,Russian Female,Russian Male,Serbian Male,Serbo-Croatian Male,Sinhala,Sinhala,Slovak Female,Slovak Male,Spanish Female,Spanish Male,Spanish Latin American Female,Spanish Latin American Male,Swahili Male,Swedish Female,Swedish Male,Tamil Female,Tamil Male,Thai Female,Thai Male,Turkish Female,Turkish Male,Ukrainian Female,Vietnamese Female,Vietnamese Male,Welsh Male|}}}--\n${3:Enter some **text** that gets read out aloud with another voice.\nOnly paragraphs are allowed!}",
         "description": [
             "You can change the voice also per comment by adding it directly after the number of appearance.",
             "Type \"voice\" for fuzzy searching all responsive voices or click on the link below.",
@@ -362,9 +450,11 @@
         "prefix": "lia-comment-voice"
     },
     "--{{number}}--": {
-        "body": "              --{{${1:number}}}--\n${2:Enter some **text** that gets read out aloud.\nOnly paragraphs are allowed!}'",
+        "body": "              --{{${1:number}}}--\n${2:Enter some **text** that gets read out aloud.\nOnly paragraphs are allowed!}",
         "description": [
-            "Comments are those elements that get read out aloud in slide and presentation mode and a printed out at the placed position in textbook mode. Only paragraphs are allowed as comments and Markdown can be applied for styling different elements.",
+            "Narration comments: the paragraph below --{{n}}-- is read out loud by the text-to-speech engine when animation step n is reached. Only one paragraph is allowed per comment, Markdown can be used inside.",
+            "",
+            "In Presentation mode the text is spoken and hidden, in Slides mode it is spoken and shown in a side panel, and in Textbook mode it is shown in place. A comment never reveals anything on the slide by itself, so pair it with a {{n}} block for the same step (see lia-effect-presentation). Several comments with the same number are read one after another.",
             "The default voice is defined within the main header, if not english will be used. This main voice can be changed per section by adding a section comment.",
             "",
             "Example:",
@@ -384,7 +474,7 @@
             "  <!-- narrator: US English Male -->",
             "",
             "               --{{0}}--",
-            "  This entire section will be spoken aloud american man.",
+            "  This entire section will be spoken by an American man.",
             "",
             "               --{{1}}--",
             "  But only this section...",
@@ -393,51 +483,18 @@
         ],
         "prefix": "lia-comment"
     },
-    "-[ ] github task": {
-        "body": "-[${1:X}] ${2:line with Markdown}",
+    "--{{number}}-- ... ?[audio](url)": {
+        "body": "              --{{${1:number}}}--\n${2:This text is not spoken, the recording is played instead.}\n?[${3:⏯}](${4:audio.mp3})",
         "description": [
-            "Use the GitHub-flavoured Markdown syntax for tasks. If the version of the course is larger than 1, the task-states will be stored persistently.",
-            "",
-            "You can define as much tasks as you want",
+            "Multimedia comment: attach an audio (or video) link at the end of a narration comment to play your own recording at this animation step instead of the text-to-speech voice. The file is only loaded and played when the step is reached in Presentation or Slides mode. It never shows up as a visible player. For a visible player, put the audio link outside of a comment.",
             "",
             "Example:",
-            "",
-            "  -[ ] This is not checked by default",
-            "  -[X] This one is checked by default"
+            "      --{{1}}--",
+            "  To play an audio file during your animation step,",
+            "  simply attach the link at the end of your comment.",
+            "  ?[⏯](recording/audio_1.mp3)"
         ],
-        "prefix": "lia-task"
-    },
-    "-[ ] github task ... <script>...</script>": {
-        "body": "-[${1:X}] ${2:task-definition}\n-[${3:X}] ${4:task-definition}\n<script>\n  ${5:js-code}\n</script>",
-        "description": [
-            "Use the GitHub-flavoured Markdown syntax for tasks in association with JavaScript-code that is executed on every input.",
-            "",
-            "You can define as much tasks as you want.",
-            "",
-            "Example:",
-            "",
-            "  - [X] Biology",
-            "  - [ ] Chemistry",
-            "  <script output=\"tasks\">\"@input\"</script>",
-            "",
-            "  <script style=\"width: 100%\">",
-            "  try {",
-            "    let task = @input(`tasks`) // interpret the output=\"tasks\"",
-            "",
-            "    if(task[0]) {",
-            "      send.liascript(`## Biology",
-            "",
-            "  Hey, great, you want to learn something about Biology.",
-            "",
-            "  * resource 1",
-            "  * resource 2",
-            "",
-            "  The input from the tasks above was: `[${task}]``)",
-            "    } else send.clear()",
-            "  } catch(e) { }",
-            "  </script>"
-        ],
-        "prefix": "lia-task-js"
+        "prefix": "lia-comment-media"
     },
     "1 colum table": {
         "body": "| ${1:Header}     |\n| :--------- |\n| ${2:Item}       |",
@@ -457,7 +514,7 @@
     "1. ... 2. ... 3. ...": {
         "body": "1. ${1:block}\n2. ${2:block}\n3. ${3:block}",
         "description": [
-            "Insert a Markdown ordered list, as depicted below. Indentation is important in this case.",
+            "Insert a Markdown ordered list. LiaScript keeps the numbers you write, so a list can be interrupted and continued, and 0. is a valid start. Indent continuation lines and nested lists to the text of the item.",
             "",
             "Example:",
             "  1. first point",
@@ -589,29 +646,24 @@
         "prefix": "lia-table-9"
     },
     "< ... # ... [": {
-        "body": "<!--\nauthor:   Your Name\n\nemail:    your@mail.org\n\nversion:  0.0.1\n\nlanguage: en\n\nnarrator: US English Female\n\ncomment:  Try to write a short comment about\n          your course, multiline is also okay.\n\nlink:     https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css\n\nscript:   https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js\n\ntranslation: Deutsch  translations/German.md\n\ntranslation: Français translations/French.md\n-->\n\n# Course Main Title\n\nThis is your **course** initialization stub.\n\nPlease see the [Docs](https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md)\nto find out what is possible in [LiaScript](https://liascript.github.io).\n\nIf you want to use instant help in your Atom IDE, please type **lia** to see all available shortcuts.\n\n## Markdown\n\nYou can use common [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) syntax to create your course, such as:\n\n1. Lists\n2. ordered or\n\n   * unordered\n   * ones ...\n\n\n| Header 1   | Header 2   |\n| :--------- | :--------- |\n| Item 1     | Item 2     |\n\n\nImages:\n\n![images](https://farm2.static.flickr.com/1618/26701766821_7bea494826.jpg)\n\n\n### Extensions\n\n     --{{0}}--\nBut you can also include other features such as spoken text.\n\n      --{{1}}--\nInsert any kind of audio file:\n\n       {{1}}\n?[audio](https://bigsoundbank.com/UPLOAD/mp3/1068.mp3)\n\n\n     --{{2}}--\nEven videos or change the language completely.\n\n       {{2-3}}\n!?[video](https://www.youtube.com/watch?v=bICfKRyKTwE)\n\n\n      --{{3 Russian Female}}--\nПервоначально создан в 2004 году Джоном Грубером (англ. John Gruber) и Аароном\nШварцем. Многие идеи языка были позаимствованы из существующих соглашений по\nразметке текста в электронных письмах...\n\n\n    {{3}}\nType \"voice\" to see a list of all available languages.\n\n\n### Styling\n\n<!-- class = \"animated rollIn\" style = \"animation-delay: 2s; color: purple\" -->\nThe whole text-block should appear in purple color and with a wobbling effect.\nWhich is a **bad** example, please use it with caution ...\n~~ only this is red ;-) ~~ <!-- class = \"animated infinite bounce\" style = \"color: red;\" -->\n\n## Charts\n\nUse ASCII-Art to draw diagrams:\n\n                                    Multiline\n    1.9 |    DOTS\n        |                 ***\n      y |               *     *\n      - | r r r r r r r*r r r r*r r r r r r r\n      a |             *         *\n      x |            *           *\n      i | B B B B B * B B B B B B * B B B B B\n      s |         *                 *\n        | *  * *                       * *  *\n     -1 +------------------------------------\n        0              x-axis               1\n\n## Quizzes\n\n### A Textquiz\n\nWhat did the **fish** say when he hit a **concrete wall**?\n\n    [[dam]]\n\n### Multiple Choice\n\nJust add as many points as you wish:\n\n    [[X]] Only the **X** marks the correct point.\n    [[ ]] Empty ones are wrong.\n    [[X]] ...\n\n### Single Choice\n\nJust add as many points as you wish:\n\n    [( )] ...\n    [(X)] <-- Only the **X** is allowed.\n    [( )] ...\n\n## Executable Code\n\nA drawing example, for demonstrating that any JavaScript library can be used, also for drawing.\n\n```javascript\n// Initialize a Line chart in the container with the ID chart1\nnew Chartist.Line('#chart1', {\n  labels: [1, 2, 3, 4],\n  series: [[100, 120, 180, 200]]\n});\n\n// Initialize a Line chart in the container with the ID chart2\nnew Chartist.Bar('#chart2', {\n  labels: [1, 2, 3, 4],\n  series: [[5, 2, 8, 3]]\n});\n```\n<script>@input</script>\n\n<div class=\"ct-chart ct-golden-section\" id=\"chart1\"></div>\n<div class=\"ct-chart ct-golden-section\" id=\"chart2\"></div>\n\n\n### Projects\n\nYou can make your code executable and define projects:\n\n``` js     -EvalScript.js\nlet who = data.first_name + \" \" + data.last_name;\n\nif(data.online) {\n  who + \" is online\"; }\nelse {\n  who + \" is NOT online\"; }\n```\n``` json    +Data.json\n{\n  \"first_name\" :  \"Sammy\",\n  \"last_name\"  :  \"Shark\",\n  \"online\"     :  true\n}\n```\n<script>\n  // insert the JSON dataset into the local variable data\n  let data = @input(1);\n\n  // eval the script that uses this dataset\n  eval(`@input(0)`);\n</script>\n\n## More\n\nFind out what you can even do more with quizzes:\n\nhttps://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md",
+        "body": "<!--\nauthor:   Your Name\n\nemail:    your@mail.org\n\nversion:  0.0.1\n\nlanguage: en\n\nnarrator: US English Female\n\ncomment:  Try to write a short comment about\n          your course, multiline is also okay.\n-->\n\n# Course Main Title\n\nThis is your **course** initialization stub.\n\nPlease see the [Docs](https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md)\nto find out what is possible in [LiaScript](https://liascript.github.io).\n\n> [!TIP]\n> Type **lia** in your editor to see all available snippets,\n> **voice** for all narrator voices and **hili** for syntax highlighting.\n\n> [!NOTE]\n> A version 0.x.x marks a course in development, nothing is stored.\n> Switch to 1.0.0 when you publish the course, then the states of\n> quizzes, tasks and code are stored in the browser.\n\n## Markdown\n\nYou can use common [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) syntax to create your course, such as:\n\n1. Lists\n2. ordered or\n\n   * unordered\n   * ones ...\n\n\n| Header 1   | Header 2   |\n| :--------- | :--------- |\n| Item 1     | Item 2     |\n\n\nImages:\n\n![images](https://farm2.static.flickr.com/1618/26701766821_7bea494826.jpg)\n\n\n## Presentation\n\n             --{{0}}--\nThis text is spoken when the slide is opened. In Textbook mode it is\nshown as normal text.\n\n     {{1}}\n* The first point appears at step 1.\n\n             --{{1}}--\nAnd this text explains the first point.\n\n     {{2}}\n* The second point appears at step 2.\n\n             --{{2}}--\nInsert any kind of audio file:\n\n     {{3}}\n?[audio](https://bigsoundbank.com/UPLOAD/mp3/1068.mp3)\n\n     {{4}}\n!?[video](https://www.youtube.com/watch?v=bICfKRyKTwE)\n\n\n### Styling\n\n<!-- class = \"animated rollIn\" style = \"animation-delay: 2s; color: purple\" -->\nThe whole text-block should appear in purple color and with a wobbling effect.\nWhich is a **bad** example, please use it with caution ...\n~~ only this is red ;-) ~~ <!-- class = \"animated infinite bounce\" style = \"color: red;\" -->\n\n## Diagrams\n\n``` ascii  Fig.: ASCII art is rendered as an image\n+------+   +-----+   +-----+\n|      |   |     |   |     |\n| Foo  +-->| Bar +-->| Baz |\n|      |   |     |   |     |\n+------+   +-----+   +-----+\n```\n\nTables with numbers can be shown as charts:\n\n<!-- data-show data-title=\"Powers\" data-xlabel=\"x\" data-ylabel=\"y\" -->\n| x | square | cube |\n| - | -----: | ---: |\n| 0 |      0 |    0 |\n| 1 |      1 |    1 |\n| 2 |      4 |    8 |\n| 3 |      9 |   27 |\n\n## Quizzes\n\n### A Textquiz\n\nWhat did the **fish** say when he hit a **concrete wall**?\n\n    [[dam]]\n    [[?]] It is a pun.\n\n### Multiple Choice\n\nJust add as many points as you wish:\n\n    [[X]] Only the **X** marks the correct point.\n    [[ ]] Empty ones are wrong.\n    [[X]] ...\n\n### Single Choice\n\nJust add as many points as you wish:\n\n    [( )] ...\n    [(X)] <-- Only the **X** is correct.\n    [( )] ...\n\n### Gap Text\n\nThe capital of France is [[ Paris ]] and of Italy [[ (Rome) | Milan | Naples ]].\n\n## Survey\n\nHow do you like LiaScript so far?\n\n    [(1)] great\n    [(2)] okay\n    [(3)] not yet\n\n## Executable Code\n\nCode blocks with a script tag can be edited and executed:\n\n```javascript\nlet sum = 0;\nfor (let i = 1; i <= 10; i++) { sum += i; }\nsum;\n```\n<script>@input</script>\n\n\n### Projects\n\nYou can make your code executable and define projects:\n\n``` js     -EvalScript.js\nlet who = data.first_name + \" \" + data.last_name;\n\nif(data.online) {\n  who + \" is online\"; }\nelse {\n  who + \" is NOT online\"; }\n```\n``` json    +Data.json\n{\n  \"first_name\" :  \"Sammy\",\n  \"last_name\"  :  \"Shark\",\n  \"online\"     :  true\n}\n```\n<script>\n  // insert the JSON dataset into the local variable data\n  let data = @input(1);\n\n  // eval the script that uses this dataset\n  eval(`@input(0)`);\n</script>\n\n## More\n\nFind out what else you can do:\n\nhttps://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md",
         "description": [
-            "Initialize your file with a complete dummy course with a header and body, which can be used as a bootstrap for your course.",
+            "Initialize your file with a complete example course (header and body), which can be used as a starting point. It shows the most important features: narration and animations, media, ASCII art, charts, quizzes, surveys and executable code.",
             "",
             "Example:",
             "",
             "    <!--",
             "    author:   Your Name",
-            "",
             "    email:    your@mail.org",
-            "",
             "    version:  0.0.1",
-            "",
             "    language: en",
-            "",
             "    narrator: US English Female",
-            "",
             "    ...",
             "    -->",
             "",
             "    # Course Main Title",
             "",
-            "    This is your **course** initialization stub..."
+            "    This is your course initialization stub..."
         ],
         "prefix": "lia-init"
     },
@@ -659,6 +711,44 @@
         ],
         "prefix": "lia-effect-animate-example"
     },
+    "<!-- data-marker ... --> ```lang ... ```": {
+        "body": "<!-- data-showGutter=\"${1|false,true|}\" data-theme=\"${2|chaos,monokai,github,dracula,solarized_light,solarized_dark,tomorrow,twilight,xcode|}\" data-marker=\"${3:1 0 2 20 error text;}\" -->\n```${4:js}\n${5:let a = 1\nlet b = a +}\n```",
+        "description": [
+            "Code blocks (executable or not) are rendered with the Ace editor. An HTML comment directly above the block configures it:",
+            "",
+            "  data-showGutter=\"false\"         hide the line numbers",
+            "  data-theme=\"monokai\"            any Ace theme",
+            "  data-marker=\"y1 x1 y2 x2 color type;\"",
+            "                                  highlight a range, repeatable with ;",
+            "                                  color: error, log, warn, debug, info",
+            "                                         or rgba(...) without spaces",
+            "                                  type:  fullLine (default), text,",
+            "                                         screenLine",
+            "  data-tabSize, data-fontSize, data-firstLineNumber",
+            "",
+            "Example:",
+            "  <!-- data-theme=\"chaos\" data-marker=\"1 0 1 12 warn;\" -->",
+            "  ```js",
+            "  let a = 1",
+            "  a = a + 1",
+            "  ```"
+        ],
+        "prefix": "lia-code-style"
+    },
+    "<!-- data-orientation=\"horizontal\" -->": {
+        "body": "<!-- data-orientation=\"horizontal\" -->",
+        "description": [
+            "Flips a BarChart: the bars are drawn horizontally and the categories are listed on the y-axis. Useful for long category names.",
+            "",
+            "Example:",
+            "  <!-- data-show data-orientation=\"horizontal\" -->",
+            "  | Animal          | weight in kg | Lifespan years |",
+            "  | --------------- | ------------:| --------------:|",
+            "  | Mouse           |        0.028 |              2 |",
+            "  | Flying squirrel |        0.085 |             15 |"
+        ],
+        "prefix": "lia-table-diagram-orientation"
+    },
     "<!-- data-show -->": {
         "body": "<!-- data-show -->",
         "description": [
@@ -675,6 +765,20 @@
             "  | E      |  2  |  1  |  1  |  1  |     |"
         ],
         "prefix": "lia-table-diagram-show"
+    },
+    "<!-- data-sortable=\"false\" -->": {
+        "body": "<!-- data-sortable=\"${1|false,true|}\" -->",
+        "description": [
+            "Tables can be sorted by clicking on a header cell. data-sortable=\"false\" in the table comment turns this off for the whole table. It can also be set for single columns in a comment inside the header cell.",
+            "",
+            "Example:",
+            "  <!-- data-sortable=\"false\" -->",
+            "  | Rank | Name  |",
+            "  | ---- | ----- |",
+            "  | 1    | Alice |",
+            "  | 2    | Bob   |"
+        ],
+        "prefix": "lia-table-diagram-sortable"
     },
     "<!-- data-src=\"..\" -->": {
         "body": "<!-- data-src=\"${1:url}\" -->",
@@ -734,10 +838,10 @@
         "prefix": "lia-table-diagram-transpose"
     },
     "<!-- data-type=\"...\" -->": {
-        "body": "<!-- data-type=\"${1:type}\" -->",
+        "body": "<!-- data-type=\"${1|lineplot,scatterplot,barchart,boxplot,radar,piechart,funnel,map,heatmap,parallel,graph,sankey,none|}\" -->",
         "description": [
-            "You can enforce the visualization of a certain type, even if the sturcture of your table might look different.",
-            "Currently available data-types are: lineplot, scatterplot, boxplot, barchart, radar, piechart, map, heatmap, parallel, graph, sankey, and none",
+            "You can enforce the visualization of a certain type, even if the structure of your table might look different.",
+            "Currently available data-types are (case-insensitive): lineplot (line), scatterplot (scatter), barchart (bar), boxplot, radar, piechart (pie), funnel, map, heatmap, parallel, graph, sankey, and none",
             "If you do not want to show tables as diagrams, you can also use data-type=\"None\" and only the table will be visible.",
             "",
             "Example:",
@@ -790,6 +894,19 @@
         ],
         "prefix": "lia-table-diagram-boxplot"
     },
+    "<!-- data-type=\"funnel\" -->": {
+        "body": "<!-- data-type=\"funnel\" -->",
+        "description": [
+            "A funnel (pyramid) chart uses the same table shape as a PieChart: a header with the categories and one row of numbers. It is never selected automatically.",
+            "",
+            "Example:",
+            "  <!-- data-type=\"funnel\" data-show -->",
+            "  | Visits | Sign-ups | Trials | Customers |",
+            "  | ------:| --------:| ------:| ---------:|",
+            "  |   1000 |      400 |    150 |        40 |"
+        ],
+        "prefix": "lia-table-diagram-funnel"
+    },
     "<!-- data-type=\"graph\" -->": {
         "body": "<!-- data-type=\"graph\" -->",
         "description": [
@@ -838,7 +955,7 @@
     "<!-- data-type=\"lineplot\" -->": {
         "body": "<!-- data-type=\"lineplot\" -->",
         "description": [
-            "If the first column contains (not repeating) numbers as well as the other columns, lineplots are used as the default representation, a special tag is not required. If this isn't the case, then you can apply this tag to enforce the visualization as a scatterplot.",
+            "If the first column contains (not repeating) numbers as well as the other columns, lineplots are used as the default representation, a special tag is not required. If this isn't the case, then you can apply this tag to enforce the visualization as a lineplot.",
             "",
             "Example:",
             "  <!-- data-type=\"lineplot\" -->",
@@ -887,7 +1004,7 @@
     "<!-- data-type=\"parallel\" -->": {
         "body": "<!-- data-type=\"parallel\" -->",
         "description": [
-            "A Parallel representation jumps in, if there are simply too many categories, so that your BarChart would contain only thin lines.",
+            "A parallel coordinates plot draws one vertical axis per column and one line per row. It is useful if there are too many categories for a readable BarChart. Do not rely on the automatic detection, set the type explicitly.",
             "",
             "Example:",
             "  <!-- data-type=\"parallel\" -->",
@@ -922,13 +1039,13 @@
     "<!-- data-type=\"radar\" -->": {
         "body": "<!-- data-type=\"radar\" -->",
         "description": [
-            "If for example humans and sheeps are removed from the dataset, then wheight in kg would not be visible in a BarChart at all. In this case a Radar is selected, that allows to analyze data visually with different \"y\"-axis.",
+            "A radar chart draws one polygon per row with one axis per column. It is useful if the columns have very different scales (e.g. weight in kg and lifespan in years), which would make a BarChart unreadable. Do not rely on the automatic detection, set the type explicitly. Use at least 3 numeric columns.",
             "",
             "Example:",
             "  <!-- data-type=\"radar\" -->",
             "  | Animal          | weight in kg | Lifespan years | Mitogen |",
             "  | --------------- | ------------:| --------------:| -------:|",
-            "  | Mouse           |        0.028 |             02 |      95 |",
+            "  | Mouse           |        0.028 |              2 |      95 |",
             "  | Flying squirrel |        0.085 |             15 |      50 |",
             "  | Brown bat       |        0.020 |             30 |      10 |"
         ],
@@ -987,6 +1104,20 @@
         ],
         "prefix": "lia-table-diagram-xlabel"
     },
+    "<!-- data-xlim=\"min,max\" -->": {
+        "body": "<!-- data-xlim=\"${1:0},${2:100}\" -->",
+        "description": [
+            "Sets the range of the x-axis. One side can be left empty to determine it automatically, e.g. data-xlim=\",12\".",
+            "",
+            "Example:",
+            "  <!-- data-show data-xlim=\"1994,2000\" -->",
+            "  | Year | Finland | Germany |",
+            "  | ---- | -------:| -------:|",
+            "  | 1995 |     6.8 |     4.4 |",
+            "  | 1996 |     6.9 |     4.5 |"
+        ],
+        "prefix": "lia-table-diagram-xlim"
+    },
     "<!-- data-ylabel=\"...\" -->": {
         "body": "<!-- data-ylabel=\"${1:title}\" -->",
         "description": [
@@ -1006,93 +1137,168 @@
         ],
         "prefix": "lia-table-diagram-ylabel"
     },
-    "<!-- name: ...": {
-        "body": "<!--\nauthor:   ${1:Your Name}\nemail:    ${2:your@email.com}\nversion:  ${3:0.1.0}\nlanguage: ${4:en}\nnarrator: ${5:US English Female}\n\ncomment:  ${6:This simple description of your course.\n          Multiline is also okay.}\n\nlink:     ${7:https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css}\n\nscript:   ${8:https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js}\n\n${9:translation: Français translations/French.md}\n-->",
+    "<!-- data-ylim=\"min,max\" -->": {
+        "body": "<!-- data-ylim=\"${1:0},${2:100}\" -->",
         "description": [
-            "  The main header is a comment of the following format. You can use it to define defaults, such as authors, emails, where to find translations, what JavaScript and styles should be loaded additionally, as well as the language of your course.",
-            "  You can change some of these settings within a sub-header for each section individually.",
+            "Sets the range of the y-axis. One side can be left empty to determine it automatically, e.g. data-ylim=\"0,\".",
             "",
-            "  Default:",
-            "      language: (en) | de | ua | fa | hy | bg",
-            "      narrator: US English Male",
+            "Example:",
+            "  <!-- data-show data-ylim=\"0,10\" -->",
+            "  | Year | Finland | Germany |",
+            "  | ---- | -------:| -------:|",
+            "  | 1995 |     6.8 |     4.4 |",
+            "  | 1996 |     6.9 |     4.5 |"
+        ],
+        "prefix": "lia-table-diagram-ylim"
+    },
+    "<!-- name: ...": {
+        "body": "<!--\nauthor:   ${1:Your Name}\nemail:    ${2:your@email.com}\nversion:  ${3:0.1.0}\nlanguage: ${4:en}\nnarrator: ${5:US English Female}\n\ncomment:  ${6:A short description of your course.\n          Multiline is also okay.}\n\n${7:logo:     ./img/logo.png}\n-->",
+        "description": [
+            "The main header is an HTML comment at the very top of the document. It defines the defaults of the course: authors, contact, version, language, the narrator voice, additional JavaScript and CSS, macros and more. Continuation lines have to be indented. Most settings can be overwritten per section (see lia-header-section).",
             "",
-            "  Example:",
+            "Common fields:",
+            "  author      separate multiple authors with ;",
+            "  email       contact shown in the info panel",
+            "  version     0.x.x = development, nothing is stored;",
+            "              >= 1.0.0 = quiz, code and task states are stored",
+            "              (bump the major version when you move quizzes)",
+            "  language    UI language and typography (en, de, fr, es, ...)",
+            "  narrator    default text-to-speech voice (type \"voice\")",
+            "  comment     short description for the course card",
+            "  logo        image for the course card",
+            "  icon        replaces the default LiaScript icon",
+            "  mode        Presentation | Slides | Textbook",
+            "  repository  link to the source repository",
+            "  edit        true or a URL to edit the course online",
+            "  link        additional CSS files, one per line",
+            "  script      additional JavaScript files, one per line",
+            "  import      macros of other courses/templates",
+            "  translation link to a translated version",
             "",
-            "      <!--",
-            "      author:   Your Name",
-            "      email:    your@email.com",
-            "      version:  0.1.0",
-            "      language: en",
-            "      narrator: US English Female",
+            "Type \"lia-macro-\" to find snippets for single header fields.",
             "",
-            "      comment:  This simple description of your course.",
-            "                Multiline is also okay.",
+            "Example:",
+            "  <!--",
+            "  author:   Your Name",
+            "  email:    your@email.com",
+            "  version:  0.1.0",
+            "  language: en",
+            "  narrator: US English Female",
             "",
-            "      link:     https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css",
-            "                https://...",
+            "  comment:  A short description of your course.",
+            "            Multiline is also okay.",
             "",
-            "      script:   https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js",
-            "                https://...",
+            "  logo:     ./img/logo.png",
             "",
-            "      translation: Français translations/French.md",
-            "      translation: 日本語    translations/Japanese.md",
-            "      -->",
+            "  link:     https://cdn.example.com/library.css",
+            "  script:   https://cdn.example.com/library.js",
             "",
-            "      # Course ...",
+            "  translation: Deutsch  translations/German.md",
+            "  -->",
             "",
-            "And you can refer to these values via the system macros:",
+            "  # Course Title",
             "",
-            "    @author",
-            "    @email",
-            "    @version"
+            "The values can be referred to by the macros @author, @email, @version and @date."
         ],
         "prefix": "lia-header-main"
     },
     "<!-- name: ... -->": {
-        "body": "<!--\nauthor:   ${1:Section Author}\nemail:    ${2:section.author@email.com}\nversion:  ${3:0.1.0}\nnarrator: ${4:UK English Female}\n\nlink:     ${5:https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css}\n\nscript:   ${6:https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js}\n-->",
+        "body": "<!--\n${1:author:   Section Author}\n${2:narrator: UK English Female}\n-->",
         "description": [
-            "You can overwrite some main header settings as it is listed below. Just attach a comment to the section title and overwrite only those settings, that are relevant to you.",
+            "A section header is an HTML comment directly after a heading. It overwrites settings of the main header for this section only, e.g. the author, the narrator voice, macros, additional scripts or styles (link, script), formula macros or persistent.",
             "",
             "Example:",
+            "  # Course",
             "",
-            "    ...",
-            "    # Course",
-            "    ...",
-            "    ## Section",
-            "    <!--",
-            "    narrator: Australian Female",
-            "    -->",
-            "    ...",
-            "    ### Sub Section",
-            "    <!--",
-            "    author:   Section Author",
-            "    email:    section.author@email.com",
-            "    version:  0.1.0",
-            "    narrator: Australian Female",
+            "  ## Section",
+            "  <!--",
+            "  narrator: Australian Female",
+            "  -->",
             "",
-            "    link:     https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css",
-            "    script:   https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js",
-            "    -->"
+            "  This section is read with an Australian voice.",
+            "",
+            "  ### Sub Section",
+            "  <!--",
+            "  author:     Section Author",
+            "  email:      section.author@email.com",
+            "  persistent: true",
+            "  -->"
         ],
         "prefix": "lia-header-section"
     },
     "<!-- style ... --> ```` /--=... `````": {
-        "body": "<!-- style=\"display: block; margin-left: auto; margin-right: auto; max-width: 315px;\" -->\n``````````````````````````````````````````````````\n${1:                             .--->  F\n    A       B     C   D     /\n    *-------*-----*---*----*----->  E\n                         ^ v          /   '--->  G\n               B --> C -'}\n``````````````````````````````````````````````````",
+        "body": "<!-- style=\"display: block; margin-left: auto; margin-right: auto; max-width: 315px;\" -->\n``````````````````````````````````````````````````\n${1:                             .--->  F\n    A       B     C   D     /\n    *-------*-----*---*----*----->  E\n             \\            ^ \\\n              v          /   '--->  G\n               B --> C -'}\n``````````````````````````````````````````````````",
         "description": [
-            "Add styling to your ASCII art drawings, sketches. Set the maximum size or center it.",
+            "Style an ASCII art drawing with an HTML comment directly above it, e.g. to center it, limit its width or change the colors of lines (stroke) and filled shapes (fill).",
             "",
             "Examples:",
             "",
-            "  <!-- style=\"display: block; margin-left: auto; margin-right: auto; max-width: 315px;\" -->",
-            "  ``````````````````````````````````````````````````",
-            "  ${1:                             .--->  F",
+            "  <!-- style=\"display: block;",
+            "              margin-left: auto;",
+            "              margin-right: auto;",
+            "              max-width: 315px;\" -->",
+            "  ``` ascii",
+            "                           .--->  F",
             "      A       B     C   D     /",
             "      *-------*-----*---*----*----->  E",
-            "                           ^ v          /   '--->  G",
-            "                 B --> C -'}",
-            "  ``````````````````````````````````````````````````"
+            "               \\            ^ \\",
+            "                v          /   '--->  G",
+            "                 B --> C -'",
+            "  ```"
         ],
         "prefix": "lia-ascii-example-css"
+    },
+    "<!-- style=\"...\" --> block": {
+        "body": "<!-- style=\"${1:color: purple; font-size: 1.2em;}\" ${2:class=\"${3:animated rollIn}\"} -->\n${4:This whole paragraph is styled.}",
+        "description": [
+            "Style any block (paragraph, list, table, quote, code, ...) by placing an HTML comment with attributes directly above it. Any HTML attribute works, e.g. style, class or id. The comment is invisible in other Markdown viewers.",
+            "",
+            "Example:",
+            "  <!-- style=\"color: purple; font-size: 1.2em\" class=\"animated rollIn\" -->",
+            "  This whole paragraph is styled.",
+            "",
+            "  <!-- style=\"width: 50%\" -->",
+            "  | <!-- style=\"background: azure\" --> Header 1 | Header 2 |",
+            "  |:--------------------------------------------|:---------|",
+            "  | <!-- style=\"background: coral\" --> Item 1   | Item 2   |"
+        ],
+        "prefix": "lia-style-block"
+    },
+    "<!-- type=\"a\" --> 1. ...": {
+        "body": "<!-- type=\"${1|a,A,i,I,1|}\" -->\n1. ${2:first}\n2. ${3:second}\n3. ${4:third}",
+        "description": [
+            "Change the numbering style of an ordered list with an attribute comment directly above it:",
+            "",
+            "  type=\"a\" / \"A\"   letters",
+            "  type=\"i\" / \"I\"   roman numerals",
+            "",
+            "Any CSS list style works as well, e.g. <!-- style=\"list-style-type: lower-greek\" -->.",
+            "",
+            "Example:",
+            "  <!-- type=\"i\" -->",
+            "  1. first",
+            "  2. second"
+        ],
+        "prefix": "lia-list-type"
+    },
+    "<!--- ignored comment --->": {
+        "body": "<!---\n${1:This note is ignored by LiaScript.}\n--->",
+        "description": [
+            "A comment that starts with three or more dashes (<!--- ... --->) is dropped completely by LiaScript. A normal HTML comment (<!-- ... -->) is read as attributes for the next element. Use it for notes to yourself or to comment out content.",
+            "",
+            "Important: always leave a blank line between this comment and any other HTML comment (e.g. a styling or chart comment). Two comments without a blank line are merged by the Markdown parser and the following element is shown as plain text.",
+            "",
+            "Example:",
+            "  <!---",
+            "  TODO: add a better picture here",
+            "  --->",
+            "",
+            "  <!-- data-type=\"LinePlot\" -->",
+            "  | x | y |",
+            "  |---|---|",
+            "  | 1 | 2 |"
+        ],
+        "prefix": "lia-comment-ignore"
     },
     "<details><summary>...": {
         "body": "<details>\n\n<summary>${1:title}</summary>\n\n${2:body}\n\n</details>",
@@ -1110,82 +1316,283 @@
         ],
         "prefix": "lia-details"
     },
-    "<script> /* quiz */ </script>": {
-        "body": "<script>\n  ${1:// @input gets replaced by the current quiz input.\n  // In case of a:\n  // * text input -> string, that has to be encapsulated with (\")\n  // * single choice -> int (-1, if nothing is selected)\n  // * multiple choice -> array int (0 unchecked, 1 checked)\n  let input = @input;\n\n  true; // if solved otherwise return false}\n</script>",
+    "<lia-chart option=\"...\">": {
+        "body": "<lia-chart option=\"{\n  title: { text: '${1:Custom ECharts diagram}' },\n  xAxis: { type: 'value' },\n  yAxis: { type: 'value' },\n  series: [{ type: '${2:line}', data: ${3:[[0,0],[1,1],[2,4],[3,9]]} }]\n}\"></lia-chart>",
         "description": [
-            "This will insert a generic script tag in the following form, the @input will be replaced according the current context:",
+            "For diagrams that cannot be generated from a table, use the lia-chart element directly. The option attribute takes a complete Apache ECharts configuration. Scripts can also generate it dynamically: return \"HTML: <lia-chart option='...'></lia-chart>\".",
             "",
-            "<script>",
-            "  // @input gets replaced by the current quiz input.",
-            "  // In case of a:",
-            "  // * text input -> string, that has to be encapsulated with (\")",
-            "  // * single choice -> int (-1, if nothing is selected)",
-            "  // * multiple choice -> array int (0 unchecked, 1 checked)",
-            "  let input = @input;",
+            "Example:",
+            "  <lia-chart option=\"{",
+            "    title: { text: 'Squares' },",
+            "    xAxis: { type: 'value' },",
+            "    yAxis: { type: 'value' },",
+            "    series: [{ type: 'line', data: [[0,0],[1,1],[2,4],[3,9]] }]",
+            "  }\"></lia-chart>"
+        ],
+        "prefix": "lia-chart"
+    },
+    "<lia-keep> ... </lia-keep>": {
+        "body": "<lia-keep>\n${1:<table>\n  <tr><td rowspan=\"2\">raw</td><td>HTML</td></tr>\n  <tr><td>without Markdown parsing</td></tr>\n</table>}\n</lia-keep>",
+        "description": [
+            "Everything inside <lia-keep> is passed through as raw HTML: no Markdown parsing and no indentation checks. Useful for complex hand-written HTML, such as tables with rowspan or colspan.",
             "",
-            "  true; // if solved otherwise return false",
-            "</script>"
+            "Example:",
+            "  <lia-keep>",
+            "  <table>",
+            "    <tr><td rowspan=\"2\">A</td><td>B</td></tr>",
+            "    <tr><td>C</td></tr>",
+            "  </table>",
+            "  </lia-keep>"
+        ],
+        "prefix": "lia-keep"
+    },
+    "<script format=\"...\" locale=\"...\">": {
+        "body": "<script format=\"${1|number,datetime,relativetime,list,pluralrules|}\" locale=\"${2:de-DE}\">\n${3:1234567.891}\n</script>",
+        "description": [
+            "Formats the result of a script with the JavaScript Intl API for the given locale. Only the display changes, connected scripts still get the raw value.",
+            "",
+            "  format=\"number\"        1234.5 -> 1.234,5 (de-DE)",
+            "  format=\"datetime\"      dates and times",
+            "  format=\"relativetime\"  \"in 3 days\"",
+            "  format=\"list\"          \"a, b and c\"",
+            "  format=\"pluralrules\"   plural category",
+            "",
+            "Example:",
+            "  <script input=\"date\" value=\"2024-05-16\" format=\"datetime\" locale=\"de\">",
+            "  \"@input\"",
+            "  </script>"
+        ],
+        "prefix": "lia-script-format"
+    },
+    "<script input=\"range\">": {
+        "body": "<script input=\"range\" value=\"${1:0}\" min=\"${2:0}\" max=\"${3:360}\" step=\"${4:1}\">\n${5:let deg = @input\n\"sin(\" + deg + \"°) = \" + Math.sin(deg * Math.PI / 180).toFixed(3)}\n</script>",
+        "description": [
+            "A slider that re-runs the script on every change. @input is replaced by the current number.",
+            "",
+            "Example:",
+            "  <script input=\"range\" value=\"0\" min=\"0\" max=\"360\" step=\"1\">",
+            "  let deg = @input",
+            "  \"sin(\" + deg + \"°) = \" + Math.sin(deg * Math.PI / 180).toFixed(3)",
+            "  </script>"
+        ],
+        "prefix": "lia-script-input-range"
+    },
+    "<script input=\"select\" options=\"...\">": {
+        "body": "<script input=\"${1|select,radio|}\" value=\"${2:red}\" options=\"${3:red|green|blue}\">\n${4:\"Selected color: @input\"}\n</script>",
+        "description": [
+            "A dropdown (select) or a group of radio buttons. The options are separated by | in the options attribute, value sets the initial selection.",
+            "",
+            "Example:",
+            "  <script input=\"radio\" value=\"1\" options=\"1|2|3|Hello World\">",
+            "  \"Selected option: @input\"",
+            "  </script>"
+        ],
+        "prefix": "lia-script-input-select"
+    },
+    "<script input=\"submit\" default=\"...\">": {
+        "body": "<script input=\"submit\" default=\"${1:roll the dice}\">\n${2:Math.floor(Math.random() * 6) + 1}\n</script>",
+        "description": [
+            "A button that runs the script only when it is clicked. default sets the text that is shown before the first click. Use input=\"button\" instead to run it also once on load.",
+            "",
+            "Example:",
+            "  <script input=\"submit\" default=\"roll the dice\">",
+            "  Math.floor(Math.random() * 6) + 1",
+            "  </script>"
+        ],
+        "prefix": "lia-script-input-submit"
+    },
+    "<script input=\"type\">": {
+        "body": "<script input=\"${1|text,number,range,checkbox,radio,select,button,submit,date,time,datetime-local,color,email,password,search,tel,url,week,month|}\" value=\"${2:Hello World}\">\n${3:let str = \"@input\"\nstr.split(\"\").reverse().join(\"\")}\n</script>",
+        "description": [
+            "Turns a script into a small interactive widget. input=\"...\" selects an HTML5 input type, value=\"...\" sets the initial value, and @input is replaced by the current value before the script runs. The result is shown next to the input.",
+            "",
+            "text, number, range, radio, select and checkbox run on every change. button runs on load and on every click. submit only runs when clicked. The other types (date, time, color, ...) run when the field loses focus.",
+            "",
+            "Extra attributes: min, max, step, options=\"a|b|c\" (radio/select), default=\"...\" (text shown before the first run of button/submit).",
+            "",
+            "Example:",
+            "  <script input=\"number\" value=\"1\" min=\"0\" max=\"100\">",
+            "  let i = @input",
+            "  \"Square of \" + i + \" = \" + i * i",
+            "  </script>"
+        ],
+        "prefix": "lia-script-input"
+    },
+    "<script output=\"name\"> ... @input(`name`)": {
+        "body": "<script input=\"${1:number}\" value=\"${2:2}\" output=\"${3:a}\">\n@input\n</script>\n${4:squared is}\n<script>\n${5:@input(`a`) ** 2}\n</script>",
+        "description": [
+            "Connect scripts: a script with output=\"name\" publishes its current result. Other scripts on the same slide can read it with @input(`name`) (with backticks) and re-run automatically when it changes.",
+            "",
+            "If two scripts depend on each other, give both a default=\"...\" value. Otherwise the first calculation fails.",
+            "",
+            "Example:",
+            "  <script input=\"checkbox\" value=\"true\" output=\"P\" default=\"true\">",
+            "  @input",
+            "  </script>",
+            "  AND",
+            "  <script input=\"checkbox\" value=\"false\" output=\"Q\" default=\"false\">",
+            "  @input",
+            "  </script>",
+            "  =",
+            "  <script>",
+            "  @input(`P`) && @input(`Q`)",
+            "  </script>"
+        ],
+        "prefix": "lia-script-connect"
+    },
+    "<script> \"LIA: terminal\" + send.handle </script>": {
+        "body": "```${1:js}\n${2:// type JavaScript into the terminal after executing this block}\n```\n<script>\n  send.handle(\"input\", (input) => {\n    ${3:send.lia(String(eval(input)))}\n  })\n  send.handle(\"stop\", (e) => {\n    ${4:console.log(\"stopped\")}\n  })\n  \"LIA: terminal\"\n</script>",
+        "description": [
+            "An interactive terminal (REPL): ending the script with \"LIA: terminal\" opens an input line below the output after execution. send.handle(\"input\", callback) is called for every line the user sends, send.handle(\"stop\", callback) when the user stops the execution.",
+            "",
+            "Example:",
+            "  ```js",
+            "  // execute me and type 2+2 into the terminal",
+            "  ```",
+            "  <script>",
+            "    send.handle(\"input\", (input) => send.lia(String(eval(input))))",
+            "    \"LIA: terminal\"",
+            "  </script>"
+        ],
+        "prefix": "lia-code-terminal"
+    },
+    "<script> /* quiz */ </script>": {
+        "body": "<script>\n  ${1:// @input is replaced by the current quiz input:\n  // * text / gap text  -> raw text, use it as `@input`\n  // * single choice    -> number (-1 if nothing selected)\n  // * selection        -> number of the selected option\n  // * multiple choice  -> array, e.g. [0,1,1] (1 = checked)\n  // * matrix           -> nested array, one entry per row\n  let input = @input;\n\n  true; // return true if solved, otherwise false}\n</script>",
+        "description": [
+            "A generic script that can be attached directly after any quiz. Before it runs, @input is replaced as text, so its form depends on the quiz type:",
+            "",
+            "  text / gap text  -> raw text, wrap it in backticks: `@input`",
+            "  single choice    -> number (-1 if nothing is selected)",
+            "  selection        -> number of the selected option",
+            "  multiple choice  -> array, e.g. [0,1,1] (1 = checked)",
+            "  matrix           -> nested array, e.g. [[1,0,0], 1]",
+            "",
+            "The last expression has to be true (solved) or false (not solved).",
+            "",
+            "Example:",
+            "      [[52]]",
+            "      <script>",
+            "        Number(`@input`) === 52",
+            "      </script>"
         ],
         "prefix": "lia-quiz-js"
     },
     "<script> /*single choice*/ </script>": {
-        "body": "<script>\n  // @input gets replaced by a single number\n  // -1 if no selection otherwise it starts\n  // with 0.\n  let input_number = @input;\n\n  ${1:if(input_number == 1)\n    true;\n  else\n    false;}\n</script>",
+        "body": "<script>\n  // @input is replaced by the index of the selected option\n  // (0 = first option, -1 = nothing selected)\n  let selected = @input;\n\n  ${1:selected === 1}\n</script>",
         "description": [
-            "In some rare cases you might want to change the correct solution, or add a counter, that reveals the correct answer after some predefined number of trials. Then simply add a script tag to the quiz. The @input string gets replaced by an integer representing the current user input:",
+            "A script after a single-choice quiz can change how it is checked, e.g. to accept other answers or to count trials. @input is replaced by a number (unquoted):",
             "",
-            "-1 -> no selection",
-            "0  -> the first",
-            "1  -> the second",
+            "  -1 -> nothing selected",
+            "   0 -> the first option",
+            "   1 -> the second option ...",
+            "",
+            "The last expression has to be true (solved) or false (not solved).",
             "",
             "Example:",
-            "",
-            "    [( )] Check this ...",
-            "    [(X)] ... and not this",
-            "    <script>",
-            "      // @input gets replaced by a single number",
-            "      // -1 if no selection otherwise it starts",
-            "      // with 0.",
-            "      let input_number = @input;",
-            "",
-            "      ${7:if(input_number == 0)",
-            "        true;",
-            "      else",
-            "        false;}",
-            "    </script>"
+            "      [( )] Check this ...",
+            "      [(X)] ... or this",
+            "      <script>",
+            "        let selected = @input;",
+            "        selected === 0 || selected === 1",
+            "      </script>"
         ],
         "prefix": "lia-quiz-single-js"
     },
     "<script> /*single multiple*/ </script>": {
-        "body": "<script>\n  // @input gets replaced by an array in the\n  // form of [0,0,0,1], whereby 0 and 1\n  // define whether a checkbox is checked\n  // or not...\n  let input_array = @input;\n  ${1:input_array = JSON.stringify(input_array);\n\n  if      (input_array == \"[0,1,0,1]\")  true;\n  else if (input_array == \"[0,1,0,0]\")  true;\n  else if (input_array == \"[0,0,0,1]\")  true;\n  else                                 false;}\n</script>",
+        "body": "<script>\n  // @input is replaced by an array such as [0,1,0,1],\n  // with 1 for a checked and 0 for an unchecked box\n  let checked = @input;\n\n  ${1:// accept every answer with at least one correct option\n  checked[1] === 1 || checked[3] === 1}\n</script>",
         "description": [
-            "In some rare cases you might want to change the correct solution, add a counter, or let some correct answers pass. Then simply add a script tag to the quiz. The @input string here gets replaced by an by an array of integers ([0,1,1,0]) that represent the current user input:",
+            "A script after a multiple-choice quiz can change how it is checked, e.g. to let partially correct answers pass. @input is replaced by an array (unquoted) with one entry per option:",
             "",
-            "0 -> stands for checked",
-            "1 -> represents an unchecked field",
+            "  1 -> checked",
+            "  0 -> unchecked",
+            "",
+            "The last expression has to be true (solved) or false (not solved).",
             "",
             "Example:",
-            "",
             "  Get at least one right ...",
             "",
-            "  [[ ]] Wrong.",
-            "  [[X]] Right.",
-            "  [[ ]] Wrong.",
-            "  [[X]] Right.",
-            "  <script>",
-            "    // @input gets replaced by an array in the",
-            "    // form of [0,0,0,1], whereby 0 and 1",
-            "    // define whether a checkbox is checked",
-            "    // or not...",
-            "    let input_array = @input;",
-            "    input_array = JSON.stringify(input_array);",
-            "",
-            "    if      (input_array == \"[0,1,0,1]\")  true;",
-            "    else if (input_array == \"[0,1,0,0]\")  true;",
-            "    else if (input_array == \"[0,0,0,1]\")  true;",
-            "    else                                 false;",
-            "  </script>"
+            "      [[ ]] Wrong.",
+            "      [[X]] Right.",
+            "      [[ ]] Wrong.",
+            "      [[X]] Right.",
+            "      <script>",
+            "        let checked = @input;",
+            "        (checked[1] === 1 || checked[3] === 1) &&",
+            "        checked[0] === 0 && checked[2] === 0",
+            "      </script>"
         ],
         "prefix": "lia-quiz-multiple-js"
+    },
+    "<script> async ... \"LIA: wait\" </script>": {
+        "body": "```${1:js}\n${2:// asynchronous code\nsetTimeout(() => console.log(\"done\"), 1000)}\n```\n<script>\n  ${3:eval(`@input`)\n  setTimeout(() => send.lia(\"LIA: stop\"), 2000)}\n  \"LIA: wait\"\n</script>",
+        "description": [
+            "Executable code with asynchronous results. End the script with \"LIA: wait\", so that LiaScript keeps the code block in the running state. Send output later with send.lia(...) or console.log(...) and finish with send.lia(\"LIA: stop\").",
+            "",
+            "Useful control strings and functions:",
+            "  \"LIA: wait\"                  keep running (async)",
+            "  \"LIA: stop\"                  finish the execution",
+            "  \"LIA: clear\"                 clear the terminal",
+            "  send.lia(\"text\")             print output and keep running",
+            "  send.lia(\"text\", [], true)   print as success",
+            "  send.lia(\"text\", [], false)  print as error",
+            "  send.liascript(\"## md\")      render LiaScript in the output",
+            "  send.lia(\"HTML: <b>x</b>\")   render raw HTML in the output",
+            "  console.log/warn/error/debug(...)",
+            "",
+            "Example:",
+            "  ```js",
+            "  let i = 0",
+            "  const id = setInterval(() => console.log(i++), 500)",
+            "  setTimeout(() => { clearInterval(id); send.lia(\"LIA: stop\") }, 3000)",
+            "  ```",
+            "  <script>",
+            "    eval(`@input`)",
+            "    \"LIA: wait\"",
+            "  </script>"
+        ],
+        "prefix": "lia-code-async"
+    },
+    "<script> send.output ... \"LIA: wait\" </script>": {
+        "body": "<script>\nlet i = 0\nsetInterval(function() {\n  ${1:i++\n  send.output(\"counting \" + i)}\n}, ${2:1000})\n\"LIA: wait\"\n</script>",
+        "description": [
+            "A self-updating script component: return \"LIA: wait\" (or call send.wait()) to keep it running, then call send.output(...) for every update. The process keeps running in the background when the user switches slides, until send.stop() is called.",
+            "",
+            "send.output only works in standalone scripts, not in scripts of code blocks (use send.lia there).",
+            "",
+            "Shortcuts: send.wait(), send.stop(), send.clear()",
+            "",
+            "Example:",
+            "  <script>",
+            "  setInterval(() => send.output(new Date().toLocaleTimeString()), 1000)",
+            "  \"LIA: wait\"",
+            "  </script>"
+        ],
+        "prefix": "lia-script-counter"
+    },
+    "<script> window.x = ... </script>": {
+        "body": "<script>\nwindow.${1:shared} = ${2:22 ** 3}\n</script>\n<script>\nwindow.${1:shared} / 2\n</script>",
+        "description": [
+            "Every script runs in its own local scope, so variables of one script are not visible in another. To share values between scripts, attach them to window explicitly. For live updates between scripts, prefer output=\"...\" and @input(`...`) (see lia-script-connect).",
+            "",
+            "Example:",
+            "  <script> window.a = 22 ** 3 </script>",
+            "  <script> window.a / 2 </script>"
+        ],
+        "prefix": "lia-script-window"
+    },
+    "<script>...</script> inline": {
+        "body": "<script>${1:Math.sin(Math.PI / 2)}</script>",
+        "description": [
+            "A <script> tag in the text (without a code block) is a JavaScript component. It runs automatically when the slide is shown, and the value of its last expression is displayed in place, like an inline element. If the result is undefined, nothing is shown.",
+            "",
+            "Every script has its own scope. To share values between scripts, attach them to window. Scripts can be combined with animations ({1}{<script>...</script>}) to run them at a certain step.",
+            "",
+            "Example:",
+            "  $ \\sin(\\frac{\\pi}{2}) = $ <script>Math.sin(Math.PI / 2)</script>",
+            "",
+            "  Today is <script>new Date().toLocaleDateString()</script>."
+        ],
+        "prefix": "lia-script-inline"
     },
     "<script>...@input...</script>": {
         "body": "<script>\n  try{\n    eval(`@input`);\n  } catch (e) {\n    var log = e.stack.match(/((.*?):(.*))\\\\n.*?(:(\\\\d+):(\\\\d+)\\\\)\\\\n)/);\n    var err_msg = new LiaError(log[1] + \" =>  (\" + log[4], 1);\n    err_msg.add_detail(0, log[3], \"error\", log[5]-1, log[6]);\n    throw err_msg;\n  }\n</script>",
@@ -1221,6 +1628,58 @@
         ],
         "prefix": "lia-code-js"
     },
+    "<section> ... </section>": {
+        "body": "<section>\n\n${1:## Grouped Sub-Heading}\n\n${2:Content that stays on this slide.}\n\n</section>",
+        "description": [
+            "Every heading (#, ##, ###, ...) starts a new slide. To use headings inside a slide without creating new slides, wrap them in a <section> or <article> tag. Leave blank lines around the content, so that it is parsed as Markdown.",
+            "",
+            "Example:",
+            "  # Slide Title",
+            "",
+            "  <section>",
+            "",
+            "  ## Part A",
+            "",
+            "  Some text.",
+            "",
+            "  </section>"
+        ],
+        "prefix": "lia-section"
+    },
+    "<svg> ... </svg>": {
+        "body": "<svg viewBox=\"${1:0 0 200 100}\" style=\"${2:background: white;}\">\n  ${3:<circle cx=\"50\" cy=\"50\" r=\"40\" fill=\"lightblue\" stroke=\"blue\" stroke-width=\"2\"/>\n  <rect x=\"110\" y=\"10\" width=\"80\" height=\"80\" fill=\"lightgreen\" stroke=\"green\" stroke-width=\"2\"/>}\n</svg>",
+        "description": [
+            "SVG can be written directly into the document. It must not be put into a code block, otherwise it is shown as code. Use viewBox to make the image scale with the slide width.",
+            "",
+            "Dark mode inverts the colors of LiaScript but not the hard-coded colors of an SVG, so set a background and explicit colors on the svg element.",
+            "",
+            "Example:",
+            "  <svg viewBox=\"0 0 200 100\" style=\"background: white;\">",
+            "    <circle cx=\"50\" cy=\"50\" r=\"40\" fill=\"lightblue\" stroke=\"blue\"/>",
+            "    <text x=\"50\" y=\"55\" font-size=\"10\" text-anchor=\"middle\">Circle</text>",
+            "  </svg>"
+        ],
+        "prefix": "lia-svg"
+    },
+    "<svg><foreignObject> ... </svg>": {
+        "body": "<svg viewBox=\"${1:0 0 280 200}\" style=\"background: white;\">\n<circle cx=\"100\" cy=\"100\" r=\"80\" fill=\"lightblue\" stroke=\"blue\" stroke-width=\"2\"/>\n<line x1=\"100\" y1=\"100\" x2=\"180\" y2=\"100\" stroke=\"red\" stroke-width=\"2\"/>\n<foreignObject x=\"${2:110}\" y=\"${3:70}\" width=\"${4:100}\" height=\"${5:30}\">\n${6:Radius: \\$r\\$}\n</foreignObject>\n</svg>",
+        "description": [
+            "foreignObject places LiaScript content (Markdown, formulas, quizzes, animations, ...) at a position inside an SVG. x, y, width and height are required and use the coordinates of the viewBox.",
+            "",
+            "Example:",
+            "  <svg viewBox=\"0 0 280 200\" style=\"background: white;\">",
+            "  <foreignObject x=\"130\" y=\"0\" width=\"200\" height=\"80\">",
+            "  Circumference:",
+            "",
+            "  $$C = 2 \\pi r$$",
+            "  </foreignObject>",
+            "  <circle cx=\"100\" cy=\"100\" r=\"80\" fill=\"lightblue\" stroke=\"blue\"/>",
+            "  <line x1=\"100\" y1=\"100\" x2=\"180\" y2=\"100\" stroke=\"red\"/>",
+            "  <foreignObject x=\"110\" y=\"78\" width=\"100\" height=\"30\"> Radius: $r$ </foreignObject>",
+            "  </svg>"
+        ],
+        "prefix": "lia-svg-foreignobject"
+    },
     "> ...": {
         "body": "> ${1:your quote}",
         "description": [
@@ -1248,6 +1707,86 @@
             "  > -- Mahatma Gandhi"
         ],
         "prefix": "lia-quote-citation"
+    },
+    "> [!CAUTION]": {
+        "body": "> [!CAUTION]${1}\n> ${2:Advice about risks or negative outcomes of certain actions.}",
+        "description": [
+            "GitHub-style alert box: a blockquote that starts with [!CAUTION]. Advice about risks or negative outcomes of certain actions. An optional title or emoji can follow the keyword on the same line (GitLab style). The alert renders as a normal quote in other Markdown viewers.",
+            "",
+            "Available types: NOTE, TIP, IMPORTANT, WARNING, CAUTION",
+            "",
+            "Example:",
+            "  > [!CAUTION]",
+            "  > Advice about risks or negative outcomes of certain actions.",
+            "",
+            "  > [!CAUTION] 🛑 Custom title",
+            "  > The title replaces the default one."
+        ],
+        "prefix": "lia-alert-caution"
+    },
+    "> [!IMPORTANT]": {
+        "body": "> [!IMPORTANT]${1}\n> ${2:Key information users need to know to achieve their goal.}",
+        "description": [
+            "GitHub-style alert box: a blockquote that starts with [!IMPORTANT]. Key information users need to know to achieve their goal. An optional title or emoji can follow the keyword on the same line (GitLab style). The alert renders as a normal quote in other Markdown viewers.",
+            "",
+            "Available types: NOTE, TIP, IMPORTANT, WARNING, CAUTION",
+            "",
+            "Example:",
+            "  > [!IMPORTANT]",
+            "  > Key information users need to know to achieve their goal.",
+            "",
+            "  > [!IMPORTANT] ❗ Custom title",
+            "  > The title replaces the default one."
+        ],
+        "prefix": "lia-alert-important"
+    },
+    "> [!NOTE]": {
+        "body": "> [!NOTE]${1}\n> ${2:Useful information that users should know, even when skimming the content.}",
+        "description": [
+            "GitHub-style alert box: a blockquote that starts with [!NOTE]. Useful information that users should know, even when skimming the content. An optional title or emoji can follow the keyword on the same line (GitLab style). The alert renders as a normal quote in other Markdown viewers.",
+            "",
+            "Available types: NOTE, TIP, IMPORTANT, WARNING, CAUTION",
+            "",
+            "Example:",
+            "  > [!NOTE]",
+            "  > Useful information that users should know, even when skimming the content.",
+            "",
+            "  > [!NOTE] ℹ️ Custom title",
+            "  > The title replaces the default one."
+        ],
+        "prefix": "lia-alert-note"
+    },
+    "> [!TIP]": {
+        "body": "> [!TIP]${1}\n> ${2:Helpful advice for doing things better or more easily.}",
+        "description": [
+            "GitHub-style alert box: a blockquote that starts with [!TIP]. Helpful advice for doing things better or more easily. An optional title or emoji can follow the keyword on the same line (GitLab style). The alert renders as a normal quote in other Markdown viewers.",
+            "",
+            "Available types: NOTE, TIP, IMPORTANT, WARNING, CAUTION",
+            "",
+            "Example:",
+            "  > [!TIP]",
+            "  > Helpful advice for doing things better or more easily.",
+            "",
+            "  > [!TIP] 💡 Custom title",
+            "  > The title replaces the default one."
+        ],
+        "prefix": "lia-alert-tip"
+    },
+    "> [!WARNING]": {
+        "body": "> [!WARNING]${1}\n> ${2:Urgent information that needs immediate attention to avoid problems.}",
+        "description": [
+            "GitHub-style alert box: a blockquote that starts with [!WARNING]. Urgent information that needs immediate attention to avoid problems. An optional title or emoji can follow the keyword on the same line (GitLab style). The alert renders as a normal quote in other Markdown viewers.",
+            "",
+            "Available types: NOTE, TIP, IMPORTANT, WARNING, CAUTION",
+            "",
+            "Example:",
+            "  > [!WARNING]",
+            "  > Urgent information that needs immediate attention to avoid problems.",
+            "",
+            "  > [!WARNING] ⚠️ Custom title",
+            "  > The title replaces the default one."
+        ],
+        "prefix": "lia-alert-warning"
     },
     "??[alt-text](url)": {
         "body": "??[${1:alt-text}](${2:url})",
@@ -1286,6 +1825,32 @@
         ],
         "prefix": "lia-audio"
     },
+    "@'input (escaped)": {
+        "body": "@'${1:input}",
+        "description": [
+            "An apostrophe after the @ escapes the result of a macro, so that it can be used safely inside a JavaScript string or template literal (quotes, backticks and backslashes are escaped). Works with @'input, @'input(1), @'0 or @'MacroName(...). Use it only once, otherwise characters are escaped twice.",
+            "",
+            "Example:",
+            "  ```text",
+            "  He said \"hello\" and left.",
+            "  ```",
+            "  <script>",
+            "    let text = `@'input`",
+            "    text.length",
+            "  </script>"
+        ],
+        "prefix": "lia-macro-escape"
+    },
+    "@@macro (debug)": {
+        "body": "@@${1:name}${2:(${3:params})}",
+        "description": [
+            "Debugging: an additional @ in front of a macro call shows the expanded result as code instead of executing it. Useful to find out what a macro (or an imported template) really produces.",
+            "",
+            "Example:",
+            "  @@highlight(red, show me the expansion)"
+        ],
+        "prefix": "lia-macro-debug"
+    },
     "@author": {
         "body": "@author",
         "description": [
@@ -1317,6 +1882,22 @@
             "  @input(1)"
         ],
         "prefix": "lia-macro-input"
+    },
+    "@macro(param1, param2)": {
+        "body": "@${1:name}(${2:param1}, ${3:param2})",
+        "description": [
+            "Calls a macro with parameters. Inside the definition, @0, @1, ... are replaced by the parameters in order. The last parameter can also be passed as a code block directly above the call (see lia-macro-call-block).",
+            "",
+            "Commas inside a parameter can be protected with backticks, but this is not reliable in every LiaScript version. If possible, avoid commas in parameters.",
+            "",
+            "Example:",
+            "  <!--",
+            "  @highlight: <b style=\"color: @0\">@1</b>",
+            "  -->",
+            "",
+            "  @highlight(red, simple text)"
+        ],
+        "prefix": "lia-macro-call-params"
     },
     "@name ... body ... @end": {
         "body": "@${1:name}\n${2:param1 -> __@0__}\n@end",
@@ -1373,15 +1954,43 @@
         ],
         "prefix": "lia-macro-definition-line"
     },
-    "@persistent": {
-        "body": "persistent: ${1|false,true|}",
+    "@onload ... @end": {
+        "body": "@onload\n${1:window.myGlobal = 42}\n@end",
         "description": [
-            "If you do not want to store the course state wihin indexeddb and also not within the local course index, you can use this macro within the header, which means that no trace of this course will be stored locally.",
+            "Header block: JavaScript that is executed once when the course is loaded, e.g. to configure a library or to define global helper functions. It is also imported by other courses that import this one.",
             "",
             "Example:",
             "  <!--",
-            "  persistent: false",
-            "  -->"
+            "  script: https://cdn.example.com/library.js",
+            "",
+            "  @onload",
+            "  window.greet = (name) => \"Hello \" + name",
+            "  @end",
+            "  -->",
+            "",
+            "  <script>greet(\"World\")</script>"
+        ],
+        "prefix": "lia-macro-onload"
+    },
+    "@persistent": {
+        "body": "persistent: ${1|true,false|}",
+        "description": [
+            "persistent can be used in two places:",
+            "",
+            "In a section header, persistent: true keeps the section alive when the user navigates to another slide. Scripts, widgets and animations are not re-created when the user comes back. This is also needed if scripts on other slides should be able to send events to this section.",
+            "",
+            "In the main header, persistent: false prevents that anything of this course (states and the entry in the local course index) is stored in the browser.",
+            "",
+            "Example:",
+            "  ## Live Clock",
+            "  <!--",
+            "  persistent: true",
+            "  -->",
+            "",
+            "  <script>",
+            "  setInterval(() => send.output(new Date().toLocaleTimeString()), 1000)",
+            "  \"LIA: wait\"",
+            "  </script>"
         ],
         "prefix": "lia-macro-persistent"
     },
@@ -1391,6 +2000,25 @@
             "Gets replaced by the current section number."
         ],
         "prefix": "lia-macro-section"
+    },
+    "@style ... @end": {
+        "body": "@style\n${1:.highlight {\n  color: crimson;\n  font-weight: bold;\n\\}}\n@end",
+        "description": [
+            "Header block: CSS rules for the whole course. Combine it with class attributes to style single elements.",
+            "",
+            "Example:",
+            "  <!--",
+            "  @style",
+            "  .highlight {",
+            "    color: crimson;",
+            "    font-weight: bold;",
+            "  }",
+            "  @end",
+            "  -->",
+            "",
+            "  This is **important**<!-- class=\"highlight\" -->."
+        ],
+        "prefix": "lia-macro-style"
     },
     "@uid": {
         "body": "@uid",
@@ -1406,26 +2034,62 @@
         ],
         "prefix": "lia-macro-version"
     },
+    "LIA.classroom publish/subscribe": {
+        "body": "<script>\nif (LIA.classroom.connected) {\n  const id = LIA.classroom.subscribe(\"${1:topic}\", (message) => {\n    ${2:send.output(JSON.stringify(message))}\n  })\n  LIA.classroom.publish(\"${1:topic}\", ${3:{ hello: \"world\" \\}})\n}\n\"LIA: wait\"\n</script>",
+        "description": [
+            "LIA.classroom lets scripts exchange messages with all participants of a live classroom session (peer-to-peer). It is only active while a classroom is connected.",
+            "",
+            "  LIA.classroom.connected                 true if a session is active",
+            "  LIA.classroom.on(\"connect\", cb)         also \"disconnect\"",
+            "  LIA.classroom.publish(\"topic\", data)    send to all peers",
+            "  LIA.classroom.subscribe(\"topic\", cb)    returns an id",
+            "  LIA.classroom.unsubscribe(id)",
+            "",
+            "Example:",
+            "  <script>",
+            "  LIA.classroom.on(\"connect\", () => send.output(\"connected\"))",
+            "  \"LIA: wait\"",
+            "  </script>"
+        ],
+        "prefix": "lia-script-classroom"
+    },
+    "Title ===== (setext)": {
+        "body": "${1:Local Subsection}\n${2:====================}",
+        "description": [
+            "Setext-style headings (text underlined with === or ---) do not start a new slide and do not appear in the table of contents. Use them for local structure within a slide.",
+            "",
+            "  ===   -> large local heading",
+            "  ---   -> smaller local heading",
+            "",
+            "Example:",
+            "  ## Section Title",
+            "",
+            "  Local Subsection",
+            "  ================",
+            "",
+            "  Local Sub-Subsection",
+            "  --------------------"
+        ],
+        "prefix": "lia-title-setext"
+    },
     "[( |X)] text": {
         "body": "[(${1: })] ${2:enter your text}",
         "description": [
-            "Compose your single choice quizzes out of many lines in the following format:",
+            "Single-choice quiz (radio buttons): one line per option. [(X)] or [(x)] marks a correct option, [( )] a wrong one. If more than one option is marked, the user has to select only one of them. A starting dash (- [( )] ...) is allowed.",
             "",
             "Example:",
             "  This is a single choice quiz with three options:",
             "",
-            "    [( )] Add as many lines as you want?",
-            "    [(X)] The X marks the only correct answer!",
-            "    [( )] ... And only one X is allowed.",
-            "",
-            "(If you want, you can also have multiple correct options.)"
+            "      [( )] Add as many lines as you want.",
+            "      [(X)] The X marks the correct answer!",
+            "      [( )] This one is wrong."
         ],
         "prefix": "lia-quiz-single-choice"
     },
     "[(1)(2)(0)]": {
         "body": "[(${1:0})(${2:1})(${3:2})]\n[         ] ${4:text}\n[         ] ${5:text}\n[         ] ${6:text}",
         "description": [
-            "A list of single choice surveys can be defined as depicted below. Either numbers have to be put into parentheses or variable. They do not have to be ordered and the number is also variable.",
+            "Single-choice matrix survey: the header contains the column identifiers in parentheses, every following row ([ ] + text) becomes its own single-choice question. Identifiers can be numbers or words.",
             "",
             "Example:",
             "",
@@ -1448,7 +2112,7 @@
     "[(1)]...[(:...)]...": {
         "body": "[(${1:1})] ${2:option 1}\n[(${3:2})] ${4:option 2}\n[(${5:3})] ${6:option 3}",
         "description": [
-            "The definition is similar to a single choice quiz, but instead of an X, either numbers have to be put into parentheses or variable names. They do not have to be ordered and the number is also variable.",
+            "Single-choice survey: like a single-choice quiz, but the parentheses contain an identifier instead of an X. Numeric identifiers let the classroom view plot the results as a distribution, while text identifiers are shown as categories. Identifiers do not have to be ordered or sequential.",
             "",
             "Example:",
             "",
@@ -1467,57 +2131,55 @@
         "prefix": "lia-survey-single-choice"
     },
     "[[ |X][ |X]...] text": {
-        "body": "[[${1: }] [${2: }] [${3: }]]\n[[${4: }] [${5: }] [${6: }]] ${7: add a line}\n[(${8: }) (${9: }) (${10: })] ${11: add a line}",
+        "body": "[[${1:column 1}] [${2:column 2}] [${3:column 3}]]\n[    [${4:X}]          [${5: }]          [${6: }]     ] ${7:multiple-choice row}\n[    (${8: })          (${9:X})          (${10: })     ] ${11:single-choice row}",
         "description": [
-            "Compose a matrix of quizzes with multiple SingleChoice and MultipleChoice quizzes per row. The column headers have to be put into brackets or parentheses, depending on your passed Markdown content. It is allowed to have different numbers of options per row.",
+            "Matrix quiz: the first line holds the column labels. Every following row starts with [ and ends with ] followed by the row text. The cells of a row define its type: [ ] / [X] cells make a multiple-choice row, ( ) / (X) cells a single-choice row. All cells of one row must use the same type. Spacing is only cosmetic.",
+            "",
+            "The brackets in the header are only labels. Use [...] or (...) so that you can put the other type of bracket into a label as text.",
             "",
             "Example:",
-            "  This is a multiple choice quiz with four options:",
-            "    [[:-)] (:-]) (_bold_)]",
-            "    [ [ ]   [ ]     [X]  ] Only the X marks the correct solution!",
-            "    [ [X]   [ ]     [ ]  ] Multiple- and SingleChoice quizzes in a matrix,",
-            "    [ ( )   ( )     (X)  ] but you have to be consitent per row.",
-            "    [ ( )   ( )     ( )   ( ) ] More or less options than defined in the header are also allowed."
+            "  - [[male (der)] (female [die]) [neuter (das)]]",
+            "  - [    [X]           [ ]             [ ]     ]  Mann - German for man",
+            "  - [    ( )           (X)             ( )     ]  Frau - German for woman"
         ],
         "prefix": "lia-quiz-matrix-choice"
     },
     "[[ |X]] text": {
         "body": "[[${1: }]] ${2:enter your text}",
         "description": [
-            "Compose your multiple choice quizzes out of many lines in the following format:",
+            "Multiple-choice quiz (checkboxes): one line per option. [[X]] or [[x]] marks an option that has to be checked, [[ ]] one that has to stay unchecked. A starting dash (- [[ ]] ...) is allowed.",
             "",
             "Example:",
             "  This is a multiple choice quiz with four options:",
             "",
-            "    [[ ]] Add as many lines as you want?",
-            "    [[X]] The X marks the correct lines that have to be selected!",
-            "    [[X]] This can offer multiple options that have to be clicked.",
-            "    [[ ]] But it can also consist of empty brackets either."
+            "      [[ ]] Add as many lines as you want.",
+            "      [[X]] The X marks the options that have to be checked!",
+            "      [[X]] There can be several of them.",
+            "      [[ ]] Empty brackets have to stay unchecked."
         ],
         "prefix": "lia-quiz-multiple-choice"
     },
     "[[!]] <script> ... </script>": {
-        "body": "[[!]]\n<script>\n  ${1:// you are free to check anything you want\n  true;}\n</script>",
+        "body": "[[!]]\n<script>\n  ${1:// check anything you want and return true or false\n  true;}\n</script>",
         "description": [
-            "In some rarely rarely rare cases, you might want to have something completely different and analyze some other HTML or code inputs (unit testing). In this case you can apply this generic tag and do in JavaScript whatever you want. The this quiz is solved if the script gets evaluated to true, not solved by resulting in false (everything else is ignored).",
+            "Generic quiz: [[!]] has no input element of its own. The quiz is solved if the script evaluates to true and not solved if it evaluates to false. Use it for checks that do not fit the other quiz types, e.g. to test the state of an interactive element or the result of a code block.",
             "",
-            "*Click Me!*<!-- onclick=\"window['rand'] = Math.random();\" -->",
+            "Use alert(...) to inspect values while developing.",
             "",
-            "[[!]]",
-            "<script>",
-            "  alert(\"your value random value is:\", window['rand']);",
-            "  if(window['rand'] > 0.8)",
-            "    true;",
-            "  else",
-            "    false",
-            "</script>"
+            "Example:",
+            "  Only lucky people can solve this quiz:",
+            "",
+            "      [[!]]",
+            "      <script>",
+            "        Math.random() < 0.2",
+            "      </script>"
         ],
         "prefix": "lia-quiz-generic-js"
     },
     "[[1][2][0]]": {
         "body": "[[${1:0}][${2:1}][${3:2}]]\n[         ] ${4:text}\n[         ] ${5:text}\n[         ] ${6:text}",
         "description": [
-            "A list of multiple choice surveys can be defined as depicted below. Either numbers have to be put into parentheses or variable names. They do not have to be ordered and the number is also variable.",
+            "Multiple-choice matrix survey: the header contains the column identifiers in brackets, every following row ([ ] + text) becomes its own multiple-choice question. Identifiers can be numbers or words.",
             "",
             "Example:",
             "",
@@ -1540,7 +2202,7 @@
     "[[1]]...[[:...]]...": {
         "body": "[[${1:1}]] ${2:option 1}\n[[${3:2}]] ${4:option 2}\n[[${5:3}]] ${6:option 3}",
         "description": [
-            "The definition is similar to a multiple choice quiz, but instead of an X, either numbers have to be put into parentheses or variable names. They do not have to be ordered and the number is also variable.",
+            "Multiple-choice survey: like a multiple-choice quiz, but the brackets contain an identifier instead of an X. Start an identifier with a number (e.g. [[1 red]]) to get a numeric instead of a categorical representation in the classroom view.",
             "",
             "Example:",
             "",
@@ -1562,88 +2224,105 @@
     "[[?]] hint": {
         "body": "[[?]] ${1:enter your hint}",
         "description": [
-            "If a quiz might be a bit tricky, you can add hints directly after any type of quiz and as many hints as you want. The user can decide whether he or she wants to use it, simply by clicking on the additional question mark, that appears after the check button.",
+            "Hints can be added directly after any type of quiz, as many as you want. They are revealed one at a time when the user clicks the hint button. A starting dash (- [[?]] ...) is allowed.",
             "",
             "Example:",
-            "  This is a text quiz with two hints:",
+            "  A text quiz with two hints:",
             "",
-            "    [[solution]]",
-            "    [[?]] This is the first hint",
-            "    [[?]] This is a second hint",
+            "      [[solution]]",
+            "      [[?]] This is the first hint",
+            "      [[?]] This is a second hint",
             "",
             "  And a multiple choice quiz with one hint:",
             "",
-            "    [[X]] This is correct!",
-            "    [[ ]] This is wrong!",
-            "    [[?]] Click on the first option!"
+            "      [[X]] This is correct!",
+            "      [[ ]] This is wrong!",
+            "      [[?]] Click on the first option!"
         ],
         "prefix": "lia-quiz-hint"
     },
     "[[___ ___]]": {
-        "body": "[[___ ___]]",
+        "body": "[[___ ___ ___]]",
         "description": [
-            "Surveys are defined similarly to quizzes by using brackets ([]). A text survey is defined by a multiple number three subsequent underscores (___) that are enclosed by double brackets. The number of underscores defines the number of lines a user has to fill out.",
+            "A multi-line text survey (textarea). Every group of underscores separated by a space adds one row. The number of groups sets the number of rows, the length of a group does not matter. One pair of double brackets always creates exactly one input field. For several fields, write several surveys, each with its own question above it.",
+            "",
+            "In a live classroom session, the answers of a textarea are listed one below the other, which suits longer answers.",
             "",
             "Example:",
+            "  A two-line text survey:",
             "",
-            "  A single line text survey:",
+            "      [[___ ___]]",
             "",
-            "    [[___]]",
+            "  Please describe your opinion in a few sentences:",
             "",
-            "  A two line text survey:",
-            "",
-            "    [[___ ___]]",
-            "",
-            "  And a six liner:",
-            "",
-            "    [[___ ___ ___ ___ ___ ___ ]]"
+            "      [[___ ___ ___ ___ ___ ___]]"
         ],
         "prefix": "lia-survey-text"
     },
-    "[[select|_wrong_|(right)]]": {
-        "body": "[[${1:option}|${2:option}]]",
+    "[[___]]": {
+        "body": "[[___]]",
         "description": [
-            "Create a selection field, that contains various different solutions, separated by `|`. Images, formulas everything is allowed, only the correct solution has to be put into parentheses and there can be multiple correct solutions.",
+            "Surveys use the quiz brackets but have no correct answer, only a submit button. Three or more underscores in double brackets create a one-line text input.",
+            "",
+            "In a live classroom session, the answers of one-line inputs are shown as a word cloud, where comma-separated terms are counted. Use it for keywords or short phrases.",
+            "",
+            "Example:",
+            "  Which programming languages do you know? Separate them with commas.",
+            "",
+            "      [[___]]"
+        ],
+        "prefix": "lia-survey-text-line"
+    },
+    "[[select|_wrong_|(right)]]": {
+        "body": "[[ ${1:option} | (${2:correct option}) | ${3:option} ]]",
+        "description": [
+            "Selection quiz: a dropdown with options separated by `|`. The correct option is put into parentheses, and more than one option can be correct. Options may contain Markdown, images or formulas. Selections do not support a starting dash.",
             "",
             "Example:",
             "  What is the color of the sky?",
             "",
-            "  [[ red | (__blue__) | green | (black at night)]]"
+            "      [[ red | (__blue__) | green | (black at night) ]]",
+            "",
+            "  What is the derivative of $f(x) = x^6$?",
+            "",
+            "      [[ $f'(x) = 6$ | ( $f'(x) = 6x^5$ ) | $f'(x) = 5x^6$ ]]"
         ],
         "prefix": "lia-quiz-select"
     },
     "[[solution]]": {
         "body": "[[${1:solution}]]",
         "description": [
-            "Simply encompass your solution word into double brackets and you will get a nicely rendered text quiz.",
+            "Text quiz: put the solution into double brackets and the user gets an input field. The answer is compared with the solution string. Text quizzes do not support a starting dash.",
             "",
             "Example:",
             "  What is the color of the sky?",
             "",
-            "  [[blue]]"
+            "      [[blue]]",
+            "",
+            "If several answers should be accepted, add a script (lia-quiz-text-js) or use a selection (lia-quiz-select)."
         ],
         "prefix": "lia-quiz-text"
     },
     "[[solution]]<script> ... </script>": {
-        "body": "[[${1:solution}]]\n<script>\n  ${2:// @input will be replace by the user input\n  let input_string = \"@input\";\n  \"solution\" == input_string.trim().toLowerCase();}\n</script>",
+        "body": "[[${1:solution}]]\n<script>\n  ${2:// @input is replaced by the raw user input, so wrap it in backticks\n  let input = `@input`.trim().toLowerCase();\n  input === \"solution\" || input === \"answer\";}\n</script>",
         "description": [
-            "If different inputs are possible, you can add a script tag to your quiz-field. The reference @input will be replaced by the current user input string, and the result of the script has to be true or false.",
+            "Text quiz with a custom check. The script is placed directly after the quiz. Before it runs, @input is replaced by the raw text the user typed, so wrap it in backticks (`@input`) to get a JavaScript string. The last expression of the script has to be true (solved) or false (not solved).",
             "",
             "Example:",
             "  What is the color of the sky?",
             "",
-            "  [[blue]]",
-            "  <script>",
-            "    let input_string = \"@input\";",
-            "    \"BLUE\" == input_string.trim().toUpperCase();",
-            "  </script>"
+            "      [[blue]]",
+            "      <script>",
+            "        let input = `@input`.trim().toLowerCase();",
+            "        input === \"blue\" || input === \"azure\";",
+            "      </script>"
         ],
         "prefix": "lia-quiz-text-js"
     },
     "[^ref]": {
         "body": "[^${1:ref}]",
         "description": [
-            "Multiline footnotes have to be split into a reference and into a comment. Footnote references are defined by brackets with a starting caret and can appear everywhere within the text. Footnote texts have to be put into the end of each section.",
+            "Multiline footnotes have to be split into a reference and into a comment. Footnote references are defined by brackets with a starting caret and can appear everywhere within the text. Footnote texts have to be put at the end of the same section, because LiaScript parses every slide on its own. The id can be a number, a word or even an emoji.",
             "",
             "Example:",
             "",
@@ -1685,6 +2364,18 @@
         ],
         "prefix": "lia-footnote-text"
     },
+    "[name](mailto:...)": {
+        "body": "[${1:Write me}](${2|mailto,tel|}:${3:you@example.com})",
+        "description": [
+            "Links with mailto: open the email program, links with tel: start a phone call on mobile devices.",
+            "",
+            "Example:",
+            "  [Write me](mailto:you@example.com)",
+            "",
+            "  [Call me](tel:+491234567890)"
+        ],
+        "prefix": "lia-mailto"
+    },
     "[name](url \"info\")": {
         "body": "[${1:name}](${2:url} \"${3:info}\")",
         "description": [
@@ -1715,6 +2406,8 @@
             "",
             "  Local navigation by slide title: [top](#some-title)",
             "",
+            "  Autolink, no escaping of parentheses needed: <https://example.com/path_(with_parens)>",
+            "",
             "  With styling [LiaScript](https://liascript.github.io)<!--",
             "    title = \"click me\"",
             "    style = \"color: red;\"",
@@ -1722,20 +2415,68 @@
         ],
         "prefix": "lia-link"
     },
+    "[preview-lia](course-url)": {
+        "body": "[preview-lia](${1:https://raw.githubusercontent.com/liaScript/docs/master/README.md})",
+        "description": [
+            "A link with the text preview-lia to the raw URL of another LiaScript course is rendered as a preview card with the title, description, logo and author taken from the course header. Clicking the card opens the course.",
+            "",
+            "Example:",
+            "  [preview-lia](https://raw.githubusercontent.com/liaScript/docs/master/README.md)"
+        ],
+        "prefix": "lia-preview-lia"
+    },
+    "[qr-code](url)": {
+        "body": "[qr-code](${1:https://liascript.github.io})",
+        "description": [
+            "A link with the text qr-code is rendered as a QR code for its URL, e.g. so that students in a lecture can open a link on their phones. Other Markdown viewers show a normal link.",
+            "",
+            "Example:",
+            "  [qr-code](https://liascript.github.io)"
+        ],
+        "prefix": "lia-qr-code"
+    },
     "^text^": {
         "body": "^${1:superscript}^",
+        "description": [
+            "Superscript text, enclosed by carets. This is a LiaScript extension. For subscripts or more complex notation use a formula ($ x_i $).",
+            "",
+            "Example:",
+            "  E = mc^2^ and the 1^st^ of May."
+        ],
         "prefix": "lia-text-superscript"
     },
     "___text___": {
         "body": "___${1:italic bold}___",
+        "description": [
+            "Bold and italic text, enclosed by triple underscores. Equivalent to ***text***.",
+            "",
+            "Example:",
+            "  This is ___bold and italic___."
+        ],
         "prefix": "lia-text-italic-bold"
     },
     "__text__": {
         "body": "__${1:bold}__",
+        "description": [
+            "Bold text, enclosed by double underscores. Equivalent to **text**.",
+            "",
+            "Every emphasis span has to stay on one physical line.",
+            "",
+            "Example:",
+            "  This is __bold__ and __bold with _italic_ inside__."
+        ],
         "prefix": "lia-text-bold"
     },
     "_text_": {
         "body": "_${1:italic}_",
+        "description": [
+            "Italic text, enclosed by single underscores. Equivalent to *text*.",
+            "",
+            "Every emphasis span has to stay on one physical line. If the closing marker lands on the next line, stray markers will show up in the rendered text.",
+            "",
+            "Example:",
+            "  This is _italic_ and this is _also **bold** inside_."
+        ],
         "prefix": "lia-text-italic"
     },
     "``` ... ``` ``` ... ``` ...": {
@@ -1826,9 +2567,9 @@
         "prefix": "lia-macro-call-block"
     },
     "````` /--=... `````": {
-        "body": "``````````````````````````````````````````````````\n${1:                             .--->  F\n    A       B     C   D     /\n    *-------*-----*---*----*----->  E\n                         ^ v          /   '--->  G\n               B --> C -'}\n``````````````````````````````````````````````````",
+        "body": "``````````````````````````````````````````````````\n${1:                             .--->  F\n    A       B     C   D     /\n    *-------*-----*---*----*----->  E\n             \\            ^ \\\n              v          /   '--->  G\n               B --> C -'}\n``````````````````````````````````````````````````",
         "description": [
-            "Add ASCII art drawings, sketches, or what ever you want, simply by enclosing it with at least four back tics (````).",
+            "ASCII art drawings are rendered as SVG images. This variant uses a fence of many backticks. The shorter form is a code block with the language ascii (see lia-ascii). The fence must not be indented.",
             "",
             "Examples:",
             "",
@@ -1836,11 +2577,69 @@
             "                           .--->  F",
             "  A       B     C   D     /",
             "  *-------*-----*---*----*----->  E",
-            "                       ^ v          /   '--->  G",
+            "           \\            ^ \\",
+            "            v          /   '--->  G",
             "             B --> C -'",
             "  `````````````````````````````````"
         ],
         "prefix": "lia-ascii-example"
+    },
+    "```ascii \"LiaScript inside\" ```": {
+        "body": "``` ascii\n+-----------------------------+\n| \"${1:**Markdown** and formulas}\"    |\n| \"${2:can be placed in quotes}\"      |\n+-----------------------------+\n```",
+        "description": [
+            "Text in double quotes inside an ASCII drawing is not drawn, but rendered as LiaScript on top of the image: Markdown, formulas, animations, quizzes, ... Lines whose quotes start at the same column form one multi-line block. The placement is not pixel-precise, so adjust the quotes and the frame by hand.",
+            "",
+            "Example:",
+            "  ``` ascii",
+            "  +-------------------------------------------+",
+            "  | \"$ \\sum_{i=1}^n i = \\frac{n(n+1)}{2} $\"   |",
+            "  +-------------------------------------------+",
+            "  | \"Gauss found this at the age of __9__.\"   |",
+            "  +-------------------------------------------+",
+            "  ```"
+        ],
+        "prefix": "lia-ascii-embed"
+    },
+    "```ascii ... ```": {
+        "body": "``` ascii\n${1:+------+   +-----+   +-----+\n|      |   |     |   |     |\n| Foo  +-->| Bar +-->| Baz |\n|      |   |     |   |     |\n+------+   +-----+   +-----+}\n```",
+        "description": [
+            "A code block with the language ascii is rendered as an SVG image (svgbob). The fence must start at the left margin, an indented block is shown as plain code.",
+            "",
+            "Drawing vocabulary:",
+            "  - _ |  \\ /       lines",
+            "  +                 square corner",
+            "  . , ' `           rounded corners",
+            "  * # o O           dots, also as arrow ends",
+            "  < > ^ v V A       arrow heads",
+            "  Unicode box-drawing characters and emojis are also allowed.",
+            "",
+            "Example:",
+            "  ``` ascii",
+            "  +------+   +-----+",
+            "  | Foo  +-->| Bar |",
+            "  +------+   +--+--+",
+            "                |",
+            "                v",
+            "          .-----------.",
+            "          |  rounded  |",
+            "          '-----------'",
+            "  ```"
+        ],
+        "prefix": "lia-ascii"
+    },
+    "```ascii Title ... ```": {
+        "body": "``` ascii  ${1:Fig.: Working with branches in git}\n${2:new feature      .---#---.\n                 |       |\ndevelopment    .-o---o---o----o----o-.\nmain   *---*-+-*---*---*-------------*----}\n```",
+        "description": [
+            "Text after the language ascii (on the same line as the opening fence) is shown as a caption below the image. It can contain Markdown.",
+            "",
+            "Example:",
+            "  ``` ascii  Fig.: A __simple__ box",
+            "  +-----+",
+            "  | Box |",
+            "  +-----+",
+            "  ```"
+        ],
+        "prefix": "lia-ascii-title"
     },
     "```lang +name ...```": {
         "body": "```${1|abap,abc,actionscript,ada,adoc,ahk,alda,angelscript,apache,apache_conf,apacheconf,apex,applescript,aql,arduino,arm,armasm,as,asc,asciidoc,asl,asm,aspectj,atom,autohotkey,avrasm,bash,basic,bat,batchfile,c,c#,c++,c9search,cc,cirru,cjs,clj,clojure,cmake,cmake.in,cmd,cobol,coffee,coffeescript,coldfusion,console,cpp,cr,craftcms,crm,crmsh,crystal,cs,csharp,cson,csound_document,csound_orchestra,csound_score,csp,css,curly,cxx,d,dart,delphi,dfm,diff,django,docker,dockerfile,dos,dot,dpr,drools,edifact,edn,eiffel,ejs,elixir,elm,erl,erlang,ex,exs,f#,f90,f95,feature,forth,fortran,fs,fsharp,fsl,ftl,gcode,gemspec,gherkin,gitignore,glsl,go,gobstones,golang,graphqlschema,groovy,gyp,h,h++,haml,handlebars,haskell,haskell_cabal,haxe,hbs,hh,hjson,hpp,hs,html,htmlbars,html_elixir,html.handlebars,html.hbs,html_ruby,hx,hxx,hy,hylang,iced,ini,ino,io,ipython,irb,jack,jade,java,javascript,jinja,js,json,json5,jsoniq,jsp,jssm,jsx,julia,kot,kotlin,kt,kts,latex,latte,less,liquid,lisp,livescript,logiql,logtalk,ls,lsl,lua,luapage,lucene,mak,make,makefile,markdown,mask,matlab,maze,md,mediawiki,mel,mips,mipsasm,mixal,mjs,mk,mkd,mkdown,ml,mm,mushcode,mysql,nc,nginx,nginxconf,nim,nix,nixos,nsis,nunjacks,obj-c,obj-c++,objc,objective-c++,objectivec,ocaml,openscad,osascript,pas,pascal,patch,pb,pbi,pcmk,pde,perl,pgsql,php,php_laravel_blade,pig,pl,plaintext,plist,pm,podspec,postgres,postgresql,powershell,pp,praat,prisma,processing,prolog,properties,protobuf,ps,ps1,puppet,purebasic,pwsh,py,python,qml,qt,r,raku,razor,rb,rdoc,red,redshift,rest,rhtml,rs,rss,rst,ruby,rust,sass,scad,scala,scheme,scss,sh,shell,shellsession,sjs,slim,smarty,smithy,soy,space,sparql,sql,sqlserver,styl,stylus,svg,swift,tcl,terraform,tex,text,textile,thor,tk,toml,ts,tsx,turtle,twig,txt,typescript,vala,vb,vbnet,vbs,vbscript,velocity,verilog,vhdl,visualforce,wollok,wsf,x86asm,xhtml,xjb,xml,xpath,xq,xquery,xsd,xsl,yaml,yml,zeek|} ${2:title.js}\n${3:var s = \"Named JavaScript syntax highlighting\";\nalert(s);}\n```",
@@ -1850,7 +2649,7 @@
             "Examples:",
             "",
             "  ```javascript    Visible.js",
-            "  alert(\"Visble JavaScript file\";);",
+            "  alert(\"Visible JavaScript file\");",
             "  ```",
             "",
             "  ```javascript   +Visible.js",
@@ -1871,12 +2670,12 @@
             "",
             "Example:",
             "",
-            "  ```javascript   +Tile.js",
+            "  ```javascript   +Visible.js",
             "  var s = \"Visible JavaScript syntax highlighting\";",
             "  ```",
             "  <script>@input</script>",
             "",
-            "  ```javascript   +Title.js",
+            "  ```javascript   -Hidden.js",
             "  var s = \"Hidden JavaScript syntax highlighting\";",
             "  ```",
             "  <script>@input</script>"
@@ -1898,7 +2697,7 @@
             "",
             "  ```python",
             "  s = \"Python syntax highlighting\"",
-            "  print s",
+            "  print(s)",
             "  ```",
             "",
             "  ```",
@@ -1949,10 +2748,10 @@
         ],
         "prefix": "lia-code-block-js"
     },
-    "```lang @ouput ...```": {
+    "```lang @output ...```": {
         "body": "``` ${1:text}     ${2:+@output}\n${3:Enter your default output}\n```",
         "description": [
-            "In contrast to the @input macro, there is also an @output macro, which can be used to define the initial output of and executable code-block. This block has to be the last and you can use a plus (+) or a minus (-) in front to indicate, whether this output is interpreted as normal stdout or stderr.",
+            "Default output: a code block with @output after the language is not shown as code, its content is shown in the terminal of an executable project when the slide loads. It is replaced by the real result after the first execution. This is useful for courses that are read offline or on GitHub, where nothing can be executed. The @output block has to be the last block of the project. A plus (+) shows the content as normal output (stdout), a minus (-) as an error (stderr).",
             "",
             "Example:",
             "",
@@ -1961,8 +2760,8 @@
             "",
             "  consolelog(str)",
             "  ```",
-            "  ``` json    -@ouput",
-            "  There is a error in line 3...",
+            "  ``` text    -@output",
+            "  There is an error in line 3 ...",
             "  ```",
             "  <script>@input</script>"
         ],
@@ -2109,6 +2908,43 @@
         ],
         "prefix": "lia-diagram-dots"
     },
+    "comment:": {
+        "body": "comment:  ${1:A short description of your course.}",
+        "description": [
+            "Header field: a short description that is shown on the course card. Continuation lines have to be indented, only the first paragraph is used.",
+            "",
+            "Example:",
+            "  <!--",
+            "  comment:  An introduction to LiaScript.",
+            "            Learn how to write interactive courses",
+            "            with Markdown.",
+            "  -->"
+        ],
+        "prefix": "lia-macro-comment"
+    },
+    "complete quiz: question, hints, script, solution": {
+        "body": "${1:What is 37 + 15?}\n\n[[${2:52}]]\n[[?]] ${3:The solution is larger than 50.}\n[[?]] ${4:It is an even number.}\n<script>\n  let input = `@input`.trim();\n  ${5:input === \"52\"}\n</script>\n****************************************\n\n${6:37 + 15 = 52, since 30 + 10 = 40 and 7 + 5 = 12.}\n\n****************************************",
+        "description": [
+            "A complete quiz template that combines everything: a question, the quiz, hints, a script that checks the input and a solution block. Remember: no blank line before the opening asterisks of the solution.",
+            "",
+            "Example:",
+            "  What is $37 + 15$?",
+            "",
+            "      [[52]]",
+            "      [[?]] The solution is larger than 50.",
+            "      [[?]] It is an even number.",
+            "      <script>",
+            "        let input = `@input`.trim();",
+            "        input === \"52\"",
+            "      </script>",
+            "      ****************************************",
+            "",
+            "      $37 + 15 = 52$",
+            "",
+            "      ****************************************"
+        ],
+        "prefix": "lia-quiz-complete"
+    },
     "console (sh)": {
         "body": "console",
         "prefix": "hili-console"
@@ -2176,6 +3012,18 @@
         "body": "dpr",
         "prefix": "hili-dpr"
     },
+    "edit:": {
+        "body": "edit: ${1|true,https://|}",
+        "description": [
+            "Header field: adds an edit button to the course. true links the current document to the LiaScript LiveEditor, a URL links to any other place where the course can be edited (e.g. the file on GitHub).",
+            "",
+            "Example:",
+            "  <!--",
+            "  edit: true",
+            "  -->"
+        ],
+        "prefix": "lia-macro-edit"
+    },
     "elixir (elixir)": {
         "body": "elixir",
         "prefix": "hili-elixir"
@@ -2208,6 +3056,23 @@
         "body": "f95",
         "prefix": "hili-f95"
     },
+    "formula: name {definition}": {
+        "body": "formula: ${1:\\\\R}  ${2:\\\\mathbb{R\\}}",
+        "description": [
+            "Define your own KaTeX macros in the main header (or a section header) with formula:. They can be used in every formula of the course. The line can be repeated for more macros.",
+            "",
+            "Example:",
+            "  <!--",
+            "  formula: \\R      \\mathbb{R}",
+            "  formula: \\norm   \\left\\lVert #1 \\right\\rVert",
+            "  -->",
+            "",
+            "  # Main",
+            "",
+            "  $ x \\in \\R $ and $ \\norm{x} $"
+        ],
+        "prefix": "lia-formula-macro"
+    },
     "fortran (fortran)": {
         "body": "fortran",
         "prefix": "hili-fortran"
@@ -2223,6 +3088,31 @@
     "fsharp (fsharp)": {
         "body": "fsharp",
         "prefix": "hili-fsharp"
+    },
+    "gap text: ... [[a|(b)|(c)]] ...": {
+        "body": "${1:I} [[ (${2:have been learning}) | (${3:'ve been learning}) | ${4:learned} ]] ${5:English for seven years now.}",
+        "description": [
+            "Gap text with a dropdown: use the selection syntax inline. To accept several answers, put every acceptable option into parentheses.",
+            "",
+            "Example:",
+            "  I [[ (have been learning) | ('ve been learning) | learned ]] English for seven years now."
+        ],
+        "prefix": "lia-quiz-gap-select"
+    },
+    "gap text: ... [[solution]] ...": {
+        "body": "${1:I} [[ ${2:have been learning} ]] ${3:English for seven years now.}",
+        "description": [
+            "Gap text: text and selection quizzes can be placed inline, anywhere inside a paragraph, a list or a table. The width of the input field matches the length of the placeholder, so add spaces to make a gap wider. All gaps of one block are checked together.",
+            "",
+            "Text around the brackets is ordinary text. To give hints, use [[?]] lines after the block.",
+            "",
+            "Example:",
+            "  __I [[  have been learning  ]] English for seven years now.__",
+            "",
+            "  The capital of France is [[ Paris ]] and of Italy [[ Rome ]].",
+            "  [[?]] Both are famous for their food."
+        ],
+        "prefix": "lia-quiz-gap-text"
     },
     "gcode (gcode)": {
         "body": "gcode",
@@ -2296,24 +3186,54 @@
         "body": "iced",
         "prefix": "hili-iced"
     },
-    "import": {
-        "body": "import: ${1:url}",
+    "icon:": {
+        "body": "icon: ${1:./img/icon.png}",
         "description": [
-            "You can import the main macros of other courses, simply by using the import command, which is followed by the raw url of the foreign course.",
+            "Header field: replaces the default LiaScript (hummingbird) icon in the top left corner with your own image.",
             "",
             "Example:",
-            "",
-            "  ## section",
             "  <!--",
-            "  import: https://raw.githubusercontent.com/liaTemplates/rextester_template/master/README.md",
+            "  icon: https://example.com/my-icon.png",
+            "  -->"
+        ],
+        "prefix": "lia-macro-icon"
+    },
+    "import": {
+        "body": "import: ${1:https://raw.githubusercontent.com/liaTemplates/ABCjs/main/README.md}",
+        "description": [
+            "Imports the main header of another course or template: its macros, script and link entries, attributions and @onload code, but not its content. Templates of the LiaTemplates collection add features such as music notation, programming languages or 3D models. Use one import line per URL.",
+            "",
+            "Pin a tag or commit in the URL instead of master/main, so that your course does not break when the template changes.",
+            "",
+            "Example:",
+            "  <!--",
+            "  import: https://raw.githubusercontent.com/liaTemplates/ABCjs/main/README.md",
             "  -->",
             "",
-            "  ``` python",
-            "  print(\"Hello World\")",
+            "  ``` abc  @ABCJS.render",
+            "  X: 1",
+            "  T: Test Tune",
+            "  M: C",
+            "  L: 1/8",
+            "  K: F",
+            "  \"F\"[A3F3][AF] ([AF][GE][AF])[BG] |",
             "  ```",
-            "  @Rextester.eval(@Python)"
+            "",
+            "See https://github.com/topics/liascript-template for more templates."
         ],
         "prefix": "lia-macro-import"
+    },
+    "inline<!-- style=\"...\" -->": {
+        "body": "<!-- style=\"${1:color: red;}\" -->",
+        "description": [
+            "Style an inline element (bold text, a link, an image, a formula, ...) by placing an HTML comment with attributes directly after it, without a space.",
+            "",
+            "Example:",
+            "  This **is important**<!-- style=\"color: red\" --> text.",
+            "",
+            "  ![a lion](lion.svg)<!-- style=\"width: 300px;\" class=\"animated bounce\" -->"
+        ],
+        "prefix": "lia-style-inline"
     },
     "irb (ruby)": {
         "body": "irb",
@@ -2331,6 +3251,20 @@
         "body": "js",
         "prefix": "hili-js"
     },
+    "language:": {
+        "body": "language: ${1|en,de,fr,es,it,pt,nl,pl,ru,zh,ja,ar,fa,hy,bg|}",
+        "description": [
+            "Header field: the language of the course as a locale code. It sets the language of the user interface, the typographic quotes and the default target for translations.",
+            "",
+            "Example:",
+            "  <!--",
+            "  language: de",
+            "  -->",
+            "",
+            "All supported languages: https://github.com/liaScript/lia-localization"
+        ],
+        "prefix": "lia-macro-language"
+    },
     "lazarus (pascal)": {
         "body": "lazarus",
         "prefix": "hili-lazarus"
@@ -2339,9 +3273,34 @@
         "body": "lfm",
         "prefix": "hili-lfm"
     },
+    "link:": {
+        "body": "link:     ${1:https://cdn.example.com/style.css}",
+        "description": [
+            "Header field: loads additional CSS files, e.g. web fonts or styles of a JavaScript library. Use one URL per line or repeat the field.",
+            "",
+            "Example:",
+            "  <!--",
+            "  link:     https://fonts.googleapis.com/css2?family=Roboto",
+            "            ./css/custom.css",
+            "  -->"
+        ],
+        "prefix": "lia-macro-link"
+    },
     "livescript (livescript)": {
         "body": "livescript",
         "prefix": "hili-livescript"
+    },
+    "logo:": {
+        "body": "logo: ${1:./img/logo.png}",
+        "description": [
+            "Header field: an image (relative or absolute URL) that is used as the background of the course card, e.g. in the LiaScript course index or in preview-lia links.",
+            "",
+            "Example:",
+            "  <!--",
+            "  logo: ./img/logo.png",
+            "  -->"
+        ],
+        "prefix": "lia-macro-logo"
     },
     "lpr (pascal)": {
         "body": "lpr",
@@ -2428,16 +3387,28 @@
         "prefix": "lia-diagram-multiline"
     },
     "multiple choice quiz with 4 options": {
-        "body": "[[${1: }]] ${2:Add as many elements as you want?}\n[[${3:X}]] ${4:The X marks the correct answer!}\n[[${5: }]] ${6:... this is wrong ...}\n[[${7:X}]] ${8:... this has to be selected too ...}",
+        "body": "[[${1: }]] ${2:Add as many options as you want.}\n[[${3:X}]] ${4:The X marks the correct answer!}\n[[${5: }]] ${6:... this is wrong ...}\n[[${7:X}]] ${8:... this has to be checked too ...}",
         "description": [
-            "Insert a the following quiz dummy:",
+            "Inserts a multiple-choice quiz with four options:",
             "",
-            "[[ ]] Add as many elements as you want?",
-            "[[X]] The X marks the correct answer!",
-            "[[ ]] ... this is wrong ...",
-            "[[X]] ... this has to be selected too ..."
+            "      [[ ]] Add as many options as you want.",
+            "      [[X]] The X marks the correct answer!",
+            "      [[ ]] ... this is wrong ...",
+            "      [[X]] ... this has to be checked too ..."
         ],
         "prefix": "lia-quiz-multiple-choice-4"
+    },
+    "narrator:": {
+        "body": "narrator: ${1|UK English Female,UK English Male,US English Female,US English Male,Afrikaans Male,Albanian Male,Arabic Female,Arabic Male,Armenian Male,Australian Female,Australian Male,Bangla Bangladesh Female,Bangla Bangladesh Male,Bangla India Female,Bangla India Male,Bosnian Male,Brazilian Portuguese Female,Brazilian Portuguese Male,Catalan Male,Chinese Female,Chinese Male,Chinese (Hong Kong) Female,Chinese (Hong Kong) Male,Chinese Taiwan Female,Chinese Taiwan Male,Croatian Male,Czech Female,Czech Male,Danish Female,Danish Male,Deutsch Female,Deutsch Male,Dutch Female,Dutch Male,Esperanto Male,Estonian Male,Filipino Female,Finnish Female,Finnish Male,French Canadian Female,French Canadian Male,French Female,French Male,Greek Female,Greek Male,Hindi Female,Hindi Male,Hungarian Female,Hungarian Male,Icelandic Male,Indonesian Female,Indonesian Male,Italian Female,Italian Male,Japanese Female,Japanese Male,Korean Female,Korean Male,Latin Female,Latin Male,Latvian Male,Macedonian Male,Moldavian Female,Moldavian Male,Montenegrin Male,Nepali,Nepali,Norwegian Female,Norwegian Male,Polish Female,Polish Male,Portuguese Female,Portuguese Male,Romanian Female,Romanian Male,Russian Female,Russian Male,Serbian Male,Serbo-Croatian Male,Sinhala,Sinhala,Slovak Female,Slovak Male,Spanish Female,Spanish Male,Spanish Latin American Female,Spanish Latin American Male,Swahili Male,Swedish Female,Swedish Male,Tamil Female,Tamil Male,Thai Female,Thai Male,Turkish Female,Turkish Male,Ukrainian Female,Vietnamese Female,Vietnamese Male,Welsh Male|}",
+        "description": [
+            "Header field: the default text-to-speech voice for narration comments (--{{n}}--) and playback buttons. Can be overwritten per section and per comment. Type \"voice\" to search all voices.",
+            "",
+            "Example:",
+            "  <!--",
+            "  narrator: Deutsch Female",
+            "  -->"
+        ],
+        "prefix": "lia-macro-narrator"
     },
     "nc (gcode)": {
         "body": "nc",
@@ -2523,6 +3494,55 @@
         "body": "pp",
         "prefix": "hili-pp"
     },
+    "presentation slide: {{n}} + --{{n}}--": {
+        "body": "## ${1:Slide Title}\n\n             --{{0}}--\n${2:Introduction, spoken when the slide is opened.}\n\n               {{1}}\n${3:* First bullet point}\n\n             --{{1}}--\n${4:Narration for the first bullet point.}\n\n               {{2}}\n${5:* Second bullet point}\n\n             --{{2}}--\n${6:Narration for the second bullet point.}",
+        "description": [
+            "A slide that works as a presentation and as a textbook: every visible step {{n}} is paired with a narration --{{n}}-- for the same step. Think of {{n}} as the bullet point and --{{n}}-- as the speaker notes for it.",
+            "",
+            "How the narration is shown depends on the mode:",
+            "  Presentation -> spoken, text hidden",
+            "  Slides       -> spoken, text shown in the side panel",
+            "  Textbook     -> not spoken, text shown in place",
+            "",
+            "A --{{n}}-- comment alone never reveals anything on the slide, so always pair it with a {{n}} block. Step 0 introduces the slide.",
+            "",
+            "Example:",
+            "  ## Photosynthesis",
+            "",
+            "               --{{0}}--",
+            "  Plants turn light into sugar. Let us look at the inputs.",
+            "",
+            "                 {{1}}",
+            "  * Light, water and CO2 go in",
+            "",
+            "               --{{1}}--",
+            "  Three things are needed: light, water and carbon dioxide."
+        ],
+        "prefix": "lia-effect-presentation"
+    },
+    "project with @output": {
+        "body": "``` ${1:js}     ${2:-EvalScript.js}\n${3:let who = data.first_name + \" \" + data.last_name;\ndata.online ? who + \" is online\" : who + \" is NOT online\"}\n```\n``` ${4:json}   ${5:+Data.json}\n${6:{ \"first_name\": \"Sammy\", \"last_name\": \"Shark\", \"online\": true \\}}\n```\n``` text     +@output\n${7:Is Sammy Shark really online? Press execute.}\n```\n<script>\n  let data = @input(1);\n  @input(0)\n</script>",
+        "description": [
+            "A multi-file project with a default output. Blocks written directly one after another (no blank line) form a project with one shared script. @input(n) refers to the n-th block (counting from 0). A file name with - starts minimized, with + (default) visible. The last block marked with @output is shown in the terminal before the first execution.",
+            "",
+            "Example:",
+            "  ``` js     -EvalScript.js",
+            "  let who = data.first_name + \" \" + data.last_name;",
+            "  data.online ? who + \" is online\" : who + \" is NOT online\"",
+            "  ```",
+            "  ``` json   +Data.json",
+            "  { \"first_name\": \"Sammy\", \"last_name\": \"Shark\", \"online\": true }",
+            "  ```",
+            "  ``` text   +@output",
+            "  Is Sammy Shark really online?",
+            "  ```",
+            "  <script>",
+            "    let data = @input(1);",
+            "    @input(0)",
+            "  </script>"
+        ],
+        "prefix": "lia-code-project-output"
+    },
     "ps (powershell)": {
         "body": "ps",
         "prefix": "hili-ps"
@@ -2576,6 +3596,23 @@
         "body": "scad",
         "prefix": "hili-scad"
     },
+    "script:": {
+        "body": "script:   ${1:https://cdn.example.com/library.js}",
+        "description": [
+            "Header field: loads additional JavaScript files before the course is rendered. The libraries are then globally available in all scripts. Use one URL per line or repeat the field. Pin a version in CDN URLs.",
+            "",
+            "Example:",
+            "  <!--",
+            "  script:   https://cdn.jsdelivr.net/npm/algebrite@1.4.0/dist/algebrite.bundle-for-browser.js",
+            "  -->",
+            "",
+            "  ```",
+            "  integral(x^2)",
+            "  ```",
+            "  <script>Algebrite.run(`@input`)</script>"
+        ],
+        "prefix": "lia-macro-script"
+    },
     "sh (batchfile)": {
         "body": "sh",
         "prefix": "hili-sh"
@@ -2621,13 +3658,13 @@
         "prefix": "lia-diagram-simple"
     },
     "single choice quiz with 3 options": {
-        "body": "[(${1: })] ${2:This is wrong.}\n[(${3:X})] ${4:The only correct option.}\n[(${5: })] ${6:Still not right.}",
+        "body": "[(${1: })] ${2:This is wrong.}\n[(${3:X})] ${4:The correct option.}\n[(${5: })] ${6:Still not right.}",
         "description": [
-            "Insert a the following quiz dummy:",
+            "Inserts a single-choice quiz with three options:",
             "",
-            "  [( )] This is wrong.",
-            "  [(X)] The only correct option.",
-            "  [( )] Still not right."
+            "      [( )] This is wrong.",
+            "      [(X)] The correct option.",
+            "      [( )] Still not right."
         ],
         "prefix": "lia-quiz-single-choice-3"
     },
@@ -2638,6 +3675,46 @@
     "stylus (stylus)": {
         "body": "stylus",
         "prefix": "hili-stylus"
+    },
+    "survey + <script> validation": {
+        "body": "[[___]]\n<script>\n  let input = `@input`.trim();\n\n  ${1:if (input.length > 4) {\n    true\n  \\} else if (input.length == 0) {\n    send.lia(\"Please enter some text\", [], false)\n  \\} else {\n    send.lia(\"Please provide some meaningful input\", [], false)\n  \\}}\n</script>",
+        "description": [
+            "A script directly after a survey can check or process the input before it is accepted. Empty input is rejected by default. The last expression decides:",
+            "",
+            "  true                              -> accept the input",
+            "  false                             -> reject it silently",
+            "  send.lia(\"message\", [], false)    -> reject it with a message",
+            "",
+            "Wrap @input in backticks for text surveys. For choice surveys @input is the selected value(s). console.log does not show anything here, use alert(...) while developing.",
+            "",
+            "Example:",
+            "      [[___]]",
+            "      <script>",
+            "        let input = `@input`.trim();",
+            "        if (input.length > 4) true",
+            "        else send.lia(\"Please provide some meaningful input\", [], false)",
+            "      </script>"
+        ],
+        "prefix": "lia-survey-js"
+    },
+    "table with diagram settings": {
+        "body": "<!--\ndata-show\ndata-type=\"${1|lineplot,scatterplot,barchart,boxplot,radar,piechart,funnel,heatmap,parallel,graph,sankey|}\"\ndata-title=\"${2:Government expenditure on education}\"\ndata-xlabel=\"${3:year}\"\ndata-ylabel=\"${4:% of GDP}\"\n-->\n| ${5:Year} | ${6:Finland} | ${7:Germany} |\n| ---- | -------:| -------:|\n| 1995 |     6.8 |     4.4 |\n| 1996 |     6.9 |     4.5 |\n| 1997 |     6.5 |     4.6 |",
+        "description": [
+            "A table that is shown as a diagram right away. All settings go into one HTML comment directly above the table:",
+            "",
+            "  data-show            show the diagram instead of the table",
+            "  data-type            chart type (see lia-table-diagram-type)",
+            "  data-title           title of the diagram",
+            "  data-xlabel/ylabel   axis labels",
+            "  data-xlim/ylim       axis ranges, e.g. \"0,10\"",
+            "  data-transpose       swap rows and columns",
+            "  data-orientation     \"horizontal\" bars",
+            "",
+            "Users can still switch between table and diagram.",
+            "",
+            "Do not put another HTML comment directly above this one without a blank line, otherwise the table is shown as plain text."
+        ],
+        "prefix": "lia-table-diagram-full"
     },
     "tcl (tcl)": {
         "body": "tcl",
@@ -2663,6 +3740,19 @@
             ""
         ],
         "prefix": "lia-macro-translateWithGoogle"
+    },
+    "translation:": {
+        "body": "translation: ${1:Deutsch}  ${2:translations/German.md}",
+        "description": [
+            "Header field: links a translated version of the course, which is offered in the translation menu. Repeat it for every language: name of the language followed by the (relative) path or URL.",
+            "",
+            "Example:",
+            "  <!--",
+            "  translation: Deutsch   translations/German.md",
+            "  translation: Français  translations/French.md",
+            "  -->"
+        ],
+        "prefix": "lia-macro-translation"
     },
     "ts (typescript)": {
         "body": "ts",
@@ -2834,11 +3924,11 @@
     },
     "voice: Finnish Male": {
         "body": "Finnish Male",
-        "prefix": "voice-finnisch-male"
+        "prefix": "voice-finnish-male"
     },
     "voice: French Canadian Female": {
         "body": "French Canadian Female",
-        "prefix": "voice-french-vanadian-female"
+        "prefix": "voice-french-canadian-female"
     },
     "voice: French Canadian Male": {
         "body": "French Male",
@@ -3161,19 +4251,19 @@
         "prefix": "lia-effect-inline"
     },
     "{{from-to}}": {
-        "body": "    {${1:from}-${2:to}}\n$3",
+        "body": "    {{${1:from}-${2:to}}}\n$3",
         "description": [
-            "Use block effects to let entire Markdown blocks appear or disappear. It works exactly as simple inline effects. But the number of appearance has to be put in double braces, followed by a hyphen (-) and the number of disappearance.",
+            "Use block effects with a range to let an entire Markdown block appear at the first step and disappear at the second. Put both numbers, separated by a hyphen, in double braces directly above the block.",
             "The entire block can also be styled and the animation tweaked, but the required comment tag has to be defined before the Markdown block. Animate.css is included at default.",
             "",
             "Examples:",
             "                   {{1-4}}",
             "  This entire block will appear with the first fragment.",
-            "  And remain untill the fourth fragment of this slide.",
+            "  And remain until the fourth fragment of this slide.",
             "",
             "                   {{0-1}}",
             "  ```js",
-            "  // I will be present emeadiately and disapper on the",
+            "  // I will be present immediately and disappear on the",
             "  // 1st fragment.",
             "  ```",
             "",
@@ -3183,12 +4273,12 @@
             "  |------|-------|",
             "  | any  | table |"
         ],
-        "prefix": "lia-effect-block"
+        "prefix": "lia-effect-block2"
     },
     "{{from-to}} *** ... ***": {
         "body": "                 {{${1:from}-${2:to}}}\n************************************************\n\n${3:Insert your Markdown blocks in here ...}\n\n************************************************",
         "description": [
-            "You can bundle multiple blocks to one effect block by enclosing them into two lines of stars (*). The rest works exactly as block effects...",
+            "Bundle multiple blocks into one animation step by enclosing them in two lines of three or more asterisks (*). The effect definition goes above the opening line. Alternatively, use a <section> ... </section> wrapper instead of the asterisks (see lia-effect-section).",
             "The entire block can also be styled and the animation tweaked, but the required comment tag has to be defined before the Markdown block. Animate.css is included at default.",
             "",
             "Examples:",
@@ -3209,9 +4299,9 @@
         "prefix": "lia-effect-multiblock2"
     },
     "{{number}}": {
-        "body": "    {${1:number}}\n$2",
+        "body": "    {{${1:number}}}\n$2",
         "description": [
-            "Use block effects to let entire Markdown blocks appear or disappear. It works exactly as simple inline effects. But the number of appearance has to be put in double braces.",
+            "Use block effects to let an entire Markdown block appear at a certain animation step. Put the step number in double braces on its own line directly above the block. Indent it by 4 or more spaces, so that other Markdown viewers show it as code and not as text. In Textbook mode all blocks are visible and tagged with their step number.",
             "The entire block can also be styled and the animation tweaked, but the required comment tag has to be defined before the Markdown block. Animate.css is included at default.",
             "",
             "Examples:",
@@ -3235,7 +4325,7 @@
     "{{number}} *** ... ***": {
         "body": "                 {{${1:number}}}\n************************************************\n\n${2:Insert your Markdown blocks in here ...}\n\n************************************************",
         "description": [
-            "You can bundle multiple blocks to one effect block by enclosing them into two lines of stars (*). The rest works exactly as block effects...",
+            "Bundle multiple blocks into one animation step by enclosing them in two lines of three or more asterisks (*). The effect definition goes above the opening line. Alternatively, use a <section> ... </section> wrapper instead of the asterisks (see lia-effect-section).",
             "The entire block can also be styled and the animation tweaked, but the required comment tag has to be defined before the Markdown block. Animate.css is included at default.",
             "",
             "Examples:",
@@ -3253,6 +4343,41 @@
             "  **************************************************"
         ],
         "prefix": "lia-effect-multiblock"
+    },
+    "{{number}} <section> ... </section>": {
+        "body": "                 {{${1:number}}}\n<section>\n\n${2:Insert your Markdown blocks in here ...}\n\n</section>",
+        "description": [
+            "Groups multiple blocks into one animation step with an HTML section tag instead of two lines of asterisks. Leave a blank line after <section> and before </section>, so that the content is parsed as Markdown.",
+            "",
+            "Example:",
+            "                    {{1}}",
+            "  <section>",
+            "",
+            "  This paragraph and the table below appear together.",
+            "",
+            "  | Also | with  |",
+            "  |------|-------|",
+            "  | any  | table |",
+            "",
+            "  </section>"
+        ],
+        "prefix": "lia-effect-section"
+    },
+    "{{|> voice}}": {
+        "body": "    {{|> ${1|UK English Female,UK English Male,US English Female,US English Male,Afrikaans Male,Albanian Male,Arabic Female,Arabic Male,Armenian Male,Australian Female,Australian Male,Bangla Bangladesh Female,Bangla Bangladesh Male,Bangla India Female,Bangla India Male,Bosnian Male,Brazilian Portuguese Female,Brazilian Portuguese Male,Catalan Male,Chinese Female,Chinese Male,Chinese (Hong Kong) Female,Chinese (Hong Kong) Male,Chinese Taiwan Female,Chinese Taiwan Male,Croatian Male,Czech Female,Czech Male,Danish Female,Danish Male,Deutsch Female,Deutsch Male,Dutch Female,Dutch Male,Esperanto Male,Estonian Male,Filipino Female,Finnish Female,Finnish Male,French Canadian Female,French Canadian Male,French Female,French Male,Greek Female,Greek Male,Hindi Female,Hindi Male,Hungarian Female,Hungarian Male,Icelandic Male,Indonesian Female,Indonesian Male,Italian Female,Italian Male,Japanese Female,Japanese Male,Korean Female,Korean Male,Latin Female,Latin Male,Latvian Male,Macedonian Male,Moldavian Female,Moldavian Male,Montenegrin Male,Nepali,Nepali,Norwegian Female,Norwegian Male,Polish Female,Polish Male,Portuguese Female,Portuguese Male,Romanian Female,Romanian Male,Russian Female,Russian Male,Serbian Male,Serbo-Croatian Male,Sinhala,Sinhala,Slovak Female,Slovak Male,Spanish Female,Spanish Male,Spanish Latin American Female,Spanish Latin American Male,Swahili Male,Swedish Female,Swedish Male,Tamil Female,Tamil Male,Thai Female,Thai Male,Turkish Female,Turkish Male,Ukrainian Female,Vietnamese Female,Vietnamese Male,Welsh Male|}}}\n$2",
+        "description": [
+            "Adds a play button to the block below, which reads it out loud with the given voice instead of the default narrator. The button works in every mode and does not depend on the animation steps.",
+            "",
+            "Type \"voice\" to search all available voices.",
+            "",
+            "Example:",
+            "      {{|> Australian Female}}",
+            "  This paragraph is read with an Australian voice.",
+            "",
+            "      {{1 |> Deutsch Female}}",
+            "  Dieser Absatz erscheint bei Schritt 1 und wird auf Deutsch vorgelesen."
+        ],
+        "prefix": "lia-effect-block-playback-voice"
     },
     "{{|>}}": {
         "body": "{{|>}}",
@@ -3291,14 +4416,32 @@
     },
     "~text~": {
         "body": "~${1:strike}~",
+        "description": [
+            "Strike-through text, enclosed by single tildes. This is a LiaScript extension.",
+            "",
+            "Example:",
+            "  The price was ~20 €~ and is now 15 €."
+        ],
         "prefix": "lia-text-strike"
     },
     "~~text~~": {
         "body": "~~${1:underline}~~",
+        "description": [
+            "Underlined text, enclosed by double tildes. This is a LiaScript extension, other Markdown viewers (e.g. GitHub) show it as strike-through.",
+            "",
+            "Example:",
+            "  This is ~~underlined~~ text."
+        ],
         "prefix": "lia-text-underline"
     },
     "~~~text~~~": {
         "body": "~~~${1:strike underline}~~~",
+        "description": [
+            "Strike-through and underlined text, enclosed by triple tildes. This is a LiaScript extension.",
+            "",
+            "Example:",
+            "  This is ~~~struck and underlined~~~."
+        ],
         "prefix": "lia-text-strike-underline"
     }
 }

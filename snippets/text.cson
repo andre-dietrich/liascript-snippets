@@ -2,59 +2,129 @@
   '_text_':
     'prefix': 'lia-text-italic'
     'body': '_${1:italic}_'
+    'description': """
+      Italic text, enclosed by single underscores. Equivalent to *text*.
+
+      Every emphasis span has to stay on one physical line. If the closing marker lands on the next line, stray markers will show up in the rendered text.
+
+      Example:
+        This is _italic_ and this is _also **bold** inside_.
+    """
     'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
     'leftLabelHTML': '<span style="color:#ff0"><i>Az</i></span>'
 
   '*text*':
     'prefix': 'lia-text-italic2'
     'body': '*${1:italic}*'
+    'description': """
+      Italic text, enclosed by single asterisks. Equivalent to _text_.
+
+      Every emphasis span has to stay on one physical line.
+
+      Example:
+        This is *italic* text.
+    """
     'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
     'leftLabelHTML': '<span style="color:#ff0"><i>Az</i></span>'
 
   '__text__':
     'prefix': 'lia-text-bold'
     'body': '__${1:bold}__'
+    'description': """
+      Bold text, enclosed by double underscores. Equivalent to **text**.
+
+      Every emphasis span has to stay on one physical line.
+
+      Example:
+        This is __bold__ and __bold with _italic_ inside__.
+    """
     'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
     'leftLabelHTML': '<span style="color:#ff0"><b>Az</b></span>'
 
   '**text**':
     'prefix': 'lia-text-bold2'
     'body': '**${1:bold}**'
+    'description': """
+      Bold text, enclosed by double asterisks. Equivalent to __text__.
+
+      Every emphasis span has to stay on one physical line.
+
+      Example:
+        This is **bold** text.
+    """
     'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
     'leftLabelHTML': '<span style="color:#ff0"><b>Az</b></span>'
 
   '___text___':
     'prefix': 'lia-text-italic-bold'
     'body': '___${1:italic bold}___'
+    'description': """
+      Bold and italic text, enclosed by triple underscores. Equivalent to ***text***.
+
+      Example:
+        This is ___bold and italic___.
+    """
     'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
     'leftLabelHTML': '<span style="color:#ff0"><b><i>Az</i></b></span>'
 
   '***text***':
     'prefix': 'lia-text-italic-bold2'
     'body': '***${1:italic bold}***'
+    'description': """
+      Bold and italic text, enclosed by triple asterisks. Equivalent to ___text___.
+
+      Note: a line that contains only *** (three or more asterisks) is not text, it groups blocks for animations or marks a quiz solution.
+
+      Example:
+        This is ***bold and italic***.
+    """
     'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
     'leftLabelHTML': '<span style="color:#ff0"><b><i>Az</i></b></span>'
 
   '~text~':
     'prefix': 'lia-text-strike'
     'body': '~${1:strike}~'
+    'description': """
+      Strike-through text, enclosed by single tildes. This is a LiaScript extension.
+
+      Example:
+        The price was ~20 €~ and is now 15 €.
+    """
     'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
     'leftLabelHTML': '<span style="color:#ff0"><s>Az</s></span>'
 
   '~~text~~':
     'prefix': 'lia-text-underline'
     'body': '~~${1:underline}~~'
+    'description': """
+      Underlined text, enclosed by double tildes. This is a LiaScript extension, other Markdown viewers (e.g. GitHub) show it as strike-through.
+
+      Example:
+        This is ~~underlined~~ text.
+    """
     'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
     'leftLabelHTML': '<span style="color:#ff0"><u>Az</u></span>'
 
   '~~~text~~~':
     'prefix': 'lia-text-strike-underline'
     'body': '~~~${1:strike underline}~~~'
+    'description': """
+      Strike-through and underlined text, enclosed by triple tildes. This is a LiaScript extension.
+
+      Example:
+        This is ~~~struck and underlined~~~.
+    """
     'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
     'leftLabelHTML': '<span style="color:#ff0"><s><u>Az</u></s></span>'
 
   '^text^':
     'prefix': 'lia-text-superscript'
     'body': '^${1:superscript}^'
+    'description': """
+      Superscript text, enclosed by carets. This is a LiaScript extension. For subscripts or more complex notation use a formula ($ x_i $).
+
+      Example:
+        E = mc^2^ and the 1^st^ of May.
+    """
     'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
     'leftLabelHTML': '<span style="color:#ff0"><sup>Az</sup></span>'

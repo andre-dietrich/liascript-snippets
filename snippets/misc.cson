@@ -219,7 +219,7 @@
 
   '###### SubParagraph Title':
     'prefix': 'lia-title-6'
-    'body': '##### ${1:SubParagraph Title}\n'
+    'body': '###### ${1:SubParagraph Title}\n'
     'description': """
       As in common Markdown, a document is segregated into different parts by its titles. A title starts with hash-tag (#) that is followed by an head-line. The number of subsequent hash-tags defines the order. It is furthermore possible to overwrite some of the definitions from the main header, see more information on this by typing "liaheadersection" ...
 
@@ -273,3 +273,254 @@
     """
     'descriptionMoreURL': 'https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet'
     'leftLabelHTML': '<span style="color:#ff0">🗂</span>'
+
+  '> [!NOTE]':
+    'prefix': 'lia-alert-note'
+    'body': """
+      > [!NOTE]${1}
+      > ${2:Useful information that users should know, even when skimming the content.}
+    """
+    'description': """
+      GitHub-style alert box: a blockquote that starts with [!NOTE]. Useful information that users should know, even when skimming the content. An optional title or emoji can follow the keyword on the same line (GitLab style). The alert renders as a normal quote in other Markdown viewers.
+
+      Available types: NOTE, TIP, IMPORTANT, WARNING, CAUTION
+
+      Example:
+        > [!NOTE]
+        > Useful information that users should know, even when skimming the content.
+
+        > [!NOTE] ℹ️ Custom title
+        > The title replaces the default one.
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">ℹ️</span>'
+
+
+  '> [!TIP]':
+    'prefix': 'lia-alert-tip'
+    'body': """
+      > [!TIP]${1}
+      > ${2:Helpful advice for doing things better or more easily.}
+    """
+    'description': """
+      GitHub-style alert box: a blockquote that starts with [!TIP]. Helpful advice for doing things better or more easily. An optional title or emoji can follow the keyword on the same line (GitLab style). The alert renders as a normal quote in other Markdown viewers.
+
+      Available types: NOTE, TIP, IMPORTANT, WARNING, CAUTION
+
+      Example:
+        > [!TIP]
+        > Helpful advice for doing things better or more easily.
+
+        > [!TIP] 💡 Custom title
+        > The title replaces the default one.
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">💡</span>'
+
+
+  '> [!IMPORTANT]':
+    'prefix': 'lia-alert-important'
+    'body': """
+      > [!IMPORTANT]${1}
+      > ${2:Key information users need to know to achieve their goal.}
+    """
+    'description': """
+      GitHub-style alert box: a blockquote that starts with [!IMPORTANT]. Key information users need to know to achieve their goal. An optional title or emoji can follow the keyword on the same line (GitLab style). The alert renders as a normal quote in other Markdown viewers.
+
+      Available types: NOTE, TIP, IMPORTANT, WARNING, CAUTION
+
+      Example:
+        > [!IMPORTANT]
+        > Key information users need to know to achieve their goal.
+
+        > [!IMPORTANT] ❗ Custom title
+        > The title replaces the default one.
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">❗</span>'
+
+
+  '> [!WARNING]':
+    'prefix': 'lia-alert-warning'
+    'body': """
+      > [!WARNING]${1}
+      > ${2:Urgent information that needs immediate attention to avoid problems.}
+    """
+    'description': """
+      GitHub-style alert box: a blockquote that starts with [!WARNING]. Urgent information that needs immediate attention to avoid problems. An optional title or emoji can follow the keyword on the same line (GitLab style). The alert renders as a normal quote in other Markdown viewers.
+
+      Available types: NOTE, TIP, IMPORTANT, WARNING, CAUTION
+
+      Example:
+        > [!WARNING]
+        > Urgent information that needs immediate attention to avoid problems.
+
+        > [!WARNING] ⚠️ Custom title
+        > The title replaces the default one.
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">⚠️</span>'
+
+
+  '> [!CAUTION]':
+    'prefix': 'lia-alert-caution'
+    'body': """
+      > [!CAUTION]${1}
+      > ${2:Advice about risks or negative outcomes of certain actions.}
+    """
+    'description': """
+      GitHub-style alert box: a blockquote that starts with [!CAUTION]. Advice about risks or negative outcomes of certain actions. An optional title or emoji can follow the keyword on the same line (GitLab style). The alert renders as a normal quote in other Markdown viewers.
+
+      Available types: NOTE, TIP, IMPORTANT, WARNING, CAUTION
+
+      Example:
+        > [!CAUTION]
+        > Advice about risks or negative outcomes of certain actions.
+
+        > [!CAUTION] 🛑 Custom title
+        > The title replaces the default one.
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">🛑</span>'
+
+
+  '<section> ... </section>':
+    'prefix': 'lia-section'
+    'body': """
+      <section>
+
+      ${1:## Grouped Sub-Heading}
+
+      ${2:Content that stays on this slide.}
+
+      </section>
+    """
+    'description': """
+      Every heading (#, ##, ###, ...) starts a new slide. To use headings inside a slide without creating new slides, wrap them in a <section> or <article> tag. Leave blank lines around the content, so that it is parsed as Markdown.
+
+      Example:
+        # Slide Title
+
+        <section>
+
+        ## Part A
+
+        Some text.
+
+        </section>
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">#</span>'
+
+
+  'Title ===== (setext)':
+    'prefix': 'lia-title-setext'
+    'body': """
+      ${1:Local Subsection}
+      ${2:====================}
+    """
+    'description': """
+      Setext-style headings (text underlined with === or ---) do not start a new slide and do not appear in the table of contents. Use them for local structure within a slide.
+
+        ===   -> large local heading
+        ---   -> smaller local heading
+
+      Example:
+        ## Section Title
+
+        Local Subsection
+        ================
+
+        Local Sub-Subsection
+        --------------------
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">#</span>'
+
+
+  '<lia-keep> ... </lia-keep>':
+    'prefix': 'lia-keep'
+    'body': """
+      <lia-keep>
+      ${1:<table>
+        <tr><td rowspan="2">raw</td><td>HTML</td></tr>
+        <tr><td>without Markdown parsing</td></tr>
+      </table>}
+      </lia-keep>
+    """
+    'description': """
+      Everything inside <lia-keep> is passed through as raw HTML: no Markdown parsing and no indentation checks. Useful for complex hand-written HTML, such as tables with rowspan or colspan.
+
+      Example:
+        <lia-keep>
+        <table>
+          <tr><td rowspan="2">A</td><td>B</td></tr>
+          <tr><td>C</td></tr>
+        </table>
+        </lia-keep>
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">&lt;/&gt;</span>'
+
+
+  '<!--- ignored comment --->':
+    'prefix': 'lia-comment-ignore'
+    'body': """
+      <!---
+      ${1:This note is ignored by LiaScript.}
+      --->
+    """
+    'description': """
+      A comment that starts with three or more dashes (<!--- ... --->) is dropped completely by LiaScript. A normal HTML comment (<!-- ... -->) is read as attributes for the next element. Use it for notes to yourself or to comment out content.
+
+      Important: always leave a blank line between this comment and any other HTML comment (e.g. a styling or chart comment). Two comments without a blank line are merged by the Markdown parser and the following element is shown as plain text.
+
+      Example:
+        <!---
+        TODO: add a better picture here
+        --->
+
+        <!-- data-type="LinePlot" -->
+        | x | y |
+        |---|---|
+        | 1 | 2 |
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">🙈</span>'
+
+
+  '<!-- style="..." --> block':
+    'prefix': 'lia-style-block'
+    'body': """
+      <!-- style="${1:color: purple; font-size: 1.2em;}" ${2:class="${3:animated rollIn}"} -->
+      ${4:This whole paragraph is styled.}
+    """
+    'description': """
+      Style any block (paragraph, list, table, quote, code, ...) by placing an HTML comment with attributes directly above it. Any HTML attribute works, e.g. style, class or id. The comment is invisible in other Markdown viewers.
+
+      Example:
+        <!-- style="color: purple; font-size: 1.2em" class="animated rollIn" -->
+        This whole paragraph is styled.
+
+        <!-- style="width: 50%" -->
+        | <!-- style="background: azure" --> Header 1 | Header 2 |
+        |:--------------------------------------------|:---------|
+        | <!-- style="background: coral" --> Item 1   | Item 2   |
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">🎨</span>'
+
+
+  'inline<!-- style="..." -->':
+    'prefix': 'lia-style-inline'
+    'body': '<!-- style="${1:color: red;}" -->'
+    'description': """
+      Style an inline element (bold text, a link, an image, a formula, ...) by placing an HTML comment with attributes directly after it, without a space.
+
+      Example:
+        This **is important**<!-- style="color: red" --> text.
+
+        ![a lion](lion.svg)<!-- style="width: 300px;" class="animated bounce" -->
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">🎨</span>'

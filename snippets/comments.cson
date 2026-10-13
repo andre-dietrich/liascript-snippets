@@ -4,10 +4,12 @@
     'body': """
                     --{{${1:number}}}--
       ${2:Enter some **text** that gets read out aloud.
-      Only paragraphs are allowed!}'
+      Only paragraphs are allowed!}
     """
     'description': """
-      Comments are those elements that get read out aloud in slide and presentation mode and a printed out at the placed position in textbook mode. Only paragraphs are allowed as comments and Markdown can be applied for styling different elements.
+      Narration comments: the paragraph below --{{n}}-- is read out loud by the text-to-speech engine when animation step n is reached. Only one paragraph is allowed per comment, Markdown can be used inside.
+
+      In Presentation mode the text is spoken and hidden, in Slides mode it is spoken and shown in a side panel, and in Textbook mode it is shown in place. A comment never reveals anything on the slide by itself, so pair it with a {{n}} block for the same step (see lia-effect-presentation). Several comments with the same number are read one after another.
       The default voice is defined within the main header, if not english will be used. This main voice can be changed per section by adding a section comment.
 
       Example:
@@ -27,7 +29,7 @@
         <!-- narrator: US English Male -->
 
                      --{{0}}--
-        This entire section will be spoken aloud american man.
+        This entire section will be spoken by an American man.
 
                      --{{1}}--
         But only this section...
@@ -42,12 +44,12 @@
     'body': """
                     --{{${1:number} ${2:voice}}}--
       ${3:Enter some **text** that gets read out aloud with another voice.
-      Only paragraphs are allowed!}'
+      Only paragraphs are allowed!}
     """
     'body_vscode': """
                     --{{${1:number} ${2|UK English Female,UK English Male,US English Female,US English Male,Afrikaans Male,Albanian Male,Arabic Female,Arabic Male,Armenian Male,Australian Female,Australian Male,Bangla Bangladesh Female,Bangla Bangladesh Male,Bangla India Female,Bangla India Male,Bosnian Male,Brazilian Portuguese Female,Brazilian Portuguese Male,Catalan Male,Chinese Female,Chinese Male,Chinese (Hong Kong) Female,Chinese (Hong Kong) Male,Chinese Taiwan Female,Chinese Taiwan Male,Croatian Male,Czech Female,Czech Male,Danish Female,Danish Male,Deutsch Female,Deutsch Male,Dutch Female,Dutch Male,Esperanto Male,Estonian Male,Filipino Female,Finnish Female,Finnish Male,French Canadian Female,French Canadian Male,French Female,French Male,Greek Female,Greek Male,Hindi Female,Hindi Male,Hungarian Female,Hungarian Male,Icelandic Male,Indonesian Female,Indonesian Male,Italian Female,Italian Male,Japanese Female,Japanese Male,Korean Female,Korean Male,Latin Female,Latin Male,Latvian Male,Macedonian Male,Moldavian Female,Moldavian Male,Montenegrin Male,Nepali,Nepali,Norwegian Female,Norwegian Male,Polish Female,Polish Male,Portuguese Female,Portuguese Male,Romanian Female,Romanian Male,Russian Female,Russian Male,Serbian Male,Serbo-Croatian Male,Sinhala,Sinhala,Slovak Female,Slovak Male,Spanish Female,Spanish Male,Spanish Latin American Female,Spanish Latin American Male,Swahili Male,Swedish Female,Swedish Male,Tamil Female,Tamil Male,Thai Female,Thai Male,Turkish Female,Turkish Male,Ukrainian Female,Vietnamese Female,Vietnamese Male,Welsh Male|}}}--
       ${3:Enter some **text** that gets read out aloud with another voice.
-      Only paragraphs are allowed!}'
+      Only paragraphs are allowed!}
     """
     'description': """
       You can change the voice also per comment by adding it directly after the number of appearance.
@@ -80,7 +82,7 @@
         -->
     """
     'descriptionMoreURL': 'https://responsivevoice.org'
-    'leftLabelHTML': '🗯'
+    'leftLabelHTML': '<span style="color:#ff0">🗯</span>'
 
   '<!-- --{{number voice}}-- ... -->':
     'prefix': 'lia-comment-voice-hidden'
@@ -102,4 +104,24 @@
       Type "voice" for fuzzy searching or click on the link below for more information.
     """
     'descriptionMoreURL': 'https://responsivevoice.org'
-    'leftLabelHTML': '🗯'
+    'leftLabelHTML': '<span style="color:#ff0">🗯</span>'
+
+
+  '--{{number}}-- ... ?[audio](url)':
+    'prefix': 'lia-comment-media'
+    'body': """
+                    --{{${1:number}}}--
+      ${2:This text is not spoken, the recording is played instead.}
+      ?[${3:⏯}](${4:audio.mp3})
+    """
+    'description': """
+      Multimedia comment: attach an audio (or video) link at the end of a narration comment to play your own recording at this animation step instead of the text-to-speech voice. The file is only loaded and played when the step is reached in Presentation or Slides mode. It never shows up as a visible player. For a visible player, put the audio link outside of a comment.
+
+      Example:
+            --{{1}}--
+        To play an audio file during your animation step,
+        simply attach the link at the end of your comment.
+        ?[⏯](recording/audio_1.mp3)
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">🗯</span>'

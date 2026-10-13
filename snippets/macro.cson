@@ -74,38 +74,54 @@
 
   '@persistent':
     'prefix': 'lia-macro-persistent'
-    'body': 'persistent: ${1:false}'
-    'body_vscode': 'persistent: ${1|false,true|}'
+    'body': 'persistent: ${1:true}'
+    'body_vscode': 'persistent: ${1|true,false|}'
     'description': """
-      If you do not want to store the course state wihin indexeddb and also not within the local course index, you can use this macro within the header, which means that no trace of this course will be stored locally.
+      persistent can be used in two places:
+
+      In a section header, persistent: true keeps the section alive when the user navigates to another slide. Scripts, widgets and animations are not re-created when the user comes back. This is also needed if scripts on other slides should be able to send events to this section.
+
+      In the main header, persistent: false prevents that anything of this course (states and the entry in the local course index) is stored in the browser.
 
       Example:
+        ## Live Clock
         <!--
-        persistent: false
+        persistent: true
         -->
+
+        <script>
+        setInterval(() => send.output(new Date().toLocaleTimeString()), 1000)
+        "LIA: wait"
+        </script>
     """
     'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
     'leftLabelHTML': '<span style="color:#ff0">🛠</span>'
 
   'import':
     'prefix': 'lia-macro-import'
-    'body': 'import: ${1:url}'
+    'body': 'import: ${1:https://raw.githubusercontent.com/liaTemplates/ABCjs/main/README.md}'
     'description': """
-      You can import the main macros of other courses, simply by using the import command, which is followed by the raw url of the foreign course.
+      Imports the main header of another course or template: its macros, script and link entries, attributions and @onload code, but not its content. Templates of the LiaTemplates collection add features such as music notation, programming languages or 3D models. Use one import line per URL.
+
+      Pin a tag or commit in the URL instead of master/main, so that your course does not break when the template changes.
 
       Example:
-
-        ## section
         <!--
-        import: https://raw.githubusercontent.com/liaTemplates/rextester_template/master/README.md
+        import: https://raw.githubusercontent.com/liaTemplates/ABCjs/main/README.md
         -->
 
-        ``` python
-        print("Hello World")
+        ``` abc  @ABCJS.render
+        X: 1
+        T: Test Tune
+        M: C
+        L: 1/8
+        K: F
+        "F"[A3F3][AF] ([AF][GE][AF])[BG] |
         ```
-        @Rextester.eval(@Python)
+
+      See https://github.com/topics/liascript-template for more templates.
     """
-    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/templates/master/README.md'
+    'descriptionMoreURL': 'https://github.com/LiaTemplates'
     'leftLabelHTML': '<span style="color:#ff0">🛠</span>'
 
 
@@ -368,4 +384,267 @@
           ```
     """
     'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/mermaid_template/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">🛠</span>'
+
+
+  'logo:':
+    'prefix': 'lia-macro-logo'
+    'body': 'logo: ${1:./img/logo.png}'
+    'description': """
+      Header field: an image (relative or absolute URL) that is used as the background of the course card, e.g. in the LiaScript course index or in preview-lia links.
+
+      Example:
+        <!--
+        logo: ./img/logo.png
+        -->
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">🛠</span>'
+
+
+
+  'icon:':
+    'prefix': 'lia-macro-icon'
+    'body': 'icon: ${1:./img/icon.png}'
+    'description': """
+      Header field: replaces the default LiaScript (hummingbird) icon in the top left corner with your own image.
+
+      Example:
+        <!--
+        icon: https://example.com/my-icon.png
+        -->
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">🛠</span>'
+
+
+
+  'edit:':
+    'prefix': 'lia-macro-edit'
+    'body': 'edit: ${1:true}'
+    'body_vscode': 'edit: ${1|true,https://|}'
+    'description': """
+      Header field: adds an edit button to the course. true links the current document to the LiaScript LiveEditor, a URL links to any other place where the course can be edited (e.g. the file on GitHub).
+
+      Example:
+        <!--
+        edit: true
+        -->
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">🛠</span>'
+
+
+
+  'comment:':
+    'prefix': 'lia-macro-comment'
+    'body': 'comment:  ${1:A short description of your course.}'
+    'description': """
+      Header field: a short description that is shown on the course card. Continuation lines have to be indented, only the first paragraph is used.
+
+      Example:
+        <!--
+        comment:  An introduction to LiaScript.
+                  Learn how to write interactive courses
+                  with Markdown.
+        -->
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">🛠</span>'
+
+
+
+  'link:':
+    'prefix': 'lia-macro-link'
+    'body': 'link:     ${1:https://cdn.example.com/style.css}'
+    'description': """
+      Header field: loads additional CSS files, e.g. web fonts or styles of a JavaScript library. Use one URL per line or repeat the field.
+
+      Example:
+        <!--
+        link:     https://fonts.googleapis.com/css2?family=Roboto
+                  ./css/custom.css
+        -->
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">🛠</span>'
+
+
+
+  'script:':
+    'prefix': 'lia-macro-script'
+    'body': 'script:   ${1:https://cdn.example.com/library.js}'
+    'description': """
+      Header field: loads additional JavaScript files before the course is rendered. The libraries are then globally available in all scripts. Use one URL per line or repeat the field. Pin a version in CDN URLs.
+
+      Example:
+        <!--
+        script:   https://cdn.jsdelivr.net/npm/algebrite@1.4.0/dist/algebrite.bundle-for-browser.js
+        -->
+
+        ```
+        integral(x^2)
+        ```
+        <script>Algebrite.run(`@input`)</script>
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">🛠</span>'
+
+
+
+  'translation:':
+    'prefix': 'lia-macro-translation'
+    'body': 'translation: ${1:Deutsch}  ${2:translations/German.md}'
+    'description': """
+      Header field: links a translated version of the course, which is offered in the translation menu. Repeat it for every language: name of the language followed by the (relative) path or URL.
+
+      Example:
+        <!--
+        translation: Deutsch   translations/German.md
+        translation: Français  translations/French.md
+        -->
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">🛠</span>'
+
+
+
+  'language:':
+    'prefix': 'lia-macro-language'
+    'body': 'language: ${1:en}'
+    'body_vscode': 'language: ${1|en,de,fr,es,it,pt,nl,pl,ru,zh,ja,ar,fa,hy,bg|}'
+    'description': """
+      Header field: the language of the course as a locale code. It sets the language of the user interface, the typographic quotes and the default target for translations.
+
+      Example:
+        <!--
+        language: de
+        -->
+
+      All supported languages: https://github.com/liaScript/lia-localization
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">🛠</span>'
+
+
+
+  'narrator:':
+    'prefix': 'lia-macro-narrator'
+    'body': 'narrator: ${1:US English Female}'
+    'body_vscode': 'narrator: ${1|UK English Female,UK English Male,US English Female,US English Male,Afrikaans Male,Albanian Male,Arabic Female,Arabic Male,Armenian Male,Australian Female,Australian Male,Bangla Bangladesh Female,Bangla Bangladesh Male,Bangla India Female,Bangla India Male,Bosnian Male,Brazilian Portuguese Female,Brazilian Portuguese Male,Catalan Male,Chinese Female,Chinese Male,Chinese (Hong Kong) Female,Chinese (Hong Kong) Male,Chinese Taiwan Female,Chinese Taiwan Male,Croatian Male,Czech Female,Czech Male,Danish Female,Danish Male,Deutsch Female,Deutsch Male,Dutch Female,Dutch Male,Esperanto Male,Estonian Male,Filipino Female,Finnish Female,Finnish Male,French Canadian Female,French Canadian Male,French Female,French Male,Greek Female,Greek Male,Hindi Female,Hindi Male,Hungarian Female,Hungarian Male,Icelandic Male,Indonesian Female,Indonesian Male,Italian Female,Italian Male,Japanese Female,Japanese Male,Korean Female,Korean Male,Latin Female,Latin Male,Latvian Male,Macedonian Male,Moldavian Female,Moldavian Male,Montenegrin Male,Nepali,Nepali,Norwegian Female,Norwegian Male,Polish Female,Polish Male,Portuguese Female,Portuguese Male,Romanian Female,Romanian Male,Russian Female,Russian Male,Serbian Male,Serbo-Croatian Male,Sinhala,Sinhala,Slovak Female,Slovak Male,Spanish Female,Spanish Male,Spanish Latin American Female,Spanish Latin American Male,Swahili Male,Swedish Female,Swedish Male,Tamil Female,Tamil Male,Thai Female,Thai Male,Turkish Female,Turkish Male,Ukrainian Female,Vietnamese Female,Vietnamese Male,Welsh Male|}'
+    'description': """
+      Header field: the default text-to-speech voice for narration comments (--{{n}}--) and playback buttons. Can be overwritten per section and per comment. Type "voice" to search all voices.
+
+      Example:
+        <!--
+        narrator: Deutsch Female
+        -->
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">🛠</span>'
+
+
+
+  '@onload ... @end':
+    'prefix': 'lia-macro-onload'
+    'body': """
+      @onload
+      ${1:window.myGlobal = 42}
+      @end
+    """
+    'description': """
+      Header block: JavaScript that is executed once when the course is loaded, e.g. to configure a library or to define global helper functions. It is also imported by other courses that import this one.
+
+      Example:
+        <!--
+        script: https://cdn.example.com/library.js
+
+        @onload
+        window.greet = (name) => "Hello " + name
+        @end
+        -->
+
+        <script>greet("World")</script>
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">🛠</span>'
+
+
+  '@style ... @end':
+    'prefix': 'lia-macro-style'
+    'body': """
+      @style
+      ${1:.highlight {
+        color: crimson;
+        font-weight: bold;
+      \\}}
+      @end
+    """
+    'description': """
+      Header block: CSS rules for the whole course. Combine it with class attributes to style single elements.
+
+      Example:
+        <!--
+        @style
+        .highlight {
+          color: crimson;
+          font-weight: bold;
+        }
+        @end
+        -->
+
+        This is **important**<!-- class="highlight" -->.
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">🛠</span>'
+
+
+  '@macro(param1, param2)':
+    'prefix': 'lia-macro-call-params'
+    'body': '@${1:name}(${2:param1}, ${3:param2})'
+    'description': """
+      Calls a macro with parameters. Inside the definition, @0, @1, ... are replaced by the parameters in order. The last parameter can also be passed as a code block directly above the call (see lia-macro-call-block).
+
+      Commas inside a parameter can be protected with backticks, but this is not reliable in every LiaScript version. If possible, avoid commas in parameters.
+
+      Example:
+        <!--
+        @highlight: <b style="color: @0">@1</b>
+        -->
+
+        @highlight(red, simple text)
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">🛠</span>'
+
+
+  '@@macro (debug)':
+    'prefix': 'lia-macro-debug'
+    'body': '@@${1:name}${2:(${3:params})}'
+    'description': """
+      Debugging: an additional @ in front of a macro call shows the expanded result as code instead of executing it. Useful to find out what a macro (or an imported template) really produces.
+
+      Example:
+        @@highlight(red, show me the expansion)
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">🛠</span>'
+
+
+  "@'input (escaped)":
+    'prefix': 'lia-macro-escape'
+    'body': "@'${1:input}"
+    'description': """
+      An apostrophe after the @ escapes the result of a macro, so that it can be used safely inside a JavaScript string or template literal (quotes, backticks and backslashes are escaped). Works with @'input, @'input(1), @'0 or @'MacroName(...). Use it only once, otherwise characters are escaped twice.
+
+      Example:
+        ```text
+        He said "hello" and left.
+        ```
+        <script>
+          let text = `@'input`
+          text.length
+        </script>
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
     'leftLabelHTML': '<span style="color:#ff0">🛠</span>'

@@ -9,53 +9,58 @@
       language: ${4:en}
       narrator: ${5:US English Female}
 
-      comment:  ${6:This simple description of your course.
+      comment:  ${6:A short description of your course.
                 Multiline is also okay.}
 
-      link:     ${7:https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css}
-
-      script:   ${8:https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js}
-
-      ${9:translation: Français translations/French.md}
+      ${7:logo:     ./img/logo.png}
       -->
     """
     'description': """
-        The main header is a comment of the following format. You can use it to define defaults, such as authors, emails, where to find translations, what JavaScript and styles should be loaded additionally, as well as the language of your course.
-        You can change some of these settings within a sub-header for each section individually.
+      The main header is an HTML comment at the very top of the document. It defines the defaults of the course: authors, contact, version, language, the narrator voice, additional JavaScript and CSS, macros and more. Continuation lines have to be indented. Most settings can be overwritten per section (see lia-header-section).
 
-        Default:
-            language: (en) | de | ua | fa | hy | bg
-            narrator: US English Male
+      Common fields:
+        author      separate multiple authors with ;
+        email       contact shown in the info panel
+        version     0.x.x = development, nothing is stored;
+                    >= 1.0.0 = quiz, code and task states are stored
+                    (bump the major version when you move quizzes)
+        language    UI language and typography (en, de, fr, es, ...)
+        narrator    default text-to-speech voice (type "voice")
+        comment     short description for the course card
+        logo        image for the course card
+        icon        replaces the default LiaScript icon
+        mode        Presentation | Slides | Textbook
+        repository  link to the source repository
+        edit        true or a URL to edit the course online
+        link        additional CSS files, one per line
+        script      additional JavaScript files, one per line
+        import      macros of other courses/templates
+        translation link to a translated version
 
-        Example:
+      Type "lia-macro-" to find snippets for single header fields.
 
-            <!--
-            author:   Your Name
-            email:    your@email.com
-            version:  0.1.0
-            language: en
-            narrator: US English Female
+      Example:
+        <!--
+        author:   Your Name
+        email:    your@email.com
+        version:  0.1.0
+        language: en
+        narrator: US English Female
 
-            comment:  This simple description of your course.
-                      Multiline is also okay.
+        comment:  A short description of your course.
+                  Multiline is also okay.
 
-            link:     https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css
-                      https://...
+        logo:     ./img/logo.png
 
-            script:   https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js
-                      https://...
+        link:     https://cdn.example.com/library.css
+        script:   https://cdn.example.com/library.js
 
-            translation: Français translations/French.md
-            translation: 日本語    translations/Japanese.md
-            -->
+        translation: Deutsch  translations/German.md
+        -->
 
-            # Course ...
+        # Course Title
 
-      And you can refer to these values via the system macros:
-
-          @author
-          @email
-          @version
+      The values can be referred to by the macros @author, @email, @version and @date.
     """
     'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
     'leftLabelHTML': '<span style="color:#ff0">📄</span>'
@@ -65,39 +70,29 @@
     'prefix': 'lia-header-section'
     'body': """
       <!--
-      author:   ${1:Section Author}
-      email:    ${2:section.author@email.com}
-      version:  ${3:0.1.0}
-      narrator: ${4:UK English Female}
-
-      link:     ${5:https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css}
-
-      script:   ${6:https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js}
+      ${1:author:   Section Author}
+      ${2:narrator: UK English Female}
       -->
     """
     'description': """
-        You can overwrite some main header settings as it is listed below. Just attach a comment to the section title and overwrite only those settings, that are relevant to you.
+      A section header is an HTML comment directly after a heading. It overwrites settings of the main header for this section only, e.g. the author, the narrator voice, macros, additional scripts or styles (link, script), formula macros or persistent.
 
-        Example:
+      Example:
+        # Course
 
-            ...
-            # Course
-            ...
-            ## Section
-            <!--
-            narrator: Australian Female
-            -->
-            ...
-            ### Sub Section
-            <!--
-            author:   Section Author
-            email:    section.author@email.com
-            version:  0.1.0
-            narrator: Australian Female
+        ## Section
+        <!--
+        narrator: Australian Female
+        -->
 
-            link:     https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css
-            script:   https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js
-            -->
+        This section is read with an Australian voice.
+
+        ### Sub Section
+        <!--
+        author:     Section Author
+        email:      section.author@email.com
+        persistent: true
+        -->
     """
     'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
     'leftLabelHTML': '<span style="color:#ff0">📄</span>'

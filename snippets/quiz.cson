@@ -3,12 +3,14 @@
     'prefix': 'lia-quiz-text'
     'body': '[[${1:solution}]]'
     'description': """
-      Simply encompass your solution word into double brackets and you will get a nicely rendered text quiz.
+      Text quiz: put the solution into double brackets and the user gets an input field. The answer is compared with the solution string. Text quizzes do not support a starting dash.
 
       Example:
         What is the color of the sky?
 
-        [[blue]]
+            [[blue]]
+
+      If several answers should be accepted, add a script (lia-quiz-text-js) or use a selection (lia-quiz-select).
     """
     'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
     'leftLabelHTML': '<span style="color:#ff0">🎓</span>'
@@ -19,22 +21,22 @@
     'body': """
       [[${1:solution}]]
       <script>
-        ${2:// @input will be replace by the user input
-        let input_string = "@input";
-        "solution" == input_string.trim().toLowerCase();}
+        ${2:// @input is replaced by the raw user input, so wrap it in backticks
+        let input = `@input`.trim().toLowerCase();
+        input === "solution" || input === "answer";}
       </script>
     """
     'description': """
-      If different inputs are possible, you can add a script tag to your quiz-field. The reference @input will be replaced by the current user input string, and the result of the script has to be true or false.
+      Text quiz with a custom check. The script is placed directly after the quiz. Before it runs, @input is replaced by the raw text the user typed, so wrap it in backticks (`@input`) to get a JavaScript string. The last expression of the script has to be true (solved) or false (not solved).
 
       Example:
         What is the color of the sky?
 
-        [[blue]]
-        <script>
-          let input_string = "@input";
-          "BLUE" == input_string.trim().toUpperCase();
-        </script>
+            [[blue]]
+            <script>
+              let input = `@input`.trim().toLowerCase();
+              input === "blue" || input === "azure";
+            </script>
     """
     'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
     'leftLabelHTML': '<span style="color:#ff0">🎓</span>'
@@ -42,14 +44,49 @@
 
   '[[select|_wrong_|(right)]]':
     'prefix': 'lia-quiz-select'
-    'body': '[[${1:option}|${2:option}]]'
+    'body': '[[ ${1:option} | (${2:correct option}) | ${3:option} ]]'
     'description': """
-      Create a selection field, that contains various different solutions, separated by `|`. Images, formulas everything is allowed, only the correct solution has to be put into parentheses and there can be multiple correct solutions.
+      Selection quiz: a dropdown with options separated by `|`. The correct option is put into parentheses, and more than one option can be correct. Options may contain Markdown, images or formulas. Selections do not support a starting dash.
 
       Example:
         What is the color of the sky?
 
-        [[ red | (__blue__) | green | (black at night)]]
+            [[ red | (__blue__) | green | (black at night) ]]
+
+        What is the derivative of $f(x) = x^6$?
+
+            [[ $f'(x) = 6$ | ( $f'(x) = 6x^5$ ) | $f'(x) = 5x^6$ ]]
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">🎓</span>'
+
+
+  'gap text: ... [[solution]] ...':
+    'prefix': 'lia-quiz-gap-text'
+    'body': '${1:I} [[ ${2:have been learning} ]] ${3:English for seven years now.}'
+    'description': """
+      Gap text: text and selection quizzes can be placed inline, anywhere inside a paragraph, a list or a table. The width of the input field matches the length of the placeholder, so add spaces to make a gap wider. All gaps of one block are checked together.
+
+      Text around the brackets is ordinary text. To give hints, use [[?]] lines after the block.
+
+      Example:
+        __I [[  have been learning  ]] English for seven years now.__
+
+        The capital of France is [[ Paris ]] and of Italy [[ Rome ]].
+        [[?]] Both are famous for their food.
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">🎓</span>'
+
+
+  'gap text: ... [[a|(b)|(c)]] ...':
+    'prefix': 'lia-quiz-gap-select'
+    'body': '${1:I} [[ (${2:have been learning}) | (${3:\'ve been learning}) | ${4:learned} ]] ${5:English for seven years now.}'
+    'description': """
+      Gap text with a dropdown: use the selection syntax inline. To accept several answers, put every acceptable option into parentheses.
+
+      Example:
+        I [[ (have been learning) | ('ve been learning) | learned ]] English for seven years now.
     """
     'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
     'leftLabelHTML': '<span style="color:#ff0">🎓</span>'
@@ -59,16 +96,14 @@
     'prefix': 'lia-quiz-single-choice'
     'body': '[(${1: })] ${2:enter your text}'
     'description': """
-      Compose your single choice quizzes out of many lines in the following format:
+      Single-choice quiz (radio buttons): one line per option. [(X)] or [(x)] marks a correct option, [( )] a wrong one. If more than one option is marked, the user has to select only one of them. A starting dash (- [( )] ...) is allowed.
 
       Example:
         This is a single choice quiz with three options:
 
-          [( )] Add as many lines as you want?
-          [(X)] The X marks the only correct answer!
-          [( )] ... And only one X is allowed.
-
-      (If you want, you can also have multiple correct options.)
+            [( )] Add as many lines as you want.
+            [(X)] The X marks the correct answer!
+            [( )] This one is wrong.
     """
     'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
     'leftLabelHTML': '<span style="color:#ff0">🎓</span>'
@@ -77,15 +112,15 @@
     'prefix': 'lia-quiz-multiple-choice'
     'body': '[[${1: }]] ${2:enter your text}'
     'description': """
-      Compose your multiple choice quizzes out of many lines in the following format:
+      Multiple-choice quiz (checkboxes): one line per option. [[X]] or [[x]] marks an option that has to be checked, [[ ]] one that has to stay unchecked. A starting dash (- [[ ]] ...) is allowed.
 
       Example:
         This is a multiple choice quiz with four options:
 
-          [[ ]] Add as many lines as you want?
-          [[X]] The X marks the correct lines that have to be selected!
-          [[X]] This can offer multiple options that have to be clicked.
-          [[ ]] But it can also consist of empty brackets either.
+            [[ ]] Add as many lines as you want.
+            [[X]] The X marks the options that have to be checked!
+            [[X]] There can be several of them.
+            [[ ]] Empty brackets have to stay unchecked.
     """
     'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
     'leftLabelHTML': '<span style="color:#ff0">🎓</span>'
@@ -94,20 +129,19 @@
   '[[ |X][ |X]...] text':
     'prefix': 'lia-quiz-matrix-choice'
     'body': """
-      [[${1: }] [${2: }] [${3: }]]
-      [[${4: }] [${5: }] [${6: }]] ${7: add a line}
-      [(${8: }) (${9: }) (${10: })] ${11: add a line}
+      [[${1:column 1}] [${2:column 2}] [${3:column 3}]]
+      [    [${4:X}]          [${5: }]          [${6: }]     ] ${7:multiple-choice row}
+      [    (${8: })          (${9:X})          (${10: })     ] ${11:single-choice row}
     """
     'description': """
-      Compose a matrix of quizzes with multiple SingleChoice and MultipleChoice quizzes per row. The column headers have to be put into brackets or parentheses, depending on your passed Markdown content. It is allowed to have different numbers of options per row.
+      Matrix quiz: the first line holds the column labels. Every following row starts with [ and ends with ] followed by the row text. The cells of a row define its type: [ ] / [X] cells make a multiple-choice row, ( ) / (X) cells a single-choice row. All cells of one row must use the same type. Spacing is only cosmetic.
+
+      The brackets in the header are only labels. Use [...] or (...) so that you can put the other type of bracket into a label as text.
 
       Example:
-        This is a multiple choice quiz with four options:
-          [[:-)] (:-]) (_bold_)]
-          [ [ ]   [ ]     [X]  ] Only the X marks the correct solution!
-          [ [X]   [ ]     [ ]  ] Multiple- and SingleChoice quizzes in a matrix,
-          [ ( )   ( )     (X)  ] but you have to be consitent per row.
-          [ ( )   ( )     ( )   ( ) ] More or less options than defined in the header are also allowed.
+        - [[male (der)] (female [die]) [neuter (das)]]
+        - [    [X]           [ ]             [ ]     ]  Mann - German for man
+        - [    ( )           (X)             ( )     ]  Frau - German for woman
     """
     'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
     'leftLabelHTML': '<span style="color:#ff0">🎓</span>'
@@ -117,20 +151,20 @@
     'prefix': 'lia-quiz-hint'
     'body': '[[?]] ${1:enter your hint}'
     'description': """
-      If a quiz might be a bit tricky, you can add hints directly after any type of quiz and as many hints as you want. The user can decide whether he or she wants to use it, simply by clicking on the additional question mark, that appears after the check button.
+      Hints can be added directly after any type of quiz, as many as you want. They are revealed one at a time when the user clicks the hint button. A starting dash (- [[?]] ...) is allowed.
 
       Example:
-        This is a text quiz with two hints:
+        A text quiz with two hints:
 
-          [[solution]]
-          [[?]] This is the first hint
-          [[?]] This is a second hint
+            [[solution]]
+            [[?]] This is the first hint
+            [[?]] This is a second hint
 
         And a multiple choice quiz with one hint:
 
-          [[X]] This is correct!
-          [[ ]] This is wrong!
-          [[?]] Click on the first option!
+            [[X]] This is correct!
+            [[ ]] This is wrong!
+            [[?]] Click on the first option!
     """
     'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
     'leftLabelHTML': '<span style="color:#ff0">🎓</span>'
@@ -140,27 +174,69 @@
     'body': """
       ****************************************
 
-      ${1:Add a solution explanation __Markdown__!}
+      ${1:Add a solution explanation, any __Markdown__ is allowed!}
 
       ****************************************
     """
     'description': """
-      If the user solved a quiz or clicked onto resolve, the correct answer gets automatically revealed, but you can add additional information to your solution by adding two lines to the end of your quiz that can contain multiple Markdown blocks as explanation.
+      A solution block is shown after the quiz was solved or resolved. Enclose any Markdown blocks (text, images, code, ...) between two lines of three or more asterisks.
+
+      Important: there must not be a blank line between the last line of the quiz (answer, hint or script) and the opening asterisks. Otherwise the block is not recognized and the solution is visible all the time. Blank lines inside the block are fine.
 
       Example:
         What is the color of the sky?
 
-          [[blue]]
-          [[?]] Enter blue!
-          *************************************
+            [[blue]]
+            [[?]] Look up!
+            *************************************
 
-          During the day the color is blue, if
-          it is not cloudy. See the following
-          picture ...
+            During the day the color is blue, if
+            it is not cloudy.
 
-          ![blue sky](./img/sunny.jpg)
+            ![blue sky](./img/sunny.jpg)
 
-          *************************************
+            *************************************
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">🎓</span>'
+
+
+  'complete quiz: question, hints, script, solution':
+    'prefix': 'lia-quiz-complete'
+    'body': """
+      ${1:What is 37 + 15?}
+
+      [[${2:52}]]
+      [[?]] ${3:The solution is larger than 50.}
+      [[?]] ${4:It is an even number.}
+      <script>
+        let input = `@input`.trim();
+        ${5:input === "52"}
+      </script>
+      ****************************************
+
+      ${6:37 + 15 = 52, since 30 + 10 = 40 and 7 + 5 = 12.}
+
+      ****************************************
+    """
+    'description': """
+      A complete quiz template that combines everything: a question, the quiz, hints, a script that checks the input and a solution block. Remember: no blank line before the opening asterisks of the solution.
+
+      Example:
+        What is $37 + 15$?
+
+            [[52]]
+            [[?]] The solution is larger than 50.
+            [[?]] It is an even number.
+            <script>
+              let input = `@input`.trim();
+              input === "52"
+            </script>
+            ****************************************
+
+            $37 + 15 = 52$
+
+            ****************************************
     """
     'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
     'leftLabelHTML': '<span style="color:#ff0">🎓</span>'
@@ -170,39 +246,29 @@
     'prefix': 'lia-quiz-single-js'
     'body': """
       <script>
-        // @input gets replaced by a single number
-        // -1 if no selection otherwise it starts
-        // with 0.
-        let input_number = @input;
+        // @input is replaced by the index of the selected option
+        // (0 = first option, -1 = nothing selected)
+        let selected = @input;
 
-        ${1:if(input_number == 1)
-          true;
-        else
-          false;}
+        ${1:selected === 1}
       </script>
     """
     'description': """
-      In some rare cases you might want to change the correct solution, or add a counter, that reveals the correct answer after some predefined number of trials. Then simply add a script tag to the quiz. The @input string gets replaced by an integer representing the current user input:
+      A script after a single-choice quiz can change how it is checked, e.g. to accept other answers or to count trials. @input is replaced by a number (unquoted):
 
-      -1 -> no selection
-      0  -> the first
-      1  -> the second
+        -1 -> nothing selected
+         0 -> the first option
+         1 -> the second option ...
+
+      The last expression has to be true (solved) or false (not solved).
 
       Example:
-
-          [( )] Check this ...
-          [(X)] ... and not this
-          <script>
-            // @input gets replaced by a single number
-            // -1 if no selection otherwise it starts
-            // with 0.
-            let input_number = @input;
-
-            ${7:if(input_number == 0)
-              true;
-            else
-              false;}
-          </script>
+            [( )] Check this ...
+            [(X)] ... or this
+            <script>
+              let selected = @input;
+              selected === 0 || selected === 1
+            </script>
     """
     'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
     'leftLabelHTML': '<span style="color:#ff0">🎓</span>'
@@ -212,46 +278,34 @@
     'prefix': 'lia-quiz-multiple-js'
     'body': """
       <script>
-        // @input gets replaced by an array in the
-        // form of [0,0,0,1], whereby 0 and 1
-        // define whether a checkbox is checked
-        // or not...
-        let input_array = @input;
-        ${1:input_array = JSON.stringify(input_array);
+        // @input is replaced by an array such as [0,1,0,1],
+        // with 1 for a checked and 0 for an unchecked box
+        let checked = @input;
 
-        if      (input_array == "[0,1,0,1]")  true;
-        else if (input_array == "[0,1,0,0]")  true;
-        else if (input_array == "[0,0,0,1]")  true;
-        else                                 false;}
+        ${1:// accept every answer with at least one correct option
+        checked[1] === 1 || checked[3] === 1}
       </script>
     """
     'description': """
-      In some rare cases you might want to change the correct solution, add a counter, or let some correct answers pass. Then simply add a script tag to the quiz. The @input string here gets replaced by an by an array of integers ([0,1,1,0]) that represent the current user input:
+      A script after a multiple-choice quiz can change how it is checked, e.g. to let partially correct answers pass. @input is replaced by an array (unquoted) with one entry per option:
 
-      0 -> stands for checked
-      1 -> represents an unchecked field
+        1 -> checked
+        0 -> unchecked
+
+      The last expression has to be true (solved) or false (not solved).
 
       Example:
-
         Get at least one right ...
 
-        [[ ]] Wrong.
-        [[X]] Right.
-        [[ ]] Wrong.
-        [[X]] Right.
-        <script>
-          // @input gets replaced by an array in the
-          // form of [0,0,0,1], whereby 0 and 1
-          // define whether a checkbox is checked
-          // or not...
-          let input_array = @input;
-          input_array = JSON.stringify(input_array);
-
-          if      (input_array == "[0,1,0,1]")  true;
-          else if (input_array == "[0,1,0,0]")  true;
-          else if (input_array == "[0,0,0,1]")  true;
-          else                                 false;
-        </script>
+            [[ ]] Wrong.
+            [[X]] Right.
+            [[ ]] Wrong.
+            [[X]] Right.
+            <script>
+              let checked = @input;
+              (checked[1] === 1 || checked[3] === 1) &&
+              checked[0] === 0 && checked[2] === 0
+            </script>
     """
     'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
     'leftLabelHTML': '<span style="color:#ff0">🎓</span>'
@@ -261,29 +315,33 @@
     'prefix': 'lia-quiz-js'
     'body': """
       <script>
-        ${1:// @input gets replaced by the current quiz input.
-        // In case of a:
-        // * text input -> string, that has to be encapsulated with (")
-        // * single choice -> int (-1, if nothing is selected)
-        // * multiple choice -> array int (0 unchecked, 1 checked)
+        ${1:// @input is replaced by the current quiz input:
+        // * text / gap text  -> raw text, use it as `@input`
+        // * single choice    -> number (-1 if nothing selected)
+        // * selection        -> number of the selected option
+        // * multiple choice  -> array, e.g. [0,1,1] (1 = checked)
+        // * matrix           -> nested array, one entry per row
         let input = @input;
 
-        true; // if solved otherwise return false}
+        true; // return true if solved, otherwise false}
       </script>
     """
     'description': """
-      This will insert a generic script tag in the following form, the @input will be replaced according the current context:
+      A generic script that can be attached directly after any quiz. Before it runs, @input is replaced as text, so its form depends on the quiz type:
 
-      <script>
-        // @input gets replaced by the current quiz input.
-        // In case of a:
-        // * text input -> string, that has to be encapsulated with (")
-        // * single choice -> int (-1, if nothing is selected)
-        // * multiple choice -> array int (0 unchecked, 1 checked)
-        let input = @input;
+        text / gap text  -> raw text, wrap it in backticks: `@input`
+        single choice    -> number (-1 if nothing is selected)
+        selection        -> number of the selected option
+        multiple choice  -> array, e.g. [0,1,1] (1 = checked)
+        matrix           -> nested array, e.g. [[1,0,0], 1]
 
-        true; // if solved otherwise return false
-      </script>
+      The last expression has to be true (solved) or false (not solved).
+
+      Example:
+            [[52]]
+            <script>
+              Number(`@input`) === 52
+            </script>
     """
     'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
     'leftLabelHTML': '<span style="color:#ff0">🎓</span>'
@@ -293,15 +351,15 @@
     'prefix': 'lia-quiz-single-choice-3'
     'body': """
       [(${1: })] ${2:This is wrong.}
-      [(${3:X})] ${4:The only correct option.}
+      [(${3:X})] ${4:The correct option.}
       [(${5: })] ${6:Still not right.}
     """
     'description': """
-      Insert a the following quiz dummy:
+      Inserts a single-choice quiz with three options:
 
-        [( )] This is wrong.
-        [(X)] The only correct option.
-        [( )] Still not right.
+            [( )] This is wrong.
+            [(X)] The correct option.
+            [( )] Still not right.
     """
     'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
     'leftLabelHTML': '<span style="color:#ff0">🎓</span>'
@@ -310,18 +368,18 @@
   'multiple choice quiz with 4 options':
     'prefix': 'lia-quiz-multiple-choice-4'
     'body': """
-      [[${1: }]] ${2:Add as many elements as you want?}
+      [[${1: }]] ${2:Add as many options as you want.}
       [[${3:X}]] ${4:The X marks the correct answer!}
       [[${5: }]] ${6:... this is wrong ...}
-      [[${7:X}]] ${8:... this has to be selected too ...}
+      [[${7:X}]] ${8:... this has to be checked too ...}
     """
     'description': """
-      Insert a the following quiz dummy:
+      Inserts a multiple-choice quiz with four options:
 
-      [[ ]] Add as many elements as you want?
-      [[X]] The X marks the correct answer!
-      [[ ]] ... this is wrong ...
-      [[X]] ... this has to be selected too ...
+            [[ ]] Add as many options as you want.
+            [[X]] The X marks the correct answer!
+            [[ ]] ... this is wrong ...
+            [[X]] ... this has to be checked too ...
     """
     'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
     'leftLabelHTML': '<span style="color:#ff0">🎓</span>'
@@ -332,23 +390,22 @@
     'body': """
       [[!]]
       <script>
-        ${1:// you are free to check anything you want
+        ${1:// check anything you want and return true or false
         true;}
       </script>
     """
     'description': """
-      In some rarely rarely rare cases, you might want to have something completely different and analyze some other HTML or code inputs (unit testing). In this case you can apply this generic tag and do in JavaScript whatever you want. The this quiz is solved if the script gets evaluated to true, not solved by resulting in false (everything else is ignored).
+      Generic quiz: [[!]] has no input element of its own. The quiz is solved if the script evaluates to true and not solved if it evaluates to false. Use it for checks that do not fit the other quiz types, e.g. to test the state of an interactive element or the result of a code block.
 
-      *Click Me!*<!-- onclick="window['rand'] = Math.random();" -->
+      Use alert(...) to inspect values while developing.
 
-      [[!]]
-      <script>
-        alert("your value random value is:", window['rand']);
-        if(window['rand'] > 0.8)
-          true;
-        else
-          false
-      </script>
+      Example:
+        Only lucky people can solve this quiz:
+
+            [[!]]
+            <script>
+              Math.random() < 0.2
+            </script>
     """
     'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
     'leftLabelHTML': '<span style="color:#ff0">🎓</span>'

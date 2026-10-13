@@ -13,8 +13,7 @@
       ``````````````````````````````````````````````````
     """
     'description': """
-      Add ASCII art drawings, sketches, or what ever you want, simply
-      by enclosing it with at least four back tics (````).
+      ASCII art drawings are rendered as SVG images. This variant uses a fence of many backticks. The shorter form is a code block with the language ascii (see lia-ascii). The fence must not be indented.
 
       Examples:
 
@@ -44,8 +43,7 @@
       ``````````````````````````````````````````````````
     """
     'description': """
-      Add styling to your ASCII art drawings, sketches. Set the maximum
-      size or center it.
+      Style an ASCII art drawing with an HTML comment directly above it, e.g. to center it, limit its width or change the colors of lines (stroke) and filled shapes (fill).
 
       Examples:
 
@@ -53,14 +51,103 @@
                     margin-left: auto;
                     margin-right: auto;
                     max-width: 315px;" -->
-        ``````````````````````````````````````````````````
-        ${1:                             .--->  F
+        ``` ascii
+                                 .--->  F
             A       B     C   D     /
             *-------*-----*---*----*----->  E
-                     \            ^ \
+                     \\            ^ \\
                       v          /   '--->  G
-                       B --> C -'}
-        ``````````````````````````````````````````````````
+                       B --> C -'
+        ```
     """
     'descriptionMoreURL': 'https://github.com/andre-dietrich/elm-svgbob/blob/master/README.md'
     'leftLabelHTML': '<span style="color:#ff0">⌨</span>'
+
+
+  '```ascii ... ```':
+    'prefix': 'lia-ascii'
+    'body': """
+      ``` ascii
+      ${1:+------+   +-----+   +-----+
+      |      |   |     |   |     |
+      | Foo  +-->| Bar +-->| Baz |
+      |      |   |     |   |     |
+      +------+   +-----+   +-----+}
+      ```
+    """
+    'description': """
+      A code block with the language ascii is rendered as an SVG image (svgbob). The fence must start at the left margin, an indented block is shown as plain code.
+
+      Drawing vocabulary:
+        - _ |  \\ /       lines
+        +                 square corner
+        . , ' `           rounded corners
+        * # o O           dots, also as arrow ends
+        < > ^ v V A       arrow heads
+        Unicode box-drawing characters and emojis are also allowed.
+
+      Example:
+        ``` ascii
+        +------+   +-----+
+        | Foo  +-->| Bar |
+        +------+   +--+--+
+                      |
+                      v
+                .-----------.
+                |  rounded  |
+                '-----------'
+        ```
+    """
+    'descriptionMoreURL': 'https://github.com/andre-dietrich/elm-svgbob/blob/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">⌨</span>'
+
+
+  '```ascii Title ... ```':
+    'prefix': 'lia-ascii-title'
+    'body': """
+      ``` ascii  ${1:Fig.: Working with branches in git}
+      ${2:new feature      .---#---.
+                       |       |
+      development    .-o---o---o----o----o-.
+      main   *---*-+-*---*---*-------------*----}
+      ```
+    """
+    'description': """
+      Text after the language ascii (on the same line as the opening fence) is shown as a caption below the image. It can contain Markdown.
+
+      Example:
+        ``` ascii  Fig.: A __simple__ box
+        +-----+
+        | Box |
+        +-----+
+        ```
+    """
+    'descriptionMoreURL': 'https://github.com/andre-dietrich/elm-svgbob/blob/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">⌨</span>'
+
+
+  '```ascii "LiaScript inside" ```':
+    'prefix': 'lia-ascii-embed'
+    'body': """
+      ``` ascii
+      +-----------------------------+
+      | "${1:**Markdown** and formulas}"    |
+      | "${2:can be placed in quotes}"      |
+      +-----------------------------+
+      ```
+    """
+    'description': """
+      Text in double quotes inside an ASCII drawing is not drawn, but rendered as LiaScript on top of the image: Markdown, formulas, animations, quizzes, ... Lines whose quotes start at the same column form one multi-line block. The placement is not pixel-precise, so adjust the quotes and the frame by hand.
+
+      Example:
+        ``` ascii
+        +-------------------------------------------+
+        | "$ \\sum_{i=1}^n i = \\frac{n(n+1)}{2} $"   |
+        +-------------------------------------------+
+        | "Gauss found this at the age of __9__."   |
+        +-------------------------------------------+
+        ```
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">⌨</span>'
+

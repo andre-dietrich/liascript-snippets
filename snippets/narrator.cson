@@ -204,13 +204,13 @@
     'descriptionMoreURL': 'https://responsivevoice.org'
 
   'voice: Finnish Male':
-    'prefix': 'voice-finnisch-male'
+    'prefix': 'voice-finnish-male'
     'body':   'Finnish Male'
     'leftLabelHTML': '<span style="color:#ff0">🇫🇮 👨</span>'
     'descriptionMoreURL': 'https://responsivevoice.org'
 
   'voice: French Canadian Female':
-    'prefix': 'voice-french-vanadian-female'
+    'prefix': 'voice-french-canadian-female'
     'body':   'French Canadian Female'
     'leftLabelHTML': '<span style="color:#ff0">🇨🇦 👩</span>'
     'descriptionMoreURL': 'https://responsivevoice.org'

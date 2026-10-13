@@ -16,6 +16,8 @@
 
         Local navigation by slide title: [top](#some-title)
 
+        Autolink, no escaping of parentheses needed: <https://example.com/path_(with_parens)>
+
         With styling [LiaScript](https://liascript.github.io)<!--
           title = "click me"
           style = "color: red;"
@@ -176,3 +178,64 @@
     """
     'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
     'leftLabelHTML': '<span style="color:#ff0">🎞</span>'
+
+
+  '[qr-code](url)':
+    'prefix': 'lia-qr-code'
+    'body': '[qr-code](${1:https://liascript.github.io})'
+    'description': """
+      A link with the text qr-code is rendered as a QR code for its URL, e.g. so that students in a lecture can open a link on their phones. Other Markdown viewers show a normal link.
+
+      Example:
+        [qr-code](https://liascript.github.io)
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">▦</span>'
+
+
+  '[preview-lia](course-url)':
+    'prefix': 'lia-preview-lia'
+    'body': '[preview-lia](${1:https://raw.githubusercontent.com/liaScript/docs/master/README.md})'
+    'description': """
+      A link with the text preview-lia to the raw URL of another LiaScript course is rendered as a preview card with the title, description, logo and author taken from the course header. Clicking the card opens the course.
+
+      Example:
+        [preview-lia](https://raw.githubusercontent.com/liaScript/docs/master/README.md)
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">🃏</span>'
+
+
+  '[name](mailto:...)':
+    'prefix': 'lia-mailto'
+    'body': '[${1:Write me}](${2:mailto}:${3:you@example.com})'
+    'body_vscode': '[${1:Write me}](${2|mailto,tel|}:${3:you@example.com})'
+    'description': """
+      Links with mailto: open the email program, links with tel: start a phone call on mobile devices.
+
+      Example:
+        [Write me](mailto:you@example.com)
+
+        [Call me](tel:+491234567890)
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">✉</span>'
+
+
+  '![image](url) + text beside it':
+    'prefix': 'lia-image-float'
+    'body': """
+      ![${1:alt-text}](${2:image-url} "${3:caption}")
+      ${4:This text has no blank line before it, so it stays in the same
+      paragraph as the image and flows beside it.}
+    """
+    'description': """
+      Two-column layout: an image followed directly by text (no blank line between them) forms one paragraph. The image floats to the left with up to 50% of the width and the text flows beside it. A blank line between image and text puts the text below the image instead.
+
+      Example:
+        ![A lion](img/lion.jpg "The king of the jungle")
+        Lions live in groups called prides. This text is shown
+        to the right of the image.
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">🖼</span>'

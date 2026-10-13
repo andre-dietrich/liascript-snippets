@@ -42,10 +42,10 @@
 
   '{{number}}':
     'prefix': 'lia-effect-block'
-    'body': '    {${1:number}}\n$2'
+    'body': '    {{${1:number}}}\n$2'
     'body2': '    {{number}}'
     'description': """
-      Use block effects to let entire Markdown blocks appear or disappear. It works exactly as simple inline effects. But the number of appearance has to be put in double braces.
+      Use block effects to let an entire Markdown block appear at a certain animation step. Put the step number in double braces on its own line directly above the block. Indent it by 4 or more spaces, so that other Markdown viewers show it as code and not as text. In Textbook mode all blocks are visible and tagged with their step number.
       The entire block can also be styled and the animation tweaked, but the required comment tag has to be defined before the Markdown block. Animate.css is included at default.
 
       Examples:
@@ -69,21 +69,21 @@
 
 
   '{{from-to}}':
-    'prefix': 'lia-effect-block'
-    'body': '    {${1:from}-${2:to}}\n$3'
+    'prefix': 'lia-effect-block2'
+    'body': '    {{${1:from}-${2:to}}}\n$3'
     'body2': '    {{from-to}}'
     'description': """
-      Use block effects to let entire Markdown blocks appear or disappear. It works exactly as simple inline effects. But the number of appearance has to be put in double braces, followed by a hyphen (-) and the number of disappearance.
+      Use block effects with a range to let an entire Markdown block appear at the first step and disappear at the second. Put both numbers, separated by a hyphen, in double braces directly above the block.
       The entire block can also be styled and the animation tweaked, but the required comment tag has to be defined before the Markdown block. Animate.css is included at default.
 
       Examples:
                          {{1-4}}
         This entire block will appear with the first fragment.
-        And remain untill the fourth fragment of this slide.
+        And remain until the fourth fragment of this slide.
 
                          {{0-1}}
         ```js
-        // I will be present emeadiately and disapper on the
+        // I will be present immediately and disappear on the
         // 1st fragment.
         ```
 
@@ -108,7 +108,7 @@
       ************************************************
     """
     'description': """
-      You can bundle multiple blocks to one effect block by enclosing them into two lines of stars (*). The rest works exactly as block effects...
+      Bundle multiple blocks into one animation step by enclosing them in two lines of three or more asterisks (*). The effect definition goes above the opening line. Alternatively, use a <section> ... </section> wrapper instead of the asterisks (see lia-effect-section).
       The entire block can also be styled and the animation tweaked, but the required comment tag has to be defined before the Markdown block. Animate.css is included at default.
 
       Examples:
@@ -140,7 +140,7 @@
       ************************************************
     """
     'description': """
-      You can bundle multiple blocks to one effect block by enclosing them into two lines of stars (*). The rest works exactly as block effects...
+      Bundle multiple blocks into one animation step by enclosing them in two lines of three or more asterisks (*). The effect definition goes above the opening line. Alternatively, use a <section> ... </section> wrapper instead of the asterisks (see lia-effect-section).
       The entire block can also be styled and the animation tweaked, but the required comment tag has to be defined before the Markdown block. Animate.css is included at default.
 
       Examples:
@@ -176,7 +176,7 @@
 
       For more information how to change the animation styles, click on the link below.
     """
-    'descriptionMoreURL': 'https://github.com/daneden/animate.css/'
+    'descriptionMoreURL': 'https://animate.style'
     'leftLabelHTML': '<span style="color:#ff0">💫</span>'
 
 
@@ -218,3 +218,98 @@
     """
     'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
     'leftLabelHTML': '<span style="color:#ff0">💫</span>'
+
+  '{{|> voice}}':
+    'prefix': 'lia-effect-block-playback-voice'
+    'body': '    {{|> ${1:voice}}}\n$2'
+    'body_vscode': '    {{|> ${1|UK English Female,UK English Male,US English Female,US English Male,Afrikaans Male,Albanian Male,Arabic Female,Arabic Male,Armenian Male,Australian Female,Australian Male,Bangla Bangladesh Female,Bangla Bangladesh Male,Bangla India Female,Bangla India Male,Bosnian Male,Brazilian Portuguese Female,Brazilian Portuguese Male,Catalan Male,Chinese Female,Chinese Male,Chinese (Hong Kong) Female,Chinese (Hong Kong) Male,Chinese Taiwan Female,Chinese Taiwan Male,Croatian Male,Czech Female,Czech Male,Danish Female,Danish Male,Deutsch Female,Deutsch Male,Dutch Female,Dutch Male,Esperanto Male,Estonian Male,Filipino Female,Finnish Female,Finnish Male,French Canadian Female,French Canadian Male,French Female,French Male,Greek Female,Greek Male,Hindi Female,Hindi Male,Hungarian Female,Hungarian Male,Icelandic Male,Indonesian Female,Indonesian Male,Italian Female,Italian Male,Japanese Female,Japanese Male,Korean Female,Korean Male,Latin Female,Latin Male,Latvian Male,Macedonian Male,Moldavian Female,Moldavian Male,Montenegrin Male,Nepali,Nepali,Norwegian Female,Norwegian Male,Polish Female,Polish Male,Portuguese Female,Portuguese Male,Romanian Female,Romanian Male,Russian Female,Russian Male,Serbian Male,Serbo-Croatian Male,Sinhala,Sinhala,Slovak Female,Slovak Male,Spanish Female,Spanish Male,Spanish Latin American Female,Spanish Latin American Male,Swahili Male,Swedish Female,Swedish Male,Tamil Female,Tamil Male,Thai Female,Thai Male,Turkish Female,Turkish Male,Ukrainian Female,Vietnamese Female,Vietnamese Male,Welsh Male|}}}\n$2'
+    'description': """
+      Adds a play button to the block below, which reads it out loud with the given voice instead of the default narrator. The button works in every mode and does not depend on the animation steps.
+
+      Type "voice" to search all available voices.
+
+      Example:
+            {{|> Australian Female}}
+        This paragraph is read with an Australian voice.
+
+            {{1 |> Deutsch Female}}
+        Dieser Absatz erscheint bei Schritt 1 und wird auf Deutsch vorgelesen.
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">💫</span>'
+
+
+  '{{number}} <section> ... </section>':
+    'prefix': 'lia-effect-section'
+    'body': """
+                       {{${1:number}}}
+      <section>
+
+      ${2:Insert your Markdown blocks in here ...}
+
+      </section>
+    """
+    'description': """
+      Groups multiple blocks into one animation step with an HTML section tag instead of two lines of asterisks. Leave a blank line after <section> and before </section>, so that the content is parsed as Markdown.
+
+      Example:
+                          {{1}}
+        <section>
+
+        This paragraph and the table below appear together.
+
+        | Also | with  |
+        |------|-------|
+        | any  | table |
+
+        </section>
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">💫</span>'
+
+
+  'presentation slide: {{n}} + --{{n}}--':
+    'prefix': 'lia-effect-presentation'
+    'body': """
+      ## ${1:Slide Title}
+
+                   --{{0}}--
+      ${2:Introduction, spoken when the slide is opened.}
+
+                     {{1}}
+      ${3:* First bullet point}
+
+                   --{{1}}--
+      ${4:Narration for the first bullet point.}
+
+                     {{2}}
+      ${5:* Second bullet point}
+
+                   --{{2}}--
+      ${6:Narration for the second bullet point.}
+    """
+    'description': """
+      A slide that works as a presentation and as a textbook: every visible step {{n}} is paired with a narration --{{n}}-- for the same step. Think of {{n}} as the bullet point and --{{n}}-- as the speaker notes for it.
+
+      How the narration is shown depends on the mode:
+        Presentation -> spoken, text hidden
+        Slides       -> spoken, text shown in the side panel
+        Textbook     -> not spoken, text shown in place
+
+      A --{{n}}-- comment alone never reveals anything on the slide, so always pair it with a {{n}} block. Step 0 introduces the slide.
+
+      Example:
+        ## Photosynthesis
+
+                     --{{0}}--
+        Plants turn light into sugar. Let us look at the inputs.
+
+                       {{1}}
+        * Light, water and CO2 go in
+
+                     --{{1}}--
+        Three things are needed: light, water and carbon dioxide.
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">💫</span>'
+

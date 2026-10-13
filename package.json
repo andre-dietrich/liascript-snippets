@@ -1,7 +1,7 @@
 {
 	"name": "liascript-snippets",
 	"displayName": "LiaScript-Snippets",
-	"version": "1.9.0",
+	"version": "1.10.0",
 	"description": "A collection of snippets for the LiaScript Markdown language...",
 	"publisher": "LiaScript",
 	"keywords": [
@@ -26,20 +26,17 @@
 			{
 				"language": "markdown",
 				"path": "./vscode/markdown.code-snippets"
-			},
-			{
-				"language": "md",
-				"path": "./vscode/markdown.code-snippets"
 			}
 		]
 	},
 	"scripts": {
-		"pack": "vsce package"
+		"pack": "npm i && vsce package"
 	},
 	"__metadata": {
 		"id": "4fdeb1cb-d1bb-4dc4-942d-f740286d0a63",
 		"publisherDisplayName": "LiaScript",
 		"publisherId": "885a7ea1-97f0-4081-ab98-cf3d9503d445",
-		"isPreReleaseVersion": false
+		"isPreReleaseVersion": false,
+		"size": 3781557
 	}
 }

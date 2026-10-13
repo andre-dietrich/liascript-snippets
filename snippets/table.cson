@@ -266,9 +266,10 @@
   '<!-- data-type="..." -->':
     'prefix': 'lia-table-diagram-type'
     'body': """<!-- data-type="${1:type}" -->"""
+    'body_vscode': """<!-- data-type="${1|lineplot,scatterplot,barchart,boxplot,radar,piechart,funnel,map,heatmap,parallel,graph,sankey,none|}" -->"""
     'description': """
-      You can enforce the visualization of a certain type, even if the sturcture of your table might look different.
-      Currently available data-types are: lineplot, scatterplot, boxplot, barchart, radar, piechart, map, heatmap, parallel, graph, sankey, and none
+      You can enforce the visualization of a certain type, even if the structure of your table might look different.
+      Currently available data-types are (case-insensitive): lineplot (line), scatterplot (scatter), barchart (bar), boxplot, radar, piechart (pie), funnel, map, heatmap, parallel, graph, sankey, and none
       If you do not want to show tables as diagrams, you can also use data-type="None" and only the table will be visible.
 
       Example:
@@ -287,7 +288,7 @@
     'prefix': 'lia-table-diagram-lineplot'
     'body': """<!-- data-type="lineplot" -->"""
     'description': """
-      If the first column contains (not repeating) numbers as well as the other columns, lineplots are used as the default representation, a special tag is not required. If this isn't the case, then you can apply this tag to enforce the visualization as a scatterplot.
+      If the first column contains (not repeating) numbers as well as the other columns, lineplots are used as the default representation, a special tag is not required. If this isn't the case, then you can apply this tag to enforce the visualization as a lineplot.
 
       Example:
         <!-- data-type="lineplot" -->
@@ -372,13 +373,13 @@
     'prefix': 'lia-table-diagram-radar'
     'body': """<!-- data-type="radar" -->"""
     'description': """
-      If for example humans and sheeps are removed from the dataset, then wheight in kg would not be visible in a BarChart at all. In this case a Radar is selected, that allows to analyze data visually with different "y"-axis.
+      A radar chart draws one polygon per row with one axis per column. It is useful if the columns have very different scales (e.g. weight in kg and lifespan in years), which would make a BarChart unreadable. Do not rely on the automatic detection, set the type explicitly. Use at least 3 numeric columns.
 
       Example:
         <!-- data-type="radar" -->
         | Animal          | weight in kg | Lifespan years | Mitogen |
         | --------------- | ------------:| --------------:| -------:|
-        | Mouse           |        0.028 |             02 |      95 |
+        | Mouse           |        0.028 |              2 |      95 |
         | Flying squirrel |        0.085 |             15 |      50 |
         | Brown bat       |        0.020 |             30 |      10 |
     """
@@ -452,7 +453,7 @@
     'prefix': 'lia-table-diagram-parallel'
     'body': """<!-- data-type="parallel" -->"""
     'description': """
-      A Parallel representation jumps in, if there are simply too many categories, so that your BarChart would contain only thin lines.
+      A parallel coordinates plot draws one vertical axis per column and one line per row. It is useful if there are too many categories for a readable BarChart. Do not rely on the automatic detection, set the type explicitly.
 
       Example:
         <!-- data-type="parallel" -->
@@ -598,4 +599,168 @@
         | ...                    |         |
     """
     'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">𝌠</span>'
+
+
+  '<!-- data-type="funnel" -->':
+    'prefix': 'lia-table-diagram-funnel'
+    'body': """<!-- data-type="funnel" -->"""
+    'description': """
+      A funnel (pyramid) chart uses the same table shape as a PieChart: a header with the categories and one row of numbers. It is never selected automatically.
+
+      Example:
+        <!-- data-type="funnel" data-show -->
+        | Visits | Sign-ups | Trials | Customers |
+        | ------:| --------:| ------:| ---------:|
+        |   1000 |      400 |    150 |        40 |
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">𝌠</span>'
+
+
+
+  '<!-- data-xlim="min,max" -->':
+    'prefix': 'lia-table-diagram-xlim'
+    'body': """<!-- data-xlim="${1:0},${2:100}" -->"""
+    'description': """
+      Sets the range of the x-axis. One side can be left empty to determine it automatically, e.g. data-xlim=",12".
+
+      Example:
+        <!-- data-show data-xlim="1994,2000" -->
+        | Year | Finland | Germany |
+        | ---- | -------:| -------:|
+        | 1995 |     6.8 |     4.4 |
+        | 1996 |     6.9 |     4.5 |
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">𝌠</span>'
+
+
+
+  '<!-- data-ylim="min,max" -->':
+    'prefix': 'lia-table-diagram-ylim'
+    'body': """<!-- data-ylim="${1:0},${2:100}" -->"""
+    'description': """
+      Sets the range of the y-axis. One side can be left empty to determine it automatically, e.g. data-ylim="0,".
+
+      Example:
+        <!-- data-show data-ylim="0,10" -->
+        | Year | Finland | Germany |
+        | ---- | -------:| -------:|
+        | 1995 |     6.8 |     4.4 |
+        | 1996 |     6.9 |     4.5 |
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">𝌠</span>'
+
+
+
+  '<!-- data-orientation="horizontal" -->':
+    'prefix': 'lia-table-diagram-orientation'
+    'body': """<!-- data-orientation="horizontal" -->"""
+    'description': """
+      Flips a BarChart: the bars are drawn horizontally and the categories are listed on the y-axis. Useful for long category names.
+
+      Example:
+        <!-- data-show data-orientation="horizontal" -->
+        | Animal          | weight in kg | Lifespan years |
+        | --------------- | ------------:| --------------:|
+        | Mouse           |        0.028 |              2 |
+        | Flying squirrel |        0.085 |             15 |
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">𝌠</span>'
+
+
+
+  '<!-- data-sortable="false" -->':
+    'prefix': 'lia-table-diagram-sortable'
+    'body': """<!-- data-sortable="${1:false}" -->"""
+    'body_vscode': """<!-- data-sortable="${1|false,true|}" -->"""
+    'description': """
+      Tables can be sorted by clicking on a header cell. data-sortable="false" in the table comment turns this off for the whole table. It can also be set for single columns in a comment inside the header cell.
+
+      Example:
+        <!-- data-sortable="false" -->
+        | Rank | Name  |
+        | ---- | ----- |
+        | 1    | Alice |
+        | 2    | Bob   |
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">𝌠</span>'
+
+
+
+  'table with diagram settings':
+    'prefix': 'lia-table-diagram-full'
+    'body': """
+      <!--
+      data-show
+      data-type="${1:lineplot}"
+      data-title="${2:Government expenditure on education}"
+      data-xlabel="${3:year}"
+      data-ylabel="${4:% of GDP}"
+      -->
+      | ${5:Year} | ${6:Finland} | ${7:Germany} |
+      | ---- | -------:| -------:|
+      | 1995 |     6.8 |     4.4 |
+      | 1996 |     6.9 |     4.5 |
+      | 1997 |     6.5 |     4.6 |
+    """
+    'body_vscode': """
+      <!--
+      data-show
+      data-type="${1|lineplot,scatterplot,barchart,boxplot,radar,piechart,funnel,heatmap,parallel,graph,sankey|}"
+      data-title="${2:Government expenditure on education}"
+      data-xlabel="${3:year}"
+      data-ylabel="${4:% of GDP}"
+      -->
+      | ${5:Year} | ${6:Finland} | ${7:Germany} |
+      | ---- | -------:| -------:|
+      | 1995 |     6.8 |     4.4 |
+      | 1996 |     6.9 |     4.5 |
+      | 1997 |     6.5 |     4.6 |
+    """
+    'description': """
+      A table that is shown as a diagram right away. All settings go into one HTML comment directly above the table:
+
+        data-show            show the diagram instead of the table
+        data-type            chart type (see lia-table-diagram-type)
+        data-title           title of the diagram
+        data-xlabel/ylabel   axis labels
+        data-xlim/ylim       axis ranges, e.g. "0,10"
+        data-transpose       swap rows and columns
+        data-orientation     "horizontal" bars
+
+      Users can still switch between table and diagram.
+
+      Do not put another HTML comment directly above this one without a blank line, otherwise the table is shown as plain text.
+    """
+    'descriptionMoreURL': 'https://liascript.github.io/course/?https://raw.githubusercontent.com/liaScript/docs/master/README.md'
+    'leftLabelHTML': '<span style="color:#ff0">𝌠</span>'
+
+
+  '<lia-chart option="...">':
+    'prefix': 'lia-chart'
+    'body': """
+      <lia-chart option="{
+        title: { text: '${1:Custom ECharts diagram}' },
+        xAxis: { type: 'value' },
+        yAxis: { type: 'value' },
+        series: [{ type: '${2:line}', data: ${3:[[0,0],[1,1],[2,4],[3,9]]} }]
+      }"></lia-chart>
+    """
+    'description': """
+      For diagrams that cannot be generated from a table, use the lia-chart element directly. The option attribute takes a complete Apache ECharts configuration. Scripts can also generate it dynamically: return "HTML: <lia-chart option='...'></lia-chart>".
+
+      Example:
+        <lia-chart option="{
+          title: { text: 'Squares' },
+          xAxis: { type: 'value' },
+          yAxis: { type: 'value' },
+          series: [{ type: 'line', data: [[0,0],[1,1],[2,4],[3,9]] }]
+        }"></lia-chart>
+    """
+    'descriptionMoreURL': 'https://echarts.apache.org/en/option.html'
     'leftLabelHTML': '<span style="color:#ff0">𝌠</span>'

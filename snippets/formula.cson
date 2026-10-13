@@ -7,17 +7,17 @@
 
     Example: $ f(a,b,c) = (a^2+b^2+c^2)^3 $
 
-    Formulas are rendered with KaTex, so click on the link below to get more information and examples on the applied notation.
+    Formulas are rendered with KaTeX. Only LaTeX is allowed between the dollar signs, no Markdown or HTML. Click on the link below for all supported commands.
     """
-    'descriptionMoreURL': 'https://khan.github.io/KaTeX/docs/supported.html'
+    'descriptionMoreURL': 'https://katex.org/docs/supported.html'
     'leftLabelHTML': '<span style="color:#ff0">𝝅²</span>'
 
-  '$$ \\sum_\\{i=1\\}^\\\\infty\\ ... $$':
+  '$$ \\sum_{i=1}^\\infty ... $$':
     'prefix': 'lia-formula-block'
     'body': """
     $$
-       ${1:\\\\sum_\\{i=1\\}^\\\\infty\\\\frac\\{1\\}\\{n^2\\}
-            =\\\\frac\\{\\\\pi^2\\}\\{6\\}}
+       ${1:\\\\sum_{i=1\\}^\\\\infty\\\\frac{1\\}{n^2\\}
+            =\\\\frac{\\\\pi^2\\}{6\\}}
     $$
     """
     'body2': """
@@ -36,7 +36,41 @@
             =\\frac{\\pi^2}{6}
     $$
 
-    Formulas are rendered with KaTex, so click on the link below to get more information and examples on the applied notation.
+    Formulas are rendered with KaTeX. Only LaTeX is allowed between the dollar signs, no Markdown or HTML. Click on the link below for all supported commands.
     """
-    'descriptionMoreURL': 'https://khan.github.io/KaTeX/docs/supported.html'
+    'descriptionMoreURL': 'https://katex.org/docs/supported.html'
     'leftLabelHTML': '<span style="color:#ff0">𝝅²</span>'
+
+  '$\\ce{...}$':
+    'prefix': 'lia-formula-chem'
+    'body': '$\\\\ce{${1:CO2 + C -> 2 CO}}$'
+    'description': """
+    Chemical equations with the mhchem extension of KaTeX: write the formula inside \\ce{...}. Arrows, charges, states and isotopes are supported.
+
+    Example:
+      $\\ce{CO2 + C -> 2 CO}$
+
+      $\\ce{Hg^2+ ->[I-] HgI2 ->[I-] [Hg^{II}I4]^2-}$
+    """
+    'descriptionMoreURL': 'https://mhchem.github.io/MathJax-mhchem/'
+    'leftLabelHTML': '<span style="color:#ff0">⚗</span>'
+
+  'formula: name {definition}':
+    'prefix': 'lia-formula-macro'
+    'body': 'formula: ${1:\\\\R}  ${2:\\\\mathbb{R\\}}'
+    'description': """
+    Define your own KaTeX macros in the main header (or a section header) with formula:. They can be used in every formula of the course. The line can be repeated for more macros.
+
+    Example:
+      <!--
+      formula: \\R      \\mathbb{R}
+      formula: \\norm   \\left\\lVert #1 \\right\\rVert
+      -->
+
+      # Main
+
+      $ x \\in \\R $ and $ \\norm{x} $
+    """
+    'descriptionMoreURL': 'https://katex.org/docs/supported.html#macros'
+    'leftLabelHTML': '<span style="color:#ff0">𝝅²</span>'
+

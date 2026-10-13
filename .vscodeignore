@@ -9,4 +9,11 @@ vsc-extension-quickstart.md
 **/*.ts
 preview.gif
 cson*
-Demo.md
+Demo.md__pycache__/**
+default.json
+monaco.json
+vscode.json
+english.md
+index.html
+CLAUDE.md
+*.vsix
